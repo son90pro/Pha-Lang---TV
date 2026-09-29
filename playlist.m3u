@@ -1,0 +1,38 @@
+#EXTM3U
+
+#EXTINF:-1 tvg-logo="https://flagcdn.com/w320/kp.png" group-title="Phá Làng TV" , 🟢 13:00 29/09 ⚽ CHỦ NHÀ
+HÒA
+ĐỘI KHÁCH
+TRỰC TIẾP
+MÔ PHỎNG
+CHIA SẺ
+Phát trực tiếp North Korea Women vs China Women (LÝ LINH LỰC) [HD2]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36
+#EXTVLCOPT:http-origin=https://phalang.live/
+https://pull1.digitalcdn.net/live/cdff1fe8285e4d5a824494555dbaf6ff/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://flagcdn.com/w320/kp.png" group-title="Phá Làng TV" , 🟢 13:00 29/09 ⚽ CHỦ NHÀ
+HÒA
+ĐỘI KHÁCH
+TRỰC TIẾP
+MÔ PHỎNG
+CHIA SẺ
+Phát trực tiếp North Korea Women vs China Women (Nhà đài)
+#EXTVLCOPT:http-referrer=https://phalang.live/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36
+#EXTVLCOPT:http-origin=https://phalang.live/
+https://lilive1.eu.cc/live/f71a6b5f9c2e8bd7552b0896fcb3db3f/playlist.m3u8
+
+#EXTINF:-1 tvg-logo="https://flagcdn.com/w320/ir.png" group-title="Phá Làng TV" , 🟢 14:00 29/09 ⚽ CHỦ NHÀ
+HÒA
+ĐỘI KHÁCH
+TRỰC TIẾP
+MÔ PHỎNG
+CHIA SẺ
+Phát trực tiếp Iran vs Indonesia (LÝ LÊN LỬA) [HD2]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36
+#EXTVLCOPT:http-origin=https://phalang.live/
+https://pull1.digitalcdn.net/live/2a2d91969b1747eca27d8cf331ba584f/index.m3u8
+
