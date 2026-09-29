@@ -4,13 +4,28 @@ import unicodedata
 from datetime import datetime, timezone, timedelta
 from playwright.sync_api import sync_playwright
 
+# CAU HINH CHUNG
+DOMAINS = [
+    "https://phalang.tv/",
+    "https://phalang1.tv/",
+    "https://phalang2.tv/"
+]
 REFERER_URL = "https://phalang.tv/"
 OUTPUT_FILE = "playlist.m3u"
 GROUP_NAME = "Phá Làng TV"
+DEFAULT_LOGO = "https://flagcdn.com/w320/vn.png"
 
 USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
 
-# DANH SÁCH MẪU TIỀN TỐ TÊN GIẢI ĐẤU CẦN CẮT BỎ BẰNG MỌI GIÁ
+# DANH SACH BLV MANG PHÁ LÀNG TV
+KNOWN_BLVS = [
+    "Lý Linh", "Lý Lên Lửa", "Lý La Làng", "Lý Bò", "Lý Thông", "Lý Tưởng",
+    "Chuối Chiên", "Chuối Chao", "Trốc", "Củ Cốt", "Nhà đài"
+]
+
+CASTER_STREAM_MAP = {}
+
+# LEAGUE SLUG PATTERNS TO REMOVE
 LEAGUE_SLUG_PATTERNS = [
     r'^(?:vdqg|vdqg-[a-z0-9]+)[-_]*',
     r'^(?:asian-games|asiad|asean-games)[-_]*',
@@ -23,8 +38,24 @@ LEAGUE_SLUG_PATTERNS = [
     r'^(?:v-league|vleague|giai-vong-loai|vong-loai)[-_]*'
 ]
 
-# Kho Logo & Cờ Quốc gia chuẩn TiviMate
+# KHO LOGO & CỜ QUỐC GIA (ĐÃ BỔ SUNG ĐẦY ĐỦ CÁC ĐỘI BÓNG TRONG HÌNH MẪU)
 LOGOS = {
+    # Châu Á & Đông Nam Á
+    "north korea": "https://flagcdn.com/w320/kp.png", "triều tiên": "https://flagcdn.com/w320/kp.png", "dprk": "https://flagcdn.com/w320/kp.png",
+    "iran": "https://flagcdn.com/w320/ir.png",
+    "philippines": "https://flagcdn.com/w320/ph.png",
+    "pakistan": "https://flagcdn.com/w320/pk.png",
+    "indonesia": "https://flagcdn.com/w320/id.png",
+    "china": "https://flagcdn.com/w320/cn.png", "trung quốc": "https://flagcdn.com/w320/cn.png",
+    "vietnam": "https://flagcdn.com/w320/vn.png", "việt nam": "https://flagcdn.com/w320/vn.png",
+    "thailand": "https://flagcdn.com/w320/th.png", "thái lan": "https://flagcdn.com/w320/th.png",
+    "malaysia": "https://flagcdn.com/w320/my.png",
+    "japan": "https://flagcdn.com/w320/jp.png", "nhật bản": "https://flagcdn.com/w320/jp.png",
+    "south korea": "https://flagcdn.com/w320/kr.png", "hàn quốc": "https://flagcdn.com/w320/kr.png", "korea": "https://flagcdn.com/w320/kr.png",
+    "india": "https://flagcdn.com/w320/in.png", "ấn độ": "https://flagcdn.com/w320/in.png",
+    "singapore": "https://flagcdn.com/w320/sg.png", "bangladesh": "https://flagcdn.com/w320/bd.png",
+    "australia": "https://flagcdn.com/w320/au.png", "úc": "https://flagcdn.com/w320/au.png",
+
     # Châu Âu
     "netherlands": "https://flagcdn.com/w320/nl.png", "hà lan": "https://flagcdn.com/w320/nl.png",
     "germany": "https://flagcdn.com/w320/de.png", "đức": "https://flagcdn.com/w320/de.png",
@@ -34,34 +65,21 @@ LOGOS = {
     "portugal": "https://flagcdn.com/w320/pt.png", "bồ đào nha": "https://flagcdn.com/w320/pt.png",
     "england": "https://flagcdn.com/w320/gb-eng.png", "anh": "https://flagcdn.com/w320/gb-eng.png",
     "slovakia": "https://flagcdn.com/w320/sk.png", "armenia": "https://flagcdn.com/w320/am.png", 
-    "latvia": "https://flagcdn.com/w320/lv.png", "turkiye": "https://flagcdn.com/w320/tr.png", "turkey": "https://flagcdn.com/w320/tr.png", "thổ nhĩ kỳ": "https://flagcdn.com/w320/tr.png",
+    "latvia": "https://flagcdn.com/w320/lv.png", "turkiye": "https://flagcdn.com/w320/tr.png", "turkey": "https://flagcdn.com/w320/tr.png",
     "belgium": "https://flagcdn.com/w320/be.png", "bỉ": "https://flagcdn.com/w320/be.png",
     "poland": "https://flagcdn.com/w320/pl.png", "ba lan": "https://flagcdn.com/w320/pl.png",
-    "hungary": "https://flagcdn.com/w320/hu.png", "hungari": "https://flagcdn.com/w320/hu.png", "ukraine": "https://flagcdn.com/w320/ua.png",
+    "hungary": "https://flagcdn.com/w320/hu.png", "ukraine": "https://flagcdn.com/w320/ua.png",
     "finland": "https://flagcdn.com/w320/fi.png", "phần lan": "https://flagcdn.com/w320/fi.png",
     "sweden": "https://flagcdn.com/w320/se.png", "thụy điển": "https://flagcdn.com/w320/se.png",
     "romania": "https://flagcdn.com/w320/ro.png", "croatia": "https://flagcdn.com/w320/hr.png",
 
-    # Châu Á & Đông Nam Á
-    "vietnam": "https://flagcdn.com/w320/vn.png", "việt nam": "https://flagcdn.com/w320/vn.png",
-    "thailand": "https://flagcdn.com/w320/th.png", "thái lan": "https://flagcdn.com/w320/th.png",
-    "indonesia": "https://flagcdn.com/w320/id.png", "malaysia": "https://flagcdn.com/w320/my.png",
-    "japan": "https://flagcdn.com/w320/jp.png", "nhật bản": "https://flagcdn.com/w320/jp.png",
-    "south korea": "https://flagcdn.com/w320/kr.png", "hàn quốc": "https://flagcdn.com/w320/kr.png", "korea": "https://flagcdn.com/w320/kr.png",
-    "china": "https://flagcdn.com/w320/cn.png", "trung quốc": "https://flagcdn.com/w320/cn.png",
-    "india": "https://flagcdn.com/w320/in.png", "ấn độ": "https://flagcdn.com/w320/in.png",
-    "singapore": "https://flagcdn.com/w320/sg.png", "bangladesh": "https://flagcdn.com/w320/bd.png",
-    "australia": "https://flagcdn.com/w320/au.png", "úc": "https://flagcdn.com/w320/au.png",
-    "pakistan": "https://flagcdn.com/w320/pk.png",
-
-    # Mỹ & Châu Phi & Các CLB
+    # Châu Mỹ & Châu Phi & Các CLB
     "panama": "https://flagcdn.com/w320/pa.png", "jamaica": "https://flagcdn.com/w320/jm.png",
-    "guatemala": "https://flagcdn.com/w320/gt.png", "morocco": "https://flagcdn.com/w320/ma.png", "ma rốc": "https://flagcdn.com/w320/ma.png",
-    "gabon": "https://flagcdn.com/w320/ga.png", "colombia": "https://flagcdn.com/w320/co.png", "chico": "https://flagcdn.com/w320/co.png", "pasto": "https://flagcdn.com/w320/co.png",
-    "mexico": "https://flagcdn.com/w320/mx.png", "atlante": "https://flagcdn.com/w320/mx.png", "tijuana": "https://flagcdn.com/w320/mx.png", "monterrey": "https://flagcdn.com/w320/mx.png", "atlas": "https://flagcdn.com/w320/mx.png",
+    "guatemala": "https://flagcdn.com/w320/gt.png", "morocco": "https://flagcdn.com/w320/ma.png",
+    "gabon": "https://flagcdn.com/w320/ga.png", "colombia": "https://flagcdn.com/w320/co.png",
+    "mexico": "https://flagcdn.com/w320/mx.png", "atlante": "https://flagcdn.com/w320/mx.png",
     "brazil": "https://flagcdn.com/w320/br.png", "argentina": "https://flagcdn.com/w320/ar.png",
-    "uruguay": "https://flagcdn.com/w320/uy.png", "ecuador": "https://flagcdn.com/w320/ec.png",
-    "jaca": "https://flagcdn.com/w320/jp.png", "j3": "https://flagcdn.com/w320/jp.png"
+    "uruguay": "https://flagcdn.com/w320/uy.png", "ecuador": "https://flagcdn.com/w320/ec.png"
 }
 
 def to_slug(text: str) -> str:
@@ -72,14 +90,13 @@ def to_slug(text: str) -> str:
 
 def clean_word(w: str) -> str:
     w_low = w.lower()
-    if w_low in ['nu', 'nữ', 'women']: return 'W'
+    if w_low in ['nu', 'nữ', 'women']: return 'Women'
     if w_low in ['nam', 'men']: return 'Men'
     if w_low in ['u23', 'u21', 'u20', 'u19', 'u18', 'u17', 'u16']: return w.upper()
     if w_low in ['fc', 'ac', 'sc', 'as', 'cd', 'pr', 'dpr']: return w.upper()
     return w.capitalize()
 
 def parse_teams_from_slug(url: str) -> str:
-    """Bóc tách tên 2 đội chính xác từ URL slug, lọc bỏ hoàn toàn Tên Giải Đấu & Tên BLV"""
     try:
         match_slug = re.search(r'/(?:truc-tiep|match|live|room|xem|phong|link|stream)/([^/?#]+)', url)
         if not match_slug:
@@ -89,25 +106,18 @@ def parse_teams_from_slug(url: str) -> str:
             parts = slug.split('-vs-')
             left, right = parts[0], parts[1]
 
-            # 1. Loại bỏ các tiền tố xưng hô BLV / nhà cái
             left = re.sub(r'^(?:blv|caster|ga|ly)[-_]*', '', left, flags=re.I)
             
-            # 2. Loại bỏ các tên BLV dính ở đầu slug
-            caster_words = [
-                "troc", "tru", "chuoi", "nho", "kem", "say", "sais", "chao", 
-                "la", "ngao", "to", "tay", "lap", "ky", "beo", "sieu", "ga", "ly"
-            ]
+            caster_words = ["troc", "tru", "chuoi", "nho", "kem", "say", "sais", "chao", "la", "ngao", "to", "tay", "lap", "ky", "beo", "sieu", "ga", "ly"]
             pattern_caster = r'^(?:' + '|'.join(caster_words) + r')[-_]*'
             while re.match(pattern_caster, left, flags=re.I):
                 left = re.sub(pattern_caster, '', left, flags=re.I)
 
-            # 3. LOẠI BỎ TRIỆT ĐỂ TÊN GIẢI ĐẤU DÍNH Ở ĐẦU TÊN ĐỘI 1
             for l_pat in LEAGUE_SLUG_PATTERNS:
                 left = re.sub(l_pat, '', left, flags=re.I)
 
             left = re.sub(r'^(?:truc-tiep|xem-truc-tiep|match|live)[-_]*', '', left, flags=re.I)
 
-            # 4. Làm sạch vế phải (Đội 2) khỏi thông số thời gian
             right = re.sub(r'-(?:luc|ngay|time|fhd|hls|\d{2}h\d{2}|\d{3,4}|\d{1,2}-\d{1,2}|\d{4}).*$', '', right, flags=re.I)
             right = re.sub(r'-\d+$', '', right)
 
@@ -124,15 +134,14 @@ def parse_teams_from_slug(url: str) -> str:
     return ""
 
 def extract_teams_from_lines(card_text: str) -> str:
-    """Bóc tách tên 2 đội từ văn bản thô khi URL không chứa từ khóa -vs-"""
     lines = [line.strip() for line in card_text.split('\n') if line.strip()]
     candidates = []
     
     junk_patterns = [
         r'\b\d{1,2}[:h/]\d{2}\b', r'\b\d{1,2}/\d{1,2}\b',
         r'\b(?:fhd|hls|live|trực tiếp|đang diễn ra|sắp diễn ra|hiệp 1|hiệp 2|hoàn tất|kết thúc)\b',
-        r'\b(?:chuối|trốc|blv|caster)\s+[a-zA-Z0-9_À-ỹ]+\b',
-        r'^\s*(?:chuối|trốc|blv|caster)\s*$',
+        r'\b(?:chuối|trốc|blv|caster|lý)\s+[a-zA-Z0-9_À-ỹ]+\b',
+        r'^\s*(?:chuối|trốc|blv|caster|lý)\s*$',
         r'\b(?:vđqg|asian games|fifa asean cup|liga mx|j3 league|v-league|giao hữu quốc tế|uefa nations league)\b'
     ]
 
@@ -153,7 +162,6 @@ def extract_teams_from_lines(card_text: str) -> str:
     return ""
 
 def is_league_or_generic_logo(url: str) -> bool:
-    """Kiểm tra nếu logo thu thập được chỉ là logo giải đấu chung"""
     if not url:
         return True
     u_low = url.lower()
@@ -164,7 +172,6 @@ def is_league_or_generic_logo(url: str) -> bool:
     return False
 
 def get_team_logo(teams_str: str, raw_card_logo: str = "") -> str:
-    """Ưu tiên tìm Cờ/Logo CLB tương ứng với tên 2 đội bóng"""
     t_lower = teams_str.lower()
     for key, url in LOGOS.items():
         if key in t_lower:
@@ -182,7 +189,7 @@ def build_emergency_channels():
     for blv in KNOWN_BLVS:
         slug = to_slug(blv)
         stream_url = CASTER_STREAM_MAP.get(slug, f"https://stm9ee346727718.stream.hdplaylink.com/cctvlive/{slug}hd/playlist.m3u8")
-        title = f"🟢 {now_str} ⚽ Trực Tiếp ({blv}) [FHD] [hls]"
+        title = f"🟢 {now_str} ⚽ Kênh Kỹ Thuật ({blv}) [FHD] [hls]"
         items.append({
             "title": title,
             "logo": DEFAULT_LOGO,
@@ -300,13 +307,13 @@ def run_scraper():
             status = item['status']
 
             # 1. Bóc tách tên BLV
-            blv_name = "Chuối Chiên"
+            blv_name = "Nhà đài"
             for b in KNOWN_BLVS:
                 if b.lower() in card_text.lower() or to_slug(b) in match_url.lower():
                     blv_name = b
                     break
 
-            # 2. Bóc tách tên 2 Đội bóng (Giải mã Slug chuẩn)
+            # 2. Bóc tách tên 2 Đội bóng
             teams_title = parse_teams_from_slug(match_url)
 
             if not teams_title:
@@ -322,10 +329,10 @@ def run_scraper():
             if not teams_title:
                 teams_title = "Trận đấu Trực Tiếp"
 
-            # 3. Tự động chọn Logo / Cờ Quốc gia
+            # 3. Chọn Cờ Quốc gia / Logo
             card_logo = get_team_logo(teams_title, item['logo'])
 
-            # 4. Icon môn thể thao
+            # 4. Icon môn thể thao (Bóng đá ⚽, Bóng chuyền 🏐, Bóng rổ 🏀)
             sport_icon = "⚽"
             text_lower = card_text.lower()
             if any(k in text_lower for k in ["bóng chuyền", "volleyball"]):
@@ -337,20 +344,29 @@ def run_scraper():
 
             # 5. Bóc tách Thời gian
             time_m = re.search(r'\b(2[0-3]|[0-1]?\d)[:h](\d{2})\b', card_text)
-            extracted_time = f"{time_m.group(1).zfill(2)}:{time_m.group(2)}" if time_m else "20:00"
+            extracted_time = f"{time_m.group(1).zfill(2)}:{time_m.group(2)}" if time_m else "13:00"
 
             date_m = re.search(r'\b(\d{1,2})[/.-](\d{1,2})\b', card_text)
             match_date = f"{date_m.group(1).zfill(2)}/{date_m.group(2).zfill(2)}" if date_m else today_str
 
-            # Dấu chấm trạng thái TiviMate chuẩn
+            # 6. Biểu tượng trạng thái (Đang phát 🟢, Sắp phát 🟡)
             status_dot = ""
             if status == 'live':
                 status_dot = "🟢 "
             elif status == 'soon':
                 status_dot = "🟡 "
 
-            # Tiêu đề kênh chuẩn 100% hình mẫu: 🟢 08:00 26/09 ⚽ Atlante FC vs Monterrey (Chuối Chao) [FHD] [hls]
-            full_title = f"{status_dot}{extracted_time} {match_date} {sport_icon} {teams_title} ({blv_name}) [FHD] [hls]"
+            # 7. Trích xuất các Thẻ bổ sung (HD2, geo, ...)
+            extra_tags = ""
+            if "hd2" in card_text.lower() or "hd2" in match_url.lower():
+                extra_tags += " [HD2]"
+            if "geo" in card_text.lower() or "geo" in match_url.lower():
+                extra_tags += " [geo]"
+
+            # Tiêu đề kênh CHUẨN 100% THEO HÌNH MẪU:
+            # Ví dụ: 🟢 13:00 29/09 ⚽ North Korea Women vs China Women (LÝ LINH)
+            # Ví dụ: 🟡 14:00 29/09 🏐 Iran vs Indonesia (LÝ LÊN LỬA) [geo]
+            full_title = f"{status_dot}{extracted_time} {match_date} {sport_icon} {teams_title} ({blv_name}){extra_tags}".strip()
 
             blv_slug = to_slug(blv_name)
             stream_url = CASTER_STREAM_MAP.get(
@@ -380,7 +396,7 @@ def run_scraper():
         print("[!] Kích hoạt danh sách kênh dự phòng khẩn cấp!")
         parsed_items = build_emergency_channels()
 
-    # GHI FILE PLAYLIST M3U DÀNH CHO TIVIMATE
+    # GHI FILE PLAYLIST M3U DÀNH CHO TIVIMATE VÀ CÁC ỨNG DỤNG IPTV
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         f.write('#EXTM3U\n\n')
         seen_urls = set()
@@ -389,7 +405,7 @@ def run_scraper():
                 continue
             seen_urls.add(item['match_url'])
 
-            f.write(f'#EXTINF:-1 tvg-logo="{item["logo"]}" group-title="{GROUP_NAME}" , {item["title"]} \n')
+            f.write(f'#EXTINF:-1 tvg-logo="{item["logo"]}" group-title="{GROUP_NAME}" , {item["title"]}\n')
             f.write(f'#EXTVLCOPT:http-referrer={REFERER_URL}\n')
             f.write(f'#EXTVLCOPT:http-user-agent={USER_AGENT}\n')
             f.write(f'{item["stream_url"]}\n\n')
@@ -398,4 +414,4 @@ def run_scraper():
 
 if __name__ == "__main__":
     run_scraper()
-            
+    
