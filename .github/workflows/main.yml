@@ -1,40 +1,41 @@
-name: Auto Scrape Phá Làng TV Playlist
+name: Auto Update IPTV Playlist
 
 on:
   schedule:
-    # Tự động chạy mỗi 1 tiếng/lần để cập nhật danh sách trận đấu & link stream
+    # Chạy tự động vào phút thứ 0 của mỗi giờ (1 tiếng / 1 lần)
     - cron: '0 * * * *'
-  workflow_dispatch: # Cho phép nhấn nút chạy thủ công trên GitHub Actions
+  # Nút bấm để kích hoạt chạy thủ công trên GitHub khi cần
+  workflow_dispatch:
 
 permissions:
   contents: write
 
 jobs:
-  scrape-and-update:
+  run-scraper:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Kiểm tra mã nguồn (Checkout Repository)
         uses: actions/checkout@v4
 
-      - name: Set up Python
+      - name: Cài đặt môi trường Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.10'
 
-      - name: Install dependencies
+      - name: Cài đặt thư viện & Trình duyệt Playwright
         run: |
           python -m pip install --upgrade pip
-          pip install playwright requests
+          pip install playwright
           playwright install chromium --with-deps
 
-      - name: Run Scraper Script
-        run: python scraper.py
-
-      - name: Commit and Push playlist.m3u
+      - name: Chạy File Scraper
         run: |
-          git config --local user.email "github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
-          git add playlist.m3u
-          git diff --quiet && git diff --staged --quiet || (git commit -m "Updated playlist.m3u [skip ci]" && git push)
+          python scraper.py
+
+      - name: Tự động Commit & Push file playlist.m3u lên Github
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Auto update playlist.m3u [skip ci]"
+          file_pattern: 'playlist.m3u'
           
