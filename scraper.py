@@ -1,9 +1,10 @@
 import time
 import re
+import unicodedata
 from datetime import datetime, timezone, timedelta
 from playwright.sync_api import sync_playwright
 
-BASE_URL = "https://phalang.live"
+# CAU HINH TEN MIEN CHINH PHÁ LÀNG TV
 DOMAINS = [
     "https://phalang.live/",
     "https://phalang.tv/",
@@ -12,62 +13,83 @@ DOMAINS = [
 REFERER_URL = "https://phalang.live/"
 OUTPUT_FILE = "playlist.m3u"
 GROUP_NAME = "Phá Làng TV"
-DEFAULT_LOGO = "https://sta.vnres.co/file/common/20260926/e852329be4add16641d68cfb8aa233ad.png"
+DEFAULT_LOGO = "https://flagcdn.com/w320/vn.png"
+
 USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
 
+# DANH SACH NHAN DIEN BLV PHÁ LÀNG TV
 KNOWN_BLVS = [
     "LÝ LINH LỰC", "LÝ LINH", "LÝ LÊN LỬA", "LÝ LA LÀNG", "LÝ BÒ", "LÝ THÔNG",
-    "LÝ TƯỞNG", "LÝ BÉO", "LÝ ĐỨC", "LÝ LIỀU LĨNH", "LÝ LÀNG LÁ", "LÝ LẮC LÉO",
-    "LÝ LONG", "CHUỐI CHIÊN", "CHUỐI CHAO", "TRỐC", "CỦ CỐT", "THỎ", "GÀ", "SÁY"
+    "LÝ TƯỞNG", "LÝ BÉO", "LÝ ĐỨC", "CHUỐI CHIÊN", "CHUỐI CHAO", "TRỐC",
+    "CỦ CỐT", "THỎ", "GÀ", "SÁY"
 ]
 
-SERVER_PRIORITY = {
-    "HD1": 1, "FHD": 1, "SD": 1, "Nguồn 1": 1,
-    "HD2": 2, "Nguồn 2": 2,
-    "HD3": 3,
-    "Nhà đài": 4
+# KHO LOGO & CỜ QUỐC GIA
+LOGOS = {
+    "north korea": "https://flagcdn.com/w320/kp.png", "triều tiên": "https://flagcdn.com/w320/kp.png", "dprk": "https://flagcdn.com/w320/kp.png",
+    "iran": "https://flagcdn.com/w320/ir.png",
+    "philippines": "https://flagcdn.com/w320/ph.png",
+    "pakistan": "https://flagcdn.com/w320/pk.png",
+    "indonesia": "https://flagcdn.com/w320/id.png",
+    "china": "https://flagcdn.com/w320/cn.png", "trung quốc": "https://flagcdn.com/w320/cn.png",
+    "vietnam": "https://flagcdn.com/w320/vn.png", "việt nam": "https://flagcdn.com/w320/vn.png",
+    "thailand": "https://flagcdn.com/w320/th.png", "thái lan": "https://flagcdn.com/w320/th.png",
+    "malaysia": "https://flagcdn.com/w320/my.png",
+    "japan": "https://flagcdn.com/w320/jp.png", "nhật bản": "https://flagcdn.com/w320/jp.png",
+    "south korea": "https://flagcdn.com/w320/kr.png", "hàn quốc": "https://flagcdn.com/w320/kr.png",
+    "australia": "https://flagcdn.com/w320/au.png", "úc": "https://flagcdn.com/w320/au.png",
+    "brazil": "https://flagcdn.com/w320/br.png", "argentina": "https://flagcdn.com/w320/ar.png"
 }
 
-def fix_logo_url(url: str) -> str:
-    """Sửa lỗi Logo khung xám: Chuyển đường dẫn tương đối thành tuyệt đối"""
-    if not url:
-        return DEFAULT_LOGO
-    url = url.strip()
-    if url.startswith("//"):
-        return f"https:{url}"
-    elif url.startswith("/"):
-        return f"{BASE_URL}{url}"
-    elif not url.startswith("http"):
-        return DEFAULT_LOGO
-    return url
+def get_team_logo(teams_str: str, raw_card_logo: str = "") -> str:
+    t_lower = teams_str.lower()
+    for key, url in LOGOS.items():
+        if key in t_lower:
+            return url
+    if raw_card_logo and raw_card_logo.startswith("http"):
+        return raw_card_logo
+    return DEFAULT_LOGO
 
 def extract_blv_from_text(text: str) -> str:
-    """Trích xuất chính xác tên BLV"""
+    """Trích xuất chính xác tên BLV từ chuỗi văn bản"""
     if not text:
         return ""
     text_upper = text.upper()
+    
+    # Check danh sách BLV cố định
     for b in KNOWN_BLVS:
         if b in text_upper:
             return b
-
-    m_bracket = re.search(r'\((LÝ\s+[^\)]+)\)', text_upper)
-    if m_bracket:
-        return m_bracket.group(1).strip()
-
-    m_ly = re.search(r'\b(LÝ\s+[A-ZÀ-Ỹ0-9]{2,10})\b', text_upper)
+            
+    # Check theo icon tai nghe hoặc chữ LÝ ...
+    m = re.search(r'(?:🎧|BLV|CASTER)\s*([A-ZÀ-Ỹ0-9\s]{2,15})', text_upper)
+    if m:
+        candidate = m.group(1).strip()
+        if "NHÀ ĐÀI" not in candidate:
+            return candidate
+            
+    m_ly = re.search(r'\b(LÝ\s+[A-ZÀ-Ỹ0-9\s]{2,12})\b', text_upper)
     if m_ly:
         return m_ly.group(1).strip()
+        
     return ""
 
 def scrape_match_detail(context, match_url: str, card_blv: str = ""):
+    """
+    Truy cập trang chi tiết để:
+    1. Bóc tách BLV chuẩn từ icon 🎧
+    2. Click các nút HD1, HD2, Nhà đài để lấy link .m3u8
+    """
     page = context.new_page()
     captured_streams = []
-    m3u8_log = []
+    current_m3u8 = None
 
     def handle_request(req):
+        nonlocal current_m3u8
         url = req.url
-        if ".m3u8" in url and any(k in url for k in ["index", "playlist", "live", "stream", "chunk", "hls", "master"]):
-            m3u8_log.append(url)
+        if ".m3u8" in url:
+            if any(k in url for k in ["index", "playlist", "live", "stream", "chunk", "hls", "master"]):
+                current_m3u8 = url
 
     page.on("request", handle_request)
 
@@ -77,43 +99,42 @@ def scrape_match_detail(context, match_url: str, card_blv: str = ""):
     match_date = ""
 
     try:
+        print(f"[*] Đang cào dữ liệu chi tiết: {match_url}")
         page.goto(match_url, timeout=25000, wait_until="domcontentloaded")
-        time.sleep(2.5)
+        time.sleep(2)
 
-        initial_m3u8 = m3u8_log[-1] if m3u8_log else ""
-
-        # Bóc tách thông tin trực tiếp từ DOM chi tiết
         detail_data = page.evaluate('''() => {
+            let t1 = '', t2 = '', blv = '', timeStr = '', dateStr = '';
             const bodyText = document.body.innerText || '';
-            let team1 = '', team2 = '', blv = '', timeStr = '', dateStr = '';
 
-            // Lấy thời gian & ngày
-            const timeMatch = bodyText.match(/(\\d{1,2}:\\d{2})\\s+(\\d{1,2}\\/\\d{1,2})/);
-            if (timeMatch) {
-                timeStr = timeMatch[1];
-                dateStr = timeMatch[2];
+            // Trích xuất thời gian chuẩn
+            const matchInfo = bodyText.match(/Phát\\s+trực\\s+tiếp\\s+([A-Za-z0-9\\s]+?)\\s+vs\\s+([A-Za-z0-9\\s]+?)\\s+vào\\s+lúc\\s+(\\d{1,2}:\\d{2})[,\\s]+ngày\\s+(\\d{1,2}\\/\\d{1,2})/i);
+            if (matchInfo) {
+                t1 = matchInfo[1].trim();
+                t2 = matchInfo[2].trim();
+                timeStr = matchInfo[3].trim();
+                dateStr = matchInfo[4].trim();
+            } else {
+                const timeMatch = bodyText.match(/(\\d{1,2}:\\d{2})\\s+(\\d{1,2}\\/\\d{1,2})/);
+                if (timeMatch) {
+                    timeStr = timeMatch[1];
+                    dateStr = timeMatch[2];
+                }
             }
 
-            // Bóc tách tên 2 đội từ DOM
-            const teamEls = document.querySelectorAll('.team-name, .name, [class*="team"]');
-            if (teamEls.length >= 2) {
-                team1 = teamEls[0].innerText.strip ? teamEls[0].innerText.strip() : teamEls[0].innerText;
-                team2 = teamEls[1].innerText.strip ? teamEls[1].innerText.strip() : teamEls[1].innerText;
-            }
-
-            // Tìm tên BLV
+            // Tìm BLV bên cạnh icon 🎧
             const allEls = document.querySelectorAll('*');
             for (let el of allEls) {
                 if (el.children.length === 0 && el.innerText) {
                     const txt = el.innerText.trim();
-                    if (txt.includes('🎧') || txt.startsWith('LÝ ')) {
+                    if (txt.includes('🎧')) {
                         blv = txt.replace('🎧', '').trim();
                         break;
                     }
                 }
             }
 
-            return { team1, team2, bodyText, blv, time: timeStr, date: dateStr };
+            return { team1: t1, team2: t2, blv: blv, time: timeStr, date: dateStr };
         }''')
 
         if detail_data['team1'] and detail_data['team2']:
@@ -125,30 +146,26 @@ def scrape_match_detail(context, match_url: str, card_blv: str = ""):
         match_time = detail_data['time']
         match_date = detail_data['date']
 
-        # Bóc tách nút chọn Server/Nguồn phát (HD1, HD2, FHD, Nhà đài...)
-        server_buttons = page.query_selector_all('button, div, a, li')
+        # Nút nguồn phát
+        server_buttons = page.query_selector_all('button, div, a')
         valid_buttons = []
         for btn in server_buttons:
             try:
                 txt = btn.inner_text().strip()
-                if txt in ["HD1", "HD2", "HD3", "FHD", "SD", "Nhà đài", "Nguồn 1", "Nguồn 2"]:
-                    if txt not in [b[0] for b in valid_buttons]:
-                        valid_buttons.append((txt, btn))
+                if txt in ["HD1", "HD2", "HD3", "FHD", "SD", "Nhà đài"] and txt not in [b[0] for b in valid_buttons]:
+                    valid_buttons.append((txt, btn))
             except:
                 pass
 
         if valid_buttons:
             for label, btn in valid_buttons:
-                log_len_before = len(m3u8_log)
+                current_m3u8 = None
                 try:
                     btn.click()
                     time.sleep(1.8)
 
-                    new_m3u8 = ""
-                    if len(m3u8_log) > log_len_before:
-                        new_m3u8 = m3u8_log[-1]
-                    else:
-                        new_m3u8 = page.evaluate('''() => {
+                    if not current_m3u8:
+                        current_m3u8 = page.evaluate('''() => {
                             const v = document.querySelector('video');
                             if (v && v.src && v.src.includes('.m3u8')) return v.src;
                             const iframes = document.querySelectorAll('iframe');
@@ -158,35 +175,29 @@ def scrape_match_detail(context, match_url: str, card_blv: str = ""):
                             return '';
                         }''')
 
-                    if not new_m3u8 and label in ["HD1", "FHD", "Nguồn 1"] and initial_m3u8:
-                        new_m3u8 = initial_m3u8
-
-                    if new_m3u8:
-                        captured_streams.append((label, new_m3u8))
-                except Exception:
-                    pass
+                    if current_m3u8:
+                        captured_streams.append((label, current_m3u8))
+                except Exception as click_err:
+                    print(f"[!] Lỗi click nút {label}: {click_err}")
         else:
-            if initial_m3u8:
-                captured_streams.append(("HD1", initial_m3u8))
+            time.sleep(2)
+            if current_m3u8:
+                captured_streams.append(("HD1", current_m3u8))
 
         page.close()
     except Exception as e:
-        print(f"[!] Lỗi cào trang chi tiết: {e}")
+        print(f"[!] Lỗi cào chi tiết: {e}")
         try:
             page.close()
         except:
             pass
-
-    has_hd1 = any(lbl in ["HD1", "FHD", "Nguồn 1"] for lbl, _ in captured_streams)
-    if not has_hd1 and initial_m3u8:
-        captured_streams.insert(0, ("HD1", initial_m3u8))
 
     return teams_title, blv_name, match_time, match_date, captured_streams
 
 def run_scraper():
     vn_tz = timezone(timedelta(hours=7))
     today_str = datetime.now(vn_tz).strftime("%d/%m")
-    all_extracted_matches = {}
+    raw_matches = []
 
     try:
         with sync_playwright() as p:
@@ -208,114 +219,86 @@ def run_scraper():
                     page.goto(base_url, timeout=30000, wait_until="domcontentloaded")
                     time.sleep(3)
 
-                    # KÍCH HOẠT VÀ TẢI TẤT CẢ CÁC TAB TRẬN ĐẤU (HÔM NAY, NGÀY MAI, TẤT CẢ)
-                    tab_names = ["Tất cả", "Hôm nay", "Ngày mai", "Bóng đá", "Bóng chuyền", "Bóng rổ"]
-                    for t_name in tab_names:
-                        try:
-                            tab_btn = page.query_selector(f"xpath=//*[contains(text(), '{t_name}')]")
-                            if tab_btn:
-                                tab_btn.click()
-                                time.sleep(1.5)
-                        except:
-                            pass
+                    # CUỘN TRANG SÂU HƠN ĐỂ TẢI HẾT TẤT CẢ CÁC TRẬN CÓ LỊCH
+                    for _ in range(8):
+                        page.evaluate("window.scrollBy(0, 1000)")
+                        time.sleep(0.5)
 
-                        # Cuộn trang tự động để load hết danh sách (Lazy Loading)
-                        for scroll in range(12):
-                            page.evaluate(f"window.scrollTo(0, {scroll * 600});")
-                            time.sleep(0.15)
+                    extracted = page.evaluate('''() => {
+                        const results = [];
+                        const seenUrls = new Set();
+                        const links = document.querySelectorAll('a[href*="/truc-tiep/"], a[href*="/match/"], a[href*="/live/"], a[href*="/phong/"]');
 
-                        # BÓC TÁCH DỮ LIỆU BẰNG DOM CỦA TRANG WEB (KHÔNG DÙNG REGEX THÔ)
-                        extracted = page.evaluate('''() => {
-                            const results = [];
-                            // Tìm tất cả các thẻ chứa thông tin trận đấu
-                            const cards = document.querySelectorAll('a[href*="/truc-tiep/"], a[href*="/match/"], a[href*="/live/"]');
+                        links.forEach(a => {
+                            const href = a.getAttribute('href');
+                            if (!href) return;
+                            const fullUrl = href.startsWith('http') ? href : window.location.origin + href;
+                            if (seenUrls.has(fullUrl)) return;
+                            seenUrls.add(fullUrl);
 
-                            cards.forEach(a => {
-                                let fullUrl = a.href;
-                                if (!fullUrl) return;
-                                fullUrl = fullUrl.split('#')[0];
-
-                                // Tìm thẻ container cha của trận đấu
-                                let cardNode = a;
-                                for (let i = 0; i < 4; i++) {
-                                    if (cardNode.parentElement && cardNode.parentElement.tagName !== 'BODY') {
-                                        cardNode = cardNode.parentElement;
-                                        if (cardNode.querySelector('img') || cardNode.innerText.includes('VS') || cardNode.innerText.includes(':')) break;
-                                    }
+                            let container = a.parentElement;
+                            while (container && container.tagName !== 'BODY') {
+                                if (container.innerText && container.innerText.length > 15 && container.innerText.length < 600) {
+                                    break;
                                 }
+                                container = container.parentElement;
+                            }
 
-                                // Trích xuất tên 2 đội từ DOM
-                                let team1 = '', team2 = '';
-                                const teamElems = cardNode.querySelectorAll('[class*="team"], [class*="name"], .title');
-                                if (teamElems.length >= 2) {
-                                    team1 = teamElems[0].innerText.trim();
-                                    team2 = teamElems[1].innerText.trim();
-                                }
+                            const text = container ? container.innerText : a.innerText;
+                            let logoUrl = '';
+                            const img = container ? container.querySelector('img') : null;
+                            if (img) logoUrl = img.getAttribute('src') || img.getAttribute('data-src') || '';
 
-                                // Trích xuất Logo chuẩn
-                                let logoUrl = '';
-                                const imgs = cardNode.querySelectorAll('img');
-                                for (let img of imgs) {
-                                    const src = img.src || img.getAttribute('data-src') || '';
-                                    if (src && !src.includes('icon') && !src.includes('avatar')) {
-                                        logoUrl = src;
-                                        break;
-                                    }
-                                }
+                            let status = 'upcoming';
+                            const htmlAll = container ? container.innerHTML.toLowerCase() : '';
+                            if (htmlAll.includes('live') || text.includes('Đang diễn ra') || text.includes('Hiệp 1') || text.includes('Hiệp 2')) {
+                                status = 'live';
+                            } else if (text.includes('Sắp diễn ra') || text.includes('Chưa bắt đầu')) {
+                                status = 'soon';
+                            }
 
-                                // Trích xuất trạng thái
-                                const text = cardNode.innerText || '';
-                                let status = 'upcoming';
-                                if (text.includes('Đang diễn ra') || text.includes('LIVE') || text.includes('Hiệp 1') || text.includes('Hiệp 2')) {
-                                    status = 'live';
-                                } else if (text.includes('Sắp diễn ra')) {
-                                    status = 'soon';
-                                }
-
-                                results.push({
-                                    url: fullUrl,
-                                    team1: team1,
-                                    team2: team2,
-                                    rawText: text,
-                                    logo: logoUrl,
-                                    status: status
-                                });
+                            results.push({
+                                url: fullUrl,
+                                rawText: text,
+                                logo: logoUrl,
+                                status: status
                             });
-                            return results;
-                        }''')
-
-                        for item in extracted:
-                            all_extracted_matches[item['url']] = item
+                        });
+                        return results;
+                    }''')
 
                     page.close()
 
-                    if all_extracted_matches:
-                        print(f"[+] Lấy thành công {len(all_extracted_matches)} trận đấu duy nhất!")
+                    if extracted and len(extracted) > 0:
+                        raw_matches = extracted
+                        print(f"[+] Lấy thành công {len(raw_matches)} trận đấu từ lịch thi đấu {base_url}")
                         break
                 except Exception as err:
                     print(f"[!] Lỗi kết nối {base_url}: {err}")
 
             parsed_items = []
-            raw_matches = list(all_extracted_matches.values())
-
             if raw_matches:
-                print("\n[*] Đang cào dữ liệu chi tiết từng trận & lấy luồng video m3u8...")
+                print("\n[*] Đang bóc tách đầy đủ danh sách trận, tên BLV & nguồn stream...")
                 for item in raw_matches:
                     match_url = item['url']
                     card_text = item['rawText']
                     status = item['status']
 
+                    # Trích xuất tên BLV ngay trên thẻ bài trang chủ
                     card_blv = extract_blv_from_text(card_text)
+
                     teams_from_page, blv_from_page, time_from_page, date_from_page, streams = scrape_match_detail(context, match_url, card_blv)
 
-                    # Chuẩn hóa Tên Đội (Ưu tiên lấy tên bóc tách chính xác từ DOM)
-                    if item['team1'] and item['team2']:
-                        teams_title = f"{item['team1']} vs {item['team2']}"
-                    elif teams_from_page:
-                        teams_title = teams_from_page
-                    else:
-                        teams_title = "Trận đấu Trực Tiếp"
+                    # Tên hai đội
+                    teams_title = teams_from_page
+                    if not teams_title:
+                        match_vs = re.search(r'([A-Za-zÀ-ỹ0-9\s\.]{2,25})\s+vs\s+([A-Za-zÀ-ỹ0-9\s\.]{2,25})', card_text, re.I)
+                        if match_vs:
+                            teams_title = f"{match_vs.group(1).strip()} vs {match_vs.group(2).strip()}"
+                        else:
+                            teams_title = "Trận đấu Trực Tiếp"
 
+                    # Tên BLV chính xác
                     blv_final = blv_from_page if blv_from_page else card_blv
 
                     # Giờ & Ngày
@@ -329,18 +312,18 @@ def run_scraper():
                         date_m = re.search(r'\b(\d{1,2})[/.-](\d{1,2})\b', card_text)
                         match_date = f"{date_m.group(1).zfill(2)}/{date_m.group(2).zfill(2)}" if date_m else today_str
 
-                    # Biểu tượng môn thể thao
+                    # Icon thể thao
                     sport_icon = "⚽"
                     if any(k in card_text.lower() for k in ["bóng chuyền", "volleyball"]):
                         sport_icon = "🏐"
                     elif any(k in card_text.lower() for k in ["bóng rổ", "basketball"]):
                         sport_icon = "🏀"
 
-                    # Dấu chấm trạng thái
-                    status_prefix = "🟢 " if status == 'live' else ("🟡 " if status == 'soon' else "")
+                    # Nhãn [geo] nếu có
+                    geo_tag = " [geo]" if "geo" in card_text.lower() or "geo" in match_url.lower() else ""
 
-                    # SỬA LỖI LOGO KHUNG XÁM
-                    card_logo = fix_logo_url(item['logo'])
+                    status_dot = "🟢 " if status == 'live' else "🟡 "
+                    card_logo = get_team_logo(teams_title, item['logo'])
 
                     try:
                         d, m = map(int, match_date.split('/'))
@@ -349,48 +332,36 @@ def run_scraper():
                     except Exception:
                         dt_obj = datetime(2099, 1, 1, 0, 0, tzinfo=vn_tz)
 
+                    # Tạo tiêu đề chuẩn mẫu:
                     if streams:
                         for server_label, stream_url in streams:
-                            is_geo = "digitalcdn" in stream_url.lower() or "geo" in stream_url.lower() or "geo" in match_url.lower()
-                            geo_suffix = " [geo]" if is_geo else ""
-
-                            # Hậu tố Server & BLV
-                            if server_label == "Nhà đài":
-                                server_suffix = " (Nhà đài)"
+                            if server_label in ["HD1", "FHD", "SD"]:
+                                server_part = ""
                             else:
-                                blv_str = blv_final if blv_final else "Phá Làng"
-                                if server_label in ["HD2", "Nguồn 2", "HD 2"]:
-                                    server_suffix = f" ({blv_str}) (HD2)"
-                                else:
-                                    server_suffix = f" ({blv_str})"
+                                server_part = f" [{server_label}]" if server_label != "Nhà đài" else ""
 
-                            # ĐỊNH DẠNG TÊN KÊNH CHUẨN HIỂN THỊ
-                            full_title = f"{status_prefix}{extracted_time} {match_date} {sport_icon} {teams_title}{server_suffix}{geo_suffix}"
+                            if server_label == "Nhà đài":
+                                blv_part = " (Nhà đài)"
+                            else:
+                                blv_part = f" ({blv_final})" if blv_final else ""
 
+                            full_title = f"{status_dot}{extracted_time} {match_date} {sport_icon} {teams_title}{blv_part}{server_part}{geo_tag}"
+                            
                             parsed_items.append({
                                 "title": full_title,
                                 "logo": card_logo,
                                 "stream_url": stream_url,
                                 "dt": dt_obj,
-                                "teams_title": teams_title,
-                                "server_label": server_label,
+                                "status": status,
                                 "match_url": f"{match_url}#{server_label}"
                             })
 
             browser.close()
 
     except Exception as e:
-        print(f"[!] Lỗi Playwright: {e}")
+        print(f"[!] Lỗi hệ thống Playwright: {e}")
 
-    parsed_items.sort(
-        key=lambda x: (
-            x['dt'],
-            x['teams_title'],
-            SERVER_PRIORITY.get(x['server_label'], 99)
-        )
-    )
-
-    # ĐỊNH DẠNG FILE M3U CHUẨN 100% CHO TIVIMATE & IPTV PLAYER
+    # GHI FILE M3U
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         f.write('#EXTM3U\n\n')
         seen_urls = set()
@@ -399,12 +370,13 @@ def run_scraper():
                 continue
             seen_urls.add(item['match_url'])
 
-            f.write(f'#EXTINF:-1 tvg-logo="{item["logo"]}" group-title="{GROUP_NAME}",{item["title"]}\n')
+            f.write(f'#EXTINF:-1 tvg-logo="{item["logo"]}" group-title="{GROUP_NAME}" , {item["title"]}\n')
             f.write(f'#EXTVLCOPT:http-referrer={REFERER_URL}\n')
             f.write(f'#EXTVLCOPT:http-user-agent={USER_AGENT}\n')
+            f.write(f'#EXTVLCOPT:http-origin={REFERER_URL}\n')
             f.write(f'{item["stream_url"]}\n\n')
 
-    print(f"\n[*] Đã xuất thành công {len(parsed_items)} kênh vào file {OUTPUT_FILE}")
+    print(f"\n[*] Xuất thành công {len(parsed_items)} kênh/nguồn phát vào file {OUTPUT_FILE}")
 
 if __name__ == "__main__":
     run_scraper()
