@@ -89,9 +89,9 @@ def extract_blv_from_text(text: str) -> str:
     return ""
 
 def block_unnecessary_resources(route):
-    """TỐI ƯU TỐC ĐỘ: Chặn tải Ảnh, CSS, Font rác để trang load cực nhanh"""
+    """Chỉ chặn ảnh tĩnh không cần thiết, giữ nguyên CSS/JS để Player chạy đúng"""
     req = route.request
-    if req.resource_type in ["image", "stylesheet", "font"] and not ".m3u8" in req.url:
+    if req.resource_type in ["image", "font"] and not ".m3u8" in req.url:
         route.abort()
     else:
         route.continue_()
@@ -105,7 +105,8 @@ def scrape_match_detail(context, match_url: str, card_blv: str = ""):
 
     def handle_request(req):
         url = req.url
-        if ".m3u8" in url and any(k in url for k in ["index", "playlist", "live", "stream", "chunk", "hls", "master"]):
+        # Nhặt toàn bộ URL chứa .m3u8 bất kể tham số đi kèm
+        if ".m3u8" in url.lower():
             if url not in m3u8_history:
                 m3u8_history.append(url)
 
@@ -118,9 +119,8 @@ def scrape_match_detail(context, match_url: str, card_blv: str = ""):
 
     try:
         print(f"[*] Đang cào chi tiết: {match_url}")
-        # Giảm timeout xuống 12s để không bị treo lâu
-        page.goto(match_url, timeout=12000, wait_until="domcontentloaded")
-        time.sleep(0.8)
+        page.goto(match_url, timeout=15000, wait_until="domcontentloaded")
+        time.sleep(1.5)
 
         detail_data = page.evaluate('''() => {
             let t1 = '', t2 = '', blv = '', timeStr = '', dateStr = '';
@@ -179,7 +179,7 @@ def scrape_match_detail(context, match_url: str, card_blv: str = ""):
         match_time = sanitize_text(detail_data['time'])
         match_date = sanitize_text(detail_data['date'])
 
-        # Lấy nút server
+        # Lấy các nút chuyển Server
         server_buttons = page.query_selector_all('button, div, a, li')
         valid_buttons = []
         for btn in server_buttons:
@@ -193,31 +193,21 @@ def scrape_match_detail(context, match_url: str, card_blv: str = ""):
 
         if valid_buttons:
             for label, btn in valid_buttons:
-                m3u8_history.clear()
+                before_count = len(m3u8_history)
                 try:
                     btn.click()
-                    time.sleep(0.8) # Giảm thời gian chờ sau click
+                    time.sleep(1)
 
-                    current_m3u8 = m3u8_history[-1] if m3u8_history else ""
-                    if not current_m3u8:
-                        current_m3u8 = page.evaluate('''() => {
-                            const v = document.querySelector('video');
-                            if (v && v.src && v.src.includes('.m3u8')) return v.src;
-                            const iframes = document.querySelectorAll('iframe');
-                            for (let f of iframes) {
-                                if (f.src && f.src.includes('.m3u8')) return f.src;
-                            }
-                            return '';
-                        }''')
-
-                    if current_m3u8:
-                        captured_streams.append((label, current_m3u8))
+                    if len(m3u8_history) > before_count:
+                        captured_streams.append((label, m3u8_history[-1]))
+                    elif m3u8_history:
+                        captured_streams.append((label, m3u8_history[-1]))
                 except Exception:
                     pass
-        else:
-            time.sleep(1)
-            if m3u8_history:
-                captured_streams.append(("HD1", m3u8_history[-1]))
+
+        # Trường hợp không có nút hoặc click không ra link mới nhưng khi vừa vào trang đã bắt được m3u8
+        if not captured_streams and m3u8_history:
+            captured_streams.append(("HD1", m3u8_history[-1]))
 
         page.close()
     except Exception as e:
@@ -252,57 +242,44 @@ def run_scraper():
                 try:
                     page = context.new_page()
                     page.route("**/*", block_unnecessary_resources)
-                    page.goto(base_url, timeout=15000, wait_until="domcontentloaded")
+                    page.goto(base_url, timeout=20000, wait_until="domcontentloaded")
                     time.sleep(2)
 
-                    # CUỘN NHAU & TẢI TRẬN
-                    for _ in range(10):
-                        page.evaluate("window.scrollBy(0, 1200)")
-                        time.sleep(0.3)
-                        # Click tự động nút Xem thêm nếu có
-                        try:
-                            btn_more = page.query_selector("xpath=//*[contains(text(), 'Xem thêm') or contains(text(), 'Tải thêm')]")
-                            if btn_more and btn_more.is_visible():
-                                btn_more.click()
-                        except:
-                            pass
+                    for _ in range(5):
+                        page.evaluate("window.scrollBy(0, 1000)")
+                        time.sleep(0.5)
 
-                    # BÓC TÁCH MỞ RỘNG TOÀN BỘ TRẬN ĐẤU TRÊN TRANG CHỦ
+                    # Bóc tách link linh hoạt hơn với Regex
                     extracted = page.evaluate('''() => {
                         const results = [];
-                        // Quét tất cả thẻ a có chứa link trận đấu
-                        const links = document.querySelectorAll('a[href*="/truc-tiep/"], a[href*="/match/"], a[href*="/live/"], a[href*="/phong/"], a[href*="/xem/"], a[href*="/tran/"]');
+                        const links = document.querySelectorAll('a');
 
                         links.forEach(a => {
                             const href = a.getAttribute('href');
-                            if (!href || href === '#' || href.includes('javascript')) return;
+                            if (!href || href === '#' || href.startsWith('javascript')) return;
                             const fullUrl = href.startsWith('http') ? href : window.location.origin + href;
 
-                            let container = a.parentElement;
-                            while (container && container.tagName !== 'BODY') {
-                                if (container.innerText && container.innerText.length > 10 && container.innerText.length < 800) {
-                                    break;
+                            // Quét tất cả đường dẫn có khả năng là trận đấu
+                            if (/(truc-tiep|match|live|phong|xem|tran|bong-da)/i.test(fullUrl)) {
+                                let container = a.closest('div, li, article') || a.parentElement;
+                                const text = container ? container.innerText : a.innerText;
+                                let logoUrl = '';
+                                const img = container ? container.querySelector('img') : null;
+                                if (img) logoUrl = img.getAttribute('src') || img.getAttribute('data-src') || '';
+
+                                let status = 'upcoming';
+                                const htmlAll = container ? container.innerHTML.toLowerCase() : '';
+                                if (htmlAll.includes('live') || text.includes('Đang diễn ra') || text.includes('Hiệp 1') || text.includes('Hiệp 2')) {
+                                    status = 'live';
                                 }
-                                container = container.parentElement;
+
+                                results.push({
+                                    url: fullUrl,
+                                    rawText: text,
+                                    logo: logoUrl,
+                                    status: status
+                                });
                             }
-
-                            const text = container ? container.innerText : a.innerText;
-                            let logoUrl = '';
-                            const img = container ? container.querySelector('img') : null;
-                            if (img) logoUrl = img.getAttribute('src') || img.getAttribute('data-src') || '';
-
-                            let status = 'upcoming';
-                            const htmlAll = container ? container.innerHTML.toLowerCase() : '';
-                            if (htmlAll.includes('live') || text.includes('Đang diễn ra') || text.includes('Hiệp 1') || text.includes('Hiệp 2')) {
-                                status = 'live';
-                            }
-
-                            results.push({
-                                url: fullUrl,
-                                rawText: text,
-                                logo: logoUrl,
-                                status: status
-                            });
                         });
                         return results;
                     }''')
@@ -322,7 +299,7 @@ def run_scraper():
             raw_matches = list(all_extracted_matches.values())
 
             if raw_matches:
-                print(f"\n[*] Bắt đầu cào nhanh thông tin cho {len(raw_matches)} trận...")
+                print(f"\n[*] Bắt đầu cào thông tin cho {len(raw_matches)} trận...")
                 for item in raw_matches:
                     match_url = item['url']
                     card_text = sanitize_text(item['rawText'])
@@ -402,22 +379,25 @@ def run_scraper():
     except Exception as e:
         print(f"[!] Lỗi Playwright: {e}")
 
-    # GHI FILE M3U
-    with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
-        f.write('#EXTM3U\n\n')
-        seen_urls = set()
-        for item in parsed_items:
-            if item['match_url'] in seen_urls:
-                continue
-            seen_urls.add(item['match_url'])
+    # BẢO VỆ FILE: Chỉ ghi file nếu tìm thấy ít nhất 1 luồng phát
+    if parsed_items:
+        with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
+            f.write('#EXTM3U\n\n')
+            seen_urls = set()
+            for item in parsed_items:
+                if item['match_url'] in seen_urls:
+                    continue
+                seen_urls.add(item['match_url'])
 
-            f.write(f'#EXTINF:-1 tvg-logo="{item["logo"]}" group-title="{GROUP_NAME}" , {item["title"]}\n')
-            f.write(f'#EXTVLCOPT:http-referrer={REFERER_URL}\n')
-            f.write(f'#EXTVLCOPT:http-user-agent={USER_AGENT}\n')
-            f.write(f'#EXTVLCOPT:http-origin={REFERER_URL}\n')
-            f.write(f'{item["stream_url"]}\n\n')
+                f.write(f'#EXTINF:-1 tvg-logo="{item["logo"]}" group-title="{GROUP_NAME}" , {item["title"]}\n')
+                f.write(f'#EXTVLCOPT:http-referrer={REFERER_URL}\n')
+                f.write(f'#EXTVLCOPT:http-user-agent={USER_AGENT}\n')
+                f.write(f'#EXTVLCOPT:http-origin={REFERER_URL}\n')
+                f.write(f'{item["stream_url"]}\n\n')
 
-    print(f"\n[SUCCESS] Hoàn thành! Đã cào {len(parsed_items)} luồng phát vào file {OUTPUT_FILE}")
+        print(f"\n[SUCCESS] Hoàn thành! Đã cào {len(parsed_items)} luồng phát vào file {OUTPUT_FILE}")
+    else:
+        print("\n[WARNING] Không tìm thấy luồng phát nào! Bỏ qua việc ghi đè file playlist.m3u để giữ dữ liệu cũ.")
 
 if __name__ == "__main__":
     run_scraper()
