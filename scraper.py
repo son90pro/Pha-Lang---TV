@@ -15,10 +15,11 @@ DEFAULT_LOGO = "https://flagcdn.com/w320/vn.png"
 
 USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
 
+# DANH SÁCH TÊN BLV ĐẦY ĐỦ CỦA PHÁ LÀNG TV
 KNOWN_BLVS = [
     "LÝ LINH LỰC", "LÝ LINH", "LÝ LÊN LỬA", "LÝ LA LÀNG", "LÝ BÒ", "LÝ THÔNG",
-    "LÝ TƯỞNG", "LÝ BÉO", "LÝ ĐỨC", "LÝ LIỀU LĨNH", "LÝ LÀNG LÁ", "CHUỐI CHIÊN",
-    "CHUỐI CHAO", "TRỐC", "CỦ CỐT", "THỎ", "GÀ", "SÁY"
+    "LÝ TƯỞNG", "LÝ BÉO", "LÝ ĐỨC", "LÝ LIỀU LĨNH", "LÝ LÀNG LÁ", "LÝ LẮC LÉO",
+    "CHUỐI CHIÊN", "CHUỐI CHAO", "TRỐC", "CỦ CỐT", "THỎ", "GÀ", "SÁY"
 ]
 
 LOGOS = {
@@ -36,12 +37,9 @@ LOGOS = {
     "brazil": "https://flagcdn.com/w320/br.png"
 }
 
-# Độ ưu tiên luồng phát để nhóm các nguồn của 1 trận đấu
 SERVER_PRIORITY = {
-    "HD1": 1,
-    "FHD": 1,
-    "SD": 1,
-    "HD2": 2,
+    "HD1": 1, "FHD": 1, "SD": 1, "Nguồn 1": 1,
+    "HD2": 2, "Nguồn 2": 2,
     "HD3": 3,
     "Nhà đài": 4
 }
@@ -56,21 +54,23 @@ def get_team_logo(teams_str: str, raw_card_logo: str = "") -> str:
     return DEFAULT_LOGO
 
 def extract_blv_from_text(text: str) -> str:
+    """Trích xuất tên BLV chính xác tuyệt đối"""
     if not text:
         return ""
     text_upper = text.upper()
     
+    # 1. Tìm trong danh sách nhận diện
     for b in KNOWN_BLVS:
         if b in text_upper:
             return b
-            
-    m = re.search(r'(?:🎧|BLV|CASTER)\s*([A-ZÀ-Ỹ0-9\s]{2,15})', text_upper)
-    if m:
-        candidate = m.group(1).strip()
-        if "NHÀ ĐÀI" not in candidate:
-            return candidate
-            
-    m_ly = re.search(r'\b(LÝ\s+[A-ZÀ-Ỹ0-9\s]{2,12})\b', text_upper)
+
+    # 2. Tìm theo ngoặc đơn (LÝ ...) hoặc (BLV ...)
+    m_bracket = re.search(r'\((LÝ\s+[^\)]+)\)', text_upper)
+    if m_bracket:
+        return m_bracket.group(1).strip()
+
+    # 3. Match theo cấu trúc LÝ + TÊN
+    m_ly = re.search(r'\b(LÝ\s+[A-ZÀ-Ỹ0-9]{2,10})\b', text_upper)
     if m_ly:
         return m_ly.group(1).strip()
         
@@ -79,13 +79,12 @@ def extract_blv_from_text(text: str) -> str:
 def scrape_match_detail(context, match_url: str, card_blv: str = ""):
     page = context.new_page()
     captured_streams = []
-    current_m3u8 = None
+    m3u8_log = []
 
     def handle_request(req):
-        nonlocal current_m3u8
         url = req.url
-        if ".m3u8" in url and any(k in url for k in ["index", "playlist", "live", "stream", "chunk", "hls", "master"]):
-            current_m3u8 = url
+        if ".m3u8" in url and any(k in url for k in ["index", "playlist", "live", "stream", "chunk", "hls", "master", "m3u8"]):
+            m3u8_log.append(url)
 
     page.on("request", handle_request)
 
@@ -95,15 +94,17 @@ def scrape_match_detail(context, match_url: str, card_blv: str = ""):
     match_date = ""
 
     try:
-        print(f"[*] Cào chi tiết: {match_url}")
+        print(f"[*] Cào trang chi tiết: {match_url}")
         page.goto(match_url, timeout=25000, wait_until="domcontentloaded")
-        time.sleep(2)
+        time.sleep(2.5) # Chờ tải player & bắt luồng m3u8 ban đầu (HD1)
+
+        initial_m3u8 = m3u8_log[-1] if m3u8_log else ""
 
         detail_data = page.evaluate('''() => {
             let t1 = '', t2 = '', blv = '', timeStr = '', dateStr = '';
             const bodyText = document.body.innerText || '';
 
-            const matchInfo = bodyText.match(/Phát\\s+trực\\s+tiếp\\s+([A-Za-z0-9\\s]+?)\\s+vs\\s+([A-Za-z0-9\\s]+?)\\s+vào\\s+lúc\\s+(\\d{1,2}:\\d{2})[,\\s]+ngày\\s+(\\d{1,2}\\/\\d{1,2})/i);
+            const matchInfo = bodyText.match(/(?:Phát\\s+trực\\s+tiếp|Trực\\s+tiếp)?\\s*([A-Za-z0-9\\sÀ-ỹ\\.]+?)\\s+vs\\s+([A-Za-z0-9\\sÀ-ỹ\\.]+?)(?:\\s+vào\\s+lúc|\\s*\\|)?\\s*(\\d{1,2}:\\d{2})[,\\s]+ngày\\s+(\\d{1,2}\\/\\d{1,2})/i);
             if (matchInfo) {
                 t1 = matchInfo[1].trim();
                 t2 = matchInfo[2].trim();
@@ -121,7 +122,7 @@ def scrape_match_detail(context, match_url: str, card_blv: str = ""):
             for (let el of allEls) {
                 if (el.children.length === 0 && el.innerText) {
                     const txt = el.innerText.trim();
-                    if (txt.includes('🎧')) {
+                    if (txt.includes('🎧') || txt.startsWith('LÝ ')) {
                         blv = txt.replace('🎧', '').trim();
                         break;
                     }
@@ -140,25 +141,30 @@ def scrape_match_detail(context, match_url: str, card_blv: str = ""):
         match_time = detail_data['time']
         match_date = detail_data['date']
 
-        server_buttons = page.query_selector_all('button, div, a')
+        # Bóc tách nút server
+        server_buttons = page.query_selector_all('button, div, a, li')
         valid_buttons = []
         for btn in server_buttons:
             try:
                 txt = btn.inner_text().strip()
-                if txt in ["HD1", "HD2", "HD3", "FHD", "SD", "Nhà đài"] and txt not in [b[0] for b in valid_buttons]:
-                    valid_buttons.append((txt, btn))
+                if txt in ["HD1", "HD2", "HD3", "FHD", "SD", "Nhà đài", "Nguồn 1", "Nguồn 2"]:
+                    if txt not in [b[0] for b in valid_buttons]:
+                        valid_buttons.append((txt, btn))
             except:
                 pass
 
         if valid_buttons:
             for label, btn in valid_buttons:
-                current_m3u8 = None
+                log_len_before = len(m3u8_log)
                 try:
                     btn.click()
                     time.sleep(1.8)
 
-                    if not current_m3u8:
-                        current_m3u8 = page.evaluate('''() => {
+                    new_m3u8 = ""
+                    if len(m3u8_log) > log_len_before:
+                        new_m3u8 = m3u8_log[-1]
+                    else:
+                        new_m3u8 = page.evaluate('''() => {
                             const v = document.querySelector('video');
                             if (v && v.src && v.src.includes('.m3u8')) return v.src;
                             const iframes = document.querySelectorAll('iframe');
@@ -168,14 +174,17 @@ def scrape_match_detail(context, match_url: str, card_blv: str = ""):
                             return '';
                         }''')
 
-                    if current_m3u8:
-                        captured_streams.append((label, current_m3u8))
+                    if not new_m3u8 and label in ["HD1", "FHD", "Nguồn 1"] and initial_m3u8:
+                        new_m3u8 = initial_m3u8
+
+                    if new_m3u8:
+                        captured_streams.append((label, new_m3u8))
                 except Exception as click_err:
                     print(f"[!] Lỗi click {label}: {click_err}")
         else:
-            time.sleep(2)
-            if current_m3u8:
-                captured_streams.append(("HD1", current_m3u8))
+            time.sleep(1)
+            if initial_m3u8:
+                captured_streams.append(("HD1", initial_m3u8))
 
         page.close()
     except Exception as e:
@@ -184,6 +193,11 @@ def scrape_match_detail(context, match_url: str, card_blv: str = ""):
             page.close()
         except:
             pass
+
+    # Đảm bảo luồng HD1 không bị bỏ sót
+    has_hd1 = any(lbl in ["HD1", "FHD", "Nguồn 1"] for lbl, _ in captured_streams)
+    if not has_hd1 and initial_m3u8:
+        captured_streams.insert(0, ("HD1", initial_m3u8))
 
     return teams_title, blv_name, match_time, match_date, captured_streams
 
@@ -212,42 +226,46 @@ def run_scraper():
                     page.goto(base_url, timeout=30000, wait_until="domcontentloaded")
                     time.sleep(3)
 
-                    # CLICK NÚT XEM THÊM (NẾU CÓ) & CUỘN SÂU ĐỂ LẤY FULL LỊCH 100%
-                    for _ in range(12):
-                        page.evaluate("window.scrollBy(0, 1200)")
-                        time.sleep(0.4)
+                    # CUỘN TRANG TỪ TỪ ĐỂ TẢI HẾT LỊCH THI ĐẤU (LAZY LOAD)
+                    for i in range(15):
+                        page.evaluate(f"window.scrollTo(0, {i * 400});")
+                        time.sleep(0.3)
                         try:
-                            more_btn = page.query_selector("text=/Xem thêm|Tải thêm|Lịch thi đấu/i")
+                            more_btn = page.query_selector("text=/Xem thêm|Tải thêm|Lịch thi đấu|Tất cả/i")
                             if more_btn and more_btn.is_visible():
                                 more_btn.click()
-                                time.sleep(1)
+                                time.sleep(0.8)
                         except:
                             pass
 
                     extracted = page.evaluate('''() => {
                         const results = [];
                         const seenUrls = new Set();
-                        const links = document.querySelectorAll('a[href*="/truc-tiep/"], a[href*="/match/"], a[href*="/live/"], a[href*="/phong/"]');
+                        const links = Array.from(document.querySelectorAll('a')).filter(a => {
+                            const href = a.getAttribute('href') || '';
+                            return href.includes('/truc-tiep/') || href.includes('/match/') || href.includes('/live/') || href.includes('/phong/');
+                        });
 
                         links.forEach(a => {
-                            const href = a.getAttribute('href');
-                            if (!href) return;
-                            const fullUrl = href.startsWith('http') ? href : window.location.origin + href;
+                            let fullUrl = a.href;
+                            if (!fullUrl) return;
+                            fullUrl = fullUrl.split('#')[0];
                             if (seenUrls.has(fullUrl)) return;
-                            seenUrls.add(fullUrl);
 
-                            let container = a.parentElement;
-                            while (container && container.tagName !== 'BODY') {
-                                if (container.innerText && container.innerText.length > 15 && container.innerText.length < 600) {
-                                    break;
+                            let container = a;
+                            for (let i = 0; i < 5; i++) {
+                                if (container.parentElement && container.parentElement.tagName !== 'BODY') {
+                                    container = container.parentElement;
+                                    if (container.innerText && container.innerText.length > 20 && container.innerText.length < 1000) {
+                                        if (container.innerText.includes('vs') || container.innerText.includes(':')) break;
+                                    }
                                 }
-                                container = container.parentElement;
                             }
 
                             const text = container ? container.innerText : a.innerText;
                             let logoUrl = '';
                             const img = container ? container.querySelector('img') : null;
-                            if (img) logoUrl = img.getAttribute('src') || img.getAttribute('data-src') || '';
+                            if (img) logoUrl = img.src || img.getAttribute('data-src') || '';
 
                             let status = 'upcoming';
                             const htmlAll = container ? container.innerHTML.toLowerCase() : '';
@@ -263,6 +281,7 @@ def run_scraper():
                                 logo: logoUrl,
                                 status: status
                             });
+                            seenUrls.add(fullUrl);
                         });
                         return results;
                     }''')
@@ -271,20 +290,22 @@ def run_scraper():
 
                     if extracted and len(extracted) > 0:
                         raw_matches = extracted
-                        print(f"[+] Đã tải thành công {len(raw_matches)} trận đấu từ danh sách web!")
+                        print(f"[+] Lấy thành công ALL {len(raw_matches)} trận đấu từ web!")
                         break
                 except Exception as err:
                     print(f"[!] Lỗi kết nối {base_url}: {err}")
 
             parsed_items = []
             if raw_matches:
-                print("\n[*] Đang cào dữ liệu chi tiết & bóc tách thông tin...")
+                print("\n[*] Đang cào dữ liệu chi tiết & bóc tách tên BLV...")
                 for item in raw_matches:
                     match_url = item['url']
                     card_text = item['rawText']
                     status = item['status']
 
+                    # Trích xuất tên BLV ngay trên thẻ bài trang chủ nếu có
                     card_blv = extract_blv_from_text(card_text)
+
                     teams_from_page, blv_from_page, time_from_page, date_from_page, streams = scrape_match_detail(context, match_url, card_blv)
 
                     teams_title = teams_from_page
@@ -295,7 +316,10 @@ def run_scraper():
                         else:
                             teams_title = "Trận đấu Trực Tiếp"
 
+                    # GIỮ TÊN BLV TỐI ĐA (DÙ KHÔNG LẤY ĐƯỢC Ở TRANG DETAIL THÌ VẪN DÙNG TÊN TRÊN CARD)
                     blv_final = blv_from_page if blv_from_page else card_blv
+                    if not blv_final:
+                        blv_final = extract_blv_from_text(teams_title)
 
                     extracted_time = time_from_page
                     if not extracted_time:
@@ -317,7 +341,6 @@ def run_scraper():
                     status_dot = "🟢 " if status == 'live' else "🟡 "
                     card_logo = get_team_logo(teams_title, item['logo'])
 
-                    # TẠO ĐỐI TƯỢNG DATETIME ĐỂ SẮP XẾP CHÍNH XÁC THEO MỐC THỜI GIAN
                     try:
                         d, m = map(int, match_date.split('/'))
                         h, mins = map(int, extracted_time.split(':'))
@@ -327,17 +350,16 @@ def run_scraper():
 
                     if streams:
                         for server_label, stream_url in streams:
-                            if server_label in ["HD1", "FHD", "SD"]:
-                                server_part = ""
-                            else:
-                                server_part = f" [{server_label}]" if server_label != "Nhà đài" else ""
+                            blv_str = f" ({blv_final})" if blv_final else ""
 
                             if server_label == "Nhà đài":
-                                blv_part = " (Nhà đài)"
+                                title_suffix = " (Nhà đài)"
+                            elif server_label in ["HD1", "FHD", "SD", "Nguồn 1"]:
+                                title_suffix = f"{blv_str}"
                             else:
-                                blv_part = f" ({blv_final})" if blv_final else ""
+                                title_suffix = f"{blv_str} [{server_label}]"
 
-                            full_title = f"{status_dot}{extracted_time} {match_date} {sport_icon} {teams_title}{blv_part}{server_part}{geo_tag}"
+                            full_title = f"{status_dot}{extracted_time} {match_date} {sport_icon} {teams_title}{title_suffix}{geo_tag}"
                             
                             parsed_items.append({
                                 "title": full_title,
@@ -354,16 +376,16 @@ def run_scraper():
     except Exception as e:
         print(f"[!] Lỗi hệ thống Playwright: {e}")
 
-    # THUẬT TOÁN SẮP XẾP TĂNG DẦN THEO THỜI GIAN VÀ THỨ TỰ TÙY CHỌN LUỒNG PHÁT
+    # SẮP XẾP THEO MỐC THỜI GIAN (13:00 -> 14:00 -> 16:00 -> 17:00 -> 17:20...)
     parsed_items.sort(
         key=lambda x: (
-            x['dt'],                                         # 1. Sắp xếp thời gian (13:00 -> 14:00 -> 16:00 -> 17:00...)
-            x['teams_title'],                                # 2. Nhóm cùng trận đấu
-            SERVER_PRIORITY.get(x['server_label'], 99)       # 3. Thứ tự server (Luồng chính -> HD2 -> Nhà đài)
+            x['dt'],
+            x['teams_title'],
+            SERVER_PRIORITY.get(x['server_label'], 99)
         )
     )
 
-    # GHI RA FILE PLAYLIST M3U
+    # GHI RA FILE M3U
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         f.write('#EXTM3U\n\n')
         seen_urls = set()
@@ -378,7 +400,7 @@ def run_scraper():
             f.write(f'#EXTVLCOPT:http-origin={REFERER_URL}\n')
             f.write(f'{item["stream_url"]}\n\n')
 
-    print(f"\n[*] Đã sắp xếp và xuất thành công {len(parsed_items)} kênh vào file {OUTPUT_FILE}")
+    print(f"\n[*] Đã xuất thành công {len(parsed_items)} kênh vào file {OUTPUT_FILE}")
 
 if __name__ == "__main__":
     run_scraper()
