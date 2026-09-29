@@ -1,96 +1,108 @@
 #EXTM3U
 
-#EXTINF:-1 tvg-logo="https://flagcdn.com/w320/vn.png" group-title="Phá Làng TV" , 🟢 19:30 29/09 ⚽ Thailand vs Vietnam (LÝ LA LÀNG) [geo]
+#EXTINF:-1 tvg-logo="https://flagcdn.com/w320/sa.png" group-title="Phá Làng TV" , 🟢 00:30 30/09 ⚽ Saudi Arabia vs Iraq (LÝ LINH LỰC) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36
 #EXTVLCOPT:http-origin=https://phalang.live/
-https://pull.digitalcdn.net/live/5d80c86cf0334102adcc996f4c33cf7c/index.m3u8
+https://pull.digitalcdn.net/live/7533194080ab4ed9b450c3bfbd7d23cb/index.m3u8
 
-#EXTINF:-1 tvg-logo="https://flagcdn.com/w320/vn.png" group-title="Phá Làng TV" , 🟢 19:30 29/09 ⚽ Thailand vs Vietnam (LÝ LA LÀNG) [HD2] [geo]
+#EXTINF:-1 tvg-logo="https://flagcdn.com/w320/sa.png" group-title="Phá Làng TV" , 🟢 00:30 30/09 ⚽ Saudi Arabia vs Iraq (LÝ LINH LỰC) [HD2] [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36
 #EXTVLCOPT:http-origin=https://phalang.live/
-https://pull1.digitalcdn.net/live/5d80c86cf0334102adcc996f4c33cf7c/index.m3u8
+https://pull1.digitalcdn.net/live/7533194080ab4ed9b450c3bfbd7d23cb/index.m3u8
 
-#EXTINF:-1 tvg-logo="https://flagcdn.com/w320/vn.png" group-title="Phá Làng TV" , 🟢 19:30 29/09 ⚽ Thailand vs Vietnam (Nhà đài)
+#EXTINF:-1 tvg-logo="https://flagcdn.com/w320/sa.png" group-title="Phá Làng TV" , 🟢 00:30 30/09 ⚽ Saudi Arabia vs Iraq (Nhà đài)
 #EXTVLCOPT:http-referrer=https://phalang.live/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36
 #EXTVLCOPT:http-origin=https://phalang.live/
-https://lilive1.eu.cc/live/9174dd3b8ea1a120a2910e3d1a536df9/playlist.m3u8
+https://lilive1.eu.cc/live/05e2754014bf6d3a11928f5ca03acc39/playlist.m3u8
 
-#EXTINF:-1 tvg-logo="https://flagcdn.com/w320/vn.png" group-title="Phá Làng TV" , 🟢 19:30 29/09 ⚽ Thailand vs Vietnam (LÝ LONG) [geo]
+#EXTINF:-1 tvg-logo="https://flagcdn.com/w320/es.png" group-title="Phá Làng TV" , 🟢 01:45 30/09 ⚽ Spain vs Croatia (LÝ LA LÀNG) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36
 #EXTVLCOPT:http-origin=https://phalang.live/
-https://pull.digitalcdn.net/live/0a0591c681f040d99c7edfefc9758e1c/index.m3u8
+https://pull.digitalcdn.net/live/752368feff3e478fb16de612984bd944/index.m3u8
 
-#EXTINF:-1 tvg-logo="https://flagcdn.com/w320/vn.png" group-title="Phá Làng TV" , 🟢 19:30 29/09 ⚽ Thailand vs Vietnam (LÝ LONG) [HD2] [geo]
+#EXTINF:-1 tvg-logo="https://flagcdn.com/w320/es.png" group-title="Phá Làng TV" , 🟢 01:45 30/09 ⚽ Spain vs Croatia (LÝ LA LÀNG) [HD2] [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36
 #EXTVLCOPT:http-origin=https://phalang.live/
-https://pull1.digitalcdn.net/live/0a0591c681f040d99c7edfefc9758e1c/index.m3u8
+https://pull1.digitalcdn.net/live/752368feff3e478fb16de612984bd944/index.m3u8
 
-#EXTINF:-1 tvg-logo="https://flagcdn.com/w320/vn.png" group-title="Phá Làng TV" , 🟢 19:30 29/09 ⚽ Thailand vs Vietnam (LÝ LÀNG LÁ) [geo]
+#EXTINF:-1 tvg-logo="https://flagcdn.com/w320/es.png" group-title="Phá Làng TV" , 🟢 01:45 30/09 ⚽ Spain vs Croatia (Nhà đài)
 #EXTVLCOPT:http-referrer=https://phalang.live/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36
 #EXTVLCOPT:http-origin=https://phalang.live/
-https://pull.digitalcdn.net/live/84e20c3f9bdf403f950ed586fb1af96f/index.m3u8
+https://lilive1.eu.cc/live/9b764d6f3ca89fce6abf2ac35b2963ec/playlist.m3u8
 
-#EXTINF:-1 tvg-logo="https://flagcdn.com/w320/vn.png" group-title="Phá Làng TV" , 🟢 19:30 29/09 ⚽ Thailand vs Vietnam (LÝ LÀNG LÁ) [HD2] [geo]
+#EXTINF:-1 tvg-logo="https://flagcdn.com/w320/gb-sct.png" group-title="Phá Làng TV" , 🟢 01:45 30/09 ⚽ Scotland vs Switzerland (LÝ LÀNG LÁ) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36
 #EXTVLCOPT:http-origin=https://phalang.live/
-https://pull1.digitalcdn.net/live/84e20c3f9bdf403f950ed586fb1af96f/index.m3u8
+https://pull.digitalcdn.net/live/0e90b6f5aa73466a9f0886c2b9e4000e/index.m3u8
 
-#EXTINF:-1 tvg-logo="https://flagcdn.com/w320/si.png" group-title="Phá Làng TV" , 🟢 21:00 29/09 ⚽ Slovenia U21 vs Israel U21 (LÝ LINH LỰC) [geo]
+#EXTINF:-1 tvg-logo="https://flagcdn.com/w320/gb-sct.png" group-title="Phá Làng TV" , 🟢 01:45 30/09 ⚽ Scotland vs Switzerland (LÝ LÀNG LÁ) [HD2] [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36
 #EXTVLCOPT:http-origin=https://phalang.live/
-https://pull.digitalcdn.net/live/fa77c0b8a31c4aa3806343fa7fc70472/index.m3u8
+https://pull1.digitalcdn.net/live/0e90b6f5aa73466a9f0886c2b9e4000e/index.m3u8
 
-#EXTINF:-1 tvg-logo="https://flagcdn.com/w320/si.png" group-title="Phá Làng TV" , 🟢 21:00 29/09 ⚽ Slovenia U21 vs Israel U21 (LÝ LINH LỰC) [HD2] [geo]
+#EXTINF:-1 tvg-logo="https://flagcdn.com/w320/gb-sct.png" group-title="Phá Làng TV" , 🟢 01:45 30/09 ⚽ Scotland vs Switzerland (Nhà đài)
 #EXTVLCOPT:http-referrer=https://phalang.live/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36
 #EXTVLCOPT:http-origin=https://phalang.live/
-https://pull1.digitalcdn.net/live/fa77c0b8a31c4aa3806343fa7fc70472/index.m3u8
+https://lilive1.eu.cc/live/59c8b4dfd70a35b4f19d62c5cf6fdf14/playlist.m3u8
 
-#EXTINF:-1 tvg-logo="https://flagcdn.com/w320/si.png" group-title="Phá Làng TV" , 🟢 21:00 29/09 ⚽ Slovenia U21 vs Israel U21 (Nhà đài)
+#EXTINF:-1 tvg-logo="https://flagcdn.com/w320/gb-eng.png" group-title="Phá Làng TV" , 🟢 01:45 30/09 ⚽ Czechia vs England (LÝ LONG) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36
 #EXTVLCOPT:http-origin=https://phalang.live/
-https://lilive1.eu.cc/live/af9d045ec0b0cc724595c61540fbf508/playlist.m3u8
+https://pull.digitalcdn.net/live/9dabceb759934cdaaf03e70b1181b7a5/index.m3u8
 
-#EXTINF:-1 tvg-logo="https://flagcdn.com/w320/fi.png" group-title="Phá Làng TV" , 🟢 23:00 29/09 ⚽ Finland vs Belarus (LÝ LÀNG LÁ)
+#EXTINF:-1 tvg-logo="https://flagcdn.com/w320/gb-eng.png" group-title="Phá Làng TV" , 🟢 01:45 30/09 ⚽ Czechia vs England (LÝ LONG) [HD2] [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36
 #EXTVLCOPT:http-origin=https://phalang.live/
-https://www3.cbox.ws/box/?boxid=3559994&boxtag=bogrZv
+https://pull1.digitalcdn.net/live/9dabceb759934cdaaf03e70b1181b7a5/index.m3u8
 
-#EXTINF:-1 tvg-logo="https://flagcdn.com/w320/sa.png" group-title="Phá Làng TV" , 🟢 00:30 30/09 ⚽ Saudi Arabia vs Iraq (LÝ LINH LỰC)
+#EXTINF:-1 tvg-logo="https://flagcdn.com/w320/gb-eng.png" group-title="Phá Làng TV" , 🟢 01:45 30/09 ⚽ Czechia vs England (Nhà đài)
 #EXTVLCOPT:http-referrer=https://phalang.live/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36
 #EXTVLCOPT:http-origin=https://phalang.live/
-https://www3.cbox.ws/box/?boxid=3559994&boxtag=bogrZv
+https://lilive1.eu.cc/live/6b5b99fe786737538ae6893592cbcdc1/playlist.m3u8
 
-#EXTINF:-1 tvg-logo="https://flagcdn.com/w320/gb-sct.png" group-title="Phá Làng TV" , 🟢 01:45 30/09 ⚽ Scotland vs Switzerland (LÝ LÀNG LÁ)
-#EXTVLCOPT:http-referrer=https://phalang.live/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36
-#EXTVLCOPT:http-origin=https://phalang.live/
-https://www3.cbox.ws/box/?boxid=3559994&boxtag=bogrZv
-
-#EXTINF:-1 tvg-logo="https://flagcdn.com/w320/gb-eng.png" group-title="Phá Làng TV" , 🟢 01:45 30/09 ⚽ Czechia vs England (LÝ LONG)
-#EXTVLCOPT:http-referrer=https://phalang.live/
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36
-#EXTVLCOPT:http-origin=https://phalang.live/
-https://www3.cbox.ws/box/?boxid=3559994&boxtag=bogrZv
-
-#EXTINF:-1 tvg-logo="https://flagcdn.com/w320/es.png" group-title="Phá Làng TV" , 🟢 01:45 30/09 ⚽ Spain vs Croatia (LÝ LA LÀNG)
+#EXTINF:-1 tvg-logo="https://flagcdn.com/w320/vn.png" group-title="Phá Làng TV" , 🟢 13:00 30/09 ⚽ Vietnam U16 vs Kyrgyzstan U16 (LÝ LÀNG LÁ)
 #EXTVLCOPT:http-referrer=https://phalang.live/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36
 #EXTVLCOPT:http-origin=https://phalang.live/
 https://www3.cbox.ws/box/?boxid=3559994&boxtag=bogrZv
 
 #EXTINF:-1 tvg-logo="https://flagcdn.com/w320/kr.png" group-title="Phá Làng TV" , 🟢 13:00 30/09 ⚽ South Korea U23 vs China U23 (LÝ LIỀU LĨNH)
+#EXTVLCOPT:http-referrer=https://phalang.live/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36
+#EXTVLCOPT:http-origin=https://phalang.live/
+https://www3.cbox.ws/box/?boxid=3559994&boxtag=bogrZv
+
+#EXTINF:-1 tvg-logo="https://flagcdn.com/w320/kh.png" group-title="Phá Làng TV" , 🟢 16:00 30/09 ⚽ Timor Leste vs Cambodia (LÝ LÊN LỬA)
+#EXTVLCOPT:http-referrer=https://phalang.live/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36
+#EXTVLCOPT:http-origin=https://phalang.live/
+https://www3.cbox.ws/box/?boxid=3559994&boxtag=bogrZv
+
+#EXTINF:-1 tvg-logo="https://flagcdn.com/w320/jp.png" group-title="Phá Làng TV" , 🟢 17:30 30/09 ⚽ Uzbekistan U23 vs Japan U23 (LÝ LA LÀNG)
+#EXTVLCOPT:http-referrer=https://phalang.live/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36
+#EXTVLCOPT:http-origin=https://phalang.live/
+https://www3.cbox.ws/box/?boxid=3559994&boxtag=bogrZv
+
+#EXTINF:-1 tvg-logo="https://flagcdn.com/w320/bn.png" group-title="Phá Làng TV" , 🟢 19:00 30/09 ⚽ Hong Kong vs Brunei Darussalam (LÝ LONG)
+#EXTVLCOPT:http-referrer=https://phalang.live/
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36
+#EXTVLCOPT:http-origin=https://phalang.live/
+https://www3.cbox.ws/box/?boxid=3559994&boxtag=bogrZv
+
+#EXTINF:-1 tvg-logo="https://images.unicourt.com/sports/soccer.png" group-title="Phá Làng TV" , 🟢 21:00 30/09 ⚽ Aktobe W vs Ajax Amsterdam Women (LÝ LIỀU LĨNH)
 #EXTVLCOPT:http-referrer=https://phalang.live/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36
 #EXTVLCOPT:http-origin=https://phalang.live/
