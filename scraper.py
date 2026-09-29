@@ -91,18 +91,8 @@ def extract_blv_from_text(text: str) -> str:
         return m_ly.group(1).strip()
     return ""
 
-def block_unnecessary_resources(route):
-    """Tối ưu tốc độ: Chặn ảnh và font rác, giữ lại JS/CSS để Player khởi tạo chuẩn"""
-    req = route.request
-    if req.resource_type in ["image", "font"] and not ".m3u8" in req.url:
-        route.abort()
-    else:
-        route.continue_()
-
 def scrape_match_detail(context, match_url: str, card_blv: str = ""):
     page = context.new_page()
-    page.route("**/*", block_unnecessary_resources)
-    
     captured_streams = []
     m3u8_history = []
 
@@ -121,14 +111,14 @@ def scrape_match_detail(context, match_url: str, card_blv: str = ""):
 
     try:
         print(f"[*] Đang cào dữ liệu chi tiết: {match_url}")
-        page.goto(match_url, timeout=12000, wait_until="domcontentloaded")
-        time.sleep(1.2)
+        page.goto(match_url, timeout=20000, wait_until="domcontentloaded")
+        time.sleep(2)
 
         detail_data = page.evaluate('''() => {
             let t1 = '', t2 = '', blv = '', timeStr = '', dateStr = '';
             const bodyText = document.body.innerText || '';
 
-            const teamNodes = document.querySelectorAll('.team-name, .team_name, [class*="team"] .name, .club-name');
+            const teamNodes = document.querySelectorAll('.team-name, .team_name, [class*="team"] .name, .club-name, .team1, .team2');
             if (teamNodes.length >= 2) {
                 t1 = teamNodes[0].innerText || '';
                 t2 = teamNodes[1].innerText || '';
@@ -181,7 +171,7 @@ def scrape_match_detail(context, match_url: str, card_blv: str = ""):
         match_time = sanitize_text(detail_data['time'])
         match_date = sanitize_text(detail_data['date'])
 
-        # Lấy nút Server
+        # Lấy danh sách server nguồn phát
         server_buttons = page.query_selector_all('button, div, a, li')
         valid_buttons = []
         for btn in server_buttons:
@@ -198,18 +188,29 @@ def scrape_match_detail(context, match_url: str, card_blv: str = ""):
                 before_len = len(m3u8_history)
                 try:
                     btn.click()
-                    time.sleep(1)
+                    time.sleep(1.2)
 
                     if len(m3u8_history) > before_len:
                         captured_streams.append((label, m3u8_history[-1]))
                     elif m3u8_history:
                         captured_streams.append((label, m3u8_history[-1]))
-                except Exception as click_err:
+                except Exception:
                     pass
         else:
-            time.sleep(1.5)
+            time.sleep(2)
             if m3u8_history:
                 captured_streams.append(("HD1", m3u8_history[-1]))
+
+        # XỬ LÝ TRẬN SẮP DIỄN RA: Dùng link player/iframe làm fallback để không làm mất trận đấu khỏi Playlist
+        if not captured_streams:
+            iframe_src = page.evaluate('''() => {
+                const iframe = document.querySelector('iframe');
+                return iframe ? iframe.src : '';
+            }''')
+            if iframe_src and iframe_src.startswith("http"):
+                captured_streams.append(("HD1", iframe_src))
+            else:
+                captured_streams.append(("HD1", match_url))
 
         page.close()
     except Exception as e:
@@ -256,18 +257,17 @@ def run_scraper():
                         "//*[contains(text(), 'Esports')]"
                     ]
 
-                    # 1. QUÉT TẤT CẢ TÁB VÀ TẢI THÊM ĐỂ LẤY TRỌN VẸN DANH SÁCH
+                    # 1. DUYỆT TẤT CẢ CÁC TAB VÀ CLICK "XEM THÊM" ĐỂ TẢI TOÀN BỘ CÁC TRẬN SẮP DIỄN RA
                     for tab_xpath in tab_selectors:
                         try:
                             tab_btn = page.query_selector(f"xpath={tab_xpath}")
                             if tab_btn and tab_btn.is_visible():
                                 tab_btn.click()
-                                time.sleep(1)
+                                time.sleep(0.8)
                         except:
                             pass
 
-                        # Cuộn sâu và tự động click "Xem thêm" nhiều lần
-                        for _ in range(8):
+                        for _ in range(10):
                             page.evaluate("window.scrollBy(0, 1500)")
                             time.sleep(0.3)
                             try:
@@ -278,7 +278,7 @@ def run_scraper():
                             except:
                                 pass
 
-                        # 2. RÚT TRÍCH MỞ RỘNG TẤT CẢ LINK TRẬN ĐẤU TRÊN TRANG
+                        # 2. QUÉT RỘNG TOÀN BỘ LINK TRẬN ĐẤU
                         extracted = page.evaluate('''() => {
                             const results = [];
                             const links = document.querySelectorAll('a[href]');
@@ -288,11 +288,13 @@ def run_scraper():
                                 if (!href || href === '#' || href.startsWith('javascript:')) return;
                                 const fullUrl = href.startsWith('http') ? href : window.location.origin + href;
 
-                                // Nhận diện mở rộng tất cả link trận đấu
-                                if (/(truc-tiep|match|live|phong|xem|tran|watch|room|bong-da)/i.test(fullUrl)) {
+                                // Bắt tất cả định dạng URL trận đấu của Phá Làng TV
+                                if (/(truc-tiep|match|live|phong|xem|tran|watch|room|bong-da)/i.test(fullUrl) || fullUrl.split('/').pop().length > 10) {
                                     let container = a.closest('div, li, article') || a.parentElement;
                                     const text = container ? container.innerText : a.innerText;
                                     
+                                    if (!text || text.length < 5) return;
+
                                     let logoUrl = '';
                                     const img = container ? container.querySelector('img') : null;
                                     if (img) logoUrl = img.getAttribute('src') || img.getAttribute('data-src') || '';
@@ -331,7 +333,7 @@ def run_scraper():
             raw_matches = list(all_extracted_matches.values())
 
             if raw_matches:
-                print(f"\n[*] Đang bóc tách thông tin cho {len(raw_matches)} trận đấu...")
+                print(f"\n[*] Đang bóc tách thông tin chi tiết cho {len(raw_matches)} trận đấu...")
                 for item in raw_matches:
                     match_url = item['url']
                     card_text = sanitize_text(item['rawText'])
@@ -380,6 +382,7 @@ def run_scraper():
                     except Exception:
                         dt_obj = datetime(2099, 1, 1, 0, 0, tzinfo=vn_tz)
 
+                    # BẮT BUỘC THÊM TRẬN ĐẤU VÀO PLAYLIST
                     if streams:
                         for server_label, stream_url in streams:
                             is_geo = "digitalcdn" in stream_url.lower() or "geo" in stream_url.lower() or "geo" in match_url.lower() or server_label.upper() == "GEO"
@@ -411,7 +414,7 @@ def run_scraper():
     except Exception as e:
         print(f"[!] Lỗi hệ thống Playwright: {e}")
 
-    # GHI FILE M3U CHỈ KHỦ KHI CÓ KẾT QUẢ
+    # GHI FILE M3U
     if parsed_items:
         with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
             f.write('#EXTM3U\n\n')
@@ -429,7 +432,7 @@ def run_scraper():
 
         print(f"\n[*] Đã xuất thành công {len(parsed_items)} luồng trận đấu vào file {OUTPUT_FILE}")
     else:
-        print("\n[!] Không lấy được trận nào. Bỏ qua ghi đè để bảo vệ playlist cũ!")
+        print("\n[!] Không tìm thấy dữ liệu trận đấu.")
 
 if __name__ == "__main__":
     run_scraper()
