@@ -1,52 +1,62 @@
 #EXTM3U
 
-#EXTINF:-1 tvg-logo="https://flagcdn.com/w320/kp.png" group-title="Phá Làng TV" , 🟢 13:00 29/09 ⚽ North Korea Women vs China Women Y39mp1hdvw4dmoj (Nhà đài)
+#EXTINF:-1 tvg-logo="https://flagcdn.com/w320/ir.png" group-title="Phá Làng TV" , 🟢 13:00 29/09 ⚽ Iran vs Indonesia (Lý Lên Lửa)
 #EXTVLCOPT:http-referrer=https://phalang.tv/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36
-https://stm9ee346727718.stream.hdplaylink.com/cctvlive/nhadaihd/playlist.m3u8
+#EXTVLCOPT:http-origin=https://phalang.tv/
+https://phalang.live/truc-tiep/iran-vs-indonesia-5e47f28fed4441c7be588f6a77d44641
 
-#EXTINF:-1 tvg-logo="https://flagcdn.com/w320/ir.png" group-title="Phá Làng TV" , 🟢 14:00 29/09 ⚽ Iran vs Indonesia 5e47f28fed4441c7be588f6a77d44641 (Nhà đài)
+#EXTINF:-1 tvg-logo="https://flagcdn.com/w320/kp.png" group-title="Phá Làng TV" , 🟢 13:00 29/09 ⚽ North Korea Women vs China Women (Lý Linh)
 #EXTVLCOPT:http-referrer=https://phalang.tv/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36
-https://stm9ee346727718.stream.hdplaylink.com/cctvlive/nhadaihd/playlist.m3u8
+#EXTVLCOPT:http-origin=https://phalang.tv/
+https://phalang.live/truc-tiep/north-korea-women-vs-china-women-y39mp1hdvw4dmoj
 
-#EXTINF:-1 tvg-logo="https://flagcdn.com/w320/ph.png" group-title="Phá Làng TV" , 🟢 16:00 29/09 ⚽ Philippines vs Pakistan 8yomo4h1n829q0j (Nhà đài)
+#EXTINF:-1 tvg-logo="https://flagcdn.com/w320/ph.png" group-title="Phá Làng TV" , 🟢 16:00 29/09 ⚽ Philippines vs Pakistan (Lý La Làng)
 #EXTVLCOPT:http-referrer=https://phalang.tv/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36
-https://stm9ee346727718.stream.hdplaylink.com/cctvlive/nhadaihd/playlist.m3u8
+#EXTVLCOPT:http-origin=https://phalang.tv/
+https://phalang.live/truc-tiep/philippines-vs-pakistan-8yomo4h1n829q0j
 
-#EXTINF:-1 tvg-logo="https://flagcdn.com/w320/au.png" group-title="Phá Làng TV" , 🟢 17:00 29/09 ⚽ Australia vs Brazil Zp5rzghg9x6gq82 (Nhà đài)
+#EXTINF:-1 tvg-logo="https://flagcdn.com/w320/au.png" group-title="Phá Làng TV" , 🟢 17:00 29/09 ⚽ Australia vs Brazil (Gà)
 #EXTVLCOPT:http-referrer=https://phalang.tv/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36
-https://stm9ee346727718.stream.hdplaylink.com/cctvlive/nhadaihd/playlist.m3u8
+#EXTVLCOPT:http-origin=https://phalang.tv/
+https://phalang.live/truc-tiep/australia-vs-brazil-zp5rzghg9x6gq82
 
-#EXTINF:-1 tvg-logo="https://img0.aiscore.com/volleyball/team/604a26fb4f696d522d464fc2ff0919de.png!w80" group-title="Phá Làng TV" , 🟢 17:00 29/09 ⚽ Han Quoc vs Trung Quoc (Nhà đài)
+#EXTINF:-1 tvg-logo="https://img0.aiscore.com/volleyball/team/604a26fb4f696d522d464fc2ff0919de.png!w80" group-title="Phá Làng TV" , 🟢 17:00 29/09 ⚽ Han Quoc vs Trung Quoc (Gà)
 #EXTVLCOPT:http-referrer=https://phalang.tv/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36
-https://stm9ee346727718.stream.hdplaylink.com/cctvlive/nhadaihd/playlist.m3u8
+#EXTVLCOPT:http-origin=https://phalang.tv/
+https://phalang.live/truc-tiep/han-quoc-vs-trung-quoc-5303a0b60fb2444b867cd8852988c95b
 
-#EXTINF:-1 tvg-logo="https://flagcdn.com/w320/pk.png" group-title="Phá Làng TV" , 🟢 17:20 29/09 ⚽ Nhat Ban vs Pakistan (Nhà đài)
+#EXTINF:-1 tvg-logo="https://flagcdn.com/w320/pk.png" group-title="Phá Làng TV" , 🟢 17:20 29/09 ⚽ Nhat Ban vs Pakistan (Lý Lên Lửa)
 #EXTVLCOPT:http-referrer=https://phalang.tv/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36
-https://stm9ee346727718.stream.hdplaylink.com/cctvlive/nhadaihd/playlist.m3u8
+#EXTVLCOPT:http-origin=https://phalang.tv/
+https://phalang.live/truc-tiep/nhat-ban-vs-pakistan-895e4593c83845df9fb73b7d801854e6
 
-#EXTINF:-1 tvg-logo="https://flagcdn.com/w320/vn.png" group-title="Phá Làng TV" , 🟢 19:30 29/09 ⚽ Thailand vs Vietnam 6ypq3nhvx8zemd7 (Nhà đài)
+#EXTINF:-1 tvg-logo="https://flagcdn.com/w320/vn.png" group-title="Phá Làng TV" , 🟢 19:30 29/09 ⚽ Thailand vs Vietnam (Lý La Làng)
 #EXTVLCOPT:http-referrer=https://phalang.tv/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36
-https://stm9ee346727718.stream.hdplaylink.com/cctvlive/nhadaihd/playlist.m3u8
+#EXTVLCOPT:http-origin=https://phalang.tv/
+https://phalang.live/truc-tiep/thailand-vs-vietnam-6ypq3nhvx8zemd7
 
-#EXTINF:-1 tvg-logo="https://flagcdn.com/w320/vn.png" group-title="Phá Làng TV" , 🟢 19:30 29/09 ⚽ Thailand vs Vietnam (Nhà đài)
+#EXTINF:-1 tvg-logo="https://flagcdn.com/w320/vn.png" group-title="Phá Làng TV" , 🟢 19:30 29/09 ⚽ Thailand vs Vietnam (Lý La Làng)
 #EXTVLCOPT:http-referrer=https://phalang.tv/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36
-https://stm9ee346727718.stream.hdplaylink.com/cctvlive/nhadaihd/playlist.m3u8
+#EXTVLCOPT:http-origin=https://phalang.tv/
+https://phalang.live/truc-tiep/thailand-vs-vietnam-921d082aaf684f80a2fb51b2be026722
 
-#EXTINF:-1 tvg-logo="https://flagcdn.com/w320/vn.png" group-title="Phá Làng TV" , 🟢 19:30 29/09 ⚽ Thailand vs Vietnam A93ccd45139149dfa77ca6ad27893bf0 (Nhà đài)
+#EXTINF:-1 tvg-logo="https://flagcdn.com/w320/vn.png" group-title="Phá Làng TV" , 🟢 19:30 29/09 ⚽ Thailand vs Vietnam (Lý La Làng)
 #EXTVLCOPT:http-referrer=https://phalang.tv/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36
-https://stm9ee346727718.stream.hdplaylink.com/cctvlive/nhadaihd/playlist.m3u8
+#EXTVLCOPT:http-origin=https://phalang.tv/
+https://phalang.live/truc-tiep/thailand-vs-vietnam-a93ccd45139149dfa77ca6ad27893bf0
 
-#EXTINF:-1 tvg-logo="https://sta.vnres.co/file/common/20260926/d283f6a20344976a38b4330e28ae45b9.png" group-title="Phá Làng TV" , 🟢 21:00 29/09 ⚽ Slovenia U21 vs Israel U21 X7lm7phjk260m2w (Nhà đài)
+#EXTINF:-1 tvg-logo="https://sta.vnres.co/file/common/20260926/d283f6a20344976a38b4330e28ae45b9.png" group-title="Phá Làng TV" , 🟢 21:00 29/09 ⚽ Slovenia U21 vs Israel U21 (Lý Linh)
 #EXTVLCOPT:http-referrer=https://phalang.tv/
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36
-https://stm9ee346727718.stream.hdplaylink.com/cctvlive/nhadaihd/playlist.m3u8
+#EXTVLCOPT:http-origin=https://phalang.tv/
+https://phalang.live/truc-tiep/slovenia-u21-vs-israel-u21-x7lm7phjk260m2w
 
