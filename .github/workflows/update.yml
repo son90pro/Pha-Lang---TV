@@ -2,9 +2,12 @@ name: Update Phá Làng TV M3U Playlist
 
 on:
   schedule:
-    # Chạy tự động mỗi 30 phút một lần
+    # Chạy tự động mỗi 30 phút
     - cron: '*/30 * * * *'
-  workflow_dispatch: # Cho phép bấm chạy thủ công trên GitHub UI
+  workflow_dispatch: # Nút bấm chạy thủ công trên GitHub UI
+
+permissions:
+  contents: write
 
 jobs:
   update-m3u:
@@ -12,12 +15,12 @@ jobs:
 
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
-          python-version: '3.x'
+          python-version: '3.10'
 
       - name: Install Dependencies
         run: |
