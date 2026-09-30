@@ -34,34 +34,42 @@ def get_now_vietnam():
     return datetime.now(vn_tz).replace(tzinfo=None)
 
 def parse_vietnam_datetime(date_val):
-    """Hỗ trợ parse Unix Timestamp, ISO 8601 và String Date về giờ VN (UTC+7)"""
+    """
+    Tự động chuyển đổi Timestamp / ISO / Chuỗi ngày giờ về giờ Việt Nam chuẩn (UTC+7)
+    """
     if not date_val:
         return None
     try:
-        # 1. Nếu là Unix Timestamp (Số nguyên / Số thực / Chuỗi số)
+        # 1. Nếu là Unix Timestamp (giây hoặc mili-giây)
         if isinstance(date_val, (int, float)) or (isinstance(date_val, str) and date_val.isdigit()):
             ts = float(date_val)
-            if ts > 1e11:  # Đơn vị mili-giây
+            if ts > 1e11:  # Mili-giây
                 ts /= 1000.0
             dt_utc = datetime.fromtimestamp(ts, tz=timezone.utc)
             return dt_utc.astimezone(timezone(timedelta(hours=7))).replace(tzinfo=None)
 
-        # 2. Chuỗi ISO / Standard Text
-        clean_str = str(date_val).replace("Z", "+00:00").replace("T", " ")
+        val_str = str(date_val).strip()
+
+        # 2. Chuỗi dạng ISO có Múi giờ UTC (chứa Z hoặc +00:00)
+        if "Z" in val_str or "+00:00" in val_str:
+            clean_iso = val_str.replace("Z", "+00:00").replace("T", " ")
+            if "." in clean_iso:
+                parts = clean_iso.split(".")
+                clean_iso = parts[0] + ("+" + parts[1].split("+")[1] if "+" in parts[1] else "")
+            dt_utc = datetime.fromisoformat(clean_iso)
+            return dt_utc.astimezone(timezone(timedelta(hours=7))).replace(tzinfo=None)
+
+        # 3. Chuỗi ngày giờ thông thường (Đã là giờ VN từ API, KHÔNG cộng thêm 7 tiếng)
+        clean_str = val_str.replace("T", " ")
         if "." in clean_str:
             clean_str = clean_str.split(".")[0]
-            
-        dt = None
+
         for fmt in ("%Y-%m-%d %H:%M:%S", "%Y-%m-%d %H:%M", "%Y-%m-%d"):
             try:
-                dt = datetime.strptime(clean_str, fmt)
-                break
+                return datetime.strptime(clean_str, fmt)
             except ValueError:
                 pass
-                
-        if dt:
-            return dt + timedelta(hours=7)
-    except Exception:
+    except Exception as e:
         pass
     return None
 
@@ -71,53 +79,43 @@ def format_time_str(dt):
         return ""
     return dt.strftime("%H:%M %d/%m")
 
-def is_match_past_or_ended(item, dt_vn):
-    """Lọc bỏ các trận đã kết thúc hẳn"""
-    is_live = bool(item.get("is_live"))
-    if is_live:
-        return False
-
-    if item.get("is_ended") or str(item.get("status")).lower() in ["ended", "finished", "3", "done"]:
-        return True
-
-    if dt_vn:
-        now_vn = get_now_vietnam()
-        # Chỉ xóa các trận không LIVE đã qua giờ bắt đầu quá 2 tiếng
-        if dt_vn < (now_vn - timedelta(hours=2)):
-            return True
-
-    return False
-
-def is_valid_schedule_date(dt_vn, is_live=False):
-    """Giữ lại các trận trong tương lai gần (3 ngày tới), không xoá nếu không parse được giờ"""
-    if is_live or dt_vn is None:
-        return True
-
-    now_vn = get_now_vietnam()
-    max_future_date = now_vn + timedelta(days=3)
-
-    return (dt_vn >= now_vn - timedelta(hours=2)) and (dt_vn <= max_future_date)
+def unpack_api_data(res_json):
+    """Bóc tách mảng danh sách trận đấu từ nhiều cấu trúc JSON khác nhau"""
+    if isinstance(res_json, list):
+        return res_json
+    if isinstance(res_json, dict):
+        d = res_json.get("data")
+        if isinstance(d, list):
+            return d
+        if isinstance(d, dict):
+            for sub_key in ["items", "rows", "matches", "list", "data"]:
+                if isinstance(d.get(sub_key), list):
+                    return d.get(sub_key)
+        for key in ["items", "rows", "matches", "list"]:
+            if isinstance(res_json.get(key), list):
+                return res_json.get(key)
+    return []
 
 def extract_all_streams(item):
-    """Trích xuất danh sách luồng phát, tên chất lượng (FHD, HD, SD...) và nhãn [geo]"""
+    """Trích xuất đầy đủ tất cả các luồng phát, tên chất lượng (FHD, HD, SD...) và nhãn [geo]"""
     streams = []
     seen_urls = set()
-    default_blv = (item.get("blv") or item.get("commentator") or "").strip()
+    default_blv = (item.get("blv") or item.get("commentator") or item.get("mc") or "").strip()
 
-    extra_servers = []
-    for key in ["servers", "streams", "sources", "play_urls", "links", "channels", "relate_matches"]:
+    servers = []
+    for key in ["servers", "streams", "sources", "play_urls", "links", "channels", "relate_matches", "links_play"]:
         val = item.get(key)
-        if isinstance(val, list) and val:
-            extra_servers.extend(val)
+        if isinstance(val, list):
+            servers.extend(val)
 
-    for s in extra_servers:
+    for s in servers:
         s_url, s_name, s_blv, is_geo = None, "", default_blv, False
 
         if isinstance(s, dict):
-            s_url = s.get("url") or s.get("source") or s.get("link") or s.get("m3u8") or s.get("play_url") or s.get("stream_url")
+            s_url = s.get("url") or s.get("source") or s.get("link") or s.get("m3u8") or s.get("play_url") or s.get("stream_url") or s.get("hls")
             s_name = s.get("name") or s.get("label") or s.get("title") or s.get("quality") or s.get("type") or ""
             if s.get("blv") or s.get("commentator"):
-                s_blv = (s.get("blv") or s.get("commentator") or "").strip()
+                s_blv = (s.get("blv") or s.get("commentator")).strip()
             if s.get("is_geo") or s.get("geo") or "geo" in str(s_url).lower() or "geo" in str(s_name).lower():
                 is_geo = True
         elif isinstance(s, str):
@@ -134,37 +132,38 @@ def extract_all_streams(item):
             })
             seen_urls.add(s_url)
 
-    # Lấy thêm các nguồn URL mặc định
-    main_urls = [
-        item.get("source_live"),
-        item.get("stream_url"),
-        item.get("m3u8"),
-        item.get("link")
-    ]
-    if item.get("stream_key"):
-        main_urls.append(f"https://lilive1.eu.cc/live/{item['stream_key']}/playlist.m3u8")
-
-    for m_url in main_urls:
-        if m_url and str(m_url).startswith("http") and m_url not in seen_urls:
-            streams.insert(0, {
+    # Lấy các trường URL trực tiếp từ root object
+    for key in ["source_live", "stream_url", "m3u8", "link", "play_url", "url"]:
+        u = item.get(key)
+        if u and str(u).startswith("http") and u not in seen_urls:
+            streams.append({
                 "name": "",
-                "url": str(m_url).strip(),
+                "url": str(u).strip(),
                 "blv": default_blv,
-                "is_geo": "geo" in str(m_url).lower() or bool(item.get("is_geo"))
+                "is_geo": "geo" in str(u).lower() or bool(item.get("is_geo"))
             })
-            seen_urls.add(m_url)
+            seen_urls.add(u)
+
+    if item.get("stream_key"):
+        sk_url = f"https://lilive1.eu.cc/live/{item['stream_key']}/playlist.m3u8"
+        if sk_url not in seen_urls:
+            streams.append({
+                "name": "",
+                "url": sk_url,
+                "blv": default_blv,
+                "is_geo": bool(item.get("is_geo"))
+            })
+            seen_urls.add(sk_url)
 
     return streams
 
 def fetch_all_matches():
-    """Quét dữ liệu đầy đủ từ các endpoints API Phá Làng TV"""
+    """Quét dữ liệu đầy đủ từ API và hiển thị log chi tiết"""
     all_matches = []
     seen_ids = set()
 
     def add_items(data_list):
         count = 0
-        if not isinstance(data_list, list):
-            return count
         for item in data_list:
             if isinstance(item, dict):
                 m_id = item.get("id") or item.get("_id") or f"{item.get('title')}_{item.get('start_date')}"
@@ -174,19 +173,23 @@ def fetch_all_matches():
                     count += 1
         return count
 
-    # 1. Cào endpoints tĩnh
+    # 1. Các Endpoints REST Tĩnh
+    print("--- [1/2] Đang cào các REST Endpoints ---")
     for ep in ["", "/live", "/hot", "/today", "/upcoming", "/schedule"]:
         try:
-            res = requests.get(f"{API_BASE}{ep}", headers=HEADERS, timeout=10)
+            url = f"{API_BASE}{ep}"
+            res = requests.get(url, headers=HEADERS, timeout=10)
             if res.status_code == 200:
-                res_json = res.json()
-                d = res_json.get("data") if isinstance(res_json, dict) else res_json
-                if isinstance(d, list):
-                    add_items(d)
-        except Exception:
-            pass
+                items = unpack_api_data(res.json())
+                added = add_items(items)
+                print(f" -> GET {ep or '/'}: Thành công ({added} trận mới)")
+            else:
+                print(f" -> GET {ep or '/'}: Lỗi HTTP {res.status_code}")
+        except Exception as e:
+            print(f" -> GET {ep or '/'}: Ngoại lệ -> {e}")
 
-    # 2. Graph API (Trận đấu mở rộng)
+    # 2. Graph API (Lấy toàn bộ trận đấu phân trang)
+    print("--- [2/2] Đang cào Graph API ---")
     for page in range(1, 11):
         payload = {
             "limit": 100,
@@ -198,13 +201,19 @@ def fetch_all_matches():
         try:
             res = requests.post(API_URL, json=payload, headers=HEADERS, timeout=15)
             if res.status_code == 200:
-                data = res.json().get("data", [])
-                add_items(data)
-                if not data or len(data) < 100:
+                items = unpack_api_data(res.json())
+                added = add_items(items)
+                print(f" -> Graph API Trang {page}: Thành công ({added} trận mới)")
+                if not items or len(items) < 100:
                     break
-        except Exception:
+            else:
+                print(f" -> Graph API Trang {page}: Lỗi HTTP {res.status_code}")
+                break
+        except Exception as e:
+            print(f" -> Graph API Trang {page}: Ngoại lệ -> {e}")
             break
 
+    print(f"=> Tổng cộng thu thập được {len(all_matches)} trận đấu thô từ API.")
     return all_matches
 
 def build_m3u(matches):
@@ -214,6 +223,10 @@ def build_m3u(matches):
     ]
 
     processed_matches = []
+    now_vn = get_now_vietnam()
+    # Nới lỏng khung thời gian: Lấy từ 4 tiếng trước đến 4 ngày sau
+    min_time = now_vn - timedelta(hours=4)
+    max_time = now_vn + timedelta(days=4)
 
     for item in matches:
         if not isinstance(item, dict):
@@ -221,19 +234,23 @@ def build_m3u(matches):
 
         dt_vn = parse_vietnam_datetime(item.get("start_date") or item.get("time") or item.get("match_time"))
         is_live = bool(item.get("is_live"))
+        is_ended = bool(item.get("is_ended")) or str(item.get("status")).lower() in ["ended", "finished", "3", "done"]
 
-        if is_match_past_or_ended(item, dt_vn):
+        # 1. Loại bỏ nếu trận đã bị đánh dấu KẾT THÚC
+        if is_ended:
             continue
 
-        if not is_valid_schedule_date(dt_vn, is_live):
-            continue
+        # 2. Lọc thời gian nới lỏng (Nếu không đọc được ngày giờ thì vẫn giữ lại để tránh bị sót)
+        if dt_vn and not is_live:
+            if dt_vn < min_time or dt_vn > max_time:
+                continue
 
         streams = extract_all_streams(item)
         if not streams:
             continue
 
-        team1 = (item.get("team_1") or "").strip()
-        team2 = (item.get("team_2") or "").strip()
+        team1 = (item.get("team_1") or item.get("home_team") or "").strip()
+        team2 = (item.get("team_2") or item.get("away_team") or "").strip()
         title_raw = (item.get("title") or item.get("name") or "").strip()
 
         if team1 and team2:
@@ -268,7 +285,7 @@ def build_m3u(matches):
         dt_vn = m["dt_vn"]
 
         desc = (item.get("desc") or item.get("category") or "FOOTBALL").strip().upper()
-        main_blv = (item.get("blv") or item.get("commentator") or "").strip()
+        main_blv = (item.get("blv") or item.get("commentator") or item.get("mc") or "").strip()
         logo = item.get("team_1_logo") or item.get("team_2_logo") or item.get("logo") or ""
         formatted_time = format_time_str(dt_vn)
 
@@ -307,24 +324,29 @@ def build_m3u(matches):
     return "\n".join(m3u_lines), total_channels
 
 def main():
-    print("Đang cào dữ liệu trận đấu từ Phá Làng TV...")
+    print("==========================================")
+    print("Bắt đầu cào dữ liệu trận đấu Phá Làng TV...")
+    print("==========================================")
+    
     matches = fetch_all_matches()
     
     if not matches:
-        print("Không lấy được dữ liệu từ API. Giữ nguyên file m3u cũ.")
+        print("❌ LỖI: Không cào được dữ liệu từ API. Giữ nguyên file m3u cũ.")
         return
 
     m3u_content, total_channels = build_m3u(matches)
     
-    # BẢO VỆ CẢNH BÁO: Không ghi đè nếu kết quả trả về 0 kênh
+    print(f"=> Đã xử lý xong: Tìm thấy {total_channels} luồng phát hợp lệ.")
+
+    # Bảo vệ: Không ghi đè nếu kết quả trả về 0 kênh
     if total_channels == 0:
-        print("Cảnh báo: Lọc ra 0 luồng hợp lệ! Hủy ghi file để tránh làm rỗng playlist M3U.")
+        print("⚠️ CẢNH BÁO: Lọc ra 0 luồng hợp lệ! Hủy ghi file để bảo vệ playlist M3U.")
         return
 
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         f.write(m3u_content)
         
-    print(f"Đã xuất thành công {total_channels} luồng vào file: {OUTPUT_FILE}")
+    print(f"✅ THÀNH CÔNG: Đã ghi {total_channels} luồng vào file {OUTPUT_FILE}")
 
 if __name__ == "__main__":
     main()
