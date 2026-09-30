@@ -70,7 +70,12 @@ def parse_vietnam_time(date_str):
 
 def is_youth_match(item):
     """Kiểm tra xem tên giải/đội bóng có thuộc lứa trẻ hay không"""
-    check_text = f"{item.get('league', '')} {item.get('title', '')} {item.get('team_1', '')} {item.get('team_2', '')}"
+    league = item.get('league') or ''
+    title = item.get('title') or ''
+    team_1 = item.get('team_1') or ''
+    team_2 = item.get('team_2') or ''
+    
+    check_text = f"{league} {title} {team_1} {team_2}"
     return bool(YOUTH_REGEX.search(check_text))
 
 def extract_all_streams(item):
@@ -132,18 +137,22 @@ def build_m3u(matches):
     ]
 
     for item in matches:
+        if not isinstance(item, dict):
+            continue
+
         # Lọc bỏ các trận đấu lứa trẻ (U14 đến U23)
         if is_youth_match(item):
             continue
 
-        team1 = item.get("team_1", "").strip()
-        team2 = item.get("team_2", "").strip()
-        title_raw = item.get("title", "").strip()
-        league = item.get("league", "Phá Làng TV")
-        desc = item.get("desc", "FOOTBALL").upper()
-        blv = item.get("blv", "").strip()
+        # An toàn hóa các trường chuỗi bằng cách ép về chuỗi rỗng nếu giá trị là None (null)
+        team1 = (item.get("team_1") or "").strip()
+        team2 = (item.get("team_2") or "").strip()
+        title_raw = (item.get("title") or "").strip()
+        league = item.get("league") or "Phá Làng TV"
+        desc = (item.get("desc") or "FOOTBALL").upper()
+        blv = (item.get("blv") or "").strip()
         logo = item.get("team_1_logo") or item.get("team_2_logo") or ""
-        start_date = item.get("start_date", "")
+        start_date = item.get("start_date") or ""
         is_live = item.get("is_live", False)
 
         streams = extract_all_streams(item)
@@ -161,7 +170,7 @@ def build_m3u(matches):
             quality_tag = f" {st['name']}" if st['name'] else ""
             display_title = f"{status_symbol} {formatted_time} {icon} {match_name}{blv_text}{quality_tag}"
 
-            m3u_lines.append(f'#EXTINF:-1 tvg-id="{item.get("id", "")}" tvg-name="{display_title}" tvg-logo="{logo}" group-title="{league}", {display_title}')
+            m3u_lines.append(f'#EXTINF:-1 tvg-id="{item.get("id") or ""}" tvg-name="{display_title}" tvg-logo="{logo}" group-title="{league}", {display_title}')
             m3u_lines.append('#EXTVLCOPT:http-user-agent=Mozilla/5.0')
             m3u_lines.append('#EXTVLCOPT:http-referrer=https://phalang1.tv/')
             m3u_lines.append(st["url"])
