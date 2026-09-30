@@ -42,12 +42,10 @@ SPORT_ICONS = {
 }
 
 def get_now_vietnam():
-    """Lấy thời gian hiện tại theo múi giờ Việt Nam (UTC+7)"""
     vn_tz = timezone(timedelta(hours=7))
     return datetime.now(vn_tz).replace(tzinfo=None)
 
 def parse_vietnam_datetime(date_val):
-    """Chuyển đổi chuỗi/timestamp từ API về datetime giờ Việt Nam"""
     if not date_val:
         return None
     try:
@@ -82,13 +80,11 @@ def parse_vietnam_datetime(date_val):
     return None
 
 def format_time_str(dt):
-    """Định dạng hiển thị: HH:MM DD/MM"""
     if not dt:
         return ""
     return dt.strftime("%H:%M %d/%m")
 
 def is_today_or_tomorrow(dt_vn, is_live=False):
-    """Lọc danh sách: Giữ lại tất cả trận LIVE + Trận thuộc Hôm nay & Ngày mai"""
     if is_live or not dt_vn:
         return True
 
@@ -102,7 +98,6 @@ def is_today_or_tomorrow(dt_vn, is_live=False):
     return dt_vn.date() in (today_date, tomorrow_date)
 
 def extract_all_streams(item):
-    """Trích xuất đầy đủ link stream, BLV, chất lượng và geo-tag"""
     streams = []
     seen_urls = set()
     default_blv = (item.get("blv") or item.get("commentator") or item.get("mc") or "").strip()
@@ -162,7 +157,6 @@ def extract_all_streams(item):
     return streams
 
 def unpack_api_data(res_json):
-    """Bóc tách danh sách trận đấu từ JSON API"""
     if isinstance(res_json, list):
         return res_json
     if isinstance(res_json, dict):
@@ -179,7 +173,6 @@ def unpack_api_data(res_json):
     return []
 
 def fetch_from_web_page():
-    """Cào dữ liệu từ HTML/NextJS Data của trang web phalang1.tv khi API bị chặn"""
     matches = []
     for web_url in WEB_URLS:
         try:
@@ -197,7 +190,7 @@ def fetch_from_web_page():
                             for sub in ["matches", "data", "rows"]:
                                 if isinstance(val.get(sub), list):
                                     matches.extend(val.get(sub))
-                
+
                 if not matches:
                     json_matches = re.findall(r'(\{"id":".*?"team_1":.*?\})', res.text)
                     for jm in json_matches:
@@ -206,12 +199,12 @@ def fetch_from_web_page():
                             matches.append(m_obj)
                         except Exception:
                             pass
-                
+
                 if matches:
-                    print(f" -> Cào thành công {len(matches)} trận từ trang web: {web_url}")
+                    print(f" -> Cao web thanh cong {len(matches)} tran: {web_url}")
                     break
         except Exception as e:
-            print(f" -> Lỗi khi cào web {web_url}: {e}")
+            print(f" -> Loi cao web {web_url}: {e}")
     return matches
 
 def fetch_all_matches():
@@ -230,7 +223,7 @@ def fetch_all_matches():
                     all_matches.append(item)
                     count += 1
         if source_name and count > 0:
-            print(f" -> [{source_name}] Đã lấy {count} trận")
+            print(f" -> [{source_name}] Lay {count} tran")
 
     for base_api in API_DOMAINS:
         for ep in ["/matches", "/matches/live", "/matches/hot", "/matches/today", "/matches/upcoming"]:
@@ -259,7 +252,7 @@ def fetch_all_matches():
             break
 
     if not all_matches:
-        print("API trả về rỗng hoặc bị chặn IP. Đang chuyển sang cào trực tiếp từ trang web...")
+        print("API rong hoac bi chan. Chuyen sang cao truc tiep tu web...")
         web_matches = fetch_from_web_page()
         add_items(web_matches, "Web Scraper")
 
@@ -268,7 +261,7 @@ def fetch_all_matches():
 def build_m3u(matches):
     m3u_lines = [
         '#EXTM3U url-tvg="" tvg-shift="0"',
-        '# Cập nhật tự động Phá Làng TV M3U Playlist'
+        '# Cap nhat tu dong Pha Lang TV M3U Playlist'
     ]
 
     processed_matches = []
@@ -361,182 +354,16 @@ def build_m3u(matches):
     return "\n".join(m3u_lines), total_channels
 
 def main():
-    print("=== Bắt đầu cào dữ liệu trận đấu Phá Làng TV ===")
+    print("=== Bat dau cao du lieu tran dau Pha Lang TV ===")
     matches = fetch_all_matches()
-    print(f"Tổng số trận lấy được: {len(matches)}")
+    print(f"Tong so tran lay duoc: {len(matches)}")
 
     m3u_content, total_channels = build_m3u(matches)
-    
+
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         f.write(m3u_content)
-        
-    print(f"=== Đã xuất thành công {total_channels} luồng trận đấu vào file: {OUTPUT_FILE} ===")
 
-if __name__ == "__main__":
-    main()
- sang cào trực tiếp trang Web
-    if not all_matches:
-        print("API trả về rỗng hoặc bị chặn IP. Đang chuyển sang cào trực tiếp từ trang web...")
-        web_matches = fetch_from_web_page()
-        add_items(web_matches, "Web Scraper")
-
-    return all_matches
-
-def build_m3u(matches):
-    m3u_lines = [
-        '#EXTM3U url-tvg="" tvg-shift="0"',
-        '# Cập nhật tự động Phá Làng TV M3U Playlist'
-    ]
-
-    processed_matches = []
-
-    for item in matches:
-        if not isinstance(item, dict):
-            continue
-
-        dt_vn = parse_vietnam_datetime(item.get("start_date") or item.get("time") or item.get("match_time"))
-        is_live = bool(item.get("is_live"))
-        is_ended = bool(item.get("is_ended")) or str(item.get("status")).lower() in ["ended", "finished", "3", "done"]
-
-        if is_ended:
-            continue
-
-        if not is_today_or_tomorrow(dt_vn, is_live):
-            continue
-
-        streams = extract_all_streams(item)
-        if not streams:
-            continue
-
-        team1 = (item.get("team_1") or item.get("home_team") or "").strip()
-        team2 = (item.get("team_2") or item.get("away_team") or "").strip()
-        title_raw = (item.get("title") or item.get("name") or "").strip()
-
-        if team1 and team2:
-            match_name = f"{team1} vs {team2}"
-        elif title_raw:
-            match_name = title_raw
-        else:
-            continue
-
-        processed_matches.append({
-            "item": item,
-            "match_name": match_name,
-            "dt_vn": dt_vn,
-            "is_live": is_live,
-            "streams": streams
-        })
-
-    # SẮP XẾP: Trận LIVE (🟢) lên đầu -> Tiếp theo là trận chưa đá (🟡) xếp theo thời gian
-    processed_matches.sort(
-        key=lambda x: (
-            0 if x["is_live"] else 1,
-            x["dt_vn"] if x["dt_vn"] else datetime.max
-        )
-    )
-
-    total_channels = 0
-    for m in processed_matches:
-        item = m["item"]
-        match_name = m["match_name"]
-        is_live = m["is_live"]
-        streams = m["streams"]
-        dt_vn = m["dt_vn"]
-
-        desc = (item.get("desc") or item.get("category") or "FOOTBALL").strip().upper()
-        main_blv = (item.get("blv") or item.get("commentator") or item.get("mc") or "").strip()
-        logo = item.get("team_1_logo") or item.get("team_2_logo") or item.get("logo") or ""
-        formatted_time = format_time_str(dt_vn)
-
-        icon = "⚽"
-        for key, val in SPORT_ICONS.items():
-            if key in desc:
-                icon = val
-                break
-
-        status_symbol = "🟢" if is_live else "🟡"
-
-        for st in streams:
-            blv_name = st.get("blv") or main_blv
-            blv_tag = f"({blv_name.upper()})" if blv_name else "(Nhà đài)"
-
-            quality_str = st.get("name", "").strip()
-            quality_tag = f" ({quality_str})" if quality_str and quality_str.upper() not in ["MẶC ĐỊNH", "DEFAULT"] else ""
-
-            geo_tag = " [geo]" if st.get("is_geo") else ""
-
-            # Định dạng tên hiển thị chuẩn
-            display_title = f"{status_symbol} {formatted_time} {icon} {match_name} {blv_tag}{quality_tag}{geo_tag}".strip()
-            display_title = re.sub(r'\s+', ' ', display_title)
-
-            m3u_lines.append(
-                f'#EXTINF:-1 tvg-id="{item.get("id") or ""}" tvg-name="{display_title}" tvg-logo="{logo}" group-title="{GROUP_TITLE}", {display_title}'
-            )
-            m3u_lines.append('#EXTVLCOPT:http-user-agent=Mozilla/5.0')
-            m3u_lines.append('#EXTVLCOPT:http-referrer=https://phalang1.tv/')
-            m3u_lines.append(st["url"])
-            total_channels += 1
-
-    return "\n".join(m3u_lines), total_channels
-
-def main():
-    print("=== Bắt đầu cào dữ liệu trận đấu Phá Làng TV ===")
-    matches = fetch_all_matches()
-    print(f"Tổng số trận lấy được: {len(matches)}")
-
-    m3u_content, total_channels = build_m3u(matches)
-    
-    with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
-        f.write(m3u_content)
-        
-    print(f"=== Đã xuất thành công {total_channels} luồng trận đấu vào file: {OUTPUT_FILE} ===")
-
-if __name__ == "__main__":
-    main()
-) or item.get("team_2_logo") or item.get("logo") or ""
-        formatted_time = format_time_str(dt_vn)
-
-        icon = "⚽"
-        for key, val in SPORT_ICONS.items():
-            if key in desc:
-                icon = val
-                break
-
-        status_symbol = "🟢" if is_live else "🟡"
-
-        for st in streams:
-            blv_name = st.get("blv") or main_blv
-            blv_tag = f"({blv_name.upper()})" if blv_name else "(Nhà đài)"
-
-            quality_str = st.get("name", "").strip()
-            quality_tag = f" ({quality_str})" if quality_str and quality_str.upper() not in ["MẶC ĐỊNH", "DEFAULT"] else ""
-
-            geo_tag = " [geo]" if st.get("is_geo") else ""
-
-            display_title = f"{status_symbol} {formatted_time} {icon} {match_name} {blv_tag}{quality_tag}{geo_tag}".strip()
-            display_title = re.sub(r'\s+', ' ', display_title)
-
-            m3u_lines.append(
-                f'#EXTINF:-1 tvg-id="{item.get("id") or ""}" tvg-name="{display_title}" tvg-logo="{logo}" group-title="{GROUP_TITLE}", {display_title}'
-            )
-            m3u_lines.append('#EXTVLCOPT:http-user-agent=Mozilla/5.0')
-            m3u_lines.append('#EXTVLCOPT:http-referrer=https://phalang1.tv/')
-            m3u_lines.append(st["url"])
-            total_channels += 1
-
-    return "\n".join(m3u_lines), total_channels
-
-def main():
-    print("=== Đang cào dữ liệu trận đấu hôm nay & ngày mai từ Phá Làng TV ===")
-    matches = fetch_all_matches()
-    print(f"Tổng số trận cào được từ API: {len(matches)}")
-
-    m3u_content, total_channels = build_m3u(matches)
-    
-    with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
-        f.write(m3u_content)
-        
-    print(f"=== Đã cập nhật thành công {total_channels} luồng vào file: {OUTPUT_FILE} ===")
+    print(f"=== Xuat thanh cong {total_channels} luong vao file: {OUTPUT_FILE} ===")
 
 if __name__ == "__main__":
     main()
