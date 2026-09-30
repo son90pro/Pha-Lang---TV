@@ -64,15 +64,24 @@ def format_time_str(dt):
         return ""
     return dt.strftime("%H:%M %d/%m")
 
-def is_match_ended(item, dt_vn):
-    """Kiểm tra trận đấu đã kết thúc hoàn toàn hay chưa"""
+def is_match_past_or_ended(item, dt_vn):
+    """
+    Kiểm tra xem trận đấu đã kết thúc hoặc đã trôi qua giờ đá chưa.
+    """
+    is_live = bool(item.get("is_live"))
+    
+    # 1. Đang LIVE -> Giữ lại 100%
+    if is_live:
+        return False
+
+    # 2. Đã đánh dấu kết thúc trong API -> Loại bỏ
     if item.get("is_ended") or item.get("status") in ["ended", "finished", "3", 3]:
         return True
     
-    now_vn = get_now_vietnam()
-    if not item.get("is_live") and dt_vn:
-        # Nếu trận không live và đã trôi qua hơn 3 tiếng -> coi như đã xong
-        if now_vn - dt_vn > timedelta(hours=3):
+    # 3. Trận không LIVE và đã trôi qua quá 15 phút so với giờ bắt đầu -> Loại bỏ (đã đá xong hoặc hủy)
+    if dt_vn:
+        now_vn = get_now_vietnam()
+        if dt_vn < (now_vn - timedelta(minutes=15)):
             return True
             
     return False
@@ -88,8 +97,7 @@ def is_today_or_tomorrow(dt_vn, is_live=False):
     today_date = now_vn.date()
     tomorrow_date = today_date + timedelta(days=1)
 
-    match_date = dt_vn.date()
-    return match_date in (today_date, tomorrow_date)
+    return dt_vn.date() in (today_date, tomorrow_date)
 
 def extract_all_streams(item):
     """Trích xuất đầy đủ tất cả các luồng phát / server phụ / link M3U8"""
@@ -231,11 +239,11 @@ def build_m3u(matches):
         dt_vn = parse_vietnam_datetime(item.get("start_date"))
         is_live = bool(item.get("is_live"))
 
-        # 1. Bỏ qua các trận đã kết thúc
-        if is_match_ended(item, dt_vn):
+        # 1. Loại bỏ các trận đã kết thúc hoặc đã trôi qua thời gian thi đấu mà không LIVE
+        if is_match_past_or_ended(item, dt_vn):
             continue
 
-        # 2. Chỉ giữ lại trận đấu diễn ra HÔM NAY hoặc NGÀY MAI (hoặc đang LIVE)
+        # 2. Chỉ giữ lại trận thuộc Hôm nay hoặc Ngày mai (hoặc đang LIVE)
         if not is_today_or_tomorrow(dt_vn, is_live):
             continue
 
@@ -262,7 +270,7 @@ def build_m3u(matches):
             "streams": streams
         })
 
-    # Sắp xếp: Ưu tiên trận LIVE (🟢) lên đầu, tiếp theo là trận sắp đá (🟡)
+    # Sắp xếp: Ưu tiên trận LIVE (🟢) lên đầu, tiếp theo là các trận sắp diễn ra (🟡) theo thời gian
     processed_matches.sort(
         key=lambda x: (
             0 if x["is_live"] else 1,
@@ -311,7 +319,7 @@ def build_m3u(matches):
     return "\n".join(m3u_lines)
 
 def main():
-    print("Đang cào dữ liệu trận đấu (Hôm nay & Ngày mai) từ Phá Làng TV...")
+    print("Đang cào dữ liệu trận đấu từ Phá Làng TV...")
     matches = fetch_all_matches()
     
     if not matches:
