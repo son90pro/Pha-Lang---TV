@@ -6,8 +6,9 @@ from datetime import datetime, timedelta
 
 # Cấu hình API Phá Làng TV
 API_URL = "https://api.plapi202624081158.com/matches/graph"
+API_BASE = "https://api.plapi202624081158.com/matches"
 OUTPUT_FILE = "phalang.m3u"
-GROUP_TITLE = "Phá Làng TV"  # Tất cả gom chung vào 1 danh mục theo mẫu
+GROUP_TITLE = "Phá Làng TV"
 
 HEADERS = {
     "Accept": "application/json, text/plain, */*",
@@ -18,27 +19,19 @@ HEADERS = {
 }
 
 SPORT_ICONS = {
-    "FOOTBALL": "⚽",
-    "BONG DA": "⚽",
-    "VOLLEYBALL": "🏐",
-    "BONG CHUYEN": "🏐",
-    "BASKETBALL": "🏀",
-    "BONG RO": "🏀",
-    "TENNIS": "🎾",
-    "BADMINTON": "🏸",
-    "TABLE TENNIS": "🏓",
-    "BILLIARDS": "🎱",
-    "SNOOKER": "🎱",
-    "BOXING": "🥊",
-    "MMA": "🥊",
-    "ESPORTS": "🎮",
-    "RACING": "🏎️"
+    "FOOTBALL": "⚽", "BONG DA": "⚽",
+    "VOLLEYBALL": "🏐", "BONG CHUYEN": "🏐",
+    "BASKETBALL": "🏀", "BONG RO": "🏀",
+    "TENNIS": "🎾", "BADMINTON": "🏸",
+    "TABLE TENNIS": "🏓", "BILLIARDS": "🎱",
+    "SNOOKER": "🎱", "BOXING": "🥊",
+    "MMA": "🥊", "ESPORTS": "🎮", "RACING": "🏎️"
 }
 
-def parse_vietnam_time(date_str):
-    """Chuyển đổi ngày giờ về múi giờ Việt Nam (UTC+7) - Định dạng: HH:MM DD/MM"""
+def parse_vietnam_datetime(date_str):
+    """Chuyển đổi chuỗi ngày giờ API về object datetime theo múi giờ Việt Nam (UTC+7)"""
     if not date_str:
-        return ""
+        return None
     try:
         clean_str = str(date_str).replace("T", " ")
         if "." in clean_str:
@@ -54,14 +47,30 @@ def parse_vietnam_time(date_str):
                 break
             except ValueError:
                 pass
-
-        if not dt:
-            return str(date_str)
-
-        dt_vn = dt + timedelta(hours=7)
-        return dt_vn.strftime("%H:%M %d/%m")
+        if dt:
+            return dt + timedelta(hours=7)
     except Exception:
-        return str(date_str)
+        pass
+    return None
+
+def format_time_str(dt):
+    """Định dạng hiển thị: HH:MM DD/MM"""
+    if not dt:
+        return ""
+    return dt.strftime("%H:%M %d/%m")
+
+def is_match_ended(item, dt_vn):
+    """Kiểm tra trận đấu đã kết thúc hoàn toàn hay chưa"""
+    if item.get("is_ended") or item.get("status") in ["ended", "finished", "3", 3]:
+        return True
+    
+    # Nếu không phải live và thời gian bắt đầu đã trôi qua quá 3 tiếng -> coi như đã xong
+    now_vn = datetime.now() + timedelta(hours=7)
+    if not item.get("is_live") and dt_vn:
+        if now_vn - dt_vn > timedelta(hours=3):
+            return True
+            
+    return False
 
 def extract_all_streams(item):
     """Trích xuất đầy đủ tất cả các luồng phát / server phụ / link M3U8"""
@@ -69,7 +78,6 @@ def extract_all_streams(item):
     seen_urls = set()
     default_blv = (item.get("blv") or item.get("commentator") or "").strip()
 
-    # Quét tất cả các mảng chứa server / luồng phát từ API
     extra_servers = []
     for key in ["servers", "streams", "sources", "play_urls", "links", "channels", "relate_matches"]:
         val = item.get(key)
@@ -101,7 +109,6 @@ def extract_all_streams(item):
             })
             seen_urls.add(s_url)
 
-    # Quét các nguồn luồng chính trực tiếp
     main_urls = [
         item.get("source_live"),
         item.get("stream_url"),
@@ -123,12 +130,57 @@ def extract_all_streams(item):
     return streams
 
 def fetch_all_matches():
-    """Tự động phân trang để lấy TOÀN BỘ trận đấu (không bị giới hạn 100 trận)"""
+    """Quét toàn bộ danh sách trận đấu từ nhiều nguồn API khác nhau"""
     all_matches = []
     seen_ids = set()
-    page = 1
-    
-    while True:
+
+    def add_items(data_list):
+        count = 0
+        if not isinstance(data_list, list):
+            return count
+        for item in data_list:
+            if isinstance(item, dict):
+                m_id = item.get("id") or item.get("_id") or f"{item.get('title')}_{item.get('start_date')}"
+                if m_id not in seen_ids:
+                    seen_ids.add(m_id)
+                    all_matches.append(item)
+                    count += 1
+        return count
+
+    # 1. Cào trực tiếp từ các Endpoint Live / Hot / Today
+    for ep in ["/live", "/hot", "/today"]:
+        try:
+            res = requests.get(f"{API_BASE}{ep}", headers=HEADERS, timeout=10)
+            if res.status_code == 200:
+                d = res.json().get("data", [])
+                added = add_items(d)
+                print(f"Lấy từ endpoint {ep}: +{added} trận")
+        except Exception:
+            pass
+
+    # 2. Cào Graph API ưu tiên các trận đang Trực Tiếp (order_desc: is_live)
+    for page in range(1, 6):
+        payload = {
+            "limit": 100,
+            "page": page,
+            "order_desc": "is_live",
+            "queries": [],
+            "query_or": True
+        }
+        try:
+            res = requests.post(API_URL, json=payload, headers=HEADERS, timeout=15)
+            if res.status_code == 200:
+                data = res.json().get("data", [])
+                added = add_items(data)
+                print(f"Lấy từ Graph API (Ưu tiên Live) Trang {page}: +{added} trận")
+                if len(data) < 100:
+                    break
+        except Exception as e:
+            print(f"Lỗi Graph API (Live) Trang {page}: {e}")
+            break
+
+    # 3. Cào Graph API theo thời gian thi đấu (order_asc: start_date)
+    for page in range(1, 6):
         payload = {
             "limit": 100,
             "page": page,
@@ -137,40 +189,17 @@ def fetch_all_matches():
             "query_or": True
         }
         try:
-            response = requests.post(API_URL, json=payload, headers=HEADERS, timeout=20)
-            if response.status_code != 200:
-                print(f"Trang {page}: Lỗi HTTP {response.status_code}")
-                break
-                
-            res_json = response.json()
-            data = res_json.get("data", [])
-            
-            if not data or not isinstance(data, list):
-                break
-                
-            new_count = 0
-            for item in data:
-                if isinstance(item, dict):
-                    m_id = item.get("id") or item.get("_id") or f"{item.get('title')}_{item.get('start_date')}"
-                    if m_id not in seen_ids:
-                        seen_ids.add(m_id)
-                        all_matches.append(item)
-                        new_count += 1
-            
-            print(f"Lấy thành công Trang {page}: +{new_count} trận (Tống cộng: {len(all_matches)} trận)")
-            
-            # Nếu số lượng trả về ít hơn 100 tức là đã hết trận
-            if len(data) < 100:
-                break
-                
-            page += 1
-            if page > 10:  # Giới hạn an toàn tránh lặp vô tận
-                break
-                
+            res = requests.post(API_URL, json=payload, headers=HEADERS, timeout=15)
+            if res.status_code == 200:
+                data = res.json().get("data", [])
+                added = add_items(data)
+                print(f"Lấy từ Graph API (Thời gian) Trang {page}: +{added} trận")
+                if len(data) < 100:
+                    break
         except Exception as e:
-            print(f"Lỗi khi kết nối API ở trang {page}: {e}")
+            print(f"Lỗi Graph API (Thời gian) Trang {page}: {e}")
             break
-            
+
     return all_matches
 
 def build_m3u(matches):
@@ -179,15 +208,26 @@ def build_m3u(matches):
         '# Cập nhật tự động Phá Làng TV M3U Playlist'
     ]
 
+    processed_matches = []
+
     for item in matches:
         if not isinstance(item, dict):
+            continue
+
+        dt_vn = parse_vietnam_datetime(item.get("start_date"))
+
+        # Bỏ qua các trận đã hết giờ thi đấu
+        if is_match_ended(item, dt_vn):
+            continue
+
+        streams = extract_all_streams(item)
+        if not streams:
             continue
 
         team1 = (item.get("team_1") or "").strip()
         team2 = (item.get("team_2") or "").strip()
         title_raw = (item.get("title") or "").strip()
-        
-        # Xác định tên trận
+
         if team1 and team2:
             match_name = f"{team1} vs {team2}"
         elif title_raw:
@@ -195,41 +235,53 @@ def build_m3u(matches):
         else:
             continue
 
+        is_live = bool(item.get("is_live"))
+
+        processed_matches.append({
+            "item": item,
+            "match_name": match_name,
+            "dt_vn": dt_vn,
+            "is_live": is_live,
+            "streams": streams
+        })
+
+    # SẮP XẾP: Trận đang LIVE (🟢) đưa lên đầu danh sách, tiếp theo là trận sắp đá (🟡)
+    processed_matches.sort(
+        key=lambda x: (
+            0 if x["is_live"] else 1,
+            x["dt_vn"] if x["dt_vn"] else datetime.max
+        )
+    )
+
+    for m in processed_matches:
+        item = m["item"]
+        match_name = m["match_name"]
+        is_live = m["is_live"]
+        streams = m["streams"]
+        dt_vn = m["dt_vn"]
+
         desc = (item.get("desc") or "FOOTBALL").strip().upper()
         main_blv = (item.get("blv") or item.get("commentator") or "").strip()
         logo = item.get("team_1_logo") or item.get("team_2_logo") or item.get("logo") or ""
-        start_date = item.get("start_date") or ""
-        is_live = item.get("is_live", False)
+        formatted_time = format_time_str(dt_vn)
 
-        streams = extract_all_streams(item)
-        if not streams:
-            continue
-
-        formatted_time = parse_vietnam_time(start_date)
-        
-        # Biểu tượng môn thể thao
         icon = "⚽"
         for key, val in SPORT_ICONS.items():
             if key in desc:
                 icon = val
                 break
-                
+
         status_symbol = "🟢" if is_live else "🟡"
 
         for st in streams:
-            # 1. Tên BLV (In hoa)
             blv_name = st.get("blv") or main_blv
             blv_tag = f"({blv_name.upper()})" if blv_name else "(Nhà đài)"
 
-            # 2. Chất lượng / Server (vd: HD2, HD3)
             quality_str = st.get("name", "").strip()
             quality_tag = f" ({quality_str})" if quality_str else ""
 
-            # 3. Thẻ [geo]
             geo_tag = " [geo]" if st.get("is_geo") else ""
 
-            # Định dạng đúng chuẩn hình mẫu:
-            # 🟡 23:00 30/09 ⚽ Eritrea vs South Africa (LÝ LINH LỰC) (HD2) [geo]
             display_title = f"{status_symbol} {formatted_time} {icon} {match_name} {blv_tag}{quality_tag}{geo_tag}".strip()
 
             m3u_lines.append(
