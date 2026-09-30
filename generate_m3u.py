@@ -5,18 +5,22 @@ import os
 from datetime import datetime, timedelta, timezone
 import urllib3
 
-# Tắt cảnh báo SSL InsecureRequest
+# Tắt cảnh báo SSL
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
-# Danh sách API & Domain dự phòng của Phá Làng TV
+# Danh sách API & Domain mirror của Phá Làng TV
 API_DOMAINS = [
     "https://api.plapi202624081158.com",
     "https://api.phalang.tv",
-    "https://api.phalang1.tv"
+    "https://api.phalang1.tv",
+    "https://api.phalang.net"
 ]
+
 WEB_URLS = [
     "https://phalang1.tv",
-    "https://phalang.tv"
+    "https://phalang.tv",
+    "https://phalang.live",
+    "https://phalang.net"
 ]
 
 OUTPUT_FILE = "phalang.m3u"
@@ -40,10 +44,6 @@ SPORT_ICONS = {
     "SNOOKER": "🎱", "BOXING": "🥊",
     "MMA": "🥊", "ESPORTS": "🎮", "RACING": "🏎️"
 }
-
-def get_now_vietnam():
-    vn_tz = timezone(timedelta(hours=7))
-    return datetime.now(vn_tz).replace(tzinfo=None)
 
 def parse_vietnam_datetime(date_val):
     if not date_val:
@@ -83,19 +83,6 @@ def format_time_str(dt):
     if not dt:
         return ""
     return dt.strftime("%H:%M %d/%m")
-
-def is_today_or_tomorrow(dt_vn, is_live=False):
-    if is_live or not dt_vn:
-        return True
-
-    now_vn = get_now_vietnam()
-    today_date = now_vn.date()
-    tomorrow_date = today_date + timedelta(days=1)
-
-    if dt_vn < (now_vn - timedelta(hours=4)):
-        return False
-
-    return dt_vn.date() in (today_date, tomorrow_date)
 
 def extract_all_streams(item):
     streams = []
@@ -201,7 +188,7 @@ def fetch_from_web_page():
                             pass
 
                 if matches:
-                    print(f" -> Cao web thanh cong {len(matches)} tran: {web_url}")
+                    print(f" -> Cao web thanh cong {len(matches)} tran tu: {web_url}")
                     break
         except Exception as e:
             print(f" -> Loi cao web {web_url}: {e}")
@@ -252,7 +239,7 @@ def fetch_all_matches():
             break
 
     if not all_matches:
-        print("API rong hoac bi chan. Chuyen sang cao truc tiep tu web...")
+        print("API bi chan hoac rong. Chuyen sang cao truc tiep tu web...")
         web_matches = fetch_from_web_page()
         add_items(web_matches, "Web Scraper")
 
@@ -274,10 +261,8 @@ def build_m3u(matches):
         is_live = bool(item.get("is_live"))
         is_ended = bool(item.get("is_ended")) or str(item.get("status")).lower() in ["ended", "finished", "3", "done"]
 
+        # Chỉ loại bỏ các trận đã kết thúc hẳn
         if is_ended:
-            continue
-
-        if not is_today_or_tomorrow(dt_vn, is_live):
             continue
 
         streams = extract_all_streams(item)
@@ -303,6 +288,7 @@ def build_m3u(matches):
             "streams": streams
         })
 
+    # Sắp xếp: LIVE lên trước, sau đó xếp theo thời gian
     processed_matches.sort(
         key=lambda x: (
             0 if x["is_live"] else 1,
