@@ -5,10 +5,8 @@ from datetime import datetime, timedelta, timezone
 import requests
 import urllib3
 
-# Tắt cảnh báo SSL không an toàn
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
-# Danh sách API Domain dự phòng
 API_DOMAINS = [
     "https://api.plapi202624081158.com",
     "https://api.phalang.tv",
@@ -27,7 +25,6 @@ HEADERS = {
     "Referer": "https://phalang1.tv/"
 }
 
-# Icon theo môn thể thao
 SPORT_ICONS = {
     "FOOTBALL": "⚽", "BONG DA": "⚽",
     "VOLLEYBALL": "🏐", "BONG CHUYEN": "🏐",
@@ -37,19 +34,29 @@ SPORT_ICONS = {
     "ESPORTS": "🎮", "RACING": "🏎️"
 }
 
-def parse_vietnam_datetime(date_val):
+def parse_and_convert_to_vn_time(date_val):
+    """
+    Chuyển đổi thời gian API (UTC/GMT+0) sang Múi giờ Việt Nam (GMT+7)
+    """
     if not date_val:
         return None
     try:
-        val_str = str(date_val).strip()
-        clean_str = val_str.replace("T", " ")
-        if "." in clean_str:
-            clean_str = clean_str.split(".")[0]
+        val_str = str(date_val).strip().replace("T", " ")
+        if "." in val_str:
+            val_str = val_str.split(".")[0]
+        
+        dt = None
         for fmt in ("%Y-%m-%d %H:%M:%S", "%Y-%m-%d %H:%M", "%Y-%m-%d"):
             try:
-                return datetime.strptime(clean_str, fmt)
+                dt = datetime.strptime(val_str, fmt)
+                break
             except ValueError:
                 pass
+        
+        if dt:
+            # Cộng thêm 7 giờ để chuyển từ UTC sang Giờ Việt Nam (GMT+7)
+            dt_vn = dt + timedelta(hours=7)
+            return dt_vn
     except Exception:
         pass
     return None
@@ -59,34 +66,56 @@ def format_time_str(dt):
         return ""
     return dt.strftime("%H:%M %d/%m")
 
-def extract_all_streams(item):
+def fetch_match_detail(session, base_api, match_id):
+    """
+    Gọi API chi tiết của từng trận đấu để lấy đầy đủ luồng FHD, HD, HD1, HD2...
+    """
+    url = f"{base_api}/matches/detail/{match_id}"
+    try:
+        res = session.get(url, headers=HEADERS, timeout=5, verify=False)
+        if res.status_code == 200:
+            res_json = res.json()
+            return res_json.get("data") or res_json
+    except Exception:
+        pass
+    return None
+
+def extract_all_streams(item, detail_item=None):
+    """
+    Trích xuất toàn bộ luồng phát sóng (Kèm phân loại FHD, HD, HD1, HD2, Nhà đài...)
+    """
     streams = []
     seen_urls = set()
-    default_blv = str(item.get("blv") or "").strip()
+    
+    # Kết hợp thông tin từ API tổng và API chi tiết trận đấu
+    source_obj = detail_item if detail_item else item
+    default_blv = str(source_obj.get("blv") or item.get("blv") or "").strip()
 
-    # 1. Ưu tiên source_live trực tiếp từ API nếu có
-    source_live = item.get("source_live")
-    if source_live and str(source_live).startswith("http"):
-        streams.append({
-            "name": "",
-            "url": str(source_live).strip(),
-            "blv": default_blv,
-            "is_geo": True
-        })
-        seen_urls.add(source_live)
+    # 1. Luồng chính source_live
+    for obj in [source_obj, item]:
+        source_live = obj.get("source_live")
+        if source_live and str(source_live).startswith("http") and source_live not in seen_urls:
+            streams.append({
+                "name": "FHD",
+                "url": str(source_live).strip(),
+                "blv": default_blv,
+                "is_geo": True
+            })
+            seen_urls.add(source_live)
 
-    # 2. Quét mảng servers / streams chứa các chất lượng HD, FHD, HD1, HD2...
+    # 2. Luồng danh sách server/sub-streams (HD, HD1, HD2, NHÀ ĐÀI...)
     servers = []
-    for key in ["servers", "streams", "sources", "play_urls", "links"]:
-        val = item.get(key)
-        if isinstance(val, list):
-            servers.extend(val)
+    for obj in [source_obj, item]:
+        for key in ["servers", "streams", "sources", "play_urls", "links", "channels", "relate_matches"]:
+            val = obj.get(key)
+            if isinstance(val, list):
+                servers.extend(val)
 
     for s in servers:
         s_url, s_name, s_blv, is_geo = None, "", default_blv, True
         if isinstance(s, dict):
             s_url = s.get("url") or s.get("source") or s.get("link") or s.get("m3u8")
-            s_name = str(s.get("name") or s.get("label") or s.get("quality") or "").strip()
+            s_name = str(s.get("name") or s.get("label") or s.get("quality") or s.get("title") or "").strip()
             if s.get("blv"):
                 s_blv = str(s.get("blv")).strip()
         elif isinstance(s, str):
@@ -101,12 +130,12 @@ def extract_all_streams(item):
             })
             seen_urls.add(s_url)
 
-    # 3. Tạo link tự động qua stream_key nếu chưa có link phát nào
-    stream_key = item.get("stream_key")
+    # 3. Mặc định tạo luồng qua stream_key nếu chưa có luồng nào
+    stream_key = source_obj.get("stream_key") or item.get("stream_key")
     if stream_key and len(streams) == 0:
         sk_url = f"https://lilive1.eu.cc/live/{stream_key}/playlist.m3u8"
         streams.append({
-            "name": "",
+            "name": "HD",
             "url": sk_url,
             "blv": default_blv,
             "is_geo": True
@@ -118,7 +147,6 @@ def fetch_matches_by_post():
     all_matches = []
     seen_ids = set()
 
-    # Payload lấy danh sách trận HOT & TOP & LIVE
     payload = {
         "limit": 50,
         "page": 1,
@@ -135,7 +163,7 @@ def fetch_matches_by_post():
 
     for base_api in API_DOMAINS:
         url = f"{base_api}/matches/graph"
-        for page in range(1, 4):  # Quét tối đa 3 trang
+        for page in range(1, 4):
             payload["page"] = page
             try:
                 res = session.post(url, headers=HEADERS, json=payload, timeout=10, verify=False)
@@ -147,6 +175,9 @@ def fetch_matches_by_post():
                             m_id = item.get("id")
                             if m_id and m_id not in seen_ids:
                                 seen_ids.add(m_id)
+                                # Lấy thêm chi tiết trận đấu để bóc tách luồng HD1, HD2...
+                                detail = fetch_match_detail(session, base_api, m_id)
+                                item["_detail"] = detail
                                 all_matches.append(item)
                         print(f" -> Lấy thành công Page {page} từ {base_api} ({len(data)} trận)")
                     else:
@@ -172,8 +203,11 @@ def build_m3u(matches):
         if not isinstance(item, dict):
             continue
 
-        dt_vn = parse_vietnam_datetime(item.get("start_date"))
-        streams = extract_all_streams(item)
+        # Chuyển đổi về Múi giờ Việt Nam GMT+7
+        dt_vn = parse_and_convert_to_vn_time(item.get("start_date"))
+        detail_item = item.get("_detail")
+        streams = extract_all_streams(item, detail_item)
+        
         if not streams:
             continue
 
@@ -205,10 +239,9 @@ def build_m3u(matches):
             
             quality_str = str(st.get("name") or "").strip()
             quality_tag = f" ({quality_str})" if quality_str else ""
-
             geo_tag = " [geo]" if st.get("is_geo") else ""
 
-            # Cấu trúc tiêu đề chuẩn như hình: 17:00 01/10 ⚽ Japan vs Ecuador (LÝ LA LÀNG) [geo]
+            # Định dạng: 07:00 01/10 ⚽ Argentina vs Bolivia (LÝ LONG) (FHD) [geo]
             display_title = f"{formatted_time} {icon} {match_name}{blv_tag}{quality_tag}{geo_tag}".strip()
             display_title = re.sub(r'\s+', ' ', display_title)
 
@@ -225,7 +258,7 @@ def build_m3u(matches):
     return "\n".join(m3u_lines), total_channels
 
 def main():
-    print("=== Bắt đầu cào dữ liệu Phá Làng TV via POST API ===")
+    print("=== Bắt đầu cào dữ liệu Phá Làng TV (GMT+7 & Full Streams) ===")
     matches = fetch_matches_by_post()
     print(f"Tổng số trận lấy được: {len(matches)}")
 
@@ -238,3 +271,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+    
