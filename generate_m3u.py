@@ -2,7 +2,7 @@ import requests
 import json
 import re
 import os
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 
 # Cấu hình API Phá Làng TV
 API_URL = "https://api.plapi202624081158.com/matches/graph"
@@ -27,6 +27,11 @@ SPORT_ICONS = {
     "SNOOKER": "🎱", "BOXING": "🥊",
     "MMA": "🥊", "ESPORTS": "🎮", "RACING": "🏎️"
 }
+
+def get_now_vietnam():
+    """Lấy thời gian hiện tại theo múi giờ Việt Nam (UTC+7)"""
+    vn_tz = timezone(timedelta(hours=7))
+    return datetime.now(vn_tz).replace(tzinfo=None)
 
 def parse_vietnam_datetime(date_str):
     """Chuyển đổi chuỗi ngày giờ API về object datetime theo múi giờ Việt Nam (UTC+7)"""
@@ -64,13 +69,27 @@ def is_match_ended(item, dt_vn):
     if item.get("is_ended") or item.get("status") in ["ended", "finished", "3", 3]:
         return True
     
-    # Nếu không phải live và thời gian bắt đầu đã trôi qua quá 3 tiếng -> coi như đã xong
-    now_vn = datetime.now() + timedelta(hours=7)
+    now_vn = get_now_vietnam()
     if not item.get("is_live") and dt_vn:
+        # Nếu trận không live và đã trôi qua hơn 3 tiếng -> coi như đã xong
         if now_vn - dt_vn > timedelta(hours=3):
             return True
             
     return False
+
+def is_today_or_tomorrow(dt_vn, is_live=False):
+    """Kiểm tra trận đấu có thuộc Hôm Nay hoặc Ngày Mai hay không"""
+    if is_live:
+        return True
+    if not dt_vn:
+        return False
+
+    now_vn = get_now_vietnam()
+    today_date = now_vn.date()
+    tomorrow_date = today_date + timedelta(days=1)
+
+    match_date = dt_vn.date()
+    return match_date in (today_date, tomorrow_date)
 
 def extract_all_streams(item):
     """Trích xuất đầy đủ tất cả các luồng phát / server phụ / link M3U8"""
@@ -130,7 +149,7 @@ def extract_all_streams(item):
     return streams
 
 def fetch_all_matches():
-    """Quét toàn bộ danh sách trận đấu từ nhiều nguồn API khác nhau"""
+    """Quét danh sách trận đấu từ API"""
     all_matches = []
     seen_ids = set()
 
@@ -147,19 +166,18 @@ def fetch_all_matches():
                     count += 1
         return count
 
-    # 1. Cào trực tiếp từ các Endpoint Live / Hot / Today
+    # 1. Endpoint Live / Hot / Today
     for ep in ["/live", "/hot", "/today"]:
         try:
             res = requests.get(f"{API_BASE}{ep}", headers=HEADERS, timeout=10)
             if res.status_code == 200:
                 d = res.json().get("data", [])
-                added = add_items(d)
-                print(f"Lấy từ endpoint {ep}: +{added} trận")
+                add_items(d)
         except Exception:
             pass
 
-    # 2. Cào Graph API ưu tiên các trận đang Trực Tiếp (order_desc: is_live)
-    for page in range(1, 6):
+    # 2. Graph API (Trận Live)
+    for page in range(1, 4):
         payload = {
             "limit": 100,
             "page": page,
@@ -171,16 +189,14 @@ def fetch_all_matches():
             res = requests.post(API_URL, json=payload, headers=HEADERS, timeout=15)
             if res.status_code == 200:
                 data = res.json().get("data", [])
-                added = add_items(data)
-                print(f"Lấy từ Graph API (Ưu tiên Live) Trang {page}: +{added} trận")
+                add_items(data)
                 if len(data) < 100:
                     break
-        except Exception as e:
-            print(f"Lỗi Graph API (Live) Trang {page}: {e}")
+        except Exception:
             break
 
-    # 3. Cào Graph API theo thời gian thi đấu (order_asc: start_date)
-    for page in range(1, 6):
+    # 3. Graph API (Thời gian)
+    for page in range(1, 5):
         payload = {
             "limit": 100,
             "page": page,
@@ -192,12 +208,10 @@ def fetch_all_matches():
             res = requests.post(API_URL, json=payload, headers=HEADERS, timeout=15)
             if res.status_code == 200:
                 data = res.json().get("data", [])
-                added = add_items(data)
-                print(f"Lấy từ Graph API (Thời gian) Trang {page}: +{added} trận")
+                add_items(data)
                 if len(data) < 100:
                     break
-        except Exception as e:
-            print(f"Lỗi Graph API (Thời gian) Trang {page}: {e}")
+        except Exception:
             break
 
     return all_matches
@@ -215,9 +229,14 @@ def build_m3u(matches):
             continue
 
         dt_vn = parse_vietnam_datetime(item.get("start_date"))
+        is_live = bool(item.get("is_live"))
 
-        # Bỏ qua các trận đã hết giờ thi đấu
+        # 1. Bỏ qua các trận đã kết thúc
         if is_match_ended(item, dt_vn):
+            continue
+
+        # 2. Chỉ giữ lại trận đấu diễn ra HÔM NAY hoặc NGÀY MAI (hoặc đang LIVE)
+        if not is_today_or_tomorrow(dt_vn, is_live):
             continue
 
         streams = extract_all_streams(item)
@@ -235,8 +254,6 @@ def build_m3u(matches):
         else:
             continue
 
-        is_live = bool(item.get("is_live"))
-
         processed_matches.append({
             "item": item,
             "match_name": match_name,
@@ -245,7 +262,7 @@ def build_m3u(matches):
             "streams": streams
         })
 
-    # SẮP XẾP: Trận đang LIVE (🟢) đưa lên đầu danh sách, tiếp theo là trận sắp đá (🟡)
+    # Sắp xếp: Ưu tiên trận LIVE (🟢) lên đầu, tiếp theo là trận sắp đá (🟡)
     processed_matches.sort(
         key=lambda x: (
             0 if x["is_live"] else 1,
@@ -294,20 +311,19 @@ def build_m3u(matches):
     return "\n".join(m3u_lines)
 
 def main():
-    print("Đang cào dữ liệu toàn bộ các trận đấu từ Phá Làng TV...")
+    print("Đang cào dữ liệu trận đấu (Hôm nay & Ngày mai) từ Phá Làng TV...")
     matches = fetch_all_matches()
     
     if not matches:
         print("Không lấy được dữ liệu. Giữ nguyên file cũ để không gián đoạn dịch vụ.")
         return
 
-    print(f"==> Tổng số trận đấu hợp lệ thu được: {len(matches)}")
     m3u_content = build_m3u(matches)
     
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         f.write(m3u_content)
         
-    print(f"Đã xuất thành công toàn bộ vào file: {OUTPUT_FILE}")
+    print(f"Đã xuất thành công danh sách M3U vào file: {OUTPUT_FILE}")
 
 if __name__ == "__main__":
     main()
