@@ -7,6 +7,7 @@ from datetime import datetime, timedelta
 # Cấu hình API Phá Làng TV
 API_URL = "https://api.plapi202624081158.com/matches/graph"
 OUTPUT_FILE = "phalang.m3u"
+GROUP_TITLE = "Phá Làng TV"  # Gom tất cả trận đấu vào danh mục này
 
 HEADERS = {
     "Accept": "application/json, text/plain, */*",
@@ -80,42 +81,61 @@ def is_youth_match(item):
 
 def extract_all_streams(item):
     """
-    Trích xuất toàn bộ luồng phát (chính & phụ như HD1, HD2, FHD...)
+    Trích xuất toàn bộ luồng phát (chính, phụ, các kênh BLV khác nhau)
     """
     streams = []
     seen_urls = set()
+    default_blv = (item.get("blv") or "").strip()
 
-    # 1. Luồng chính
-    main_url = item.get("source_live")
-    if not main_url and item.get("stream_key"):
-        main_url = f"https://lilive1.eu.cc/live/{item['stream_key']}/playlist.m3u8"
-    
-    if main_url:
-        streams.append({"name": "", "url": main_url})
-        seen_urls.add(main_url)
-
-    # 2. Các luồng phụ/server khác
+    # 1. Quét danh sách các server/luồng phát từ API
     extra_servers = (
         item.get("servers") or 
         item.get("streams") or 
         item.get("sources") or 
-        item.get("play_urls") or []
+        item.get("play_urls") or 
+        item.get("links") or []
     )
     
-    for idx, s in enumerate(extra_servers, start=1):
-        s_url = None
-        s_name = f"HD{idx}"
-        
-        if isinstance(s, dict):
-            s_url = s.get("url") or s.get("source") or s.get("link") or s.get("m3u8")
-            s_name = s.get("name") or s.get("label") or s.get("title") or f"HD{idx}"
-        elif isinstance(s, str):
-            s_url = s
-
-        if s_url and s_url not in seen_urls:
-            streams.append({"name": f"[{s_name}]", "url": s_url})
-            seen_urls.add(s_url)
+    if isinstance(extra_servers, list):
+        for idx, s in enumerate(extra_servers, start=1):
+            s_url = None
+            s_name = ""
+            s_blv = default_blv
+            is_geo = False
             
+            if isinstance(s, dict):
+                s_url = s.get("url") or s.get("source") or s.get("link") or s.get("m3u8") or s.get("play_url")
+                s_name = s.get("name") or s.get("label") or s.get("title") or s.get("quality") or ""
+                if s.get("blv") or s.get("commentator"):
+                    s_blv = (s.get("blv") or s.get("commentator") or "").strip()
+                if s.get("is_geo") or s.get("geo") or "geo" in str(s_url).lower():
+                    is_geo = True
+            elif isinstance(s, str):
+                s_url = s
+
+            if s_url and s_url not in seen_urls:
+                streams.append({
+                    "name": s_name,
+                    "url": s_url,
+                    "blv": s_blv,
+                    "is_geo": is_geo
+                })
+                seen_urls.add(s_url)
+
+    # 2. Quét luồng chính nếu chưa nằm trong danh sách server
+    main_url = item.get("source_live")
+    if not main_url and item.get("stream_key"):
+        main_url = f"https://lilive1.eu.cc/live/{item['stream_key']}/playlist.m3u8"
+    
+    if main_url and main_url not in seen_urls:
+        streams.insert(0, {
+            "name": "",
+            "url": main_url,
+            "blv": default_blv,
+            "is_geo": "geo" in str(main_url).lower() or bool(item.get("is_geo"))
+        })
+        seen_urls.add(main_url)
+
     return streams
 
 def fetch_matches():
@@ -144,13 +164,11 @@ def build_m3u(matches):
         if is_youth_match(item):
             continue
 
-        # An toàn hóa các trường chuỗi bằng cách ép về chuỗi rỗng nếu giá trị là None (null)
         team1 = (item.get("team_1") or "").strip()
         team2 = (item.get("team_2") or "").strip()
         title_raw = (item.get("title") or "").strip()
-        league = item.get("league") or "Phá Làng TV"
         desc = (item.get("desc") or "FOOTBALL").upper()
-        blv = (item.get("blv") or "").strip()
+        main_blv = (item.get("blv") or "").strip()
         logo = item.get("team_1_logo") or item.get("team_2_logo") or ""
         start_date = item.get("start_date") or ""
         is_live = item.get("is_live", False)
@@ -161,16 +179,29 @@ def build_m3u(matches):
 
         formatted_time = parse_vietnam_time(start_date)
         icon = SPORT_ICONS.get(desc, "⚽")
-        status_symbol = "🟢" if is_live else "⏳"
+        status_symbol = "🟢" if is_live else "🟡"
         
         match_name = f"{team1} vs {team2}" if (team1 and team2) else title_raw
-        blv_text = f" ({blv})" if blv else ""
 
         for st in streams:
-            quality_tag = f" {st['name']}" if st['name'] else ""
-            display_title = f"{status_symbol} {formatted_time} {icon} {match_name}{blv_text}{quality_tag}"
+            # 1. Tên Bình luận viên (In hoa theo mẫu)
+            blv_name = st.get("blv") or main_blv
+            blv_tag = f"({blv_name.upper()})" if blv_name else "(Nhà đài)"
 
-            m3u_lines.append(f'#EXTINF:-1 tvg-id="{item.get("id") or ""}" tvg-name="{display_title}" tvg-logo="{logo}" group-title="{league}", {display_title}')
+            # 2. Nhãn chất lượng / Server (vd: HD2)
+            quality_str = st.get("name", "").strip()
+            quality_tag = f" ({quality_str})" if quality_str else ""
+
+            # 3. Thẻ [geo]
+            geo_tag = " [geo]" if st.get("is_geo") else ""
+
+            # Tên kênh hiển thị: 🟡 23:00 30/09 ⚽ Eritrea vs South Africa (LÝ LINH LỰC) (HD2) [geo]
+            display_title = f"{status_symbol} {formatted_time} {icon} {match_name} {blv_tag}{quality_tag}{geo_tag}"
+
+            # Tất cả các kênh đều gắn group-title="Phá Làng TV"
+            m3u_lines.append(
+                f'#EXTINF:-1 tvg-id="{item.get("id") or ""}" tvg-name="{display_title}" tvg-logo="{logo}" group-title="{GROUP_TITLE}", {display_title}'
+            )
             m3u_lines.append('#EXTVLCOPT:http-user-agent=Mozilla/5.0')
             m3u_lines.append('#EXTVLCOPT:http-referrer=https://phalang1.tv/')
             m3u_lines.append(st["url"])
