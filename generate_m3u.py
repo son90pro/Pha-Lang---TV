@@ -46,7 +46,7 @@ def parse_vietnam_datetime(date_str):
         clean_str = clean_str.strip()
             
         dt = None
-        for fmt in ("%Y-%m-%d %H:%M:%S", "%Y-%m-%d %H:%M"):
+        for fmt in ("%Y-%m-%d %H:%M:%S", "%Y-%m-%d %H:%M", "%Y-%m-%d"):
             try:
                 dt = datetime.strptime(clean_str, fmt)
                 break
@@ -65,20 +65,15 @@ def format_time_str(dt):
     return dt.strftime("%H:%M %d/%m")
 
 def is_match_past_or_ended(item, dt_vn):
-    """
-    Kiểm tra xem trận đấu đã kết thúc hoặc đã trôi qua giờ đá chưa.
-    """
+    """Kiểm tra xem trận đấu đã kết thúc hoặc trôi qua quá lâu chưa"""
     is_live = bool(item.get("is_live"))
     
-    # 1. Đang LIVE -> Giữ lại 100%
     if is_live:
         return False
 
-    # 2. Đã đánh dấu kết thúc trong API -> Loại bỏ
     if item.get("is_ended") or item.get("status") in ["ended", "finished", "3", 3]:
         return True
     
-    # 3. Trận không LIVE và đã trôi qua quá 15 phút so với giờ bắt đầu -> Loại bỏ (đã đá xong hoặc hủy)
     if dt_vn:
         now_vn = get_now_vietnam()
         if dt_vn < (now_vn - timedelta(minutes=15)):
@@ -86,21 +81,20 @@ def is_match_past_or_ended(item, dt_vn):
             
     return False
 
-def is_today_or_tomorrow(dt_vn, is_live=False):
-    """Kiểm tra trận đấu có thuộc Hôm Nay hoặc Ngày Mai hay không"""
+def is_valid_schedule_date(dt_vn, is_live=False):
+    """Giữ lại tất cả các trận sắp diễn ra trong vòng 3 ngày tới"""
     if is_live:
         return True
     if not dt_vn:
         return False
 
     now_vn = get_now_vietnam()
-    today_date = now_vn.date()
-    tomorrow_date = today_date + timedelta(days=1)
-
-    return dt_vn.date() in (today_date, tomorrow_date)
+    max_future_date = now_vn + timedelta(days=3)
+    
+    return (dt_vn >= now_vn - timedelta(minutes=15)) and (dt_vn <= max_future_date)
 
 def extract_all_streams(item):
-    """Trích xuất đầy đủ tất cả các luồng phát / server phụ / link M3U8"""
+    """Trích xuất đầy đủ tất cả các luồng phát, tên chất lượng (FHD, HD, SD...) và nhãn [geo]"""
     streams = []
     seen_urls = set()
     default_blv = (item.get("blv") or item.get("commentator") or "").strip()
@@ -119,15 +113,18 @@ def extract_all_streams(item):
         
         if isinstance(s, dict):
             s_url = s.get("url") or s.get("source") or s.get("link") or s.get("m3u8") or s.get("play_url") or s.get("stream_url")
-            s_name = s.get("name") or s.get("label") or s.get("title") or s.get("quality") or ""
+            s_name = s.get("name") or s.get("label") or s.get("title") or s.get("quality") or s.get("type") or ""
             if s.get("blv") or s.get("commentator"):
                 s_blv = (s.get("blv") or s.get("commentator") or "").strip()
-            if s.get("is_geo") or s.get("geo") or "geo" in str(s_url).lower():
+            if s.get("is_geo") or s.get("geo") or "geo" in str(s_url).lower() or "geo" in str(s_name).lower():
                 is_geo = True
         elif isinstance(s, str):
             s_url = s
 
         if s_url and str(s_url).startswith("http") and s_url not in seen_urls:
+            if "geo" in str(s_url).lower():
+                is_geo = True
+
             streams.append({
                 "name": str(s_name).strip(),
                 "url": str(s_url).strip(),
@@ -136,18 +133,19 @@ def extract_all_streams(item):
             })
             seen_urls.add(s_url)
 
+    # Nguồn chính nếu chưa có trong danh sách
     main_urls = [
-        item.get("source_live"),
-        item.get("stream_url"),
-        item.get("m3u8")
+        ("", item.get("source_live")),
+        ("", item.get("stream_url")),
+        ("", item.get("m3u8"))
     ]
     if item.get("stream_key"):
-        main_urls.append(f"https://lilive1.eu.cc/live/{item['stream_key']}/playlist.m3u8")
+        main_urls.append(("", f"https://lilive1.eu.cc/live/{item['stream_key']}/playlist.m3u8"))
 
-    for m_url in main_urls:
+    for label, m_url in main_urls:
         if m_url and str(m_url).startswith("http") and m_url not in seen_urls:
             streams.insert(0, {
-                "name": "",
+                "name": label,
                 "url": str(m_url).strip(),
                 "blv": default_blv,
                 "is_geo": "geo" in str(m_url).lower() or bool(item.get("is_geo"))
@@ -157,7 +155,7 @@ def extract_all_streams(item):
     return streams
 
 def fetch_all_matches():
-    """Quét danh sách trận đấu từ API"""
+    """Quét toàn bộ danh sách trận đấu từ nhiều API endpoint & phân trang sâu hơn"""
     all_matches = []
     seen_ids = set()
 
@@ -174,37 +172,21 @@ def fetch_all_matches():
                     count += 1
         return count
 
-    # 1. Endpoint Live / Hot / Today
-    for ep in ["/live", "/hot", "/today"]:
+    # 1. Các Endpoints tĩnh
+    endpoints = ["", "/live", "/hot", "/today", "/upcoming", "/schedule"]
+    for ep in endpoints:
         try:
             res = requests.get(f"{API_BASE}{ep}", headers=HEADERS, timeout=10)
             if res.status_code == 200:
-                d = res.json().get("data", [])
-                add_items(d)
+                res_json = res.json()
+                d = res_json.get("data") if isinstance(res_json, dict) else res_json
+                if isinstance(d, list):
+                    add_items(d)
         except Exception:
             pass
 
-    # 2. Graph API (Trận Live)
-    for page in range(1, 4):
-        payload = {
-            "limit": 100,
-            "page": page,
-            "order_desc": "is_live",
-            "queries": [],
-            "query_or": True
-        }
-        try:
-            res = requests.post(API_URL, json=payload, headers=HEADERS, timeout=15)
-            if res.status_code == 200:
-                data = res.json().get("data", [])
-                add_items(data)
-                if len(data) < 100:
-                    break
-        except Exception:
-            break
-
-    # 3. Graph API (Thời gian)
-    for page in range(1, 5):
+    # 2. Graph API - Phân trang sâu 10 trang để lấy đầy đủ các trận ngày hôm sau
+    for page in range(1, 11):
         payload = {
             "limit": 100,
             "page": page,
@@ -217,7 +199,7 @@ def fetch_all_matches():
             if res.status_code == 200:
                 data = res.json().get("data", [])
                 add_items(data)
-                if len(data) < 100:
+                if not data or len(data) < 100:
                     break
         except Exception:
             break
@@ -239,12 +221,10 @@ def build_m3u(matches):
         dt_vn = parse_vietnam_datetime(item.get("start_date"))
         is_live = bool(item.get("is_live"))
 
-        # 1. Loại bỏ các trận đã kết thúc hoặc đã trôi qua thời gian thi đấu mà không LIVE
         if is_match_past_or_ended(item, dt_vn):
             continue
 
-        # 2. Chỉ giữ lại trận thuộc Hôm nay hoặc Ngày mai (hoặc đang LIVE)
-        if not is_today_or_tomorrow(dt_vn, is_live):
+        if not is_valid_schedule_date(dt_vn, is_live):
             continue
 
         streams = extract_all_streams(item)
@@ -270,7 +250,7 @@ def build_m3u(matches):
             "streams": streams
         })
 
-    # Sắp xếp: Ưu tiên trận LIVE (🟢) lên đầu, tiếp theo là các trận sắp diễn ra (🟡) theo thời gian
+    # Sắp xếp: Ưu tiên LIVE lên đầu, sau đó theo thời gian tăng dần
     processed_matches.sort(
         key=lambda x: (
             0 if x["is_live"] else 1,
@@ -296,18 +276,26 @@ def build_m3u(matches):
                 icon = val
                 break
 
-        status_symbol = "🟢" if is_live else "🟡"
+        status_symbol = "🟢" if is_live else ""
 
         for st in streams:
             blv_name = st.get("blv") or main_blv
             blv_tag = f"({blv_name.upper()})" if blv_name else "(Nhà đài)"
 
+            # Tên luồng / Chất lượng (HD, HD2, FHD, SD...)
             quality_str = st.get("name", "").strip()
-            quality_tag = f" ({quality_str})" if quality_str else ""
+            quality_tag = f" ({quality_str})" if quality_str and quality_str.upper() not in ["MẶC ĐỊNH", "DEFAULT"] else ""
 
+            # Nhãn [geo]
             geo_tag = " [geo]" if st.get("is_geo") else ""
 
-            display_title = f"{status_symbol} {formatted_time} {icon} {match_name} {blv_tag}{quality_tag}{geo_tag}".strip()
+            # Ghép tiêu đề chuẩn theo hình mẫu
+            if status_symbol:
+                display_title = f"{status_symbol} {formatted_time} {icon} {match_name} {blv_tag}{quality_tag}{geo_tag}".strip()
+            else:
+                display_title = f"{formatted_time} {icon} {match_name} {blv_tag}{quality_tag}{geo_tag}".strip()
+
+            display_title = re.sub(r'\s+', ' ', display_title)
 
             m3u_lines.append(
                 f'#EXTINF:-1 tvg-id="{item.get("id") or ""}" tvg-name="{display_title}" tvg-logo="{logo}" group-title="{GROUP_TITLE}", {display_title}'
