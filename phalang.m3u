@@ -1,2 +1,42 @@
 #EXTM3U url-tvg="" tvg-shift="0"
-# Cap nhat tu dong Pha Lang TV M3U Playlist
+# Cập nhật tự động Phá Làng TV M3U Playlist
+#EXTINF:-1 tvg-id="phalang_1" tvg-name="🟢 Kênh Trực Tiếp Phá Làng 01 (Server Backup)" group-title="Phá Làng TV", 🟢 Kênh Trực Tiếp Phá Làng 01 (Server Backup)
+#EXTVLCOPT:http-user-agent=Mozilla/5.0
+#EXTVLCOPT:http-referrer=https://phalang1.tv/
+https://lilive1.eu.cc/live/phalang1/playlist.m3u8
+#EXTINF:-1 tvg-id="phalang_2" tvg-name="🟢 Kênh Trực Tiếp Phá Làng 02 (Server Backup)" group-title="Phá Làng TV", 🟢 Kênh Trực Tiếp Phá Làng 02 (Server Backup)
+#EXTVLCOPT:http-user-agent=Mozilla/5.0
+#EXTVLCOPT:http-referrer=https://phalang1.tv/
+https://lilive1.eu.cc/live/phalang2/playlist.m3u8
+#EXTINF:-1 tvg-id="phalang_3" tvg-name="🟢 Kênh Trực Tiếp Phá Làng 03 (Server Backup)" group-title="Phá Làng TV", 🟢 Kênh Trực Tiếp Phá Làng 03 (Server Backup)
+#EXTVLCOPT:http-user-agent=Mozilla/5.0
+#EXTVLCOPT:http-referrer=https://phalang1.tv/
+https://lilive1.eu.cc/live/phalang3/playlist.m3u8
+#EXTINF:-1 tvg-id="phalang_4" tvg-name="🟢 Kênh Trực Tiếp Phá Làng 04 (Server Backup)" group-title="Phá Làng TV", 🟢 Kênh Trực Tiếp Phá Làng 04 (Server Backup)
+#EXTVLCOPT:http-user-agent=Mozilla/5.0
+#EXTVLCOPT:http-referrer=https://phalang1.tv/
+https://lilive1.eu.cc/live/phalang4/playlist.m3u8
+#EXTINF:-1 tvg-id="phalang_5" tvg-name="🟢 Kênh Trực Tiếp Phá Làng 05 (Server Backup)" group-title="Phá Làng TV", 🟢 Kênh Trực Tiếp Phá Làng 05 (Server Backup)
+#EXTVLCOPT:http-user-agent=Mozilla/5.0
+#EXTVLCOPT:http-referrer=https://phalang1.tv/
+https://lilive1.eu.cc/live/phalang5/playlist.m3u8
+#EXTINF:-1 tvg-id="phalang_6" tvg-name="🟢 Kênh Trực Tiếp Phá Làng 06 (Server Backup)" group-title="Phá Làng TV", 🟢 Kênh Trực Tiếp Phá Làng 06 (Server Backup)
+#EXTVLCOPT:http-user-agent=Mozilla/5.0
+#EXTVLCOPT:http-referrer=https://phalang1.tv/
+https://lilive1.eu.cc/live/phalang6/playlist.m3u8
+#EXTINF:-1 tvg-id="phalang_7" tvg-name="🟢 Kênh Trực Tiếp Phá Làng 07 (Server Backup)" group-title="Phá Làng TV", 🟢 Kênh Trực Tiếp Phá Làng 07 (Server Backup)
+#EXTVLCOPT:http-user-agent=Mozilla/5.0
+#EXTVLCOPT:http-referrer=https://phalang1.tv/
+https://lilive1.eu.cc/live/phalang7/playlist.m3u8
+#EXTINF:-1 tvg-id="phalang_8" tvg-name="🟢 Kênh Trực Tiếp Phá Làng 08 (Server Backup)" group-title="Phá Làng TV", 🟢 Kênh Trực Tiếp Phá Làng 08 (Server Backup)
+#EXTVLCOPT:http-user-agent=Mozilla/5.0
+#EXTVLCOPT:http-referrer=https://phalang1.tv/
+https://lilive1.eu.cc/live/phalang8/playlist.m3u8
+#EXTINF:-1 tvg-id="phalang_9" tvg-name="🟢 Kênh Trực Tiếp Phá Làng 09 (Server Backup)" group-title="Phá Làng TV", 🟢 Kênh Trực Tiếp Phá Làng 09 (Server Backup)
+#EXTVLCOPT:http-user-agent=Mozilla/5.0
+#EXTVLCOPT:http-referrer=https://phalang1.tv/
+https://lilive1.eu.cc/live/phalang9/playlist.m3u8
+#EXTINF:-1 tvg-id="phalang_10" tvg-name="🟢 Kênh Trực Tiếp Phá Làng 10 (Server Backup)" group-title="Phá Làng TV", 🟢 Kênh Trực Tiếp Phá Làng 10 (Server Backup)
+#EXTVLCOPT:http-user-agent=Mozilla/5.0
+#EXTVLCOPT:http-referrer=https://phalang1.tv/
+https://lilive1.eu.cc/live/phalang10/playlist.m3u8
