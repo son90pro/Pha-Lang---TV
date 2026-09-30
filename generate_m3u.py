@@ -7,15 +7,7 @@ import urllib3
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
-# Danh sách API & Web Domain cập nhật mới nhất
-API_DOMAINS = [
-    "https://api.phalang.tv",
-    "https://api.phalang1.tv",
-    "https://api.plapi202624081158.com",
-    "https://api.phalang.net",
-    "https://api.phalang.live"
-]
-
+# Danh sách URL Web & API
 WEB_URLS = [
     "https://phalang1.tv",
     "https://phalang.tv",
@@ -23,19 +15,31 @@ WEB_URLS = [
     "https://phalang.net"
 ]
 
+API_DOMAINS = [
+    "https://api.phalang.tv",
+    "https://api.phalang1.tv",
+    "https://api.plapi202624081158.com",
+    "https://api.phalang.net"
+]
+
 OUTPUT_FILE = "phalang.m3u"
 GROUP_TITLE = "Phá Làng TV"
 
-# Headers giả lập thiết bị di động Việt Nam
+# Headers đóng vai trình duyệt Chrome Việt Nam
 HEADERS = {
-    "User-Agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Mobile Safari/537.36",
-    "Accept": "application/json, text/plain, */*",
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36",
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8",
     "Accept-Language": "vi-VN,vi;q=0.9,en-US;q=0.8,en;q=0.7",
-    "Origin": "https://phalang1.tv",
-    "Referer": "https://phalang1.tv/",
-    "Sec-Fetch-Dest": "empty",
-    "Sec-Fetch-Mode": "cors",
-    "Sec-Fetch-Site": "cross-site"
+    "Cache-Control": "no-cache",
+    "Pragma": "no-cache",
+    "Sec-Ch-Ua": '"Chromium";v="128", "Not=A?Brand";v="24", "Google Chrome";v="128"',
+    "Sec-Ch-Ua-Mobile": "?0",
+    "Sec-Ch-Ua-Platform": '"Windows"',
+    "Sec-Fetch-Dest": "document",
+    "Sec-Fetch-Mode": "navigate",
+    "Sec-Fetch-Site": "none",
+    "Sec-Fetch-User": "?1",
+    "Upgrade-Insecure-Requests": "1"
 }
 
 SPORT_ICONS = {
@@ -146,40 +150,38 @@ def extract_all_streams(item):
 
     return streams
 
-def unpack_api_data(res_json):
-    if isinstance(res_json, list):
-        return res_json
-    if isinstance(res_json, dict):
-        d = res_json.get("data")
-        if isinstance(d, list):
-            return d
-        if isinstance(d, dict):
-            for sub_key in ["items", "rows", "matches", "list", "data"]:
-                if isinstance(d.get(sub_key), list):
-                    return d.get(sub_key)
-        for key in ["items", "rows", "matches", "list"]:
-            if isinstance(res_json.get(key), list):
-                return res_json.get(key)
-    return []
+def recursive_search_matches(data, found_matches):
+    """Tìm kiếm tất cả các đối tượng trận đấu trong JSON lồng nhau"""
+    if isinstance(data, dict):
+        if "team_1" in data or "home_team" in data or ("id" in data and "stream_key" in data):
+            found_matches.append(data)
+            return
+        for v in data.values():
+            recursive_search_matches(v, found_matches)
+    elif isinstance(data, list):
+        for item in data:
+            recursive_search_matches(item, found_matches)
 
 def fetch_from_web_page():
     matches = []
+    session = requests.Session()
+    
     for web_url in WEB_URLS:
         try:
-            res = requests.get(web_url, headers=HEADERS, timeout=10, verify=False)
+            print(f"Thử cào web: {web_url}")
+            res = session.get(web_url, headers=HEADERS, timeout=12, verify=False)
             if res.status_code == 200:
                 match = re.search(r'<script id="__NEXT_DATA__" type="application/json">(.*?)</script>', res.text, re.DOTALL)
                 if match:
-                    json_data = json.loads(match.group(1))
-                    props = json_data.get("props", {}).get("pageProps", {})
-                    for key in ["matches", "matchList", "todayMatches", "liveMatches", "initialState", "data"]:
-                        val = props.get(key)
-                        if isinstance(val, list):
-                            matches.extend(val)
-                        elif isinstance(val, dict):
-                            for sub in ["matches", "data", "rows"]:
-                                if isinstance(val.get(sub), list):
-                                    matches.extend(val.get(sub))
+                    try:
+                        json_data = json.loads(match.group(1))
+                        temp_matches = []
+                        recursive_search_matches(json_data, temp_matches)
+                        if temp_matches:
+                            matches.extend(temp_matches)
+                            print(f" -> Lấy thành công {len(temp_matches)} trận từ __NEXT_DATA__")
+                    except Exception as e:
+                        print(f" -> Lỗi giải mã JSON __NEXT_DATA__: {e}")
 
                 if not matches:
                     json_matches = re.findall(r'(\{"id":".*?"team_1":.*?\})', res.text)
@@ -190,52 +192,57 @@ def fetch_from_web_page():
                             pass
 
                 if matches:
-                    print(f" -> Cào Web thành công {len(matches)} trận từ: {web_url}")
                     break
+            else:
+                print(f" -> Response Code: {res.status_code}")
         except Exception as e:
-            print(f" -> Lỗi cào Web {web_url}: {e}")
+            print(f" -> Lỗi kết nối {web_url}: {e}")
+            
+    return matches
+
+def fetch_from_api():
+    matches = []
+    session = requests.Session()
+    api_headers = HEADERS.copy()
+    api_headers["Accept"] = "application/json, text/plain, */*"
+
+    for base_api in API_DOMAINS:
+        for ep in ["/matches/live", "/matches/today", "/matches/upcoming", "/matches"]:
+            url = f"{base_api}{ep}"
+            try:
+                res = session.get(url, headers=api_headers, timeout=6, verify=False)
+                if res.status_code == 200:
+                    data = res.json()
+                    temp = []
+                    recursive_search_matches(data, temp)
+                    if temp:
+                        matches.extend(temp)
+                        print(f" -> API thành công {url}: {len(temp)} trận")
+            except Exception:
+                pass
+        if matches:
+            break
     return matches
 
 def fetch_all_matches():
     all_matches = []
     seen_ids = set()
 
-    def add_items(data_list, source_name=""):
-        count = 0
-        if not isinstance(data_list, list):
-            return
-        for item in data_list:
-            if isinstance(item, dict):
-                m_id = item.get("id") or item.get("_id") or f"{item.get('title')}_{item.get('start_date')}"
-                if m_id not in seen_ids:
-                    seen_ids.add(m_id)
-                    all_matches.append(item)
-                    count += 1
-        if source_name and count > 0:
-            print(f" -> [{source_name}] Lấy {count} trận")
+    raw_matches = fetch_from_web_page()
+    if not raw_matches:
+        print("Cào Web không có dữ liệu, thử API...")
+        raw_matches = fetch_from_api()
 
-    for base_api in API_DOMAINS:
-        for ep in ["/matches/live", "/matches/today", "/matches/upcoming", "/matches/hot", "/matches"]:
-            url = f"{base_api}{ep}"
-            try:
-                res = requests.get(url, headers=HEADERS, timeout=6, verify=False)
-                if res.status_code == 200:
-                    add_items(unpack_api_data(res.json()), f"GET {ep}")
-            except Exception:
-                pass
-
-        if len(all_matches) > 0:
-            break
-
-    if not all_matches:
-        print("API bị chặn IP. Chuyển sang cào trực tiếp HTML Web...")
-        web_matches = fetch_from_web_page()
-        add_items(web_matches, "Web Scraper")
+    for item in raw_matches:
+        if isinstance(item, dict):
+            m_id = item.get("id") or item.get("_id") or f"{item.get('title')}_{item.get('start_date')}"
+            if m_id not in seen_ids:
+                seen_ids.add(m_id)
+                all_matches.append(item)
 
     return all_matches
 
 def generate_fallback_channels():
-    """Tạo kênh dự phòng trường hợp IP GitHub bị chặn hoàn toàn"""
     fallback_lines = []
     for i in range(1, 11):
         title = f"🟢 Kênh Trực Tiếp Phá Làng {i:02d} (Server Backup)"
@@ -331,7 +338,7 @@ def build_m3u(matches):
             total_channels += 1
 
     if total_channels == 0:
-        print("Không cào được trận nào do chặn IP. Khởi tạo danh sách luồng dự phòng Backup...")
+        print("Không có trận đấu khả thi. Chuyển sang danh sách Server Backup...")
         fb_content, fb_count = generate_fallback_channels()
         m3u_lines.append(fb_content)
         total_channels = fb_count
@@ -352,4 +359,4 @@ def main():
 
 if __name__ == "__main__":
     main()
-        
+    
