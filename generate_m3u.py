@@ -185,7 +185,6 @@ def fetch_from_web_page():
         try:
             res = requests.get(web_url, headers=HEADERS, timeout=12, verify=False)
             if res.status_code == 200:
-                # 1. Tìm __NEXT_DATA__
                 match = re.search(r'<script id="__NEXT_DATA__" type="application/json">(.*?)</script>', res.text, re.DOTALL)
                 if match:
                     json_data = json.loads(match.group(1))
@@ -199,7 +198,6 @@ def fetch_from_web_page():
                                 if isinstance(val.get(sub), list):
                                     matches.extend(val.get(sub))
                 
-                # 2. Bóc tách JSON đối tượng trận đấu nhúng trực tiếp trong HTML
                 if not matches:
                     json_matches = re.findall(r'(\{"id":".*?"team_1":.*?\})', res.text)
                     for jm in json_matches:
@@ -234,7 +232,6 @@ def fetch_all_matches():
         if source_name and count > 0:
             print(f" -> [{source_name}] Đã lấy {count} trận")
 
-    # 1. Thử cào từ các Endpoint API
     for base_api in API_DOMAINS:
         for ep in ["/matches", "/matches/live", "/matches/hot", "/matches/today", "/matches/upcoming"]:
             url = f"{base_api}{ep}"
@@ -245,7 +242,6 @@ def fetch_all_matches():
             except Exception:
                 pass
 
-        # Graph API
         graph_url = f"{base_api}/matches/graph"
         for page in range(1, 4):
             payload = {"limit": 100, "page": page, "order_asc": "start_date", "queries": [], "query_or": True}
@@ -262,7 +258,123 @@ def fetch_all_matches():
         if len(all_matches) > 0:
             break
 
-    # 2. Nếu API không trả dữ liệu (do bị chặn IP Cloudflare), chuyển sang cào trực tiếp trang Web
+    if not all_matches:
+        print("API trả về rỗng hoặc bị chặn IP. Đang chuyển sang cào trực tiếp từ trang web...")
+        web_matches = fetch_from_web_page()
+        add_items(web_matches, "Web Scraper")
+
+    return all_matches
+
+def build_m3u(matches):
+    m3u_lines = [
+        '#EXTM3U url-tvg="" tvg-shift="0"',
+        '# Cập nhật tự động Phá Làng TV M3U Playlist'
+    ]
+
+    processed_matches = []
+
+    for item in matches:
+        if not isinstance(item, dict):
+            continue
+
+        dt_vn = parse_vietnam_datetime(item.get("start_date") or item.get("time") or item.get("match_time"))
+        is_live = bool(item.get("is_live"))
+        is_ended = bool(item.get("is_ended")) or str(item.get("status")).lower() in ["ended", "finished", "3", "done"]
+
+        if is_ended:
+            continue
+
+        if not is_today_or_tomorrow(dt_vn, is_live):
+            continue
+
+        streams = extract_all_streams(item)
+        if not streams:
+            continue
+
+        team1 = (item.get("team_1") or item.get("home_team") or "").strip()
+        team2 = (item.get("team_2") or item.get("away_team") or "").strip()
+        title_raw = (item.get("title") or item.get("name") or "").strip()
+
+        if team1 and team2:
+            match_name = f"{team1} vs {team2}"
+        elif title_raw:
+            match_name = title_raw
+        else:
+            continue
+
+        processed_matches.append({
+            "item": item,
+            "match_name": match_name,
+            "dt_vn": dt_vn,
+            "is_live": is_live,
+            "streams": streams
+        })
+
+    processed_matches.sort(
+        key=lambda x: (
+            0 if x["is_live"] else 1,
+            x["dt_vn"] if x["dt_vn"] else datetime.max
+        )
+    )
+
+    total_channels = 0
+    for m in processed_matches:
+        item = m["item"]
+        match_name = m["match_name"]
+        is_live = m["is_live"]
+        streams = m["streams"]
+        dt_vn = m["dt_vn"]
+
+        desc = (item.get("desc") or item.get("category") or "FOOTBALL").strip().upper()
+        main_blv = (item.get("blv") or item.get("commentator") or item.get("mc") or "").strip()
+        logo = item.get("team_1_logo") or item.get("team_2_logo") or item.get("logo") or ""
+        formatted_time = format_time_str(dt_vn)
+
+        icon = "⚽"
+        for key, val in SPORT_ICONS.items():
+            if key in desc:
+                icon = val
+                break
+
+        status_symbol = "🟢" if is_live else "🟡"
+
+        for st in streams:
+            blv_name = st.get("blv") or main_blv
+            blv_tag = f"({blv_name.upper()})" if blv_name else "(Nhà đài)"
+
+            quality_str = st.get("name", "").strip()
+            quality_tag = f" ({quality_str})" if quality_str and quality_str.upper() not in ["MẶC ĐỊNH", "DEFAULT"] else ""
+
+            geo_tag = " [geo]" if st.get("is_geo") else ""
+
+            display_title = f"{status_symbol} {formatted_time} {icon} {match_name} {blv_tag}{quality_tag}{geo_tag}".strip()
+            display_title = re.sub(r'\s+', ' ', display_title)
+
+            m3u_lines.append(
+                f'#EXTINF:-1 tvg-id="{item.get("id") or ""}" tvg-name="{display_title}" tvg-logo="{logo}" group-title="{GROUP_TITLE}", {display_title}'
+            )
+            m3u_lines.append('#EXTVLCOPT:http-user-agent=Mozilla/5.0')
+            m3u_lines.append('#EXTVLCOPT:http-referrer=https://phalang1.tv/')
+            m3u_lines.append(st["url"])
+            total_channels += 1
+
+    return "\n".join(m3u_lines), total_channels
+
+def main():
+    print("=== Bắt đầu cào dữ liệu trận đấu Phá Làng TV ===")
+    matches = fetch_all_matches()
+    print(f"Tổng số trận lấy được: {len(matches)}")
+
+    m3u_content, total_channels = build_m3u(matches)
+    
+    with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
+        f.write(m3u_content)
+        
+    print(f"=== Đã xuất thành công {total_channels} luồng trận đấu vào file: {OUTPUT_FILE} ===")
+
+if __name__ == "__main__":
+    main()
+ sang cào trực tiếp trang Web
     if not all_matches:
         print("API trả về rỗng hoặc bị chặn IP. Đang chuyển sang cào trực tiếp từ trang web...")
         web_matches = fetch_from_web_page()
