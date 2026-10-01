@@ -1,7 +1,7 @@
 import json
 import os
 import re
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 import requests
 import urllib3
 
@@ -24,7 +24,20 @@ HEADERS = {
     "Referer": "https://phalang1.tv/"
 }
 
-# Cấu hình Phân nhóm (group-title) & Icon theo môn thể thao
+# Thứ tự ưu tiên hiển thị Nhóm (Bóng Đá xếp đầu tiên)
+GROUP_ORDER = [
+    "Bóng Đá",
+    "Bóng Chuyền",
+    "Bóng Rổ",
+    "Cầu Lông",
+    "Quần Vợt (Tennis)",
+    "Bida (Billiards)",
+    "Bóng Bàn",
+    "Thể Thao Điện Tử",
+    "Đua Xe",
+    "Thể Thao Khác"
+]
+
 SPORT_MAPPING = {
     "FOOTBALL": {"group": "Bóng Đá", "icon": "⚽"},
     "BONG DA": {"group": "Bóng Đá", "icon": "⚽"},
@@ -55,9 +68,6 @@ SPORT_MAPPING = {
 }
 
 def parse_and_convert_to_vn_time(date_val):
-    """
-    Chuyển đổi thời gian API (UTC/GMT+0) sang Múi giờ Việt Nam (GMT+7)
-    """
     if not date_val:
         return None
     try:
@@ -74,6 +84,7 @@ def parse_and_convert_to_vn_time(date_val):
                 pass
         
         if dt:
+            # Quy đổi UTC -> Múi giờ Việt Nam (GMT+7)
             return dt + timedelta(hours=7)
     except Exception:
         pass
@@ -85,19 +96,36 @@ def format_time_str(dt):
     return dt.strftime("%H:%M %d/%m")
 
 def get_sport_info(desc, title=""):
-    """
-    Xác định Group Category và Icon tương ứng cho từng môn thể thao
-    """
     text_check = f"{desc} {title}".upper()
     for key, info in SPORT_MAPPING.items():
         if key in text_check:
             return info["group"], info["icon"]
     return "Thể Thao Khác", "🏆"
 
+def is_valid_time_window(dt_vn):
+    """
+    Kiểm tra xem trận đấu có nằm trong khung thời gian cho phép:
+    - Đang diễn ra / Trận hôm nay / Trận ngày mai (GMT+7)
+    """
+    if not dt_vn:
+        return True
+    
+    # Lấy thời điểm hiện tại theo giờ VN (GMT+7)
+    tz_vn = timezone(timedelta(hours=7))
+    now_vn = datetime.now(tz_vn).replace(tzinfo=None)
+    
+    today_start = now_vn.replace(hour=0, minute=0, second=0, microsecond=0)
+    day_after_tomorrow_end = today_start + timedelta(days=2) - timedelta(seconds=1)
+    
+    # Bỏ qua các trận diễn ra trước hôm nay hoặc sau ngày mai
+    if dt_vn < (now_vn - timedelta(hours=3)):  # Trận đã diễn ra quá 3 tiếng
+        return False
+    if dt_vn > day_after_tomorrow_end:        # Trận diễn ra từ ngày mốt trở đi
+        return False
+        
+    return True
+
 def fetch_match_detail(session, base_api, match_id):
-    """
-    Lấy thêm thông tin chi tiết luồng phát của từng trận
-    """
     url = f"{base_api}/matches/detail/{match_id}"
     try:
         res = session.get(url, headers=HEADERS, timeout=5, verify=False)
@@ -109,9 +137,6 @@ def fetch_match_detail(session, base_api, match_id):
     return None
 
 def extract_all_streams(item, detail_item=None):
-    """
-    Bóc tách toàn bộ luồng phát sóng (FHD, HD, HD1, HD2, Nhà đài...)
-    """
     streams = []
     seen_urls = set()
     
@@ -130,7 +155,7 @@ def extract_all_streams(item, detail_item=None):
             })
             seen_urls.add(source_live)
 
-    # 2. Toàn bộ server/luồng phụ
+    # 2. Các luồng server phụ
     servers = []
     for obj in [source_obj, item]:
         for key in ["servers", "streams", "sources", "play_urls", "links", "channels"]:
@@ -157,7 +182,7 @@ def extract_all_streams(item, detail_item=None):
             })
             seen_urls.add(s_url)
 
-    # 3. Luồng dự phòng từ stream_key
+    # 3. Stream_key dự phòng
     stream_key = source_obj.get("stream_key") or item.get("stream_key")
     if stream_key and len(streams) == 0:
         sk_url = f"https://lilive1.eu.cc/live/{stream_key}/playlist.m3u8"
@@ -174,7 +199,6 @@ def fetch_matches_by_post():
     all_matches = []
     seen_ids = set()
 
-    # Truy vấn lấy toàn bộ các trận Hot, Live, Top và sắp diễn ra
     payload = {
         "limit": 100,
         "page": 1,
@@ -187,7 +211,7 @@ def fetch_matches_by_post():
 
     for base_api in API_DOMAINS:
         url = f"{base_api}/matches/graph"
-        for page in range(1, 10): # Quét đến 10 trang để đảm bảo lấy hết danh sách
+        for page in range(1, 10):
             payload["page"] = page
             try:
                 res = session.post(url, headers=HEADERS, json=payload, timeout=10, verify=False)
@@ -217,9 +241,10 @@ def fetch_matches_by_post():
 def build_m3u(matches):
     m3u_lines = [
         '#EXTM3U url-tvg="" tvg-shift="0"',
-        '# Playlist Tự Động Phá Làng TV - Phân Loại Theo Bộ Môn'
+        '# Playlist Tự Động Phá Làng TV - Hôm Nay & Ngày Mai'
     ]
 
+    grouped_items = {grp: [] for grp in GROUP_ORDER}
     total_channels = 0
 
     for item in matches:
@@ -227,6 +252,11 @@ def build_m3u(matches):
             continue
 
         dt_vn = parse_and_convert_to_vn_time(item.get("start_date"))
+        
+        # Lọc chỉ lấy các trận hôm nay & ngày mai
+        if not is_valid_time_window(dt_vn):
+            continue
+
         detail_item = item.get("_detail")
         streams = extract_all_streams(item, detail_item)
         
@@ -249,7 +279,6 @@ def build_m3u(matches):
         logo = str(item.get("team_1_logo") or item.get("logo") or "").strip()
         formatted_time = format_time_str(dt_vn)
 
-        # Phân loại nhóm bộ môn thể thao riêng biệt
         group_category, icon = get_sport_info(desc, match_name)
 
         for st in streams:
@@ -265,21 +294,32 @@ def build_m3u(matches):
 
             item_id = str(item.get("id") or "")
             
-            # Đã gắn group-title theo môn thể thao riêng biệt
-            m3u_lines.append(
-                f'#EXTINF:-1 tvg-id="{item_id}" tvg-name="{display_title}" tvg-logo="{logo}" group-title="{group_category}", {display_title}'
-            )
-            m3u_lines.append('#EXTVLCOPT:http-user-agent=Mozilla/5.0')
-            m3u_lines.append('#EXTVLCOPT:http-referrer=https://phalang1.tv/')
-            m3u_lines.append(st["url"])
+            channel_entry = [
+                f'#EXTINF:-1 tvg-id="{item_id}" tvg-name="{display_title}" tvg-logo="{logo}" group-title="{group_category}", {display_title}',
+                '#EXTVLCOPT:http-user-agent=Mozilla/5.0',
+                '#EXTVLCOPT:http-referrer=https://phalang1.tv/',
+                st["url"]
+            ]
+
+            if group_category in grouped_items:
+                grouped_items[group_category].append(channel_entry)
+            else:
+                grouped_items["Thể Thao Khác"].append(channel_entry)
+                
             total_channels += 1
+
+    # Đưa các kênh vào file theo đúng thứ tự (Bóng Đá lên đầu tiên)
+    for grp in GROUP_ORDER:
+        entries = grouped_items.get(grp, [])
+        for entry in entries:
+            m3u_lines.extend(entry)
 
     return "\n".join(m3u_lines), total_channels
 
 def main():
-    print("=== Bắt đầu cào dữ liệu Phá Làng TV (Phân nhóm theo Bộ Môn) ===")
+    print("=== Bắt đầu cào dữ liệu Phá Làng TV (Ưu tiên Bóng Đá & Lọc Hôm nay/Ngày mai) ===")
     matches = fetch_matches_by_post()
-    print(f"Tổng số trận lấy được: {len(matches)}")
+    print(f"Tổng số trận cào được: {len(matches)}")
 
     m3u_content, total_channels = build_m3u(matches)
 
