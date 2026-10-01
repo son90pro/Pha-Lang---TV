@@ -1,9 +1,5 @@
 #EXTM3U url-tvg="" tvg-shift="0"
-# Playlist Tự Động Phá Làng TV - Phân Loại Theo Bộ Môn
-#EXTINF:-1 tvg-id="6a5f9bb7a0a841b1b0df4fe6dc8359b8" tvg-name="11:00 01/10 🏐 Hàn Quốc vs Iran (LÝ LÊN LỬA) (HD) [geo]" tvg-logo="https://img0.aiscore.com/volleyball/team/604a26fb4f696d522d464fc2ff0919de.png!w80" group-title="Bóng Chuyền", 11:00 01/10 🏐 Hàn Quốc vs Iran (LÝ LÊN LỬA) (HD) [geo]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://phalang1.tv/
-https://lilive1.eu.cc/live/48f8760363914843886819765b0520c1/playlist.m3u8
+# Playlist Tự Động Phá Làng TV - Hôm Nay & Ngày Mai
 #EXTINF:-1 tvg-id="dj2ryohl8w9nq1z" tvg-name="12:00 01/10 ⚽ Khovd Western vs Deren FC (Nhà đài) (FHD) [geo]" tvg-logo="https://img.sports-data.online/football/team/9ae36debba0abd59c01de2e60fc42648.png" group-title="Bóng Đá", 12:00 01/10 ⚽ Khovd Western vs Deren FC (Nhà đài) (FHD) [geo]
 #EXTVLCOPT:http-user-agent=Mozilla/5.0
 #EXTVLCOPT:http-referrer=https://phalang1.tv/
@@ -16,14 +12,6 @@ https://lilive1.eu.cc/live/91872cda1e671fcbd467e41ce273dab2/playlist.m3u8
 #EXTVLCOPT:http-user-agent=Mozilla/5.0
 #EXTVLCOPT:http-referrer=https://phalang1.tv/
 https://lilive1.eu.cc/live/fedd6c698d5f95375afd917b7fab3f54/playlist.m3u8
-#EXTINF:-1 tvg-id="802f226df9294105b790f15778b78334" tvg-name="14:00 01/10 🏐 Thái Lan vs Trung Quốc (LÝ LIỀU LĨNH) (HD) [geo]" tvg-logo="https://img0.aiscore.com/volleyball/team/3e9126e77f86c6fd0f04f67c8f149712.png!w80" group-title="Bóng Chuyền", 14:00 01/10 🏐 Thái Lan vs Trung Quốc (LÝ LIỀU LĨNH) (HD) [geo]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://phalang1.tv/
-https://lilive1.eu.cc/live/e2d7cc4232214687a3c0d3f14ff18a37/playlist.m3u8
-#EXTINF:-1 tvg-id="96ab9288e9da424a93ae821e4f34d3e9" tvg-name="14:00 01/10 🏐 Việt Nam vs Uzbekistan (LÝ LÊN LỬA) (HD) [geo]" tvg-logo="https://img0.aiscore.com/volleyball/team/93ff8d7f8cbb4a363bee874b30e2a263.png!w80" group-title="Bóng Chuyền", 14:00 01/10 🏐 Việt Nam vs Uzbekistan (LÝ LÊN LỬA) (HD) [geo]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://phalang1.tv/
-https://lilive1.eu.cc/live/9900ac047a8145d99dd413668d51204d/playlist.m3u8
 #EXTINF:-1 tvg-id="2y8m4zh5l2e1ql0" tvg-name="15:00 01/10 ⚽ Khaan Khuns-Erchim FC vs Central Stallions (Nhà đài) (HD) [geo]" tvg-logo="https://img.sports-data.online/football/team/c8188e3985db5cee9be1f4ea436f2fc2.png" group-title="Bóng Đá", 15:00 01/10 ⚽ Khaan Khuns-Erchim FC vs Central Stallions (Nhà đài) (HD) [geo]
 #EXTVLCOPT:http-user-agent=Mozilla/5.0
 #EXTVLCOPT:http-referrer=https://phalang1.tv/
@@ -80,10 +68,6 @@ https://lilive1.eu.cc/live/6a3836427505433286e138e212349be1/playlist.m3u8
 #EXTVLCOPT:http-user-agent=Mozilla/5.0
 #EXTVLCOPT:http-referrer=https://phalang1.tv/
 https://lilive1.eu.cc/live/42e644b7b4674fac91c2fd60739e18ac/playlist.m3u8
-#EXTINF:-1 tvg-id="6945a41fa47a4df39d3f2186977efdec" tvg-name="17:00 01/10 🏐 Philippines vs Indonesia (LÝ LINH LỰC) (HD) [geo]" tvg-logo="https://img0.aiscore.com/volleyball/team/0553251f78c17a5cd8a102fd354e9316.png!w80" group-title="Bóng Chuyền", 17:00 01/10 🏐 Philippines vs Indonesia (LÝ LINH LỰC) (HD) [geo]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://phalang1.tv/
-https://lilive1.eu.cc/live/ac40ea8602f441279c102c17af815891/playlist.m3u8
 #EXTINF:-1 tvg-id="dn1m1gh9vkkpmoe" tvg-name="17:00 01/10 ⚽ Kosovo U17 Women vs Azerbaijan Women U17 (Nhà đài) (HD) [geo]" tvg-logo="https://img.sports-data.online/football/team/cfd6e412180ad33079f739e9d11a52e1.png" group-title="Bóng Đá", 17:00 01/10 ⚽ Kosovo U17 Women vs Azerbaijan Women U17 (Nhà đài) (HD) [geo]
 #EXTVLCOPT:http-user-agent=Mozilla/5.0
 #EXTVLCOPT:http-referrer=https://phalang1.tv/
@@ -92,10 +76,6 @@ https://lilive1.eu.cc/live/bf3bb062a05445cfa6182cc73dba0784/playlist.m3u8
 #EXTVLCOPT:http-user-agent=Mozilla/5.0
 #EXTVLCOPT:http-referrer=https://phalang1.tv/
 https://lilive1.eu.cc/live/aad5dbe1adf2fe14afe5d96cb146c4b6/playlist.m3u8
-#EXTINF:-1 tvg-id="3b69817d72d14b51b081335e9560cb20" tvg-name="17:20 01/10 🏐 Nhật Bản vs Qatar (LÝ LÊN LỬA) (HD) [geo]" tvg-logo="https://img0.aiscore.com/volleyball/team/b337fa1acec0642f9ded3da29456d58a.png!w80" group-title="Bóng Chuyền", 17:20 01/10 🏐 Nhật Bản vs Qatar (LÝ LÊN LỬA) (HD) [geo]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://phalang1.tv/
-https://lilive1.eu.cc/live/d6c6bbffd7254518977b34601967294f/playlist.m3u8
 #EXTINF:-1 tvg-id="2y8m4zhv067dql0" tvg-name="17:30 01/10 ⚽ Parikrma FC vs Asc And Center FC (Nhà đài) (FHD) [geo]" tvg-logo="https://img.sports-data.online/football/team/9797959a20ca90fb6901b819293bb1bd.png" group-title="Bóng Đá", 17:30 01/10 ⚽ Parikrma FC vs Asc And Center FC (Nhà đài) (FHD) [geo]
 #EXTVLCOPT:http-user-agent=Mozilla/5.0
 #EXTVLCOPT:http-referrer=https://phalang1.tv/
@@ -1400,403 +1380,19 @@ https://lilive1.eu.cc/live/06e7814d77c24d9bb3d626c84a358a54/playlist.m3u8
 #EXTVLCOPT:http-user-agent=Mozilla/5.0
 #EXTVLCOPT:http-referrer=https://phalang1.tv/
 https://lilive1.eu.cc/live/fe44a74c340f40bd8836d11ca40d0d81/playlist.m3u8
-#EXTINF:-1 tvg-id="23xmvkhyvpl3qg8" tvg-name="00:00 03/10 ⚽ Niendorfer TSV vs SC Concordia Hamburg (Nhà đài) (HD) [geo]" tvg-logo="https://img.sports-data.online/football/team/65ed316e4885e15ec2b1f11bdc8ef9f2.png" group-title="Bóng Đá", 00:00 03/10 ⚽ Niendorfer TSV vs SC Concordia Hamburg (Nhà đài) (HD) [geo]
+#EXTINF:-1 tvg-id="802f226df9294105b790f15778b78334" tvg-name="14:00 01/10 🏐 Thái Lan vs Trung Quốc (LÝ LIỀU LĨNH) (HD) [geo]" tvg-logo="https://img0.aiscore.com/volleyball/team/3e9126e77f86c6fd0f04f67c8f149712.png!w80" group-title="Bóng Chuyền", 14:00 01/10 🏐 Thái Lan vs Trung Quốc (LÝ LIỀU LĨNH) (HD) [geo]
 #EXTVLCOPT:http-user-agent=Mozilla/5.0
 #EXTVLCOPT:http-referrer=https://phalang1.tv/
-https://lilive1.eu.cc/live/7545fba159ba4d4eb4db609b17c96da8/playlist.m3u8
-#EXTINF:-1 tvg-id="2y8m4zh5wd9gql0" tvg-name="00:00 03/10 ⚽ Lunds BK vs Laholms FK (Nhà đài) (HD) [geo]" tvg-logo="https://img.sports-data.online/football/team/88a839f2f6f1427879fc33ee4acf4f66.jpg" group-title="Bóng Đá", 00:00 03/10 ⚽ Lunds BK vs Laholms FK (Nhà đài) (HD) [geo]
+https://lilive1.eu.cc/live/e2d7cc4232214687a3c0d3f14ff18a37/playlist.m3u8
+#EXTINF:-1 tvg-id="96ab9288e9da424a93ae821e4f34d3e9" tvg-name="14:00 01/10 🏐 Việt Nam vs Uzbekistan (LÝ LÊN LỬA) (HD) [geo]" tvg-logo="https://img0.aiscore.com/volleyball/team/93ff8d7f8cbb4a363bee874b30e2a263.png!w80" group-title="Bóng Chuyền", 14:00 01/10 🏐 Việt Nam vs Uzbekistan (LÝ LÊN LỬA) (HD) [geo]
 #EXTVLCOPT:http-user-agent=Mozilla/5.0
 #EXTVLCOPT:http-referrer=https://phalang1.tv/
-https://lilive1.eu.cc/live/f8041553637e49538269af1e0d90b9ed/playlist.m3u8
-#EXTINF:-1 tvg-id="318q66h8zwp1qo9" tvg-name="00:00 03/10 ⚽ Atlantis II vs PPJ/Lauttasaari (Nhà đài) (HD) [geo]" tvg-logo="https://img.sports-data.online/football/team/122c4008678922037f2ab14515c022fe.png" group-title="Bóng Đá", 00:00 03/10 ⚽ Atlantis II vs PPJ/Lauttasaari (Nhà đài) (HD) [geo]
+https://lilive1.eu.cc/live/9900ac047a8145d99dd413668d51204d/playlist.m3u8
+#EXTINF:-1 tvg-id="6945a41fa47a4df39d3f2186977efdec" tvg-name="17:00 01/10 🏐 Philippines vs Indonesia (LÝ LINH LỰC) (HD) [geo]" tvg-logo="https://img0.aiscore.com/volleyball/team/0553251f78c17a5cd8a102fd354e9316.png!w80" group-title="Bóng Chuyền", 17:00 01/10 🏐 Philippines vs Indonesia (LÝ LINH LỰC) (HD) [geo]
 #EXTVLCOPT:http-user-agent=Mozilla/5.0
 #EXTVLCOPT:http-referrer=https://phalang1.tv/
-https://lilive1.eu.cc/live/40234acc1a794b4cb193ead5505a005a/playlist.m3u8
-#EXTINF:-1 tvg-id="318q66hx10y0qo9" tvg-name="00:00 03/10 ⚽ Rosenborg B vs Melhus (Nhà đài) (HD) [geo]" tvg-logo="https://img.sports-data.online/football/team/010dd75804d9351bafd37d765a3b831d.png" group-title="Bóng Đá", 00:00 03/10 ⚽ Rosenborg B vs Melhus (Nhà đài) (HD) [geo]
+https://lilive1.eu.cc/live/ac40ea8602f441279c102c17af815891/playlist.m3u8
+#EXTINF:-1 tvg-id="3b69817d72d14b51b081335e9560cb20" tvg-name="17:20 01/10 🏐 Nhật Bản vs Qatar (LÝ LÊN LỬA) (HD) [geo]" tvg-logo="https://img0.aiscore.com/volleyball/team/b337fa1acec0642f9ded3da29456d58a.png!w80" group-title="Bóng Chuyền", 17:20 01/10 🏐 Nhật Bản vs Qatar (LÝ LÊN LỬA) (HD) [geo]
 #EXTVLCOPT:http-user-agent=Mozilla/5.0
 #EXTVLCOPT:http-referrer=https://phalang1.tv/
-https://lilive1.eu.cc/live/05d844d1351442c18d025784c284ec76/playlist.m3u8
-#EXTINF:-1 tvg-id="318q66hx643gqo9" tvg-name="00:00 03/10 ⚽ Ranheim IL vs Egersunds IK (Nhà đài) (HD) [geo]" tvg-logo="https://img.sports-data.online/football/team/91fb347003b5ca9288f782d2a0f39ddd.png" group-title="Bóng Đá", 00:00 03/10 ⚽ Ranheim IL vs Egersunds IK (Nhà đài) (HD) [geo]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://phalang1.tv/
-https://lilive1.eu.cc/live/46277dd00c9e47129373f0f0da024538/playlist.m3u8
-#EXTINF:-1 tvg-id="3glrw7h4k3p9qdy" tvg-name="00:00 03/10 ⚽ Teuta Durres vs KS Perparimi Kukesi (Nhà đài) (HD) [geo]" tvg-logo="https://img.sports-data.online/football/team/f5734e108981b819b16e034c024d7540.png" group-title="Bóng Đá", 00:00 03/10 ⚽ Teuta Durres vs KS Perparimi Kukesi (Nhà đài) (HD) [geo]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://phalang1.tv/
-https://lilive1.eu.cc/live/95cfd2899854491b80398e72536b8e9c/playlist.m3u8
-#EXTINF:-1 tvg-id="3glrw7h4kplyqdy" tvg-name="00:00 03/10 ⚽ SC Vorwarts Wacker Billstedt vs Tus Dassendorf (Nhà đài) (HD) [geo]" tvg-logo="https://img.sports-data.online/football/team/e16fd47c1d1adc21f52a52a5321a2960.png" group-title="Bóng Đá", 00:00 03/10 ⚽ SC Vorwarts Wacker Billstedt vs Tus Dassendorf (Nhà đài) (HD) [geo]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://phalang1.tv/
-https://lilive1.eu.cc/live/17bb607802704e1e9209b1a8a0926394/playlist.m3u8
-#EXTINF:-1 tvg-id="3glrw7hn2w23qdy" tvg-name="00:00 03/10 ⚽ SC Gleisdorf vs SV Tillmitsch (Nhà đài) (HD) [geo]" tvg-logo="https://img.sports-data.online/football/team/d3e11356966efd8cbd83ac95c87965b8.png" group-title="Bóng Đá", 00:00 03/10 ⚽ SC Gleisdorf vs SV Tillmitsch (Nhà đài) (HD) [geo]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://phalang1.tv/
-https://lilive1.eu.cc/live/f0bd2fb56a9744bd9d8be3d79df809d0/playlist.m3u8
-#EXTINF:-1 tvg-id="3glrw7hn7okvqdy" tvg-name="00:00 03/10 ⚽ Hestrafors IF vs Onsala BK (Nhà đài) (HD) [geo]" tvg-logo="https://img.sports-data.online/football/team/f93a8dbbb2730f6fc52a4d9b4eb9a694.png" group-title="Bóng Đá", 00:00 03/10 ⚽ Hestrafors IF vs Onsala BK (Nhà đài) (HD) [geo]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://phalang1.tv/
-https://lilive1.eu.cc/live/6fe1c516b49c41c1a70930394d691004/playlist.m3u8
-#EXTINF:-1 tvg-id="4jwq2ghne16wm0v" tvg-name="00:00 03/10 ⚽ Staffanstorp United vs Solvesborgs GoIF (Nhà đài) (HD) [geo]" tvg-logo="https://img.sports-data.online/football/team/cd6f611f1f584cc8e1476751a4d924b9.png" group-title="Bóng Đá", 00:00 03/10 ⚽ Staffanstorp United vs Solvesborgs GoIF (Nhà đài) (HD) [geo]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://phalang1.tv/
-https://lilive1.eu.cc/live/baa71cc0b79b48eeb5bc868155530efa/playlist.m3u8
-#EXTINF:-1 tvg-id="4jwq2ghnjlzkm0v" tvg-name="00:00 03/10 ⚽ Fremad Amager vs Boldklubben af 1893 (Nhà đài) (HD) [geo]" tvg-logo="https://img.sports-data.online/football/team/3515b25b2d87eb8b252411993cb83f7c.png" group-title="Bóng Đá", 00:00 03/10 ⚽ Fremad Amager vs Boldklubben af 1893 (Nhà đài) (HD) [geo]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://phalang1.tv/
-https://lilive1.eu.cc/live/2991aed6e2bc4722924ea79b544cd252/playlist.m3u8
-#EXTINF:-1 tvg-id="4jwq2ghnzzdnm0v" tvg-name="00:00 03/10 ⚽ Jitex DFF Women vs Linkopings Women (Nhà đài) (HD) [geo]" tvg-logo="https://img.sports-data.online/football/team/546bf097792d6d32c0f158d478b3b12c.png" group-title="Bóng Đá", 00:00 03/10 ⚽ Jitex DFF Women vs Linkopings Women (Nhà đài) (HD) [geo]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://phalang1.tv/
-https://lilive1.eu.cc/live/66470b499c1c449fa98cb1022b3b76a1/playlist.m3u8
-#EXTINF:-1 tvg-id="4wyrn4h6j09lq86" tvg-name="00:00 03/10 ⚽ TSV Buchbach vs SC Eltersdorf (Nhà đài) (HD) [geo]" tvg-logo="https://img.sports-data.online/football/team/48ccc02739484d12db2f91cfc62cf90f.png" group-title="Bóng Đá", 00:00 03/10 ⚽ TSV Buchbach vs SC Eltersdorf (Nhà đài) (HD) [geo]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://phalang1.tv/
-https://lilive1.eu.cc/live/efef6f7042f44b3d9384a8d8ef7b15cb/playlist.m3u8
-#EXTINF:-1 tvg-id="6ypq3nhk6n45md7" tvg-name="00:00 03/10 ⚽ SpVgg Weiden vs Viktoria Aschaffenburg (Nhà đài) (HD) [geo]" tvg-logo="https://img.sports-data.online/football/team/56fc87b7065ffffe38b7bdc741d49b09.png" group-title="Bóng Đá", 00:00 03/10 ⚽ SpVgg Weiden vs Viktoria Aschaffenburg (Nhà đài) (HD) [geo]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://phalang1.tv/
-https://lilive1.eu.cc/live/9794cbf7b1dd4e09b76190ae07c1973d/playlist.m3u8
-#EXTINF:-1 tvg-id="6ypq3nhvy0yemd7" tvg-name="00:00 03/10 ⚽ Deutschlandsberger SC vs SC Weiz (Nhà đài) (HD) [geo]" tvg-logo="https://img.sports-data.online/football/team/3ee5cb5629a0a9bd4a3339183334415a.png" group-title="Bóng Đá", 00:00 03/10 ⚽ Deutschlandsberger SC vs SC Weiz (Nhà đài) (HD) [geo]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://phalang1.tv/
-https://lilive1.eu.cc/live/e6b456102a034783b69c330b54ab634c/playlist.m3u8
-#EXTINF:-1 tvg-id="8yomo4h13zwlq0j" tvg-name="00:00 03/10 ⚽ Kungsangens IF vs Sunnersta AIF (Nhà đài) (HD) [geo]" tvg-logo="https://img.sports-data.online/football/team/2ce5d59209938b0c81bf565e268a7063.png" group-title="Bóng Đá", 00:00 03/10 ⚽ Kungsangens IF vs Sunnersta AIF (Nhà đài) (HD) [geo]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://phalang1.tv/
-https://lilive1.eu.cc/live/f6e2a467e2ec4a84b953e0c0f0489bc9/playlist.m3u8
-#EXTINF:-1 tvg-id="8yomo4h1l7l9q0j" tvg-name="00:00 03/10 ⚽ Allerheiligen vs SC Kalsdorf (Nhà đài) (HD) [geo]" tvg-logo="https://img.sports-data.online/football/team/006f99eded414b258cc18d55cb93f171.png" group-title="Bóng Đá", 00:00 03/10 ⚽ Allerheiligen vs SC Kalsdorf (Nhà đài) (HD) [geo]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://phalang1.tv/
-https://lilive1.eu.cc/live/30b0a8e49d664da7a1537454177c81ec/playlist.m3u8
-#EXTINF:-1 tvg-id="8yomo4h1w9z6q0j" tvg-name="00:00 03/10 ⚽ Unterhaching vs Schweinfurt 05 FC (Nhà đài) (HD) [geo]" tvg-logo="https://img.sports-data.online/football/team/9bff922d4108faacbc08b106761ff7ff.png" group-title="Bóng Đá", 00:00 03/10 ⚽ Unterhaching vs Schweinfurt 05 FC (Nhà đài) (HD) [geo]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://phalang1.tv/
-https://lilive1.eu.cc/live/09a056e7dbc742599eecb03cdacbc082/playlist.m3u8
-#EXTINF:-1 tvg-id="8yomo4hye457q0j" tvg-name="00:00 03/10 ⚽ DJK Don Bosco Bamberg vs Eintracht Bamberg (Nhà đài) (HD) [geo]" tvg-logo="https://img.sports-data.online/football/team/7690eb1a1aa57b85ed98a540134bf4a0.png" group-title="Bóng Đá", 00:00 03/10 ⚽ DJK Don Bosco Bamberg vs Eintracht Bamberg (Nhà đài) (HD) [geo]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://phalang1.tv/
-https://lilive1.eu.cc/live/bc23b897c7a24caab7aa936f4e02087b/playlist.m3u8
-#EXTINF:-1 tvg-id="965mkyhkxp2er1g" tvg-name="00:00 03/10 ⚽ Naestved vs Nykobing FC (Nhà đài) (HD) [geo]" tvg-logo="https://img.sports-data.online/football/team/f5ddb9e7a54cb5c09279d1da08ea727b.png" group-title="Bóng Đá", 00:00 03/10 ⚽ Naestved vs Nykobing FC (Nhà đài) (HD) [geo]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://phalang1.tv/
-https://lilive1.eu.cc/live/8e7d63ad268949ae89b90344c667a040/playlist.m3u8
-#EXTINF:-1 tvg-id="dj2ryohle30yq1z" tvg-name="00:00 03/10 ⚽ Kristianstads FF vs Ariana (Nhà đài) (HD) [geo]" tvg-logo="https://img.sports-data.online/football/team/9e688f86466bd4f8de6709209f7eeec1.png" group-title="Bóng Đá", 00:00 03/10 ⚽ Kristianstads FF vs Ariana (Nhà đài) (HD) [geo]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://phalang1.tv/
-https://lilive1.eu.cc/live/de0d41b9f2554e67bf53a40940111a71/playlist.m3u8
-#EXTINF:-1 tvg-id="dn1m1ghlyev1moe" tvg-name="00:00 03/10 ⚽ SV Seekirchen vs Union Gurten (Nhà đài) (HD) [geo]" tvg-logo="https://img.sports-data.online/football/team/7d1e6b02af59efefd53323255d6ded3d.png" group-title="Bóng Đá", 00:00 03/10 ⚽ SV Seekirchen vs Union Gurten (Nhà đài) (HD) [geo]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://phalang1.tv/
-https://lilive1.eu.cc/live/460b7bf0b935430186678055e3bc2e94/playlist.m3u8
-#EXTINF:-1 tvg-id="jw2r09hkvdd5rz8" tvg-name="00:00 03/10 ⚽ SV Gloggnitz vs Traiskirchen (Nhà đài) (HD) [geo]" tvg-logo="https://img.sports-data.online/football/team/97d8d9ba257b70438131f8f50d882016.png" group-title="Bóng Đá", 00:00 03/10 ⚽ SV Gloggnitz vs Traiskirchen (Nhà đài) (HD) [geo]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://phalang1.tv/
-https://lilive1.eu.cc/live/ae8337a4fb0b4f42b3c78b578d53fb3f/playlist.m3u8
-#EXTINF:-1 tvg-id="k82rekhg4l01rep" tvg-name="00:00 03/10 ⚽ VSK Aarhus vs Brabrand (Nhà đài) (HD) [geo]" tvg-logo="https://img.sports-data.online/football/team/a2fa9d787567c8d8ddcdd33670969afc.png" group-title="Bóng Đá", 00:00 03/10 ⚽ VSK Aarhus vs Brabrand (Nhà đài) (HD) [geo]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://phalang1.tv/
-https://lilive1.eu.cc/live/23eb627fc98745aa85aef379d0a5a438/playlist.m3u8
-#EXTINF:-1 tvg-id="n54qllhn7d22qvy" tvg-name="00:00 03/10 ⚽ Torslanda IK vs IK Kongahalla (Nhà đài) (HD) [geo]" tvg-logo="https://img.sports-data.online/football/team/edc1113d32db29df8224e2053ab5c471.png" group-title="Bóng Đá", 00:00 03/10 ⚽ Torslanda IK vs IK Kongahalla (Nhà đài) (HD) [geo]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://phalang1.tv/
-https://lilive1.eu.cc/live/ce48a5027d714ad7842ee48d79cbb398/playlist.m3u8
-#EXTINF:-1 tvg-id="n54qllhng3o7qvy" tvg-name="00:00 03/10 ⚽ Stuttgarter Kickers vs Kickers Offenbach (Nhà đài) (HD) [geo]" tvg-logo="https://img.sports-data.online/football/team/15fec6d00e3d89f5b9e83c78f950e821.png" group-title="Bóng Đá", 00:00 03/10 ⚽ Stuttgarter Kickers vs Kickers Offenbach (Nhà đài) (HD) [geo]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://phalang1.tv/
-https://lilive1.eu.cc/live/a0993fbb76fc4147a08d46cc9a3b7e0b/playlist.m3u8
-#EXTINF:-1 tvg-id="pxwrxlhlp329ryk" tvg-name="00:00 03/10 ⚽ TSV 1860 München II vs TSV 1860 Rosenheim (Nhà đài) (HD) [geo]" tvg-logo="https://img.sports-data.online/football/team/342329830f0f3d1bb1ba4c3a01ad833c.png" group-title="Bóng Đá", 00:00 03/10 ⚽ TSV 1860 München II vs TSV 1860 Rosenheim (Nhà đài) (HD) [geo]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://phalang1.tv/
-https://lilive1.eu.cc/live/e2bc5233dee34d838392d1f2e7f0a5a1/playlist.m3u8
-#EXTINF:-1 tvg-id="pxwrxlhlpx3lryk" tvg-name="00:00 03/10 ⚽ Stade Lavallois MFC vs Stade Rennais FC (Nhà đài) (HD) [geo]" tvg-logo="https://img.sports-data.online/football/team/f4a20fb2ff268799ad07c8593295231c.png" group-title="Bóng Đá", 00:00 03/10 ⚽ Stade Lavallois MFC vs Stade Rennais FC (Nhà đài) (HD) [geo]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://phalang1.tv/
-https://lilive1.eu.cc/live/e122a99e5095449788ae670bda2c863a/playlist.m3u8
-#EXTINF:-1 tvg-id="pxwrxlhlpxpdryk" tvg-name="00:00 03/10 ⚽ Polonia Nysa vs Miedz Legnica II (Nhà đài) (HD) [geo]" tvg-logo="https://img.sports-data.online/football/team/519f154b5122a2cbab18ed1969ebe34b.png" group-title="Bóng Đá", 00:00 03/10 ⚽ Polonia Nysa vs Miedz Legnica II (Nhà đài) (HD) [geo]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://phalang1.tv/
-https://lilive1.eu.cc/live/854fcc35e7bc4c7a84d4a108440521e3/playlist.m3u8
-#EXTINF:-1 tvg-id="pxwrxlhy52v2ryk" tvg-name="00:00 03/10 ⚽ Smedby AIS vs Nykopings BIS (Nhà đài) (HD) [geo]" tvg-logo="https://img.sports-data.online/football/team/9cef3f19777545edf9809d8ab2068488.png" group-title="Bóng Đá", 00:00 03/10 ⚽ Smedby AIS vs Nykopings BIS (Nhà đài) (HD) [geo]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://phalang1.tv/
-https://lilive1.eu.cc/live/41504c99dcec45fd8046382f68cbd287/playlist.m3u8
-#EXTINF:-1 tvg-id="pxwrxlhy8g83ryk" tvg-name="00:00 03/10 ⚽ Lafnitz vs FSC Eggendorf Hartberg II (Nhà đài) (HD) [geo]" tvg-logo="https://img.sports-data.online/football/team/c251bf24edb56a264af5c4bb623371bd.png" group-title="Bóng Đá", 00:00 03/10 ⚽ Lafnitz vs FSC Eggendorf Hartberg II (Nhà đài) (HD) [geo]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://phalang1.tv/
-https://lilive1.eu.cc/live/0fa10c2b3f6b4d64a999964a74d262f9/playlist.m3u8
-#EXTINF:-1 tvg-id="vjxm8ghed4dlr6o" tvg-name="00:00 03/10 ⚽ Atus Velden vs SK Treibach (Nhà đài) (HD) [geo]" tvg-logo="https://img.sports-data.online/football/team/dea4f3022be38d6f1bd7817216632dc3.png" group-title="Bóng Đá", 00:00 03/10 ⚽ Atus Velden vs SK Treibach (Nhà đài) (HD) [geo]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://phalang1.tv/
-https://lilive1.eu.cc/live/29b47c54b47a46ddb63f14c386bb60c1/playlist.m3u8
-#EXTINF:-1 tvg-id="vjxm8ghelxvnr6o" tvg-name="00:00 03/10 ⚽ Lindome GIF vs Galtabacks BK (Nhà đài) (HD) [geo]" tvg-logo="https://img.sports-data.online/football/team/386b9f37921a0305720f18815fcd6f88.png" group-title="Bóng Đá", 00:00 03/10 ⚽ Lindome GIF vs Galtabacks BK (Nhà đài) (HD) [geo]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://phalang1.tv/
-https://lilive1.eu.cc/live/37b30280adf042bcba5f86674129ab13/playlist.m3u8
-#EXTINF:-1 tvg-id="vjxm8ghkvw2pr6o" tvg-name="00:00 03/10 ⚽ 1.FC Muhlhausen vs Pforzheim (Nhà đài) (HD) [geo]" tvg-logo="https://img.sports-data.online/football/team/a7b214c732d3434baafaa9ad762d3b49.png" group-title="Bóng Đá", 00:00 03/10 ⚽ 1.FC Muhlhausen vs Pforzheim (Nhà đài) (HD) [geo]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://phalang1.tv/
-https://lilive1.eu.cc/live/658b6e098223446face34d3f63f6f7ea/playlist.m3u8
-#EXTINF:-1 tvg-id="x7lm7phjee0xm2w" tvg-name="00:00 03/10 ⚽ Real Aviles vs CD Lugo (Nhà đài) (HD) [geo]" tvg-logo="https://img.sports-data.online/football/team/c457026150f5e33b47ea1f05b9ce2824.png" group-title="Bóng Đá", 00:00 03/10 ⚽ Real Aviles vs CD Lugo (Nhà đài) (HD) [geo]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://phalang1.tv/
-https://lilive1.eu.cc/live/6fc1511008d844ba80826debbb731663/playlist.m3u8
-#EXTINF:-1 tvg-id="x7lm7phjykyjm2w" tvg-name="00:00 03/10 ⚽ VST Volkermarkt vs ATSV Wolfsberg (Nhà đài) (HD) [geo]" tvg-logo="https://img.sports-data.online/football/team/8c9dc125cedcc74a5ce6e5c307139510.png" group-title="Bóng Đá", 00:00 03/10 ⚽ VST Volkermarkt vs ATSV Wolfsberg (Nhà đài) (HD) [geo]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://phalang1.tv/
-https://lilive1.eu.cc/live/91feb7794e38431faf21a9ba08c74418/playlist.m3u8
-#EXTINF:-1 tvg-id="x7lm7phjyv19m2w" tvg-name="00:00 03/10 ⚽ Eintracht Frankfurt II vs VfR Mannheim (Nhà đài) (HD) [geo]" tvg-logo="https://img.sports-data.online/football/team/84a832460562f57ea050f43ad9c7a540.png" group-title="Bóng Đá", 00:00 03/10 ⚽ Eintracht Frankfurt II vs VfR Mannheim (Nhà đài) (HD) [geo]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://phalang1.tv/
-https://lilive1.eu.cc/live/175f8d76f976419c8436d37f6a07db6f/playlist.m3u8
-#EXTINF:-1 tvg-id="x7lm7phjzpn8m2w" tvg-name="00:00 03/10 ⚽ Lilla Torg FF vs Nosaby IF (Nhà đài) (HD) [geo]" tvg-logo="https://img.sports-data.online/football/team/0b518a250c90421f0a3b4f32e8312e3d.jpg" group-title="Bóng Đá", 00:00 03/10 ⚽ Lilla Torg FF vs Nosaby IF (Nhà đài) (HD) [geo]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://phalang1.tv/
-https://lilive1.eu.cc/live/2c7556f0bc3341a1a38b029fc374d533/playlist.m3u8
-#EXTINF:-1 tvg-id="x7lm7phxg75pm2w" tvg-name="00:00 03/10 ⚽ Hertha Wiesbach vs FV Diefflen (Nhà đài) (HD) [geo]" tvg-logo="https://img.sports-data.online/football/team/5fed2f12b989d2ca2a3c4e5cd857f74a.png" group-title="Bóng Đá", 00:00 03/10 ⚽ Hertha Wiesbach vs FV Diefflen (Nhà đài) (HD) [geo]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://phalang1.tv/
-https://lilive1.eu.cc/live/f11b67b5bcee42ceaf06a40a9e156915/playlist.m3u8
-#EXTINF:-1 tvg-id="y0or5jh823voqwz" tvg-name="00:00 03/10 ⚽ Grasshopper Women vs FC Zurich Frauen Women (Nhà đài) (HD) [geo]" tvg-logo="https://img.sports-data.online/football/team/e07cfa0e56e09bf646002dce4ab73ec6.png" group-title="Bóng Đá", 00:00 03/10 ⚽ Grasshopper Women vs FC Zurich Frauen Women (Nhà đài) (HD) [geo]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://phalang1.tv/
-https://lilive1.eu.cc/live/b4f9cfeb16f04ce7bd2e1b5c535216e2/playlist.m3u8
-#EXTINF:-1 tvg-id="y0or5jh8y52zqwz" tvg-name="00:00 03/10 ⚽ SV Sandhausen vs 1.FC Kaiserslautern II (Nhà đài) (HD) [geo]" tvg-logo="https://img.sports-data.online/football/team/31a9bc54e21495e1be1cf07dbc43adf1.png" group-title="Bóng Đá", 00:00 03/10 ⚽ SV Sandhausen vs 1.FC Kaiserslautern II (Nhà đài) (HD) [geo]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://phalang1.tv/
-https://lilive1.eu.cc/live/9a0e9c76c2af47028fe17bdbc7dc3bc4/playlist.m3u8
-#EXTINF:-1 tvg-id="y0or5jh8zk3lqwz" tvg-name="00:00 03/10 ⚽ Karlbergs BK vs Sollentuna United (Nhà đài) (HD) [geo]" tvg-logo="https://img.sports-data.online/football/team/19645dbe5cc836759c3288573d1f312e.png" group-title="Bóng Đá", 00:00 03/10 ⚽ Karlbergs BK vs Sollentuna United (Nhà đài) (HD) [geo]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://phalang1.tv/
-https://lilive1.eu.cc/live/6c4138040f254d2db02caa793eb0d408/playlist.m3u8
-#EXTINF:-1 tvg-id="y0or5jh9xnnxqwz" tvg-name="00:00 03/10 ⚽ Luxembourg U19 vs North Macedonia U19 (Nhà đài) (HD) [geo]" tvg-logo="https://img.sports-data.online/football/team/878cff5915dd8c5146b5babdbd6ff1a4.png" group-title="Bóng Đá", 00:00 03/10 ⚽ Luxembourg U19 vs North Macedonia U19 (Nhà đài) (HD) [geo]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://phalang1.tv/
-https://lilive1.eu.cc/live/4e31cce7d21c467f958c07b4f848757e/playlist.m3u8
-#EXTINF:-1 tvg-id="zp5rzghg51o8q82" tvg-name="00:00 03/10 ⚽ Herrestads AIF vs Grebbestads IF (Nhà đài) (HD) [geo]" tvg-logo="https://img.sports-data.online/football/team/dca79bfddf0cc62322f4c6fb95bd0958.png" group-title="Bóng Đá", 00:00 03/10 ⚽ Herrestads AIF vs Grebbestads IF (Nhà đài) (HD) [geo]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://phalang1.tv/
-https://lilive1.eu.cc/live/1968fa394b9546e387505d0f07afe981/playlist.m3u8
-#EXTINF:-1 tvg-id="zp5rzghg8dkvq82" tvg-name="00:00 03/10 ⚽ Al Aqaba SC vs Sahl Horan SC (Nhà đài) (HD) [geo]" tvg-logo="https://img.sports-data.online/football/team/4fd9da0c41d26bf164e8709b8a6bee2d.png" group-title="Bóng Đá", 00:00 03/10 ⚽ Al Aqaba SC vs Sahl Horan SC (Nhà đài) (HD) [geo]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://phalang1.tv/
-https://lilive1.eu.cc/live/f9382d28ceae400890e401b5662d21d6/playlist.m3u8
-#EXTINF:-1 tvg-id="dj2ryohl0339q1z" tvg-name="00:10 03/10 ⚽ Favoritner AC vs SC Mannsdorf (Nhà đài) (HD) [geo]" tvg-logo="https://img.sports-data.online/football/team/5f29d4cec8b69aa5a99606c167b8e43f.png" group-title="Bóng Đá", 00:10 03/10 ⚽ Favoritner AC vs SC Mannsdorf (Nhà đài) (HD) [geo]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://phalang1.tv/
-https://lilive1.eu.cc/live/23479f8eb11b4af2985e0e8678f9ac33/playlist.m3u8
-#EXTINF:-1 tvg-id="1l4rjnhnyl3jm7v" tvg-name="00:30 03/10 ⚽ TuS Blau-Weiss Lohne vs BSV Rehden (Nhà đài) (HD) [geo]" tvg-logo="https://img.sports-data.online/football/team/8312f66b051c06d0664b6d7a9a14ec21.png" group-title="Bóng Đá", 00:30 03/10 ⚽ TuS Blau-Weiss Lohne vs BSV Rehden (Nhà đài) (HD) [geo]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://phalang1.tv/
-https://lilive1.eu.cc/live/bd5c886c97854d898f7140fc84daf139/playlist.m3u8
-#EXTINF:-1 tvg-id="23xmvkhyv0g9qg8" tvg-name="00:30 03/10 ⚽ TuRa Harksheide vs HEBC Hamburg (Nhà đài) (HD) [geo]" tvg-logo="https://img.sports-data.online/football/team/782b923d8a80be39352fff62275991f8.png" group-title="Bóng Đá", 00:30 03/10 ⚽ TuRa Harksheide vs HEBC Hamburg (Nhà đài) (HD) [geo]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://phalang1.tv/
-https://lilive1.eu.cc/live/5abebff4e84543aaafb7c1c9b2ba8527/playlist.m3u8
-#EXTINF:-1 tvg-id="2y8m4zh59dddql0" tvg-name="00:30 03/10 ⚽ SV Oberwart vs SV Horn (Nhà đài) (HD) [geo]" tvg-logo="https://img.sports-data.online/football/team/54fb21f94afc6bf482206b00610e668f.png" group-title="Bóng Đá", 00:30 03/10 ⚽ SV Oberwart vs SV Horn (Nhà đài) (HD) [geo]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://phalang1.tv/
-https://lilive1.eu.cc/live/83844a79226c4b5e8adc6eaac01c716a/playlist.m3u8
-#EXTINF:-1 tvg-id="318q66hxy0zjqo9" tvg-name="00:30 03/10 ⚽ FC Pinzgau Saalfelden vs Bad Schallerbach (Nhà đài) (HD) [geo]" tvg-logo="https://img.sports-data.online/football/team/3bdf1cf3d9d6ae841205e8f4c3fd0932.png" group-title="Bóng Đá", 00:30 03/10 ⚽ FC Pinzgau Saalfelden vs Bad Schallerbach (Nhà đài) (HD) [geo]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://phalang1.tv/
-https://lilive1.eu.cc/live/e30bd6f3041c4c40be03b8ed1fee6daf/playlist.m3u8
-#EXTINF:-1 tvg-id="4jwq2ghgo90em0v" tvg-name="00:30 03/10 ⚽ Ratingen SV vs SV Scherpenberg (Nhà đài) (HD) [geo]" tvg-logo="https://img.sports-data.online/football/team/2335c3e7fbf7fdf12158799bac137d5a.png" group-title="Bóng Đá", 00:30 03/10 ⚽ Ratingen SV vs SV Scherpenberg (Nhà đài) (HD) [geo]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://phalang1.tv/
-https://lilive1.eu.cc/live/b2ab74966e1e4df58172cc183dbfcf77/playlist.m3u8
-#EXTINF:-1 tvg-id="4wyrn4h6n1j1q86" tvg-name="00:30 03/10 ⚽ Kremser vs Wiener SC (Nhà đài) (HD) [geo]" tvg-logo="https://img.sports-data.online/football/team/bd15a9fd569584b1bc778607f0f76ca3.png" group-title="Bóng Đá", 00:30 03/10 ⚽ Kremser vs Wiener SC (Nhà đài) (HD) [geo]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://phalang1.tv/
-https://lilive1.eu.cc/live/dbcf6057506c4fdead40aa658e25a98a/playlist.m3u8
-#EXTINF:-1 tvg-id="6ypq3nhv0ppomd7" tvg-name="00:30 03/10 ⚽ Andorra U21 vs Moldova U21 (Nhà đài) (HD) [geo]" tvg-logo="https://img.sports-data.online/football/team/3804a2cf046fe49c6dd7a7cc276100d1.png" group-title="Bóng Đá", 00:30 03/10 ⚽ Andorra U21 vs Moldova U21 (Nhà đài) (HD) [geo]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://phalang1.tv/
-https://lilive1.eu.cc/live/270fcd67553546af803bab15fb5260a8/playlist.m3u8
-#EXTINF:-1 tvg-id="8yomo4h1nd67q0j" tvg-name="00:30 03/10 ⚽ Palma Futsal vs Peniscola Futsal (Nhà đài) (HD) [geo]" tvg-logo="https://img.sports-data.online/football/team/1497ddb46b25f1dd39a967e9a59212da.png" group-title="Bóng Đá", 00:30 03/10 ⚽ Palma Futsal vs Peniscola Futsal (Nhà đài) (HD) [geo]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://phalang1.tv/
-https://lilive1.eu.cc/live/70f8140fa674447796b966f768e2313c/playlist.m3u8
-#EXTINF:-1 tvg-id="8yomo4h1ojjoq0j" tvg-name="00:30 03/10 ⚽ Wiener SC vs Kremser (Nhà đài) (HD) [geo]" tvg-logo="https://img.sports-data.online/football/team/cc31aaf9dc8db45ed906dea54da1d9e0.png" group-title="Bóng Đá", 00:30 03/10 ⚽ Wiener SC vs Kremser (Nhà đài) (HD) [geo]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://phalang1.tv/
-https://lilive1.eu.cc/live/cfb71f9a5b644dd1b79754598a8d13fd/playlist.m3u8
-#EXTINF:-1 tvg-id="965mkyh8log8r1g" tvg-name="00:30 03/10 ⚽ Wuppertaler vs SF Baumberg (Nhà đài) (HD) [geo]" tvg-logo="https://img.sports-data.online/football/team/ee4c1960493c3014fc5ad73f7b2a525a.png" group-title="Bóng Đá", 00:30 03/10 ⚽ Wuppertaler vs SF Baumberg (Nhà đài) (HD) [geo]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://phalang1.tv/
-https://lilive1.eu.cc/live/095d3c19a6494cd4be49cde0cf09b476/playlist.m3u8
-#EXTINF:-1 tvg-id="ednm9wh580dwryo" tvg-name="00:30 03/10 ⚽ Uerdingen KFC 05 vs SSVg Velbert (Nhà đài) (HD) [geo]" tvg-logo="https://img.sports-data.online/football/team/1a690de16cd1ec9a1e328f818754ce49.png" group-title="Bóng Đá", 00:30 03/10 ⚽ Uerdingen KFC 05 vs SSVg Velbert (Nhà đài) (HD) [geo]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://phalang1.tv/
-https://lilive1.eu.cc/live/385b66a3025d4675aeb077cd42f1119f/playlist.m3u8
-#EXTINF:-1 tvg-id="ednm9whwn782ryo" tvg-name="00:30 03/10 ⚽ Bonner vs SV Westfalia Rhynern (Nhà đài) (HD) [geo]" tvg-logo="https://img.sports-data.online/football/team/ef1ec3e4552cd523c6acd9df9d281128.png" group-title="Bóng Đá", 00:30 03/10 ⚽ Bonner vs SV Westfalia Rhynern (Nhà đài) (HD) [geo]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://phalang1.tv/
-https://lilive1.eu.cc/live/9357f4adffe143ca9ace535c21df361d/playlist.m3u8
-#EXTINF:-1 tvg-id="k82rekh2zx8jrep" tvg-name="00:30 03/10 ⚽ TuS Koblenz vs Sportfreunde Eisbachtal (Nhà đài) (HD) [geo]" tvg-logo="https://img.sports-data.online/football/team/8a128c9a79df0bcca6218778da525d73.png" group-title="Bóng Đá", 00:30 03/10 ⚽ TuS Koblenz vs Sportfreunde Eisbachtal (Nhà đài) (HD) [geo]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://phalang1.tv/
-https://lilive1.eu.cc/live/904af8d3ef05465db51df939dc9175c2/playlist.m3u8
-#EXTINF:-1 tvg-id="n54qllh45zk9qvy" tvg-name="00:30 03/10 ⚽ FC Schwaig vs TSV Kottern (Nhà đài) (HD) [geo]" tvg-logo="https://img.sports-data.online/football/team/0e5e436a4f769185dafaeba6af347912.png" group-title="Bóng Đá", 00:30 03/10 ⚽ FC Schwaig vs TSV Kottern (Nhà đài) (HD) [geo]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://phalang1.tv/
-https://lilive1.eu.cc/live/3f828559fdbc45b1bcd3b89dc898ed14/playlist.m3u8
-#EXTINF:-1 tvg-id="vjxm8ghe1l7yr6o" tvg-name="00:30 03/10 ⚽ VFB Lubeck vs Eimsbutteler TV (Nhà đài) (HD) [geo]" tvg-logo="https://img.sports-data.online/football/team/8b39fc2a0c37c3b0dae5b936005b9392.png" group-title="Bóng Đá", 00:30 03/10 ⚽ VFB Lubeck vs Eimsbutteler TV (Nhà đài) (HD) [geo]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://phalang1.tv/
-https://lilive1.eu.cc/live/4abf2106c6624134966ca6b9b3dc2cb2/playlist.m3u8
-#EXTINF:-1 tvg-id="y0or5jh8n1lxqwz" tvg-name="00:30 03/10 ⚽ Qviding FIF vs Landvetter IS (Nhà đài) (HD) [geo]" tvg-logo="https://img.sports-data.online/football/team/615d99745742817c7a80800967a4acd6.png" group-title="Bóng Đá", 00:30 03/10 ⚽ Qviding FIF vs Landvetter IS (Nhà đài) (HD) [geo]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://phalang1.tv/
-https://lilive1.eu.cc/live/3ab295f9e97e414ea7f5cd66759013d7/playlist.m3u8
-#EXTINF:-1 tvg-id="y0or5jh9xo00qwz" tvg-name="00:30 03/10 ⚽ TSV Kornburg vs TSV Nördlingen (Nhà đài) (HD) [geo]" tvg-logo="https://img.sports-data.online/football/team/50eed30d214026fdef8d646793d5d8fb.png" group-title="Bóng Đá", 00:30 03/10 ⚽ TSV Kornburg vs TSV Nördlingen (Nhà đài) (HD) [geo]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://phalang1.tv/
-https://lilive1.eu.cc/live/01add54dba18415681f02899660abbc5/playlist.m3u8
-#EXTINF:-1 tvg-id="y39mp1hdv4komoj" tvg-name="00:30 03/10 ⚽ FC Monheim vs Schwarz-Weiss Essen (Nhà đài) (HD) [geo]" tvg-logo="https://img.sports-data.online/football/team/b2f10065b9d29505c0fecc1589594883.png" group-title="Bóng Đá", 00:30 03/10 ⚽ FC Monheim vs Schwarz-Weiss Essen (Nhà đài) (HD) [geo]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://phalang1.tv/
-https://lilive1.eu.cc/live/2b85b04fadb547d182982d29d4cc4892/playlist.m3u8
-#EXTINF:-1 tvg-id="zp5rzgh3yw2wq82" tvg-name="00:30 03/10 ⚽ SC Victoria Hamburg vs TSV Sasel (Nhà đài) (HD) [geo]" tvg-logo="https://img.sports-data.online/football/team/b5ecbbf5782cc7fe9e453f3a2f26f24b.jpg" group-title="Bóng Đá", 00:30 03/10 ⚽ SC Victoria Hamburg vs TSV Sasel (Nhà đài) (HD) [geo]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://phalang1.tv/
-https://lilive1.eu.cc/live/4de74494b4884dc09369a09fc1558035/playlist.m3u8
-#EXTINF:-1 tvg-id="zp5rzghgk5y0q82" tvg-name="00:30 03/10 ⚽ Borussia Monchengladbach II vs Bochum II (Nhà đài) (HD) [geo]" tvg-logo="https://img.sports-data.online/football/team/19efe60c744bea339b7e6d195b96bdfa.png" group-title="Bóng Đá", 00:30 03/10 ⚽ Borussia Monchengladbach II vs Bochum II (Nhà đài) (HD) [geo]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://phalang1.tv/
-https://lilive1.eu.cc/live/6dc1a4a92c3e44f4bc263784f38ab6df/playlist.m3u8
-#EXTINF:-1 tvg-id="23xmvkhyvv3gqg8" tvg-name="01:00 03/10 ⚽ Vikingur Reykjavik Women vs Thor KA Akureyri Women (Nhà đài) (HD) [geo]" tvg-logo="https://img.sports-data.online/football/team/7215e16b09a3b2377aab0d5ecca75d07.png" group-title="Bóng Đá", 01:00 03/10 ⚽ Vikingur Reykjavik Women vs Thor KA Akureyri Women (Nhà đài) (HD) [geo]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://phalang1.tv/
-https://lilive1.eu.cc/live/e65921645d8f4687a3e4a0d10230802c/playlist.m3u8
-#EXTINF:-1 tvg-id="318q66h8zg7dqo9" tvg-name="01:00 03/10 ⚽ Eintracht Norderstedt B vs Altona 93 (Nhà đài) (HD) [geo]" tvg-logo="https://img.sports-data.online/football/team/98bd1896cd19055cded348a57bdc5447.png" group-title="Bóng Đá", 01:00 03/10 ⚽ Eintracht Norderstedt B vs Altona 93 (Nhà đài) (HD) [geo]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://phalang1.tv/
-https://lilive1.eu.cc/live/0116f3ac384c4a57ad8dc47c5cf5c691/playlist.m3u8
-#EXTINF:-1 tvg-id="4wyrn4hyzl7pq86" tvg-name="01:00 03/10 ⚽ VfL Viktoria Juchen-Garzweiler vs Sportverein Sonsbeck (Nhà đài) (HD) [geo]" tvg-logo="https://img.sports-data.online/football/team/d9ea283c4991f0b3804d24cdce691adf.png" group-title="Bóng Đá", 01:00 03/10 ⚽ VfL Viktoria Juchen-Garzweiler vs Sportverein Sonsbeck (Nhà đài) (HD) [geo]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://phalang1.tv/
-https://lilive1.eu.cc/live/cba1b6ea0b3047689f567a4c946ed1d8/playlist.m3u8
-#EXTINF:-1 tvg-id="8yomo4hyeeeoq0j" tvg-name="01:00 03/10 ⚽ Stjarnan Gardabaer Women vs Njardvik Grindavik (W) (Nhà đài) (HD) [geo]" tvg-logo="https://img.sports-data.online/football/team/f664f55fd3276a343b2ad6505e85b225.png" group-title="Bóng Đá", 01:00 03/10 ⚽ Stjarnan Gardabaer Women vs Njardvik Grindavik (W) (Nhà đài) (HD) [geo]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://phalang1.tv/
-https://lilive1.eu.cc/live/782ddcd1840e45e3af49e5d4cd42677c/playlist.m3u8
-#EXTINF:-1 tvg-id="dn1m1gh9v0ozmoe" tvg-name="01:00 03/10 ⚽ SV BW Dingden vs DJK Teutonia St.Tonis (Nhà đài) (HD) [geo]" tvg-logo="https://img.sports-data.online/football/team/81f38a336d5fa8c7972623de370336c7.png" group-title="Bóng Đá", 01:00 03/10 ⚽ SV BW Dingden vs DJK Teutonia St.Tonis (Nhà đài) (HD) [geo]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://phalang1.tv/
-https://lilive1.eu.cc/live/f76a199726304c8f89facb093fc79ec9/playlist.m3u8
-#EXTINF:-1 tvg-id="jw2r09h540porz8" tvg-name="01:00 03/10 ⚽ CGI April 7 U20 vs Friburguense RJ (Nhà đài) (HD) [geo]" tvg-logo="https://img.sports-data.online/football/team/d5c3206c330e53c1abe600399521fece.png" group-title="Bóng Đá", 01:00 03/10 ⚽ CGI April 7 U20 vs Friburguense RJ (Nhà đài) (HD) [geo]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://phalang1.tv/
-https://lilive1.eu.cc/live/98b42b8b7bab428c8f8ce547fa7023e5/playlist.m3u8
-#EXTINF:-1 tvg-id="l5ergphk0851r8k" tvg-name="01:00 03/10 ⚽ Duren vs Konishisdorf (Nhà đài) (HD) [geo]" tvg-logo="https://img.sports-data.online/football/team/bb6bb6aa7ac81d1ff2c9dde704cfee02.png" group-title="Bóng Đá", 01:00 03/10 ⚽ Duren vs Konishisdorf (Nhà đài) (HD) [geo]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://phalang1.tv/
-https://lilive1.eu.cc/live/47c41763d9394bc8808ba2202daac642/playlist.m3u8
-#EXTINF:-1 tvg-id="l7oqdehgoe16r51" tvg-name="01:00 03/10 ⚽ FOC Farsta vs Fittja IF (Nhà đài) (HD) [geo]" tvg-logo="https://img.sports-data.online/football/team/2ecd87aa847ac3a18555f86b063db79a.png" group-title="Bóng Đá", 01:00 03/10 ⚽ FOC Farsta vs Fittja IF (Nhà đài) (HD) [geo]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://phalang1.tv/
-https://lilive1.eu.cc/live/44ddcad4117b4caebf396c10615df600/playlist.m3u8
-#EXTINF:-1 tvg-id="n54qllh4552dqvy" tvg-name="01:00 03/10 ⚽ Fram Reykjavik Women vs Valur Women (Nhà đài) (HD) [geo]" tvg-logo="https://img.sports-data.online/football/team/13b1530d60c5f03f0dc22fb291cfe1e7.png" group-title="Bóng Đá", 01:00 03/10 ⚽ Fram Reykjavik Women vs Valur Women (Nhà đài) (HD) [geo]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://phalang1.tv/
-https://lilive1.eu.cc/live/b35938d2e8d3490681a7201d7144a0b8/playlist.m3u8
-#EXTINF:-1 tvg-id="y39mp1h67j36moj" tvg-name="01:00 03/10 ⚽ Wydad Temara vs UTS Union Touarga Sport Rabat (Nhà đài) (HD) [geo]" tvg-logo="https://img.sports-data.online/football/team/f23b657e16d68b2a595c9c78fcd078c8.png" group-title="Bóng Đá", 01:00 03/10 ⚽ Wydad Temara vs UTS Union Touarga Sport Rabat (Nhà đài) (HD) [geo]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://phalang1.tv/
-https://lilive1.eu.cc/live/cac4c3e9464e483c9b7bb00b3a872448/playlist.m3u8
-#EXTINF:-1 tvg-id="23xmvkhyv81gqg8" tvg-name="01:30 03/10 ⚽ Birkirkara Women vs Hibernians Women (Nhà đài) (HD) [geo]" tvg-logo="https://img.sports-data.online/football/team/0832570245c107b1b7eac4c4355103f3.png" group-title="Bóng Đá", 01:30 03/10 ⚽ Birkirkara Women vs Hibernians Women (Nhà đài) (HD) [geo]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://phalang1.tv/
-https://lilive1.eu.cc/live/caa3fbc4b07a4beaa63607b2786f4544/playlist.m3u8
-#EXTINF:-1 tvg-id="2y8m4zh59ldyql0" tvg-name="01:30 03/10 ⚽ Carmarthen vs Llantwit Major (Nhà đài) (HD) [geo]" tvg-logo="https://img.sports-data.online/football/team/2ba33b1a12b7857757c6c5663b359159.png" group-title="Bóng Đá", 01:30 03/10 ⚽ Carmarthen vs Llantwit Major (Nhà đài) (HD) [geo]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://phalang1.tv/
-https://lilive1.eu.cc/live/90c8e7a9d9ce42a7b9929241d5850535/playlist.m3u8
-#EXTINF:-1 tvg-id="4wyrn4hyz8dgq86" tvg-name="01:30 03/10 ⚽ Istres vs Chateauroux (Nhà đài) (HD) [geo]" tvg-logo="https://img.sports-data.online/football/team/bee81021f37740903b1588d5f47d377a.png" group-title="Bóng Đá", 01:30 03/10 ⚽ Istres vs Chateauroux (Nhà đài) (HD) [geo]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://phalang1.tv/
-https://lilive1.eu.cc/live/c2d11c53f8c24116954ce821cf9df1c0/playlist.m3u8
-#EXTINF:-1 tvg-id="8yomo4h1onjpq0j" tvg-name="01:30 03/10 ⚽ Llanelli Town AFC vs Baglan Dragons (Nhà đài) (HD) [geo]" tvg-logo="https://img.sports-data.online/football/team/52e2fcc286efca071ebdfeecaa7e8fbf.png" group-title="Bóng Đá", 01:30 03/10 ⚽ Llanelli Town AFC vs Baglan Dragons (Nhà đài) (HD) [geo]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://phalang1.tv/
-https://lilive1.eu.cc/live/c5c3271729c34eaab8b9a5d86fecda08/playlist.m3u8
-#EXTINF:-1 tvg-id="dn1m1ghl5ppnmoe" tvg-name="01:30 03/10 ⚽ Hasselt U21 vs Kortrijk U21 (Nhà đài) (HD) [geo]" tvg-logo="https://img.sports-data.online/football/team/003c86c1bf91252039d50f71f5361e98.png" group-title="Bóng Đá", 01:30 03/10 ⚽ Hasselt U21 vs Kortrijk U21 (Nhà đài) (HD) [geo]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://phalang1.tv/
-https://lilive1.eu.cc/live/92d11d90a1dc4e7cb4a956174eb7d433/playlist.m3u8
-#EXTINF:-1 tvg-id="l5ergphk023vr8k" tvg-name="01:30 03/10 ⚽ Cumnock Juniors FC vs Auchinleck Talbot (Nhà đài) (HD) [geo]" tvg-logo="https://img.sports-data.online/football/team/47e6373d2c912f02abc32fe1e5f76c13.png" group-title="Bóng Đá", 01:30 03/10 ⚽ Cumnock Juniors FC vs Auchinleck Talbot (Nhà đài) (HD) [geo]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://phalang1.tv/
-https://lilive1.eu.cc/live/d9c609c436034656b63188906794684f/playlist.m3u8
-#EXTINF:-1 tvg-id="l7oqdehjy3evr51" tvg-name="01:30 03/10 ⚽ Eintracht Stadtallendorf vs Turk Gucu Friedberg (Nhà đài) (HD) [geo]" tvg-logo="https://img.sports-data.online/football/team/0735c91953a1772f1e444f9c9b2ad1b2.png" group-title="Bóng Đá", 01:30 03/10 ⚽ Eintracht Stadtallendorf vs Turk Gucu Friedberg (Nhà đài) (HD) [geo]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://phalang1.tv/
-https://lilive1.eu.cc/live/1819e42a731443dd8cba884e450f0606/playlist.m3u8
-#EXTINF:-1 tvg-id="y0or5jh8k6jxqwz" tvg-name="01:30 03/10 ⚽ Eldense vs Real Oviedo (Nhà đài) (HD) [geo]" tvg-logo="https://img.sports-data.online/football/team/1d6e461df015562ab49d5b6af780d256.png" group-title="Bóng Đá", 01:30 03/10 ⚽ Eldense vs Real Oviedo (Nhà đài) (HD) [geo]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://phalang1.tv/
-https://lilive1.eu.cc/live/8531471699ed4f43be0e780f510d7985/playlist.m3u8
-#EXTINF:-1 tvg-id="y39mp1hdvz1xmoj" tvg-name="01:30 03/10 ⚽ Sevilla FC vs Aston Villa (Nhà đài) (HD) [geo]" tvg-logo="https://img.sports-data.online/football/team/d20ed1da4f299cc3ef0e1e9eb06eced1.png" group-title="Bóng Đá", 01:30 03/10 ⚽ Sevilla FC vs Aston Villa (Nhà đài) (HD) [geo]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://phalang1.tv/
-https://lilive1.eu.cc/live/0944031de9e6427090fa93bb5498a9b5/playlist.m3u8
-#EXTINF:-1 tvg-id="23xmvkh61vd1qg8" tvg-name="01:45 03/10 ⚽ Denbigh Town vs Holyhead (Nhà đài) (HD) [geo]" tvg-logo="https://img.sports-data.online/football/team/05a0a99e4c9d625156d6baa95aba0145.png" group-title="Bóng Đá", 01:45 03/10 ⚽ Denbigh Town vs Holyhead (Nhà đài) (HD) [geo]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://phalang1.tv/
-https://lilive1.eu.cc/live/2631e44f37774695bc8b8fae89294347/playlist.m3u8
-#EXTINF:-1 tvg-id="23xmvkh6y1j0qg8" tvg-name="01:45 03/10 ⚽ Bosnia and Herzegovina vs Sweden (Nhà đài) (HD) [geo]" tvg-logo="https://img.sports-data.online/football/team/7e2715cb1a79a2947617c86e6b17f8e0.png" group-title="Bóng Đá", 01:45 03/10 ⚽ Bosnia and Herzegovina vs Sweden (Nhà đài) (HD) [geo]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://phalang1.tv/
-https://lilive1.eu.cc/live/067d6b6f39c543599850e0aa2359b36f/playlist.m3u8
-#EXTINF:-1 tvg-id="3glrw7hn425zqdy" tvg-name="01:45 03/10 ⚽ France vs Italy (Nhà đài) (HD) [geo]" tvg-logo="https://img.sports-data.online/football/team/17883efbf965291049b600c87db36057.png" group-title="Bóng Đá", 01:45 03/10 ⚽ France vs Italy (Nhà đài) (HD) [geo]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://phalang1.tv/
-https://lilive1.eu.cc/live/fd8fc10b467b4c84bc47464968ac4a15/playlist.m3u8
-#EXTINF:-1 tvg-id="4jwq2ghngyjnm0v" tvg-name="01:45 03/10 ⚽ Faroe Islands vs Slovakia (Nhà đài) (HD) [geo]" tvg-logo="https://img.sports-data.online/football/team/19eeefdc072e675e1be2a9786cfba016.png" group-title="Bóng Đá", 01:45 03/10 ⚽ Faroe Islands vs Slovakia (Nhà đài) (HD) [geo]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://phalang1.tv/
-https://lilive1.eu.cc/live/9dceadee9fb54c1286c7769a1107bef9/playlist.m3u8
-#EXTINF:-1 tvg-id="4wyrn4h668w3q86" tvg-name="01:45 03/10 ⚽ Bray Wanderers vs Cobh Ramblers (Nhà đài) (HD) [geo]" tvg-logo="https://img.sports-data.online/football/team/15f5ac7c149d8f631e37d7e4db26db4c.png" group-title="Bóng Đá", 01:45 03/10 ⚽ Bray Wanderers vs Cobh Ramblers (Nhà đài) (HD) [geo]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://phalang1.tv/
-https://lilive1.eu.cc/live/ff14264f9c12474a8a8e9c01574c9559/playlist.m3u8
-#EXTINF:-1 tvg-id="6ypq3nhvoxdjmd7" tvg-name="01:45 03/10 ⚽ Caerau Ely vs Afan Lido (Nhà đài) (HD) [geo]" tvg-logo="https://img.sports-data.online/football/team/53c81c151f3b682b56c4d8350badf908.png" group-title="Bóng Đá", 01:45 03/10 ⚽ Caerau Ely vs Afan Lido (Nhà đài) (HD) [geo]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://phalang1.tv/
-https://lilive1.eu.cc/live/0062ef206f5a4a2fa18f2bea0d9ff599/playlist.m3u8
-#EXTINF:-1 tvg-id="dn1m1ghll4xymoe" tvg-name="01:45 03/10 ⚽ Athlone Town vs Cork City (Nhà đài) (HD) [geo]" tvg-logo="https://img.sports-data.online/football/team/7b1422267512464d0ce8eac05f715891.png" group-title="Bóng Đá", 01:45 03/10 ⚽ Athlone Town vs Cork City (Nhà đài) (HD) [geo]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://phalang1.tv/
-https://lilive1.eu.cc/live/3feec196e59d4fa5bcb6706ec9e4fa01/playlist.m3u8
-#EXTINF:-1 tvg-id="jw2r09hkkl3erz8" tvg-name="01:45 03/10 ⚽ Treaty United vs UC Dublin (Nhà đài) (HD) [geo]" tvg-logo="https://img.sports-data.online/football/team/5fcd42b6879f272fad680c5a38d2e67a.png" group-title="Bóng Đá", 01:45 03/10 ⚽ Treaty United vs UC Dublin (Nhà đài) (HD) [geo]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://phalang1.tv/
-https://lilive1.eu.cc/live/8acbdbf0aaea4f0c9b39ec76928e3fdd/playlist.m3u8
-#EXTINF:-1 tvg-id="l5ergph44od9r8k" tvg-name="01:45 03/10 ⚽ Finn Harps vs Kerry FC (Nhà đài) (HD) [geo]" tvg-logo="https://img.sports-data.online/football/team/dda093cea9ae219443cd01ca5371a7ce.png" group-title="Bóng Đá", 01:45 03/10 ⚽ Finn Harps vs Kerry FC (Nhà đài) (HD) [geo]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://phalang1.tv/
-https://lilive1.eu.cc/live/ad618233757045b5a1ce6f6b6ad7e274/playlist.m3u8
-#EXTINF:-1 tvg-id="l7oqdehg8154r51" tvg-name="01:45 03/10 ⚽ Dundalk vs Bohemians (Nhà đài) (HD) [geo]" tvg-logo="https://img.sports-data.online/football/team/6b689b46cb5355bd8de1baa916e65aef.png" group-title="Bóng Đá", 01:45 03/10 ⚽ Dundalk vs Bohemians (Nhà đài) (HD) [geo]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://phalang1.tv/
-https://lilive1.eu.cc/live/8e6ea1a4e9b144b6bc4baac7fa16d314/playlist.m3u8
-#EXTINF:-1 tvg-id="l7oqdehggnx7r51" tvg-name="01:45 03/10 ⚽ Wexford vs Longford Town (Nhà đài) (HD) [geo]" tvg-logo="https://img.sports-data.online/football/team/650109674afba511c36c824b275ae82f.png" group-title="Bóng Đá", 01:45 03/10 ⚽ Wexford vs Longford Town (Nhà đài) (HD) [geo]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://phalang1.tv/
-https://lilive1.eu.cc/live/10c3150b366d402990901936658247ad/playlist.m3u8
-#EXTINF:-1 tvg-id="n54qllh457gdqvy" tvg-name="01:45 03/10 ⚽ Douglas Hall vs Castleview FC (Nhà đài) (HD) [geo]" tvg-logo="https://img.sports-data.online/football/team/f6397706a7763d500946d0fbff957ec0.png" group-title="Bóng Đá", 01:45 03/10 ⚽ Douglas Hall vs Castleview FC (Nhà đài) (HD) [geo]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://phalang1.tv/
-https://lilive1.eu.cc/live/f0ccd6b8d1b94953b46b0115d01b0f9d/playlist.m3u8
-#EXTINF:-1 tvg-id="n54qllhn4g61qvy" tvg-name="01:45 03/10 ⚽ Poland vs Romania (Nhà đài) (HD) [geo]" tvg-logo="https://img.sports-data.online/football/team/45dc54dd4ca5afda59e020f40920cf84.png" group-title="Bóng Đá", 01:45 03/10 ⚽ Poland vs Romania (Nhà đài) (HD) [geo]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://phalang1.tv/
-https://lilive1.eu.cc/live/af0f05ed77264640ac1119726fbab6e6/playlist.m3u8
-#EXTINF:-1 tvg-id="pxwrxlhyg008ryk" tvg-name="01:45 03/10 ⚽ England U21 vs Slovakia U21 (Nhà đài) (HD) [geo]" tvg-logo="https://img.sports-data.online/football/team/55995cebcaad7ce43ef53adcddda56bb.png" group-title="Bóng Đá", 01:45 03/10 ⚽ England U21 vs Slovakia U21 (Nhà đài) (HD) [geo]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://phalang1.tv/
-https://lilive1.eu.cc/live/50f7da9bc29846dfb44e033c67090f47/playlist.m3u8
-#EXTINF:-1 tvg-id="vjxm8ghekd6xr6o" tvg-name="01:45 03/10 ⚽ Belgium vs Turkiye (Nhà đài) (HD) [geo]" tvg-logo="https://img.sports-data.online/football/team/f40763e705743d293364c0056abbc341.png" group-title="Bóng Đá", 01:45 03/10 ⚽ Belgium vs Turkiye (Nhà đài) (HD) [geo]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://phalang1.tv/
-https://lilive1.eu.cc/live/1d9db15139d440aebcd9d65dce8d8007/playlist.m3u8
+https://lilive1.eu.cc/live/d6c6bbffd7254518977b34601967294f/playlist.m3u8
