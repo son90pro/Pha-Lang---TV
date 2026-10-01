@@ -3,7 +3,7 @@ name: Update Phá Làng TV M3U Playlist
 on:
   schedule:
     # Chạy tự động mỗi 30 phút
-    - cron: '*/30 * * * *'
+    - cron: '0 * * * *'
   workflow_dispatch: # Nút bấm chạy thủ công trên GitHub UI
 
 permissions:
