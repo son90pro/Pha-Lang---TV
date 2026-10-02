@@ -24,16 +24,47 @@ HEADERS = {
     "Referer": "https://phalang1.tv/"
 }
 
-SPORT_ICONS = {
-    "FOOTBALL": "⚽", "BONG DA": "⚽", "SOCCER": "⚽",
-    "VOLLEYBALL": "🏐", "BONG CHUYEN": "🏐",
-    "BASKETBALL": "🏀", "BONG RO": "🏀",
-    "TENNIS": "🎾",
-    "BADMINTON": "🏸", "CAU LONG": "🏸",
-    "TABLE TENNIS": "🏓", "BONG BAN": "🏓",
-    "BILLIARDS": "🎱", "POOL": "🎱",
-    "ESPORTS": "🎮", "GAME": "🎮",
-    "RACING": "🏎️", "F1": "🏎️"
+# Thứ tự ưu tiên hiển thị Nhóm (Bóng Đá xếp đầu tiên)
+GROUP_ORDER = [
+    "Bóng Đá",
+    "Bóng Chuyền",
+    "Bóng Rổ",
+    "Cầu Lông",
+    "Quần Vợt (Tennis)",
+    "Bida (Billiards)",
+    "Bóng Bàn",
+    "Thể Thao Điện Tử",
+    "Đua Xe",
+    "Thể Thao Khác"
+]
+
+SPORT_MAPPING = {
+    "FOOTBALL": {"group": "Bóng Đá", "icon": "⚽"},
+    "BONG DA": {"group": "Bóng Đá", "icon": "⚽"},
+    "SOCCER": {"group": "Bóng Đá", "icon": "⚽"},
+    
+    "VOLLEYBALL": {"group": "Bóng Chuyền", "icon": "🏐"},
+    "BONG CHUYEN": {"group": "Bóng Chuyền", "icon": "🏐"},
+    
+    "BASKETBALL": {"group": "Bóng Rổ", "icon": "🏀"},
+    "BONG RO": {"group": "Bóng Rổ", "icon": "🏀"},
+    
+    "TENNIS": {"group": "Quần Vợt (Tennis)", "icon": "🎾"},
+    
+    "BADMINTON": {"group": "Cầu Lông", "icon": "🏸"},
+    "CAU LONG": {"group": "Cầu Lông", "icon": "🏸"},
+    
+    "TABLE TENNIS": {"group": "Bóng Bàn", "icon": "🏓"},
+    "BONG BAN": {"group": "Bóng Bàn", "icon": "🏓"},
+    
+    "BILLIARDS": {"group": "Bida (Billiards)", "icon": "🎱"},
+    "POOL": {"group": "Bida (Billiards)", "icon": "🎱"},
+    
+    "ESPORTS": {"group": "Thể Thao Điện Tử", "icon": "🎮"},
+    "GAME": {"group": "Thể Thao Điện Tử", "icon": "🎮"},
+    
+    "RACING": {"group": "Đua Xe", "icon": "🏎️"},
+    "F1": {"group": "Đua Xe", "icon": "🏎️"}
 }
 
 def parse_and_convert_to_vn_time(date_val):
@@ -53,6 +84,7 @@ def parse_and_convert_to_vn_time(date_val):
                 pass
         
         if dt:
+            # Quy đổi UTC -> Múi giờ Việt Nam (GMT+7)
             return dt + timedelta(hours=7)
     except Exception:
         pass
@@ -63,64 +95,35 @@ def format_time_str(dt):
         return ""
     return dt.strftime("%H:%M %d/%m")
 
-def get_sport_icon(desc, title=""):
+def get_sport_info(desc, title=""):
     text_check = f"{desc} {title}".upper()
-    for key, icon in SPORT_ICONS.items():
+    for key, info in SPORT_MAPPING.items():
         if key in text_check:
-            return icon
-    return "⚽"
+            return info["group"], info["icon"]
+    return "Thể Thao Khác", "🏆"
 
 def is_valid_time_window(dt_vn):
+    """
+    Kiểm tra xem trận đấu có nằm trong khung thời gian cho phép:
+    - Đang diễn ra / Trận hôm nay / Trận ngày mai (GMT+7)
+    """
     if not dt_vn:
         return True
     
+    # Lấy thời điểm hiện tại theo giờ VN (GMT+7)
     tz_vn = timezone(timedelta(hours=7))
     now_vn = datetime.now(tz_vn).replace(tzinfo=None)
     
     today_start = now_vn.replace(hour=0, minute=0, second=0, microsecond=0)
     day_after_tomorrow_end = today_start + timedelta(days=2) - timedelta(seconds=1)
     
-    if dt_vn < (now_vn - timedelta(hours=3)):
+    # Bỏ qua các trận diễn ra trước hôm nay hoặc sau ngày mai
+    if dt_vn < (now_vn - timedelta(hours=3)):  # Trận đã diễn ra quá 3 tiếng
         return False
-    if dt_vn > day_after_tomorrow_end:
+    if dt_vn > day_after_tomorrow_end:        # Trận diễn ra từ ngày mốt trở đi
         return False
         
     return True
-
-def extract_hash_ids(item, detail_item=None):
-    """
-    Tách chính xác 2 Hash ID riêng biệt:
-    1. digitalcdn_id (Luồng BLV) từ source_live
-    2. nhadai_id (Luồng Nhà đài) từ stream_key
-    """
-    source_obj = detail_item if detail_item else item
-    
-    digitalcdn_id = None
-    nhadai_id = None
-
-    # Tìm digitalcdn_id
-    for obj in [source_obj, item]:
-        source_live = str(obj.get("source_live") or "")
-        match = re.search(r'digitalcdn\.net/live/([a-f0-9]{32})', source_live)
-        if match:
-            digitalcdn_id = match.group(1)
-            break
-        elif re.match(r'^[a-f0-9]{32}$', source_live):
-            digitalcdn_id = source_live
-            break
-
-    # Tìm nhadai_id
-    for obj in [source_obj, item]:
-        sk = str(obj.get("stream_key") or "").strip()
-        if re.match(r'^[a-f0-9]{32}$', sk):
-            nhadai_id = sk
-            break
-        match = re.search(r'lilive1\.eu\.cc/live/([a-f0-9]{32})', sk)
-        if match:
-            nhadai_id = match.group(1)
-            break
-
-    return digitalcdn_id, nhadai_id
 
 def fetch_match_detail(session, base_api, match_id):
     url = f"{base_api}/matches/detail/{match_id}"
@@ -132,6 +135,65 @@ def fetch_match_detail(session, base_api, match_id):
     except Exception:
         pass
     return None
+
+def extract_all_streams(item, detail_item=None):
+    streams = []
+    seen_urls = set()
+    
+    source_obj = detail_item if detail_item else item
+    default_blv = str(source_obj.get("blv") or item.get("blv") or "").strip()
+
+    # 1. Luồng source_live chính
+    for obj in [source_obj, item]:
+        source_live = obj.get("source_live")
+        if source_live and str(source_live).startswith("http") and source_live not in seen_urls:
+            streams.append({
+                "name": "FHD",
+                "url": str(source_live).strip(),
+                "blv": default_blv,
+                "is_geo": True
+            })
+            seen_urls.add(source_live)
+
+    # 2. Các luồng server phụ
+    servers = []
+    for obj in [source_obj, item]:
+        for key in ["servers", "streams", "sources", "play_urls", "links", "channels"]:
+            val = obj.get(key)
+            if isinstance(val, list):
+                servers.extend(val)
+
+    for s in servers:
+        s_url, s_name, s_blv, is_geo = None, "", default_blv, True
+        if isinstance(s, dict):
+            s_url = s.get("url") or s.get("source") or s.get("link") or s.get("m3u8")
+            s_name = str(s.get("name") or s.get("label") or s.get("quality") or s.get("title") or "").strip()
+            if s.get("blv"):
+                s_blv = str(s.get("blv")).strip()
+        elif isinstance(s, str):
+            s_url = s
+
+        if s_url and str(s_url).startswith("http") and s_url not in seen_urls:
+            streams.append({
+                "name": s_name,
+                "url": str(s_url).strip(),
+                "blv": s_blv,
+                "is_geo": is_geo
+            })
+            seen_urls.add(s_url)
+
+    # 3. Stream_key dự phòng
+    stream_key = source_obj.get("stream_key") or item.get("stream_key")
+    if stream_key and len(streams) == 0:
+        sk_url = f"https://lilive1.eu.cc/live/{stream_key}/playlist.m3u8"
+        streams.append({
+            "name": "HD",
+            "url": sk_url,
+            "blv": default_blv,
+            "is_geo": True
+        })
+
+    return streams
 
 def fetch_matches_by_post():
     all_matches = []
@@ -177,8 +239,12 @@ def fetch_matches_by_post():
     return all_matches
 
 def build_m3u(matches):
-    m3u_lines = ["#EXTM3U\n"]
-    REFERRER_TAG = "#EXTVLCOPT:http-referrer=https://phalang.live/"
+    m3u_lines = [
+        '#EXTM3U url-tvg="" tvg-shift="0"',
+        '# Playlist Tự Động Phá Làng TV - Hôm Nay & Ngày Mai'
+    ]
+
+    grouped_items = {grp: [] for grp in GROUP_ORDER}
     total_channels = 0
 
     for item in matches:
@@ -186,13 +252,15 @@ def build_m3u(matches):
             continue
 
         dt_vn = parse_and_convert_to_vn_time(item.get("start_date"))
+        
+        # Lọc chỉ lấy các trận hôm nay & ngày mai
         if not is_valid_time_window(dt_vn):
             continue
 
         detail_item = item.get("_detail")
-        digitalcdn_id, nhadai_id = extract_hash_ids(item, detail_item)
-
-        if not digitalcdn_id and not nhadai_id:
+        streams = extract_all_streams(item, detail_item)
+        
+        if not streams:
             continue
 
         team1 = str(item.get("team_1") or "").strip()
@@ -207,64 +275,49 @@ def build_m3u(matches):
             continue
 
         desc = str(item.get("desc") or "").strip()
+        main_blv = str(item.get("blv") or "").strip()
         logo = str(item.get("team_1_logo") or item.get("logo") or "").strip()
         formatted_time = format_time_str(dt_vn)
-        icon = get_sport_icon(desc, match_name)
 
-        # Kiểm tra trận đang diễn ra
-        is_live = item.get("is_live") or item.get("status") == "LIVE"
-        live_prefix = "🟢 " if is_live else ""
+        group_category, icon = get_sport_info(desc, match_name)
 
-        # Tên Bình luận viên
-        blv_name = str(item.get("blv") or (detail_item.get("blv") if detail_item else "") or "").strip()
-        blv_label = f"({blv_name})" if blv_name else ""
-
-        # 1. Luồng BLV - Server chính
-        if digitalcdn_id:
-            title_s1 = f"{live_prefix}{formatted_time} {icon} {match_name} {blv_label} [geo]".strip()
-            title_s1 = re.sub(r'\s+', ' ', title_s1)
-            url_s1 = f"https://pull.digitalcdn.net/live/{digitalcdn_id}/index.m3u8"
+        for st in streams:
+            blv_name = st.get("blv") or main_blv
+            blv_tag = f" ({blv_name})" if blv_name else " (Nhà đài)"
             
-            m3u_lines.extend([
-                f'#EXTINF:-1 tvg-logo="{logo}" group-title="Phá Làng TV" , {title_s1}',
-                REFERRER_TAG,
-                url_s1,
-                ""
-            ])
+            quality_str = str(st.get("name") or "").strip()
+            quality_tag = f" ({quality_str})" if quality_str else ""
+            geo_tag = " [geo]" if st.get("is_geo") else ""
+
+            display_title = f"{formatted_time} {icon} {match_name}{blv_tag}{quality_tag}{geo_tag}".strip()
+            display_title = re.sub(r'\s+', ' ', display_title)
+
+            item_id = str(item.get("id") or "")
+            
+            channel_entry = [
+                f'#EXTINF:-1 tvg-id="{item_id}" tvg-name="{display_title}" tvg-logo="{logo}" group-title="{group_category}", {display_title}',
+                '#EXTVLCOPT:http-user-agent=Mozilla/5.0',
+                '#EXTVLCOPT:http-referrer=https://phalang1.tv/',
+                st["url"]
+            ]
+
+            if group_category in grouped_items:
+                grouped_items[group_category].append(channel_entry)
+            else:
+                grouped_items["Thể Thao Khác"].append(channel_entry)
+                
             total_channels += 1
 
-        # 2. Luồng BLV - Server dự phòng (HD2)
-        if digitalcdn_id:
-            title_s2 = f"{live_prefix}{formatted_time} {icon} {match_name} {blv_label} (HD2) [geo]".strip()
-            title_s2 = re.sub(r'\s+', ' ', title_s2)
-            url_s2 = f"https://pull1.digitalcdn.net/live/{digitalcdn_id}/index.m3u8"
-            
-            m3u_lines.extend([
-                f'#EXTINF:-1 tvg-logo="{logo}" group-title="Phá Làng TV" , {title_s2}',
-                REFERRER_TAG,
-                url_s2,
-                ""
-            ])
-            total_channels += 1
-
-        # 3. Luồng Nhà đài
-        if nhadai_id:
-            title_s3 = f"{live_prefix}{formatted_time} {icon} {match_name} (Nhà đài)".strip()
-            title_s3 = re.sub(r'\s+', ' ', title_s3)
-            url_s3 = f"https://lilive1.eu.cc/live/{nhadai_id}/playlist.m3u8"
-            
-            m3u_lines.extend([
-                f'#EXTINF:-1 tvg-logo="{logo}" group-title="Phá Làng TV" , {title_s3}',
-                REFERRER_TAG,
-                url_s3,
-                ""
-            ])
-            total_channels += 1
+    # Đưa các kênh vào file theo đúng thứ tự (Bóng Đá lên đầu tiên)
+    for grp in GROUP_ORDER:
+        entries = grouped_items.get(grp, [])
+        for entry in entries:
+            m3u_lines.extend(entry)
 
     return "\n".join(m3u_lines), total_channels
 
 def main():
-    print("=== Bắt đầu cào dữ liệu Phá Làng TV (Chuẩn M3U) ===")
+    print("=== Bắt đầu cào dữ liệu Phá Làng TV (Ưu tiên Bóng Đá & Lọc Hôm nay/Ngày mai) ===")
     matches = fetch_matches_by_post()
     print(f"Tổng số trận cào được: {len(matches)}")
 
@@ -277,4 +330,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-    
