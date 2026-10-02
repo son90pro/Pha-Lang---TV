@@ -103,24 +103,18 @@ def get_sport_info(desc, title=""):
     return "Thể Thao Khác", "🏆"
 
 def is_valid_time_window(dt_vn):
-    """
-    Kiểm tra xem trận đấu có nằm trong khung thời gian cho phép:
-    - Đang diễn ra / Trận hôm nay / Trận ngày mai (GMT+7)
-    """
     if not dt_vn:
         return True
     
-    # Lấy thời điểm hiện tại theo giờ VN (GMT+7)
     tz_vn = timezone(timedelta(hours=7))
     now_vn = datetime.now(tz_vn).replace(tzinfo=None)
     
     today_start = now_vn.replace(hour=0, minute=0, second=0, microsecond=0)
     day_after_tomorrow_end = today_start + timedelta(days=2) - timedelta(seconds=1)
     
-    # Bỏ qua các trận diễn ra trước hôm nay hoặc sau ngày mai
-    if dt_vn < (now_vn - timedelta(hours=3)):  # Trận đã diễn ra quá 3 tiếng
+    if dt_vn < (now_vn - timedelta(hours=3)):
         return False
-    if dt_vn > day_after_tomorrow_end:        # Trận diễn ra từ ngày mốt trở đi
+    if dt_vn > day_after_tomorrow_end:
         return False
         
     return True
@@ -241,7 +235,7 @@ def fetch_matches_by_post():
 def build_m3u(matches):
     m3u_lines = [
         '#EXTM3U url-tvg="" tvg-shift="0"',
-        '# Playlist Tự Động Phá Làng TV - Hôm Nay & Ngày Mai'
+        '# Playlist Tự Động Phá Làng TV - Lọc Bỏ Luồng Nhà Đài Bóng Đá'
     ]
 
     grouped_items = {grp: [] for grp in GROUP_ORDER}
@@ -253,7 +247,6 @@ def build_m3u(matches):
 
         dt_vn = parse_and_convert_to_vn_time(item.get("start_date"))
         
-        # Lọc chỉ lấy các trận hôm nay & ngày mai
         if not is_valid_time_window(dt_vn):
             continue
 
@@ -283,6 +276,12 @@ def build_m3u(matches):
 
         for st in streams:
             blv_name = st.get("blv") or main_blv
+            
+            # --- LỌC BỎ LUỒNG NHÀ ĐÀI CHO MỤC BÓNG ĐÁ ---
+            if group_category == "Bóng Đá" and not blv_name:
+                continue
+            # ---------------------------------------------
+
             blv_tag = f" ({blv_name})" if blv_name else " (Nhà đài)"
             
             quality_str = str(st.get("name") or "").strip()
@@ -308,7 +307,6 @@ def build_m3u(matches):
                 
             total_channels += 1
 
-    # Đưa các kênh vào file theo đúng thứ tự (Bóng Đá lên đầu tiên)
     for grp in GROUP_ORDER:
         entries = grouped_items.get(grp, [])
         for entry in entries:
@@ -317,7 +315,7 @@ def build_m3u(matches):
     return "\n".join(m3u_lines), total_channels
 
 def main():
-    print("=== Bắt đầu cào dữ liệu Phá Làng TV (Ưu tiên Bóng Đá & Lọc Hôm nay/Ngày mai) ===")
+    print("=== Bắt đầu cào dữ liệu Phá Làng TV (Lọc bỏ Nhà đài Bóng Đá) ===")
     matches = fetch_matches_by_post()
     print(f"Tổng số trận cào được: {len(matches)}")
 
