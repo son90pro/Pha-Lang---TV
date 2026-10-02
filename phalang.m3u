@@ -1,5 +1,5 @@
 #EXTM3U url-tvg="" tvg-shift="0"
-# Playlist Tự Động Phá Làng TV - Lọc Bỏ Luồng Nhà Đài Bóng Đá
+# Playlist Tự Động Phá Làng TV - Đầy Đủ Luồng Cho Các Trận Có BLV
 #EXTINF:-1 tvg-id="dn1m1gh9v70dmoe" tvg-name="17:30 02/10 ⚽ North Korea Women vs Japan Women (LÝ LINH LỰC) (FHD) [geo]" tvg-logo="https://img0.aiscore.com/football/team/b6b90237b3ebd1e462a5d11dbc5c4dae.png!w80" group-title="Bóng Đá", 17:30 02/10 ⚽ North Korea Women vs Japan Women (LÝ LINH LỰC) (FHD) [geo]
 #EXTVLCOPT:http-user-agent=Mozilla/5.0
 #EXTVLCOPT:http-referrer=https://phalang1.tv/
@@ -36,11 +36,3 @@ https://lilive1.eu.cc/live/1d9db15139d440aebcd9d65dce8d8007/playlist.m3u8
 #EXTVLCOPT:http-user-agent=Mozilla/5.0
 #EXTVLCOPT:http-referrer=https://phalang1.tv/
 https://lilive1.eu.cc/live/5b0489dd5f6d4608b23568db294b7356/playlist.m3u8
-#EXTINF:-1 tvg-id="d0f9a0d9587642858d03d23faba80006" tvg-name="17:00 02/10 🏐 Việt Nam vs Indonesia (LÝ LIỀU LĨNH) (HD) [geo]" tvg-logo="https://img0.aiscore.com/volleyball/team/93ff8d7f8cbb4a363bee874b30e2a263.png!w80" group-title="Bóng Chuyền", 17:00 02/10 🏐 Việt Nam vs Indonesia (LÝ LIỀU LĨNH) (HD) [geo]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://phalang1.tv/
-https://lilive1.eu.cc/live/5cca4649b1dd4826b28f117ba67c6e23/playlist.m3u8
-#EXTINF:-1 tvg-id="d818ee81a1bc40999ee2f36649863cd7" tvg-name="17:20 02/10 🏐 Nhật Bản vs Trung Quốc (LÝ LÊN LỬA) (HD) [geo]" tvg-logo="https://img0.aiscore.com/volleyball/team/b337fa1acec0642f9ded3da29456d58a.png!w80" group-title="Bóng Chuyền", 17:20 02/10 🏐 Nhật Bản vs Trung Quốc (LÝ LÊN LỬA) (HD) [geo]
-#EXTVLCOPT:http-user-agent=Mozilla/5.0
-#EXTVLCOPT:http-referrer=https://phalang1.tv/
-https://lilive1.eu.cc/live/fdffac894a8144b69da2102c1413c607/playlist.m3u8
