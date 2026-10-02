@@ -1,5 +1,19 @@
 import re
 import json
+import requests
+
+def extract_stream_ids(html_or_json_text):
+    """
+    Hàm giúp tách đúng 2 Hash ID khác nhau từ dữ liệu thô
+    """
+    digitalcdn_match = re.search(r'pull(?:\d)?\.digitalcdn\.net/live/([a-f0-9]{32})/', html_or_json_text)
+    digitalcdn_id = digitalcdn_match.group(1) if digitalcdn_match else None
+
+    nhadai_match = re.search(r'lilive1\.eu\.cc/live/([a-f0-9]{32})/', html_or_json_text)
+    nhadai_id = nhadai_match.group(1) if nhadai_match else None
+
+    return digitalcdn_id, nhadai_id
+
 
 def build_m3u_playlist(matches_data):
     """
@@ -22,15 +36,12 @@ def build_m3u_playlist(matches_data):
         blv = item.get("blv_name", "").strip()
         blv_label = f"({blv})" if blv else ""
 
-        # LẤY ĐÚNG HASH ID RIÊNG CHO TỪNG NGUỒN
-        # Đảm bảo không lấy nhầm Hash ID của Nhà đài gán cho digitalcdn
-        digitalcdn_id = item.get("digitalcdn_id")  # VD: 56ab06ef2994451995eebfbdf3ce4c8c
-        nhadai_id = item.get("nhadai_id")          # VD: af1e3c5362ae48452c6e328062a5800b
+        digitalcdn_id = item.get("digitalcdn_id")
+        nhadai_id = item.get("nhadai_id")
 
-        # 1. Luồng BLV - Sever chính (pull.digitalcdn.net)
+        # 1. Luồng BLV - Server chính (pull.digitalcdn.net)
         if digitalcdn_id:
             extinf = f'#EXTINF:-1 tvg-logo="{logo}" group-title="{group}" , {is_live}{time_str} {sport} {title} {blv_label} [geo]'
-            # Giữ URL sạch, KHÔNG cộng thêm '|Referer=...' ở cuối
             clean_url = f"https://pull.digitalcdn.net/live/{digitalcdn_id}/index.m3u8"
             m3u_lines.extend([extinf, REFERRER_TAG, clean_url, ""])
 
@@ -49,17 +60,33 @@ def build_m3u_playlist(matches_data):
     return "\n".join(m3u_lines)
 
 
-# --- NẾU BẠN BẮT LINK BẰNG REGEX TỪ SOURCE WEB/API ---
-def extract_stream_ids(html_or_json_text):
-    """
-    Hàm mẫu giúp tách đúng 2 Hash ID khác nhau từ dữ liệu thô
-    """
-    # Regex tìm Hash ID của digitalcdn (Luồng BLV)
-    digitalcdn_match = re.search(r'pull(?:\d)?\.digitalcdn\.net/live/([a-f0-9]{32})/', html_or_json_text)
-    digitalcdn_id = digitalcdn_match.group(1) if digitalcdn_match else None
+def main():
+    # Danh sách chứa các trận đấu bóc tách được
+    matches_data = []
 
-    # Regex tìm Hash ID của lilive1 (Luồng Nhà đài)
-    nhadai_match = re.search(r'lilive1\.eu\.cc/live/([a-f0-9]{32})/', html_or_json_text)
-    nhadai_id = nhadai_match.group(1) if nhadai_match else None
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+        "Referer": "https://phalang.live/"
+    }
 
-    return digitalcdn_id, nhadai_id
+    try:
+        # TODO: Thêm logic request / cào dữ liệu trận đấu của bạn tại đây
+        # response = requests.get("https://phalang.live/api/matches", headers=headers, timeout=15)
+        # matches_data = response.json()
+        pass
+    except Exception as e:
+        print(f"Lỗi trong quá trình lấy dữ liệu: {e}")
+
+    # Tạo nội dung chuỗi M3U
+    m3u_content = build_m3u_playlist(matches_data)
+
+    # GHI THỰC TẾ RA FILE phalang.m3u
+    with open("phalang.m3u", "w", encoding="utf-8") as f:
+        f.write(m3u_content)
+
+    print("Đã tạo thành công file phalang.m3u!")
+
+
+if __name__ == "__main__":
+    main()
+    
