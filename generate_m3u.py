@@ -84,7 +84,7 @@ def parse_and_convert_to_vn_time(date_val):
                 pass
         
         if dt:
-            # Quy đổi UTC -> Múi giờ Việt Nam (GMT+7)
+            # Quy đổi UTC -> GMT+7
             return dt + timedelta(hours=7)
     except Exception:
         pass
@@ -131,39 +131,51 @@ def fetch_match_detail(session, base_api, match_id):
     return None
 
 def extract_all_streams(item, detail_item=None):
+    """
+    Bóc tách toàn bộ luồng phát từ detail và item gốc mà không bỏ sót bất kỳ server phụ nào
+    """
     streams = []
     seen_urls = set()
     
     source_obj = detail_item if detail_item else item
     default_blv = str(source_obj.get("blv") or item.get("blv") or "").strip()
 
-    # 1. Luồng source_live chính
+    # 1. Quét luồng source_live chính
     for obj in [source_obj, item]:
+        if not isinstance(obj, dict):
+            continue
         source_live = obj.get("source_live")
         if source_live and str(source_live).startswith("http") and source_live not in seen_urls:
             streams.append({
-                "name": "FHD",
+                "name": "",
                 "url": str(source_live).strip(),
                 "blv": default_blv,
                 "is_geo": True
             })
             seen_urls.add(source_live)
 
-    # 2. Toàn bộ các luồng server phụ (HD, HD1, HD2, Nhà đài,...)
-    servers = []
+    # 2. Quét sâu toàn bộ các danh sách server / stream / link phụ
+    server_lists = []
     for obj in [source_obj, item]:
-        for key in ["servers", "streams", "sources", "play_urls", "links", "channels"]:
+        if not isinstance(obj, dict):
+            continue
+        for key in ["servers", "streams", "sources", "play_urls", "links", "channels", "server_list"]:
             val = obj.get(key)
             if isinstance(val, list):
-                servers.extend(val)
+                server_lists.extend(val)
 
-    for s in servers:
+    for s in server_lists:
         s_url, s_name, s_blv, is_geo = None, "", default_blv, True
         if isinstance(s, dict):
-            s_url = s.get("url") or s.get("source") or s.get("link") or s.get("m3u8")
-            s_name = str(s.get("name") or s.get("label") or s.get("quality") or s.get("title") or "").strip()
+            s_url = s.get("url") or s.get("source") or s.get("link") or s.get("m3u8") or s.get("play_url")
+            s_name = str(s.get("name") or s.get("label") or s.get("quality") or s.get("title") or s.get("server_name") or "").strip()
+            
+            # Kiểm tra riêng BLV của luồng nếu có
             if s.get("blv"):
                 s_blv = str(s.get("blv")).strip()
+            
+            if "is_geo" in s:
+                is_geo = bool(s.get("is_geo"))
         elif isinstance(s, str):
             s_url = s
 
@@ -176,18 +188,36 @@ def extract_all_streams(item, detail_item=None):
             })
             seen_urls.add(s_url)
 
-    # 3. Stream_key dự phòng
+    # 3. Stream_key dự phòng nếu chưa tìm thấy luồng
     stream_key = source_obj.get("stream_key") or item.get("stream_key")
     if stream_key and len(streams) == 0:
         sk_url = f"https://lilive1.eu.cc/live/{stream_key}/playlist.m3u8"
         streams.append({
-            "name": "HD",
+            "name": "",
             "url": sk_url,
             "blv": default_blv,
             "is_geo": True
         })
 
     return streams
+
+def has_commentator(item, detail_item, streams):
+    """
+    Kiểm tra xem trận đấu có BLV tiếng Việt (của web) hay không
+    """
+    # 1. Kiểm tra BLV trong item / detail
+    if item.get("blv") and str(item.get("blv")).strip():
+        return True
+    if detail_item and detail_item.get("blv") and str(detail_item.get("blv")).strip():
+        return True
+        
+    # 2. Kiểm tra BLV từng luồng lẻ
+    for st in streams:
+        blv_str = str(st.get("blv") or "").strip()
+        if blv_str and "nhà đài" not in blv_str.lower():
+            return True
+            
+    return False
 
 def fetch_matches_by_post():
     all_matches = []
@@ -235,7 +265,7 @@ def fetch_matches_by_post():
 def build_m3u(matches):
     m3u_lines = [
         '#EXTM3U url-tvg="" tvg-shift="0"',
-        '# Playlist Tự Động Phá Làng TV - Đầy Đủ Luồng Cho Các Trận Có BLV'
+        '# Playlist Tự Động Phá Làng TV - Đầy Đủ Tất Cả Các Luồng'
     ]
 
     grouped_items = {grp: [] for grp in GROUP_ORDER}
@@ -247,15 +277,16 @@ def build_m3u(matches):
 
         dt_vn = parse_and_convert_to_vn_time(item.get("start_date"))
         
-        # 1. Lọc theo thời gian (Hôm nay & Ngày mai)
+        # Lọc khung giờ Hôm nay & Ngày mai
         if not is_valid_time_window(dt_vn):
             continue
 
         detail_item = item.get("_detail") or {}
+        streams = extract_all_streams(item, detail_item)
         
-        # Kiểm tra xem TRẬN ĐẤU này có BLV không
-        main_blv = str(detail_item.get("blv") or item.get("blv") or "").strip()
-        
+        if not streams:
+            continue
+
         team1 = str(item.get("team_1") or "").strip()
         team2 = str(item.get("team_2") or "").strip()
         title_raw = str(item.get("title") or "").strip()
@@ -270,21 +301,20 @@ def build_m3u(matches):
         desc = str(item.get("desc") or "").strip()
         group_category, icon = get_sport_info(desc, match_name)
 
-        # 2. LOẠI BỎ TRẬN ĐẤU NẾU KHÔNG CÓ BLV CỦA WEB
-        if not main_blv:
+        # LOẠI BỎ TRẬN ĐẤU NẾU KHÔNG CÓ BLV CỦA WEB (Chỉ lọc ở môn Bóng Đá)
+        if group_category == "Bóng Đá" and not has_commentator(item, detail_item, streams):
             continue
 
-        streams = extract_all_streams(item, detail_item)
-        if not streams:
-            continue
-
+        main_blv = str(detail_item.get("blv") or item.get("blv") or "").strip()
         logo = str(item.get("team_1_logo") or item.get("logo") or "").strip()
         formatted_time = format_time_str(dt_vn)
 
-        # 3. Giữ trọn vẹn TẤT CẢ luồng phát (FHD, HD1, HD2, [geo]...) thuộc về trận đấu có BLV này
+        # Xuất đầy đủ tất cả các luồng của trận đấu
         for st in streams:
             st_blv = st.get("blv") or main_blv
-            blv_tag = f" ({st_blv})" if st_blv else ""
+            
+            # Phân biệt tên hiển thị: Nếu luồng không có tên BLV -> đánh nhãn (Nhà đài)
+            blv_tag = f" ({st_blv})" if st_blv else " (Nhà đài)"
             
             quality_str = str(st.get("name") or "").strip()
             quality_tag = f" ({quality_str})" if quality_str else ""
