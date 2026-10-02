@@ -85,7 +85,6 @@ def parse_and_convert_to_vn_time(date_val):
                 pass
         
         if dt:
-            # Quy đổi UTC -> GMT+7
             return dt + timedelta(hours=7)
     except Exception:
         pass
@@ -120,17 +119,21 @@ def is_valid_time_window(dt_vn):
         
     return True
 
-def fetch_match_detail(session, base_api, match_id):
-    url = f"{base_api}/matches/detail/{match_id}"
-    try:
-        res = session.get(url, headers=HEADERS, timeout=6, verify=False)
-        if res.status_code == 200:
-            res_json = res.json()
-            if isinstance(res_json, dict):
-                return res_json.get("data") or res_json
-    except Exception:
-        pass
-    return None
+def fetch_match_detail(match_id):
+    """Lấy chi tiết trận đấu, thử lần lượt qua các Domain API nếu bị lỗi"""
+    for base_api in API_DOMAINS:
+        url = f"{base_api}/matches/detail/{match_id}"
+        try:
+            res = requests.get(url, headers=HEADERS, timeout=4, verify=False)
+            if res.status_code == 200:
+                res_json = res.json()
+                if isinstance(res_json, dict):
+                    data = res_json.get("data") or res_json
+                    if isinstance(data, dict) and data:
+                        return data
+        except Exception:
+            continue
+    return {}
 
 def extract_all_streams(item, detail_item=None):
     streams = []
@@ -139,45 +142,46 @@ def extract_all_streams(item, detail_item=None):
     source_obj = detail_item if isinstance(detail_item, dict) and detail_item else item
     main_blv = str(source_obj.get("blv") or item.get("blv") or "").strip()
 
-    # 1. Thu thập toàn bộ danh sách servers/streams/links từ API
-    servers_list = []
+    # 1. Quét danh sách servers/streams/links từ Detail trước
+    raw_servers = []
     for obj in [detail_item, item]:
         if not isinstance(obj, dict):
             continue
         for key in ["servers", "streams", "sources", "links", "channels", "play_urls", "server_list"]:
             val = obj.get(key)
             if isinstance(val, list) and len(val) > 0:
-                servers_list.extend(val)
+                raw_servers.extend(val)
+            elif isinstance(val, dict):
+                raw_servers.extend(val.values())
 
-    if servers_list:
-        for s in servers_list:
-            s_url, s_name, s_blv, is_geo = None, "", "", True
-            if isinstance(s, dict):
-                s_url = s.get("url") or s.get("source") or s.get("link") or s.get("m3u8") or s.get("play_url")
-                s_name = str(s.get("name") or s.get("label") or s.get("title") or s.get("quality") or s.get("server_name") or "").strip()
-                s_blv = str(s.get("blv") or "").strip()
-                if "is_geo" in s:
-                    is_geo = bool(s.get("is_geo"))
-            elif isinstance(s, str):
-                s_url = s
+    for s in raw_servers:
+        s_url, s_name, s_blv, is_geo = None, "", "", True
+        if isinstance(s, dict):
+            s_url = s.get("url") or s.get("source") or s.get("link") or s.get("m3u8") or s.get("play_url")
+            s_name = str(s.get("name") or s.get("label") or s.get("title") or s.get("quality") or s.get("server_name") or "").strip()
+            s_blv = str(s.get("blv") or "").strip()
+            if "is_geo" in s:
+                is_geo = bool(s.get("is_geo"))
+        elif isinstance(s, str):
+            s_url = s
 
-            if s_url and str(s_url).startswith("http") and s_url not in seen_urls:
-                streams.append({
-                    "name": s_name,
-                    "url": str(s_url).strip(),
-                    "blv": s_blv,
-                    "is_geo": is_geo
-                })
-                seen_urls.add(s_url)
+        if s_url and str(s_url).startswith("http") and s_url not in seen_urls:
+            streams.append({
+                "name": s_name,
+                "url": str(s_url).strip(),
+                "blv": s_blv if s_blv else main_blv,
+                "is_geo": is_geo
+            })
+            seen_urls.add(s_url)
 
-    # 2. Bổ sung luồng source_live nếu chưa có trong servers
+    # 2. Bổ sung source_live chính nếu chưa có
     for obj in [detail_item, item]:
         if not isinstance(obj, dict):
             continue
         source_live = obj.get("source_live")
         if source_live and str(source_live).startswith("http") and source_live not in seen_urls:
             streams.append({
-                "name": "",
+                "name": "FHD",
                 "url": str(source_live).strip(),
                 "blv": main_blv,
                 "is_geo": True
@@ -189,7 +193,7 @@ def extract_all_streams(item, detail_item=None):
     if stream_key and len(streams) == 0:
         sk_url = f"https://lilive1.eu.cc/live/{stream_key}/playlist.m3u8"
         streams.append({
-            "name": "",
+            "name": "FHD",
             "url": sk_url,
             "blv": main_blv,
             "is_geo": True
@@ -210,7 +214,6 @@ def fetch_matches_by_post():
     }
 
     session = requests.Session()
-    working_base_api = None
 
     for base_api in API_DOMAINS:
         url = f"{base_api}/matches/graph"
@@ -227,7 +230,6 @@ def fetch_matches_by_post():
                             if m_id and m_id not in seen_ids:
                                 seen_ids.add(m_id)
                                 all_matches.append(item)
-                        working_base_api = base_api
                         print(f" -> Lấy thành công Page {page} từ {base_api} ({len(data)} trận)")
                     else:
                         break
@@ -238,26 +240,25 @@ def fetch_matches_by_post():
         if len(all_matches) > 0:
             break
 
-    # Sử dụng ThreadPoolExecutor cào đa luồng detail cực nhanh
-    if all_matches and working_base_api:
+    # Lấy Chi tiết (Detail) bằng Đa Luồng để không bị bỏ sót
+    if all_matches:
         print(f"=== Đang cào chi tiết luồng cho {len(all_matches)} trận đấu... ===")
-        def get_detail_task(item):
-            m_id = item.get("id")
-            detail = fetch_match_detail(session, working_base_api, m_id)
-            item["_detail"] = detail
-            return item
-
-        with ThreadPoolExecutor(max_workers=10) as executor:
-            futures = [executor.submit(get_detail_task, item) for item in all_matches]
-            for future in as_completed(futures):
-                pass
+        with ThreadPoolExecutor(max_workers=8) as executor:
+            future_to_match = {executor.submit(fetch_match_detail, item["id"]): item for item in all_matches if item.get("id")}
+            for future in as_completed(future_to_match):
+                item = future_to_match[future]
+                try:
+                    detail = future.result()
+                    item["_detail"] = detail
+                except Exception:
+                    item["_detail"] = {}
 
     return all_matches
 
 def build_m3u(matches):
     m3u_lines = [
         '#EXTM3U url-tvg="" tvg-shift="0"',
-        '# Playlist Tự Động Phá Làng TV - Đầy Đủ Luồng Phát'
+        '# Playlist Tự Động Phá Làng TV - Đầy Đủ TẤT CẢ Luồng Phát'
     ]
 
     grouped_items = {grp: [] for grp in GROUP_ORDER}
@@ -272,8 +273,6 @@ def build_m3u(matches):
             continue
 
         detail_item = item.get("_detail") or {}
-
-        # Lấy tên BLV chính của trận
         main_blv = str(detail_item.get("blv") or item.get("blv") or "").strip()
 
         team1 = str(item.get("team_1") or "").strip()
@@ -294,7 +293,7 @@ def build_m3u(matches):
         if not streams:
             continue
 
-        # --- LỌC BỎ TRẬN ĐẤU BÓNG ĐÁ KHÔNG CÓ BLV CỦA WEB ---
+        # Lọc bỏ trận BÓNG ĐÁ không có BLV của web
         has_web_blv = bool(main_blv and "nhà đài" not in main_blv.lower() and "nha dai" not in main_blv.lower())
         if not has_web_blv:
             for st in streams:
@@ -305,21 +304,19 @@ def build_m3u(matches):
 
         if group_category == "Bóng Đá" and not has_web_blv:
             continue
-        # ----------------------------------------------------
 
         logo = str(item.get("team_1_logo") or item.get("logo") or "").strip()
         formatted_time = format_time_str(dt_vn)
 
-        for st in streams:
+        # Xuất đầy đủ từng luồng đúng chuẩn tên hiển thị
+        for idx, st in enumerate(streams):
             s_name = str(st.get("name") or "").strip()
             s_blv = str(st.get("blv") or "").strip()
 
-            # Kiểm tra xem đây có phải luồng Nhà đài không
             is_nhadai_stream = (
-                "nhà đài" in s_name.lower() or
-                "nha dai" in s_name.lower() or
-                "nhà đài" in s_blv.lower() or
-                "nha dai" in s_blv.lower()
+                "nhà đài" in s_name.lower() or "nha dai" in s_name.lower() or
+                "nhà đài" in s_blv.lower() or "nha dai" in s_blv.lower() or
+                (not s_blv and idx > 0 and s_name.upper() not in ["HD1", "HD2", "HD"])
             )
 
             if is_nhadai_stream:
@@ -329,14 +326,13 @@ def build_m3u(matches):
                 blv_tag = f"({blv_name})" if blv_name else "(Nhà đài)"
 
                 qual_tag = ""
-                if s_name and s_name.upper() not in ["FHD", "DEFAULT", "MAIN", "FULL HD"]:
+                if s_name and s_name.upper() not in ["FHD", "DEFAULT", "MAIN", "FULL HD", ""]:
                     qual_tag = f" ({s_name})"
 
-                tag_str = f"{blv_tag}{qual_tag}"
+                geo_tag = " [geo]" if st.get("is_geo", True) else ""
+                tag_str = f"{blv_tag}{qual_tag}{geo_tag}"
 
-            geo_tag = " [geo]" if st.get("is_geo") else ""
-
-            display_title = f"{formatted_time} {icon} {match_name} {tag_str}{geo_tag}".strip()
+            display_title = f"{formatted_time} {icon} {match_name} {tag_str}".strip()
             display_title = re.sub(r'\s+', ' ', display_title)
 
             item_id = str(item.get("id") or "")
