@@ -21,11 +21,10 @@ HEADERS = {
     "Accept": "application/json, text/plain, */*",
     "Content-Type": "application/json",
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36",
-    "Origin": "https://phalang1.tv",
-    "Referer": "https://phalang1.tv/"
+    "Origin": "https://phalang.live",
+    "Referer": "https://phalang.live/"
 }
 
-# Thứ tự ưu tiên hiển thị Nhóm (Bóng Đá xếp đầu tiên)
 GROUP_ORDER = [
     "Bóng Đá",
     "Bóng Chuyền",
@@ -120,7 +119,6 @@ def is_valid_time_window(dt_vn):
     return True
 
 def fetch_match_detail(match_id):
-    """Lấy chi tiết trận đấu, thử lần lượt qua các Domain API nếu bị lỗi"""
     for base_api in API_DOMAINS:
         url = f"{base_api}/matches/detail/{match_id}"
         try:
@@ -134,72 +132,6 @@ def fetch_match_detail(match_id):
         except Exception:
             continue
     return {}
-
-def extract_all_streams(item, detail_item=None):
-    streams = []
-    seen_urls = set()
-
-    source_obj = detail_item if isinstance(detail_item, dict) and detail_item else item
-    main_blv = str(source_obj.get("blv") or item.get("blv") or "").strip()
-
-    # 1. Quét danh sách servers/streams/links từ Detail trước
-    raw_servers = []
-    for obj in [detail_item, item]:
-        if not isinstance(obj, dict):
-            continue
-        for key in ["servers", "streams", "sources", "links", "channels", "play_urls", "server_list"]:
-            val = obj.get(key)
-            if isinstance(val, list) and len(val) > 0:
-                raw_servers.extend(val)
-            elif isinstance(val, dict):
-                raw_servers.extend(val.values())
-
-    for s in raw_servers:
-        s_url, s_name, s_blv, is_geo = None, "", "", True
-        if isinstance(s, dict):
-            s_url = s.get("url") or s.get("source") or s.get("link") or s.get("m3u8") or s.get("play_url")
-            s_name = str(s.get("name") or s.get("label") or s.get("title") or s.get("quality") or s.get("server_name") or "").strip()
-            s_blv = str(s.get("blv") or "").strip()
-            if "is_geo" in s:
-                is_geo = bool(s.get("is_geo"))
-        elif isinstance(s, str):
-            s_url = s
-
-        if s_url and str(s_url).startswith("http") and s_url not in seen_urls:
-            streams.append({
-                "name": s_name,
-                "url": str(s_url).strip(),
-                "blv": s_blv if s_blv else main_blv,
-                "is_geo": is_geo
-            })
-            seen_urls.add(s_url)
-
-    # 2. Bổ sung source_live chính nếu chưa có
-    for obj in [detail_item, item]:
-        if not isinstance(obj, dict):
-            continue
-        source_live = obj.get("source_live")
-        if source_live and str(source_live).startswith("http") and source_live not in seen_urls:
-            streams.append({
-                "name": "FHD",
-                "url": str(source_live).strip(),
-                "blv": main_blv,
-                "is_geo": True
-            })
-            seen_urls.add(source_live)
-
-    # 3. Stream_key dự phòng
-    stream_key = source_obj.get("stream_key") or item.get("stream_key")
-    if stream_key and len(streams) == 0:
-        sk_url = f"https://lilive1.eu.cc/live/{stream_key}/playlist.m3u8"
-        streams.append({
-            "name": "FHD",
-            "url": sk_url,
-            "blv": main_blv,
-            "is_geo": True
-        })
-
-    return streams
 
 def fetch_matches_by_post():
     all_matches = []
@@ -240,7 +172,6 @@ def fetch_matches_by_post():
         if len(all_matches) > 0:
             break
 
-    # Lấy Chi tiết (Detail) bằng Đa Luồng để không bị bỏ sót
     if all_matches:
         print(f"=== Đang cào chi tiết luồng cho {len(all_matches)} trận đấu... ===")
         with ThreadPoolExecutor(max_workers=8) as executor:
@@ -255,14 +186,54 @@ def fetch_matches_by_post():
 
     return all_matches
 
+def generate_match_streams(item, detail_item):
+    """Tạo chính xác 3 luồng phát theo cấu trúc chuẩn"""
+    source_obj = detail_item if isinstance(detail_item, dict) and detail_item else item
+    main_blv = str(source_obj.get("blv") or item.get("blv") or "").strip()
+
+    source_live = str(source_obj.get("source_live") or item.get("source_live") or "").strip()
+    stream_key = str(source_obj.get("stream_key") or item.get("stream_key") or "").strip()
+
+    streams = []
+
+    # 1. Luồng chính BLV
+    if source_live and source_live.startswith("http"):
+        blv_tag = f"({main_blv}) [geo]" if main_blv else "[geo]"
+        streams.append({
+            "url": source_live,
+            "tag": blv_tag
+        })
+
+        # 2. Luồng phụ HD2 (Thay pull. -> pull1.)
+        if "pull.digitalcdn.net" in source_live:
+            hd2_url = source_live.replace("pull.digitalcdn.net", "pull1.digitalcdn.net")
+        else:
+            hd2_url = source_live.replace("://pull.", "://pull1.")
+
+        hd2_tag = f"({main_blv}) (HD2) [geo]" if main_blv else "(HD2) [geo]"
+        streams.append({
+            "url": hd2_url,
+            "tag": hd2_tag
+        })
+
+    # 3. Luồng Nhà đài
+    if stream_key:
+        nhadai_url = f"https://lilive1.eu.cc/live/{stream_key}/playlist.m3u8"
+        streams.append({
+            "url": nhadai_url,
+            "tag": "(Nhà đài)"
+        })
+
+    return streams, main_blv
+
 def build_m3u(matches):
-    m3u_lines = [
-        '#EXTM3U url-tvg="" tvg-shift="0"',
-        '# Playlist Tự Động Phá Làng TV - Đầy Đủ TẤT CẢ Luồng Phát'
-    ]
+    m3u_lines = ['#EXTM3U']
 
     grouped_items = {grp: [] for grp in GROUP_ORDER}
     total_channels = 0
+
+    tz_vn = timezone(timedelta(hours=7))
+    now_vn = datetime.now(tz_vn).replace(tzinfo=None)
 
     for item in matches:
         if not isinstance(item, dict):
@@ -273,7 +244,6 @@ def build_m3u(matches):
             continue
 
         detail_item = item.get("_detail") or {}
-        main_blv = str(detail_item.get("blv") or item.get("blv") or "").strip()
 
         team1 = str(item.get("team_1") or "").strip()
         team2 = str(item.get("team_2") or "").strip()
@@ -289,58 +259,31 @@ def build_m3u(matches):
         desc = str(item.get("desc") or "").strip()
         group_category, icon = get_sport_info(desc, match_name)
 
-        streams = extract_all_streams(item, detail_item)
+        streams, main_blv = generate_match_streams(item, detail_item)
         if not streams:
             continue
 
-        # Lọc bỏ trận BÓNG ĐÁ không có BLV của web
+        # Lọc bỏ trận Bóng Đá KHÔNG có BLV tiếng Việt của web
         has_web_blv = bool(main_blv and "nhà đài" not in main_blv.lower() and "nha dai" not in main_blv.lower())
-        if not has_web_blv:
-            for st in streams:
-                st_b = str(st.get("blv") or "").strip()
-                if st_b and "nhà đài" not in st_b.lower() and "nha dai" not in st_b.lower():
-                    has_web_blv = True
-                    break
-
         if group_category == "Bóng Đá" and not has_web_blv:
             continue
 
         logo = str(item.get("team_1_logo") or item.get("logo") or "").strip()
         formatted_time = format_time_str(dt_vn)
 
-        # Xuất đầy đủ từng luồng đúng chuẩn tên hiển thị
-        for idx, st in enumerate(streams):
-            s_name = str(st.get("name") or "").strip()
-            s_blv = str(st.get("blv") or "").strip()
+        # Trận đang diễn ra sẽ thêm 🟢 vào đầu
+        is_live = False
+        if dt_vn and (dt_vn <= now_vn <= dt_vn + timedelta(hours=2, minutes=30)):
+            is_live = True
+        live_prefix = "🟢 " if is_live else ""
 
-            is_nhadai_stream = (
-                "nhà đài" in s_name.lower() or "nha dai" in s_name.lower() or
-                "nhà đài" in s_blv.lower() or "nha dai" in s_blv.lower() or
-                (not s_blv and idx > 0 and s_name.upper() not in ["HD1", "HD2", "HD"])
-            )
-
-            if is_nhadai_stream:
-                tag_str = "(Nhà đài)"
-            else:
-                blv_name = s_blv if s_blv else main_blv
-                blv_tag = f"({blv_name})" if blv_name else "(Nhà đài)"
-
-                qual_tag = ""
-                if s_name and s_name.upper() not in ["FHD", "DEFAULT", "MAIN", "FULL HD", ""]:
-                    qual_tag = f" ({s_name})"
-
-                geo_tag = " [geo]" if st.get("is_geo", True) else ""
-                tag_str = f"{blv_tag}{qual_tag}{geo_tag}"
-
-            display_title = f"{formatted_time} {icon} {match_name} {tag_str}".strip()
+        for st in streams:
+            display_title = f"{live_prefix}{formatted_time} {icon} {match_name} {st['tag']}".strip()
             display_title = re.sub(r'\s+', ' ', display_title)
 
-            item_id = str(item.get("id") or "")
-
             channel_entry = [
-                f'#EXTINF:-1 tvg-id="{item_id}" tvg-name="{display_title}" tvg-logo="{logo}" group-title="{group_category}", {display_title}',
-                '#EXTVLCOPT:http-user-agent=Mozilla/5.0',
-                '#EXTVLCOPT:http-referrer=https://phalang1.tv/',
+                f'#EXTINF:-1 tvg-logo="{logo}" group-title="{group_category}" , {display_title}',
+                '#EXTVLCOPT:http-referrer=https://phalang.live/',
                 st["url"]
             ]
 
