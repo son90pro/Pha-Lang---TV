@@ -84,7 +84,7 @@ def parse_and_convert_to_vn_time(date_val):
                 pass
         
         if dt:
-            # Quy đổi UTC -> GMT+7
+            # Quy đổi UTC -> Múi giờ Việt Nam (GMT+7)
             return dt + timedelta(hours=7)
     except Exception:
         pass
@@ -103,18 +103,24 @@ def get_sport_info(desc, title=""):
     return "Thể Thao Khác", "🏆"
 
 def is_valid_time_window(dt_vn):
+    """
+    Kiểm tra xem trận đấu có nằm trong khung thời gian cho phép:
+    - Đang diễn ra / Trận hôm nay / Trận ngày mai (GMT+7)
+    """
     if not dt_vn:
         return True
     
+    # Lấy thời điểm hiện tại theo giờ VN (GMT+7)
     tz_vn = timezone(timedelta(hours=7))
     now_vn = datetime.now(tz_vn).replace(tzinfo=None)
     
     today_start = now_vn.replace(hour=0, minute=0, second=0, microsecond=0)
     day_after_tomorrow_end = today_start + timedelta(days=2) - timedelta(seconds=1)
     
-    if dt_vn < (now_vn - timedelta(hours=3)):
+    # Bỏ qua các trận diễn ra trước hôm nay hoặc sau ngày mai
+    if dt_vn < (now_vn - timedelta(hours=3)):  # Trận đã diễn ra quá 3 tiếng
         return False
-    if dt_vn > day_after_tomorrow_end:
+    if dt_vn > day_after_tomorrow_end:        # Trận diễn ra từ ngày mốt trở đi
         return False
         
     return True
@@ -131,51 +137,39 @@ def fetch_match_detail(session, base_api, match_id):
     return None
 
 def extract_all_streams(item, detail_item=None):
-    """
-    Bóc tách toàn bộ luồng phát từ detail và item gốc mà không bỏ sót bất kỳ server phụ nào
-    """
     streams = []
     seen_urls = set()
     
     source_obj = detail_item if detail_item else item
     default_blv = str(source_obj.get("blv") or item.get("blv") or "").strip()
 
-    # 1. Quét luồng source_live chính
+    # 1. Luồng source_live chính
     for obj in [source_obj, item]:
-        if not isinstance(obj, dict):
-            continue
         source_live = obj.get("source_live")
         if source_live and str(source_live).startswith("http") and source_live not in seen_urls:
             streams.append({
-                "name": "",
+                "name": "FHD",
                 "url": str(source_live).strip(),
                 "blv": default_blv,
                 "is_geo": True
             })
             seen_urls.add(source_live)
 
-    # 2. Quét sâu toàn bộ các danh sách server / stream / link phụ
-    server_lists = []
+    # 2. Các luồng server phụ
+    servers = []
     for obj in [source_obj, item]:
-        if not isinstance(obj, dict):
-            continue
-        for key in ["servers", "streams", "sources", "play_urls", "links", "channels", "server_list"]:
+        for key in ["servers", "streams", "sources", "play_urls", "links", "channels"]:
             val = obj.get(key)
             if isinstance(val, list):
-                server_lists.extend(val)
+                servers.extend(val)
 
-    for s in server_lists:
+    for s in servers:
         s_url, s_name, s_blv, is_geo = None, "", default_blv, True
         if isinstance(s, dict):
-            s_url = s.get("url") or s.get("source") or s.get("link") or s.get("m3u8") or s.get("play_url")
-            s_name = str(s.get("name") or s.get("label") or s.get("quality") or s.get("title") or s.get("server_name") or "").strip()
-            
-            # Kiểm tra riêng BLV của luồng nếu có
+            s_url = s.get("url") or s.get("source") or s.get("link") or s.get("m3u8")
+            s_name = str(s.get("name") or s.get("label") or s.get("quality") or s.get("title") or "").strip()
             if s.get("blv"):
                 s_blv = str(s.get("blv")).strip()
-            
-            if "is_geo" in s:
-                is_geo = bool(s.get("is_geo"))
         elif isinstance(s, str):
             s_url = s
 
@@ -188,36 +182,18 @@ def extract_all_streams(item, detail_item=None):
             })
             seen_urls.add(s_url)
 
-    # 3. Stream_key dự phòng nếu chưa tìm thấy luồng
+    # 3. Stream_key dự phòng
     stream_key = source_obj.get("stream_key") or item.get("stream_key")
     if stream_key and len(streams) == 0:
         sk_url = f"https://lilive1.eu.cc/live/{stream_key}/playlist.m3u8"
         streams.append({
-            "name": "",
+            "name": "HD",
             "url": sk_url,
             "blv": default_blv,
             "is_geo": True
         })
 
     return streams
-
-def has_commentator(item, detail_item, streams):
-    """
-    Kiểm tra xem trận đấu có BLV tiếng Việt (của web) hay không
-    """
-    # 1. Kiểm tra BLV trong item / detail
-    if item.get("blv") and str(item.get("blv")).strip():
-        return True
-    if detail_item and detail_item.get("blv") and str(detail_item.get("blv")).strip():
-        return True
-        
-    # 2. Kiểm tra BLV từng luồng lẻ
-    for st in streams:
-        blv_str = str(st.get("blv") or "").strip()
-        if blv_str and "nhà đài" not in blv_str.lower():
-            return True
-            
-    return False
 
 def fetch_matches_by_post():
     all_matches = []
@@ -265,7 +241,7 @@ def fetch_matches_by_post():
 def build_m3u(matches):
     m3u_lines = [
         '#EXTM3U url-tvg="" tvg-shift="0"',
-        '# Playlist Tự Động Phá Làng TV - Đầy Đủ Tất Cả Các Luồng'
+        '# Playlist Tự Động Phá Làng TV - Hôm Nay & Ngày Mai'
     ]
 
     grouped_items = {grp: [] for grp in GROUP_ORDER}
@@ -277,11 +253,11 @@ def build_m3u(matches):
 
         dt_vn = parse_and_convert_to_vn_time(item.get("start_date"))
         
-        # Lọc khung giờ Hôm nay & Ngày mai
+        # Lọc chỉ lấy các trận hôm nay & ngày mai
         if not is_valid_time_window(dt_vn):
             continue
 
-        detail_item = item.get("_detail") or {}
+        detail_item = item.get("_detail")
         streams = extract_all_streams(item, detail_item)
         
         if not streams:
@@ -299,22 +275,15 @@ def build_m3u(matches):
             continue
 
         desc = str(item.get("desc") or "").strip()
-        group_category, icon = get_sport_info(desc, match_name)
-
-        # LOẠI BỎ TRẬN ĐẤU NẾU KHÔNG CÓ BLV CỦA WEB (Chỉ lọc ở môn Bóng Đá)
-        if group_category == "Bóng Đá" and not has_commentator(item, detail_item, streams):
-            continue
-
-        main_blv = str(detail_item.get("blv") or item.get("blv") or "").strip()
+        main_blv = str(item.get("blv") or "").strip()
         logo = str(item.get("team_1_logo") or item.get("logo") or "").strip()
         formatted_time = format_time_str(dt_vn)
 
-        # Xuất đầy đủ tất cả các luồng của trận đấu
+        group_category, icon = get_sport_info(desc, match_name)
+
         for st in streams:
-            st_blv = st.get("blv") or main_blv
-            
-            # Phân biệt tên hiển thị: Nếu luồng không có tên BLV -> đánh nhãn (Nhà đài)
-            blv_tag = f" ({st_blv})" if st_blv else " (Nhà đài)"
+            blv_name = st.get("blv") or main_blv
+            blv_tag = f" ({blv_name})" if blv_name else " (Nhà đài)"
             
             quality_str = str(st.get("name") or "").strip()
             quality_tag = f" ({quality_str})" if quality_str else ""
@@ -339,6 +308,7 @@ def build_m3u(matches):
                 
             total_channels += 1
 
+    # Đưa các kênh vào file theo đúng thứ tự (Bóng Đá lên đầu tiên)
     for grp in GROUP_ORDER:
         entries = grouped_items.get(grp, [])
         for entry in entries:
@@ -347,7 +317,7 @@ def build_m3u(matches):
     return "\n".join(m3u_lines), total_channels
 
 def main():
-    print("=== Bắt đầu cào dữ liệu Phá Làng TV ===")
+    print("=== Bắt đầu cào dữ liệu Phá Làng TV (Ưu tiên Bóng Đá & Lọc Hôm nay/Ngày mai) ===")
     matches = fetch_matches_by_post()
     print(f"Tổng số trận cào được: {len(matches)}")
 
