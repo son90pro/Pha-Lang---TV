@@ -17,12 +17,15 @@ API_DOMAINS = [
 
 OUTPUT_FILE = "phalang.m3u"
 
+USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+REFERER = "https://phalang.live/"
+
 HEADERS = {
     "Accept": "application/json, text/plain, */*",
     "Content-Type": "application/json",
-    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36",
+    "User-Agent": USER_AGENT,
     "Origin": "https://phalang.live",
-    "Referer": "https://phalang.live/"
+    "Referer": REFERER
 }
 
 GROUP_ORDER = [
@@ -189,52 +192,56 @@ def fetch_matches_by_post():
 
 def create_match_streams(item):
     """
-    Tạo chính xác 3 luồng phát chuẩn theo mẫu:
-    1. Luồng chính BLV Web (pull.digitalcdn.net/live/{match_id}/index.m3u8) -> Có logo Phá Làng TV
-    2. Luồng HD2 Web (pull1.digitalcdn.net/live/{match_id}/index.m3u8)
-    3. Luồng Nhà đài gốc (lilive1.eu.cc/live/{stream_key}/playlist.m3u8)
+    Tạo chính xác các luồng phát dựa trên dữ liệu thực tế từ API.
+    Thêm pipe header (|Referer=...&User-Agent=...) để vượt qua cơ chế chống Chơi Chùa của CDN.
     """
     detail = item.get("_detail") or {}
 
-    match_id = str(item.get("id") or detail.get("id") or "").strip()
-    stream_key = str(item.get("stream_key") or detail.get("stream_key") or "").strip()
-    main_blv = str(item.get("blv") or detail.get("blv") or "").strip()
+    main_blv = str(detail.get("blv") or item.get("blv") or "").strip()
+    stream_key = str(detail.get("stream_key") or item.get("stream_key") or "").strip()
+    
+    source_live = str(detail.get("source_live") or item.get("source_live") or "").strip()
 
-    source_live = str(item.get("source_live") or detail.get("source_live") or "").strip()
-    web_hash = ""
-    if source_live:
-        match_hash = re.search(r'/live/([a-zA-Z0-9]+)', source_live)
-        if match_hash:
-            web_hash = match_hash.group(1)
-
-    if not web_hash:
-        web_hash = match_id
+    servers = detail.get("servers") or detail.get("sources") or item.get("servers") or []
+    if isinstance(servers, list):
+        for s in servers:
+            if isinstance(s, dict):
+                s_url = s.get("url") or s.get("source") or s.get("m3u8")
+                if s_url and str(s_url).startswith("http"):
+                    source_live = str(s_url).strip()
+                    break
 
     streams = []
+    pipe_headers = f"|Referer={REFERER}&User-Agent={USER_AGENT}"
 
-    # 1. Luồng BLV chính (Web Phá Làng TV - Có logo)
-    if web_hash:
-        url_main = f"https://pull.digitalcdn.net/live/{web_hash}/index.m3u8"
+    # 1. Luồng BLV Web chính (Có logo Phá Làng TV)
+    if source_live and source_live.startswith("http"):
         tag_main = f"({main_blv}) [geo]" if main_blv else "[geo]"
         streams.append({
-            "url": url_main,
+            "url": source_live + pipe_headers,
             "tag": tag_main
         })
 
-        # 2. Luồng HD2 (Web dự phòng)
-        url_hd2 = f"https://pull1.digitalcdn.net/live/{web_hash}/index.m3u8"
+        # 2. Luồng HD2 Web (Dự phòng CDN pull1)
+        if "pull.digitalcdn.net" in source_live:
+            hd2_base = source_live.replace("pull.digitalcdn.net", "pull1.digitalcdn.net")
+        elif "://pull." in source_live:
+            hd2_base = source_live.replace("://pull.", "://pull1.")
+        else:
+            hd2_base = source_live
+
         tag_hd2 = f"({main_blv}) (HD2) [geo]" if main_blv else "(HD2) [geo]"
         streams.append({
-            "url": url_hd2,
+            "url": hd2_base + pipe_headers,
             "tag": tag_hd2
         })
 
-    # 3. Luồng Nhà đài (Luồng gốc)
-    if stream_key and stream_key != web_hash:
-        url_nhadai = f"https://lilive1.eu.cc/live/{stream_key}/playlist.m3u8"
+    # 3. Luồng Nhà đài gốc
+    if stream_key:
+        nhadai_url = f"https://lilive1.eu.cc/live/{stream_key}/playlist.m3u8"
         tag_nhadai = "(Nhà đài)"
         streams.append({
-            "url": url_nhadai,
+            "url": nhadai_url + pipe_headers,
             "tag": tag_nhadai
         })
 
@@ -275,7 +282,6 @@ def build_m3u(matches):
         if not streams:
             continue
 
-        # Bỏ qua bóng đá nếu không có BLV tiếng Việt của Web
         has_web_blv = bool(main_blv and "nhà đài" not in main_blv.lower() and "nha dai" not in main_blv.lower())
         if group_category == "Bóng Đá" and not has_web_blv:
             continue
@@ -294,7 +300,8 @@ def build_m3u(matches):
 
             channel_entry = [
                 f'#EXTINF:-1 tvg-logo="{logo}" group-title="{group_category}" , {display_title}',
-                '#EXTVLCOPT:http-referrer=https://phalang.live/',
+                f'#EXTVLCOPT:http-user-agent={USER_AGENT}',
+                f'#EXTVLCOPT:http-referrer={REFERER}',
                 st["url"]
             ]
 
