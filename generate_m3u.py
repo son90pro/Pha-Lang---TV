@@ -192,8 +192,10 @@ def fetch_matches_by_post():
 
 def create_match_streams(item):
     """
-    Tạo chính xác các luồng phát dựa trên dữ liệu thực tế từ API.
-    Thêm pipe header (|Referer=...&User-Agent=...) để vượt qua cơ chế chống Chơi Chùa của CDN.
+    Tạo phân tách rõ ràng 3 luồng:
+    1. BLV Web (pull.digitalcdn.net/live/{stream_key}/index.m3u8) -> Có logo Phá Làng TV
+    2. HD2 Web (pull1.digitalcdn.net/live/{stream_key}/index.m3u8)
+    3. Nhà đài gốc (lilive1.eu.cc/live/{stream_key}/playlist.m3u8)
     """
     detail = item.get("_detail") or {}
 
@@ -202,48 +204,30 @@ def create_match_streams(item):
     
     source_live = str(detail.get("source_live") or item.get("source_live") or "").strip()
 
-    servers = detail.get("servers") or detail.get("sources") or item.get("servers") or []
-    if isinstance(servers, list):
-        for s in servers:
-            if isinstance(s, dict):
-                s_url = s.get("url") or s.get("source") or s.get("m3u8")
-                if s_url and str(s_url).startswith("http"):
-                    source_live = str(s_url).strip()
-                    break
+    web_hash = stream_key
+    if source_live and "/live/" in source_live:
+        match_hash = re.search(r'/live/([a-zA-Z0-9_\-]+)', source_live)
+        if match_hash:
+            web_hash = match_hash.group(1)
 
-    streams = []
     pipe_headers = f"|Referer={REFERER}&User-Agent={USER_AGENT}"
+    streams = []
 
-    # 1. Luồng BLV Web chính (Có logo Phá Làng TV)
-    if source_live and source_live.startswith("http"):
+    if web_hash:
+        # 1. Luồng BLV Web chính (Có logo Phá Làng TV & BLV tiếng Việt)
+        url_main = f"https://pull.digitalcdn.net/live/{web_hash}/index.m3u8" + pipe_headers
         tag_main = f"({main_blv}) [geo]" if main_blv else "[geo]"
-        streams.append({
-            "url": source_live + pipe_headers,
-            "tag": tag_main
-        })
+        streams.append({"url": url_main, "tag": tag_main})
 
         # 2. Luồng HD2 Web (Dự phòng CDN pull1)
-        if "pull.digitalcdn.net" in source_live:
-            hd2_base = source_live.replace("pull.digitalcdn.net", "pull1.digitalcdn.net")
-        elif "://pull." in source_live:
-            hd2_base = source_live.replace("://pull.", "://pull1.")
-        else:
-            hd2_base = source_live
-
+        url_hd2 = f"https://pull1.digitalcdn.net/live/{web_hash}/index.m3u8" + pipe_headers
         tag_hd2 = f"({main_blv}) (HD2) [geo]" if main_blv else "(HD2) [geo]"
-        streams.append({
-            "url": hd2_base + pipe_headers,
-            "tag": tag_hd2
-        })
+        streams.append({"url": url_hd2, "tag": tag_hd2})
 
-    # 3. Luồng Nhà đài gốc
-    if stream_key:
-        nhadai_url = f"https://lilive1.eu.cc/live/{stream_key}/playlist.m3u8"
+        # 3. Luồng Nhà đài gốc
+        url_nhadai = f"https://lilive1.eu.cc/live/{web_hash}/playlist.m3u8" + pipe_headers
         tag_nhadai = "(Nhà đài)"
-        streams.append({
-            "url": nhadai_url + pipe_headers,
-            "tag": tag_nhadai
-        })
+        streams.append({"url": url_nhadai, "tag": tag_nhadai})
 
     return streams, main_blv
 
@@ -282,6 +266,7 @@ def build_m3u(matches):
         if not streams:
             continue
 
+        # Lọc bỏ trận Bóng Đá KHÔNG có BLV tiếng Việt
         has_web_blv = bool(main_blv and "nhà đài" not in main_blv.lower() and "nha dai" not in main_blv.lower())
         if group_category == "Bóng Đá" and not has_web_blv:
             continue
