@@ -1,1 +1,14 @@
 #EXTM3U
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/8d7a9cbd3f27b0a49ad5f082c7130699.png" group-title="Phá Làng TV" , 23:10 02/10 ⚽ Montreal Roses FC (W) vs Ottawa Rapid FC (W) (W) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://lilive1.eu.cc/live/4e7d9de620d1316a1c8eb8e3d50ab7b0/playlist.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/84f85d4178e4287ed8ad5f76ad4c5e46.png" group-title="Phá Làng TV" , 00:35 03/10 ⚽ Fortaleza vs Nautico (PE) (PE) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://lilive1.eu.cc/live/7a8304e14940244b6f7c3ec92eb5a22e/playlist.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/06bf15c418de1ef21f66856130faab5b.png" group-title="Phá Làng TV" , 02:00 03/10 ⚽ Seattle Reign (W) vs North Carolina Courage Women (W) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://lilive1.eu.cc/live/1d59a832657a34136c8284cfd986f321/playlist.m3u8
+
