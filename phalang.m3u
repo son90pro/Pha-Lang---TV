@@ -1,0 +1,21 @@
+#EXTM3U
+
+#EXTINF:-1 tvg-logo="https://sta.vnres.co/file/common/20261001/095833a8f2a539c9e27ac3170b659237.png" group-title="⚽ BÓNG ĐÁ" , 🔴 13:00 03/10 ⚽ 🔥 China U23 vs Uzbekistan U23 (BLV LÝ LÀNG LÁ) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull.digitalcdn.net/live/5b0489dd5f6d4608b23568db294b7356/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://sta.vnres.co/file/common/20261001/095833a8f2a539c9e27ac3170b659237.png" group-title="⚽ BÓNG ĐÁ" , 🔴 13:00 03/10 ⚽ 🔥 China U23 vs Uzbekistan U23 (BLV LÝ LÀNG LÁ) (HD2) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull1.digitalcdn.net/live/5b0489dd5f6d4608b23568db294b7356/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://sta.vnres.co/file/common/20261001/095833a8f2a539c9e27ac3170b659237.png" group-title="⚽ BÓNG ĐÁ" , 🔴 13:00 03/10 ⚽ 🔥 China U23 vs Uzbekistan U23 (Nhà đài)
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://lilive1.eu.cc/live/982cfe09137f0b0c36f28936096e90f6/playlist.m3u8
+
+#EXTINF:-1 tvg-logo="https://img0.aiscore.com/volleyball/team/da0f5c2d7a7ced93056baddc54135a74.png!w80" group-title="🏐 BÓNG CHUYỀN" , 🔴 14:00 03/10 🏐 🔥 Trung Quốc vs  Pakistan (BLV LÝ LÊN LỬA) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull.digitalcdn.net/live/314476d9151449c28e0df687f4325047/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img0.aiscore.com/volleyball/team/da0f5c2d7a7ced93056baddc54135a74.png!w80" group-title="🏐 BÓNG CHUYỀN" , 🔴 14:00 03/10 🏐 🔥 Trung Quốc vs  Pakistan (BLV LÝ LÊN LỬA) (HD2) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull1.digitalcdn.net/live/314476d9151449c28e0df687f4325047/index.m3u8
