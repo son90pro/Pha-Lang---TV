@@ -1,0 +1,529 @@
+#EXTM3U
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/7e16680bbd661fd90dbf08501ae7a98e.png" group-title="Phá Làng TV" , 03:00 03/10 ⚽ Club Atletico La Paz vs Venados FC Yucatán (Unknown) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull.digitalcdn.net/live/f66ba7216b28478f91d329b7e27c2daf/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/7e16680bbd661fd90dbf08501ae7a98e.png" group-title="Phá Làng TV" , 03:00 03/10 ⚽ Club Atletico La Paz vs Venados FC Yucatán (Unknown) (HD2) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull1.digitalcdn.net/live/f66ba7216b28478f91d329b7e27c2daf/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/7e16680bbd661fd90dbf08501ae7a98e.png" group-title="Phá Làng TV" , 03:00 03/10 ⚽ Club Atletico La Paz vs Venados FC Yucatán (Nhà đài)
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://lilive1.eu.cc/live/c99cec7e34d380d3f5706a7ddc776600/playlist.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/f0097a41dd58666e40d77ab2e8f8b6c3.png" group-title="Phá Làng TV" , 03:00 03/10 ⚽ Sporting Clube de Goa vs Dempo (Unknown) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull.digitalcdn.net/live/9fa7dab8a8164fd5b5fb29b0f7043a30/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/f0097a41dd58666e40d77ab2e8f8b6c3.png" group-title="Phá Làng TV" , 03:00 03/10 ⚽ Sporting Clube de Goa vs Dempo (Unknown) (HD2) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull1.digitalcdn.net/live/9fa7dab8a8164fd5b5fb29b0f7043a30/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/19c556045bbdc3aae1101beb27d6ee9c.png" group-title="Phá Làng TV" , 03:10 03/10 ⚽ Monterrey Women vs Club America Women (Unknown) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull.digitalcdn.net/live/96fcbf4a654f40ceafe261e7ae106ce3/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/19c556045bbdc3aae1101beb27d6ee9c.png" group-title="Phá Làng TV" , 03:10 03/10 ⚽ Monterrey Women vs Club America Women (Unknown) (HD2) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull1.digitalcdn.net/live/96fcbf4a654f40ceafe261e7ae106ce3/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/19c556045bbdc3aae1101beb27d6ee9c.png" group-title="Phá Làng TV" , 03:10 03/10 ⚽ Monterrey Women vs Club America Women (Nhà đài)
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://lilive1.eu.cc/live/db1fd2ae05d5018d4a176915c1eb7746/playlist.m3u8
+
+#EXTINF:-1 tvg-logo="https://img0.aiscore.com/volleyball/team/3e9126e77f86c6fd0f04f67c8f149712.png!w80" group-title="Phá Làng TV" , 04:00 03/10 🏐 Thái Lan vs Ấn Độ (LÝ LINH LỰC) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull.digitalcdn.net/live/d38d7dbbdeb64778a299a13af37330b8/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img0.aiscore.com/volleyball/team/3e9126e77f86c6fd0f04f67c8f149712.png!w80" group-title="Phá Làng TV" , 04:00 03/10 🏐 Thái Lan vs Ấn Độ (LÝ LINH LỰC) (HD2) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull1.digitalcdn.net/live/d38d7dbbdeb64778a299a13af37330b8/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/8728b3ae5b8e6a371a5ee858152b73e9.png" group-title="Phá Làng TV" , 04:00 03/10 ⚽ Speranza TakatsukiWomen vs Diavorosso Hiroshima Women (Unknown) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull.digitalcdn.net/live/0fac852b070b430e9be52b4f10b7fb5c/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/8728b3ae5b8e6a371a5ee858152b73e9.png" group-title="Phá Làng TV" , 04:00 03/10 ⚽ Speranza TakatsukiWomen vs Diavorosso Hiroshima Women (Unknown) (HD2) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull1.digitalcdn.net/live/0fac852b070b430e9be52b4f10b7fb5c/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/e8b59030ab7972166e054e065b62bdbd.png" group-title="Phá Làng TV" , 04:00 03/10 ⚽ SEISA OSA Rheia Women vs Nankatsu (W) (Unknown) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull.digitalcdn.net/live/4620f3f65501421ab12b34c3e1a2deff/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/e8b59030ab7972166e054e065b62bdbd.png" group-title="Phá Làng TV" , 04:00 03/10 ⚽ SEISA OSA Rheia Women vs Nankatsu (W) (Unknown) (HD2) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull1.digitalcdn.net/live/4620f3f65501421ab12b34c3e1a2deff/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/f34ddc8a4e8f38543ebe794975b0b3ee.png" group-title="Phá Làng TV" , 04:00 03/10 ⚽ NGU Nagoya Women vs Nittaidai SMG Yokohama (Unknown) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull.digitalcdn.net/live/c28b0e5c869f415991e18cc69cdfd676/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/f34ddc8a4e8f38543ebe794975b0b3ee.png" group-title="Phá Làng TV" , 04:00 03/10 ⚽ NGU Nagoya Women vs Nittaidai SMG Yokohama (Unknown) (HD2) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull1.digitalcdn.net/live/c28b0e5c869f415991e18cc69cdfd676/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/f34ddc8a4e8f38543ebe794975b0b3ee.png" group-title="Phá Làng TV" , 04:00 03/10 ⚽ NGU Nagoya Women vs Nittaidai SMG Yokohama (Nhà đài)
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://lilive1.eu.cc/live/5ca8edb3227d954fd62eaa2b57a240ea/playlist.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/2209c3adfbda6bc9c9804eef5e2b8659.png" group-title="Phá Làng TV" , 04:00 03/10 ⚽ Diosa Izumo Women vs Renofa Yamaguchi (W) (Unknown) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull.digitalcdn.net/live/94140bfd1b934715ba9c9d3d77e5e885/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/2209c3adfbda6bc9c9804eef5e2b8659.png" group-title="Phá Làng TV" , 04:00 03/10 ⚽ Diosa Izumo Women vs Renofa Yamaguchi (W) (Unknown) (HD2) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull1.digitalcdn.net/live/94140bfd1b934715ba9c9d3d77e5e885/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/a14e04b8e08256f34fcfcdb837fbb97d.png" group-title="Phá Làng TV" , 04:00 03/10 ⚽ VONDS Ichihara vs Iwate Grulla Morioka (Unknown) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull.digitalcdn.net/live/dabc9f8905664288a3e99722963fdaa9/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/a14e04b8e08256f34fcfcdb837fbb97d.png" group-title="Phá Làng TV" , 04:00 03/10 ⚽ VONDS Ichihara vs Iwate Grulla Morioka (Unknown) (HD2) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull1.digitalcdn.net/live/dabc9f8905664288a3e99722963fdaa9/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/a14e04b8e08256f34fcfcdb837fbb97d.png" group-title="Phá Làng TV" , 04:00 03/10 ⚽ VONDS Ichihara vs Iwate Grulla Morioka (Nhà đài)
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://lilive1.eu.cc/live/653f009cfa4ce95c11fccc4a3025ed7a/playlist.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/e2473e30597b13682634eee883fc7799.png" group-title="Phá Làng TV" , 04:00 03/10 ⚽ Yokogawa Musashino FC vs Azul Claro Numazu (Unknown) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull.digitalcdn.net/live/14161541a67f4a48bda43fd07c7ed920/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/e2473e30597b13682634eee883fc7799.png" group-title="Phá Làng TV" , 04:00 03/10 ⚽ Yokogawa Musashino FC vs Azul Claro Numazu (Unknown) (HD2) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull1.digitalcdn.net/live/14161541a67f4a48bda43fd07c7ed920/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/e2473e30597b13682634eee883fc7799.png" group-title="Phá Làng TV" , 04:00 03/10 ⚽ Yokogawa Musashino FC vs Azul Claro Numazu (Nhà đài)
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://lilive1.eu.cc/live/846210c6cf2cdefab906465aeef37f75/playlist.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/81bff08bd846db23755fe4639e3c6839.png" group-title="Phá Làng TV" , 04:00 03/10 ⚽ Fiji vs Vanuatu (Unknown) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull.digitalcdn.net/live/c0daea4391924442a67a30c6d5ed66ae/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/81bff08bd846db23755fe4639e3c6839.png" group-title="Phá Làng TV" , 04:00 03/10 ⚽ Fiji vs Vanuatu (Unknown) (HD2) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull1.digitalcdn.net/live/c0daea4391924442a67a30c6d5ed66ae/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/cc35fb970f1464e1468bafebb54a2ca6.png" group-title="Phá Làng TV" , 🟢 04:55 03/10 ⚽ Gyeongju Korea Hydro & Nuclear Power WFC vs Mungyeong Sangmu WFC (Unknown) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull.digitalcdn.net/live/a04d674656df4a90a1c78681b753218b/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/cc35fb970f1464e1468bafebb54a2ca6.png" group-title="Phá Làng TV" , 🟢 04:55 03/10 ⚽ Gyeongju Korea Hydro & Nuclear Power WFC vs Mungyeong Sangmu WFC (Unknown) (HD2) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull1.digitalcdn.net/live/a04d674656df4a90a1c78681b753218b/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/cc35fb970f1464e1468bafebb54a2ca6.png" group-title="Phá Làng TV" , 🟢 04:55 03/10 ⚽ Gyeongju Korea Hydro & Nuclear Power WFC vs Mungyeong Sangmu WFC (Nhà đài)
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://lilive1.eu.cc/live/b45f4879a0f0a7cca3a60cf9a9a68e50/playlist.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/7c2bd5703358c6c32683e2897f1100df.png" group-title="Phá Làng TV" , 🟢 04:55 03/10 ⚽ Gangjin Swans Women vs Seoul Amazones Women (Unknown) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull.digitalcdn.net/live/8ceda53679e04d69b24103caf78d7448/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/7c2bd5703358c6c32683e2897f1100df.png" group-title="Phá Làng TV" , 🟢 04:55 03/10 ⚽ Gangjin Swans Women vs Seoul Amazones Women (Unknown) (HD2) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull1.digitalcdn.net/live/8ceda53679e04d69b24103caf78d7448/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/7c2bd5703358c6c32683e2897f1100df.png" group-title="Phá Làng TV" , 🟢 04:55 03/10 ⚽ Gangjin Swans Women vs Seoul Amazones Women (Nhà đài)
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://lilive1.eu.cc/live/5202f413a74b72412901531c06801195/playlist.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/e984b5f764a158fa2836fd1ff6b7cfab.png" group-title="Phá Làng TV" , 🟢 05:00 03/10 ⚽ Haman FC vs Jecheon Citizen FC (Unknown) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull.digitalcdn.net/live/6dd6690c81d744b59172b1bb126106b4/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/e984b5f764a158fa2836fd1ff6b7cfab.png" group-title="Phá Làng TV" , 🟢 05:00 03/10 ⚽ Haman FC vs Jecheon Citizen FC (Unknown) (HD2) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull1.digitalcdn.net/live/6dd6690c81d744b59172b1bb126106b4/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/e984b5f764a158fa2836fd1ff6b7cfab.png" group-title="Phá Làng TV" , 🟢 05:00 03/10 ⚽ Haman FC vs Jecheon Citizen FC (Nhà đài)
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://lilive1.eu.cc/live/2c518c58f35438a90b0c77bb95d8eb64/playlist.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/ffb69072af11f7c87d69f3a9a71d687c.png" group-title="Phá Làng TV" , 🟢 05:00 03/10 ⚽ FC Gifu vs Renofa Yamaguchi (Unknown) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull.digitalcdn.net/live/5e885d25aa5542da9668b01dc478c88a/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/ffb69072af11f7c87d69f3a9a71d687c.png" group-title="Phá Làng TV" , 🟢 05:00 03/10 ⚽ FC Gifu vs Renofa Yamaguchi (Unknown) (HD2) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull1.digitalcdn.net/live/5e885d25aa5542da9668b01dc478c88a/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/ffb69072af11f7c87d69f3a9a71d687c.png" group-title="Phá Làng TV" , 🟢 05:00 03/10 ⚽ FC Gifu vs Renofa Yamaguchi (Nhà đài)
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://lilive1.eu.cc/live/26318034775a816e1ca8210bb1fc6601/playlist.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/9ce69393552848534795ef4af4562f20.png" group-title="Phá Làng TV" , 🟢 05:00 03/10 ⚽ Matsumoto Yamaga FC vs Gainare Tottori (Unknown) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull.digitalcdn.net/live/c723a81251b747358400d7c6a0156e3f/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/9ce69393552848534795ef4af4562f20.png" group-title="Phá Làng TV" , 🟢 05:00 03/10 ⚽ Matsumoto Yamaga FC vs Gainare Tottori (Unknown) (HD2) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull1.digitalcdn.net/live/c723a81251b747358400d7c6a0156e3f/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/9ce69393552848534795ef4af4562f20.png" group-title="Phá Làng TV" , 🟢 05:00 03/10 ⚽ Matsumoto Yamaga FC vs Gainare Tottori (Nhà đài)
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://lilive1.eu.cc/live/8c62c6d0266571e7d3043c8779e43803/playlist.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/9ec54f1321212a6ea3f3d97cd1776fc6.png" group-title="Phá Làng TV" , 05:00 03/10 ⚽ Mynavi Sendai Ladies vs INAC Kobe Leonessa (Unknown) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull.digitalcdn.net/live/303dc6907be046bc8581109f5658c721/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/9ec54f1321212a6ea3f3d97cd1776fc6.png" group-title="Phá Làng TV" , 05:00 03/10 ⚽ Mynavi Sendai Ladies vs INAC Kobe Leonessa (Unknown) (HD2) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull1.digitalcdn.net/live/303dc6907be046bc8581109f5658c721/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/a4bfaa33f9e24bdb4a4952a0b4aab142.png" group-title="Phá Làng TV" , 🟢 05:00 03/10 ⚽ Albirex Niigata vs Tokushima Vortis (Unknown) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull.digitalcdn.net/live/7af6554ad23741598ff10bf3626d1c4b/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/a4bfaa33f9e24bdb4a4952a0b4aab142.png" group-title="Phá Làng TV" , 🟢 05:00 03/10 ⚽ Albirex Niigata vs Tokushima Vortis (Unknown) (HD2) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull1.digitalcdn.net/live/7af6554ad23741598ff10bf3626d1c4b/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/a4bfaa33f9e24bdb4a4952a0b4aab142.png" group-title="Phá Làng TV" , 🟢 05:00 03/10 ⚽ Albirex Niigata vs Tokushima Vortis (Nhà đài)
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://lilive1.eu.cc/live/535af2d9e44c31d66cf1b20153e8fb51/playlist.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/cc6ff0248b27e09279c807ce35ff3488.png" group-title="Phá Làng TV" , 🟢 05:00 03/10 ⚽ Changwon City vs Yangpyeong (Unknown) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull.digitalcdn.net/live/2f1c9f162d85492db6406f616422bf7d/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/cc6ff0248b27e09279c807ce35ff3488.png" group-title="Phá Làng TV" , 🟢 05:00 03/10 ⚽ Changwon City vs Yangpyeong (Unknown) (HD2) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull1.digitalcdn.net/live/2f1c9f162d85492db6406f616422bf7d/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/cc6ff0248b27e09279c807ce35ff3488.png" group-title="Phá Làng TV" , 🟢 05:00 03/10 ⚽ Changwon City vs Yangpyeong (Nhà đài)
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://lilive1.eu.cc/live/31b7d331d749426a4be4716a64378947/playlist.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/957994d577963ea6b2b26cc07ca47216.png" group-title="Phá Làng TV" , 🟢 05:00 03/10 ⚽ Yeoju Citizen vs Jeonbuk Hyundai Motors II (Unknown) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull.digitalcdn.net/live/ad4eee308e694483b4f8e32cd0ea6a7c/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/957994d577963ea6b2b26cc07ca47216.png" group-title="Phá Làng TV" , 🟢 05:00 03/10 ⚽ Yeoju Citizen vs Jeonbuk Hyundai Motors II (Unknown) (HD2) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull1.digitalcdn.net/live/ad4eee308e694483b4f8e32cd0ea6a7c/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/957994d577963ea6b2b26cc07ca47216.png" group-title="Phá Làng TV" , 🟢 05:00 03/10 ⚽ Yeoju Citizen vs Jeonbuk Hyundai Motors II (Nhà đài)
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://lilive1.eu.cc/live/bbfdb4a37c5bb6f12afd45a7a8a55eac/playlist.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/1eaad94a9f7a2d7000407ad8a2b324b5.png" group-title="Phá Làng TV" , 🟢 05:00 03/10 ⚽ AC Nagano Parceiro vs Nara Club (Unknown) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull.digitalcdn.net/live/b0f15eef7905441491fae1ffb64f2c56/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/1eaad94a9f7a2d7000407ad8a2b324b5.png" group-title="Phá Làng TV" , 🟢 05:00 03/10 ⚽ AC Nagano Parceiro vs Nara Club (Unknown) (HD2) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull1.digitalcdn.net/live/b0f15eef7905441491fae1ffb64f2c56/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/1eaad94a9f7a2d7000407ad8a2b324b5.png" group-title="Phá Làng TV" , 🟢 05:00 03/10 ⚽ AC Nagano Parceiro vs Nara Club (Nhà đài)
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://lilive1.eu.cc/live/2400aba248b81c453d5bb5ec2c53231e/playlist.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/90d8a3ba4e8da08e280ab84514fe4cf0.png" group-title="Phá Làng TV" , 🟢 05:00 03/10 ⚽ Pocheon FC vs Chuncheon Citizen (Unknown) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull.digitalcdn.net/live/aa3f184df39a4d46998a31c0dca22967/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/90d8a3ba4e8da08e280ab84514fe4cf0.png" group-title="Phá Làng TV" , 🟢 05:00 03/10 ⚽ Pocheon FC vs Chuncheon Citizen (Unknown) (HD2) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull1.digitalcdn.net/live/aa3f184df39a4d46998a31c0dca22967/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/90d8a3ba4e8da08e280ab84514fe4cf0.png" group-title="Phá Làng TV" , 🟢 05:00 03/10 ⚽ Pocheon FC vs Chuncheon Citizen (Nhà đài)
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://lilive1.eu.cc/live/664cd303bdd6b0d383fc70e820b1bff2/playlist.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/fdae89246ac6441aae7f6cf4cec05ecf.png" group-title="Phá Làng TV" , 05:00 03/10 ⚽ Shimizu S-Pulse U21 vs Jubilo Iwata U21 (Unknown) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull.digitalcdn.net/live/08a55784716f49959fd0f14e8f7b97a3/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/fdae89246ac6441aae7f6cf4cec05ecf.png" group-title="Phá Làng TV" , 05:00 03/10 ⚽ Shimizu S-Pulse U21 vs Jubilo Iwata U21 (Unknown) (HD2) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull1.digitalcdn.net/live/08a55784716f49959fd0f14e8f7b97a3/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/0ca690140522d4a0594850a0d24ec222.png" group-title="Phá Làng TV" , 05:00 03/10 ⚽ Sanfrecce Hiroshima Regina vs AC Nagano Parceiro Ladies (Unknown) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull.digitalcdn.net/live/132707f35c554adaa51bbd4f6a8f50ff/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/0ca690140522d4a0594850a0d24ec222.png" group-title="Phá Làng TV" , 05:00 03/10 ⚽ Sanfrecce Hiroshima Regina vs AC Nagano Parceiro Ladies (Unknown) (HD2) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull1.digitalcdn.net/live/132707f35c554adaa51bbd4f6a8f50ff/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/6c1b75505526d9880a79788587648649.png" group-title="Phá Làng TV" , 05:00 03/10 ⚽ Urawa Red Diamonds Ladies vs NTV Tokyo Verdy Beleza (Unknown) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull.digitalcdn.net/live/c9c010d1474b4a1081693047c09ff842/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/6c1b75505526d9880a79788587648649.png" group-title="Phá Làng TV" , 05:00 03/10 ⚽ Urawa Red Diamonds Ladies vs NTV Tokyo Verdy Beleza (Unknown) (HD2) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull1.digitalcdn.net/live/c9c010d1474b4a1081693047c09ff842/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/89fbdff34136c67636e2b4875ab03043.png" group-title="Phá Làng TV" , 🟢 05:00 03/10 ⚽ Fujieda MYFC vs Shonan Bellmare (Unknown) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull.digitalcdn.net/live/ff9cb745341447f19af6ab95ad30b8f8/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/89fbdff34136c67636e2b4875ab03043.png" group-title="Phá Làng TV" , 🟢 05:00 03/10 ⚽ Fujieda MYFC vs Shonan Bellmare (Unknown) (HD2) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull1.digitalcdn.net/live/ff9cb745341447f19af6ab95ad30b8f8/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/89fbdff34136c67636e2b4875ab03043.png" group-title="Phá Làng TV" , 🟢 05:00 03/10 ⚽ Fujieda MYFC vs Shonan Bellmare (Nhà đài)
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://lilive1.eu.cc/live/24b7308ac492b3428ae495b43a22c6d5/playlist.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/1c8a77bdf19b6782addd1e8c02ed3f46.png" group-title="Phá Làng TV" , 🟢 05:00 03/10 ⚽ Namyangju Citizen vs Gijang United (Unknown) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull.digitalcdn.net/live/6717a27dd2e94d24b83796747c29a74c/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/1c8a77bdf19b6782addd1e8c02ed3f46.png" group-title="Phá Làng TV" , 🟢 05:00 03/10 ⚽ Namyangju Citizen vs Gijang United (Unknown) (HD2) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull1.digitalcdn.net/live/6717a27dd2e94d24b83796747c29a74c/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/1c8a77bdf19b6782addd1e8c02ed3f46.png" group-title="Phá Làng TV" , 🟢 05:00 03/10 ⚽ Namyangju Citizen vs Gijang United (Nhà đài)
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://lilive1.eu.cc/live/f107d531f623dc96244c7505ee372df1/playlist.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/6b55a647c6ffe4016e025e9f46144d3f.png" group-title="Phá Làng TV" , 🟢 05:10 03/10 ⚽ Australia U23 vs South Korea U23 (Unknown) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull.digitalcdn.net/live/bed98e3a096440dd8619ae3406abb8a3/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/6b55a647c6ffe4016e025e9f46144d3f.png" group-title="Phá Làng TV" , 🟢 05:10 03/10 ⚽ Australia U23 vs South Korea U23 (Unknown) (HD2) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull1.digitalcdn.net/live/bed98e3a096440dd8619ae3406abb8a3/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/6b55a647c6ffe4016e025e9f46144d3f.png" group-title="Phá Làng TV" , 🟢 05:10 03/10 ⚽ Australia U23 vs South Korea U23 (Nhà đài)
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://lilive1.eu.cc/live/2ea09a6a6d93932a96fd9321523b3e93/playlist.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/43f9c122bf617d349407a95d4f709a0d.png" group-title="Phá Làng TV" , 06:00 03/10 ⚽ Perth Glory vs Adelaide United (Unknown) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull.digitalcdn.net/live/498b8770f82440eaad8b556047650641/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/43f9c122bf617d349407a95d4f709a0d.png" group-title="Phá Làng TV" , 06:00 03/10 ⚽ Perth Glory vs Adelaide United (Unknown) (HD2) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull1.digitalcdn.net/live/498b8770f82440eaad8b556047650641/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://sta.vnres.co/file/common/20261001/095833a8f2a539c9e27ac3170b659237.png" group-title="Phá Làng TV" , 🟢 06:00 03/10 ⚽ China U23 vs Uzbekistan U23 (LÝ LÀNG LÁ) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull.digitalcdn.net/live/5b0489dd5f6d4608b23568db294b7356/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://sta.vnres.co/file/common/20261001/095833a8f2a539c9e27ac3170b659237.png" group-title="Phá Làng TV" , 🟢 06:00 03/10 ⚽ China U23 vs Uzbekistan U23 (LÝ LÀNG LÁ) (HD2) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull1.digitalcdn.net/live/5b0489dd5f6d4608b23568db294b7356/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://sta.vnres.co/file/common/20261001/095833a8f2a539c9e27ac3170b659237.png" group-title="Phá Làng TV" , 🟢 06:00 03/10 ⚽ China U23 vs Uzbekistan U23 (Nhà đài)
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://lilive1.eu.cc/live/982cfe09137f0b0c36f28936096e90f6/playlist.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/c6bf2c7bfc6b4ef4b8d69075db949976.png" group-title="Phá Làng TV" , 🟢 06:00 03/10 ⚽ Kawasaki Frontale U21 vs Tokyo Verdy U21 (Unknown) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull.digitalcdn.net/live/5053b1490b3649c4a5dc7facf6b95b97/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/c6bf2c7bfc6b4ef4b8d69075db949976.png" group-title="Phá Làng TV" , 🟢 06:00 03/10 ⚽ Kawasaki Frontale U21 vs Tokyo Verdy U21 (Unknown) (HD2) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull1.digitalcdn.net/live/5053b1490b3649c4a5dc7facf6b95b97/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/c6bf2c7bfc6b4ef4b8d69075db949976.png" group-title="Phá Làng TV" , 🟢 06:00 03/10 ⚽ Kawasaki Frontale U21 vs Tokyo Verdy U21 (Nhà đài)
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://lilive1.eu.cc/live/69b9d389639d0f5d94b584ee833112ee/playlist.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/ada2fba6258d87de3a01849042b87a2c.png" group-title="Phá Làng TV" , 🟢 06:00 03/10 ⚽ Ehime FC vs Thespa Kusatsu Gunma (Unknown) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull.digitalcdn.net/live/ab607ad590b34aa68e9bc52b4c6a2db7/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/ada2fba6258d87de3a01849042b87a2c.png" group-title="Phá Làng TV" , 🟢 06:00 03/10 ⚽ Ehime FC vs Thespa Kusatsu Gunma (Unknown) (HD2) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull1.digitalcdn.net/live/ab607ad590b34aa68e9bc52b4c6a2db7/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/ada2fba6258d87de3a01849042b87a2c.png" group-title="Phá Làng TV" , 🟢 06:00 03/10 ⚽ Ehime FC vs Thespa Kusatsu Gunma (Nhà đài)
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://lilive1.eu.cc/live/5b5dbbc034a67a6f2d6e2a5f470cc554/playlist.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/de407445568c4490a9b6a946274af146.png" group-title="Phá Làng TV" , 🟢 06:00 03/10 ⚽ Yenisey Krasnoyarsk Women vs Lokomotiv Moscow Women (Unknown) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull.digitalcdn.net/live/5dd2708d4909469a8e440c66cc4e5219/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/de407445568c4490a9b6a946274af146.png" group-title="Phá Làng TV" , 🟢 06:00 03/10 ⚽ Yenisey Krasnoyarsk Women vs Lokomotiv Moscow Women (Unknown) (HD2) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull1.digitalcdn.net/live/5dd2708d4909469a8e440c66cc4e5219/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/de407445568c4490a9b6a946274af146.png" group-title="Phá Làng TV" , 🟢 06:00 03/10 ⚽ Yenisey Krasnoyarsk Women vs Lokomotiv Moscow Women (Nhà đài)
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://lilive1.eu.cc/live/33fc0155c0e6850ff96fb4a293a46f08/playlist.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/4e21e71bc64239631ef1571877a73221.png" group-title="Phá Làng TV" , 07:00 03/10 ⚽ Jinju Citizen vs Geoje Citizen (Unknown) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull.digitalcdn.net/live/2b03e3e98d274583a89cf73611470bbc/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/4e21e71bc64239631ef1571877a73221.png" group-title="Phá Làng TV" , 07:00 03/10 ⚽ Jinju Citizen vs Geoje Citizen (Unknown) (HD2) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull1.digitalcdn.net/live/2b03e3e98d274583a89cf73611470bbc/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/4e21e71bc64239631ef1571877a73221.png" group-title="Phá Làng TV" , 07:00 03/10 ⚽ Jinju Citizen vs Geoje Citizen (Nhà đài)
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://lilive1.eu.cc/live/3a75801fdd40b58883593da813cccf6f/playlist.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/9594e7abdcb42f6e8a178db6d4f37a94.png" group-title="Phá Làng TV" , 07:00 03/10 ⚽ Ararat Yerevan vs Ararat-Armenia FC (Unknown) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull.digitalcdn.net/live/0c5e9860493d47b6af855a2b65e8147e/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/9594e7abdcb42f6e8a178db6d4f37a94.png" group-title="Phá Làng TV" , 07:00 03/10 ⚽ Ararat Yerevan vs Ararat-Armenia FC (Unknown) (HD2) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull1.digitalcdn.net/live/0c5e9860493d47b6af855a2b65e8147e/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img0.aiscore.com/volleyball/team/da0f5c2d7a7ced93056baddc54135a74.png!w80" group-title="Phá Làng TV" , 🟢 07:00 03/10 🏐 Trung Quốc vs  Pakistan (LÝ LÊN LỬA) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull.digitalcdn.net/live/314476d9151449c28e0df687f4325047/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img0.aiscore.com/volleyball/team/da0f5c2d7a7ced93056baddc54135a74.png!w80" group-title="Phá Làng TV" , 🟢 07:00 03/10 🏐 Trung Quốc vs  Pakistan (LÝ LÊN LỬA) (HD2) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull1.digitalcdn.net/live/314476d9151449c28e0df687f4325047/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/539c489a7bd94dd9d785308fd0f0a6b9.png" group-title="Phá Làng TV" , 07:00 03/10 ⚽ Machida Zelvia vs Kyoto Sanga (Unknown) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull.digitalcdn.net/live/d86bc218756d414ea55d30098d37eba0/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/539c489a7bd94dd9d785308fd0f0a6b9.png" group-title="Phá Làng TV" , 07:00 03/10 ⚽ Machida Zelvia vs Kyoto Sanga (Unknown) (HD2) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull1.digitalcdn.net/live/d86bc218756d414ea55d30098d37eba0/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/539c489a7bd94dd9d785308fd0f0a6b9.png" group-title="Phá Làng TV" , 07:00 03/10 ⚽ Machida Zelvia vs Kyoto Sanga (Nhà đài)
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://lilive1.eu.cc/live/c32683b2370f90d6590d9cde8faf1c6b/playlist.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/c0729dce21b4e81cb81705a2a75caf76.png" group-title="Phá Làng TV" , 07:00 03/10 ⚽ University of  Western Cape vs University of Pretoria Women (Unknown) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull.digitalcdn.net/live/a3850668122c4d1ab8910540cdd1fbd6/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/c0729dce21b4e81cb81705a2a75caf76.png" group-title="Phá Làng TV" , 07:00 03/10 ⚽ University of  Western Cape vs University of Pretoria Women (Unknown) (HD2) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull1.digitalcdn.net/live/a3850668122c4d1ab8910540cdd1fbd6/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/1f1710daafa8a09f6e35630bb81e4081.png" group-title="Phá Làng TV" , 07:00 03/10 ⚽ Dianjiang Mingyue Tianxiang vs Gaoxin Dianming Tech (Unknown) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull.digitalcdn.net/live/a3a26652da674dae8a2a24235029c847/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/1f1710daafa8a09f6e35630bb81e4081.png" group-title="Phá Làng TV" , 07:00 03/10 ⚽ Dianjiang Mingyue Tianxiang vs Gaoxin Dianming Tech (Unknown) (HD2) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull1.digitalcdn.net/live/a3a26652da674dae8a2a24235029c847/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/1f1710daafa8a09f6e35630bb81e4081.png" group-title="Phá Làng TV" , 07:00 03/10 ⚽ Dianjiang Mingyue Tianxiang vs Gaoxin Dianming Tech (Nhà đài)
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://lilive1.eu.cc/live/da7acf3212bbce9baffa36972d3357f4/playlist.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/61e08ae9a3b69ce77f30bf51e71b2a77.png" group-title="Phá Làng TV" , 07:00 03/10 ⚽ Ventforet Kofu vs Kataller Toyama (Unknown) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull.digitalcdn.net/live/69c9d6735ac6472ca42704cd907754aa/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/61e08ae9a3b69ce77f30bf51e71b2a77.png" group-title="Phá Làng TV" , 07:00 03/10 ⚽ Ventforet Kofu vs Kataller Toyama (Unknown) (HD2) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull1.digitalcdn.net/live/69c9d6735ac6472ca42704cd907754aa/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/61e08ae9a3b69ce77f30bf51e71b2a77.png" group-title="Phá Làng TV" , 07:00 03/10 ⚽ Ventforet Kofu vs Kataller Toyama (Nhà đài)
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://lilive1.eu.cc/live/6799f7e809c5182e4055f2fb906e9ba2/playlist.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/68bbaa087749b718f6399542f3f51e6d.png" group-title="Phá Làng TV" , 08:00 03/10 ⚽ Oita Trinita vs Montedio Yamagata (Unknown) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull.digitalcdn.net/live/25d5356c8ab24dc9bf7743c6d71f5e10/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/68bbaa087749b718f6399542f3f51e6d.png" group-title="Phá Làng TV" , 08:00 03/10 ⚽ Oita Trinita vs Montedio Yamagata (Unknown) (HD2) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull1.digitalcdn.net/live/25d5356c8ab24dc9bf7743c6d71f5e10/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/68bbaa087749b718f6399542f3f51e6d.png" group-title="Phá Làng TV" , 08:00 03/10 ⚽ Oita Trinita vs Montedio Yamagata (Nhà đài)
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://lilive1.eu.cc/live/ffe3dd9c6d06736d61a0e6e58faf8e37/playlist.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/3d75dae72084533015ec39b4c24217da.png" group-title="Phá Làng TV" , 08:00 03/10 ⚽ MFK Karvina U19 vs Viktoria Plzen U19 (Unknown) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull.digitalcdn.net/live/3f296ffb82e04f5281e31f0f6ed332c4/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/3d75dae72084533015ec39b4c24217da.png" group-title="Phá Làng TV" , 08:00 03/10 ⚽ MFK Karvina U19 vs Viktoria Plzen U19 (Unknown) (HD2) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull1.digitalcdn.net/live/3f296ffb82e04f5281e31f0f6ed332c4/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/3d75dae72084533015ec39b4c24217da.png" group-title="Phá Làng TV" , 08:00 03/10 ⚽ MFK Karvina U19 vs Viktoria Plzen U19 (Nhà đài)
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://lilive1.eu.cc/live/bbfb54eee056bb842d6aa2bc74bea9ae/playlist.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/a2324c377a142d82de9b710308cca602.png" group-title="Phá Làng TV" , 08:00 03/10 ⚽ FC Victoria Mykolaivka vs FC Inhulets Petrove (Unknown) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull.digitalcdn.net/live/cef29d46c87244e0b5d351154bcef6d2/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/a2324c377a142d82de9b710308cca602.png" group-title="Phá Làng TV" , 08:00 03/10 ⚽ FC Victoria Mykolaivka vs FC Inhulets Petrove (Unknown) (HD2) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull1.digitalcdn.net/live/cef29d46c87244e0b5d351154bcef6d2/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/a2324c377a142d82de9b710308cca602.png" group-title="Phá Làng TV" , 08:00 03/10 ⚽ FC Victoria Mykolaivka vs FC Inhulets Petrove (Nhà đài)
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://lilive1.eu.cc/live/cace13f6fa0b4a12fcdb38c094a1482b/playlist.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/1a5f614ece25e393280cdda4129f6fe3.png" group-title="Phá Làng TV" , 08:00 03/10 ⚽ Dewa United FC U20 vs Persija Jakarta U20 (Unknown) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull.digitalcdn.net/live/47726939a7b140f69f1a8a52cbc70641/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/1a5f614ece25e393280cdda4129f6fe3.png" group-title="Phá Làng TV" , 08:00 03/10 ⚽ Dewa United FC U20 vs Persija Jakarta U20 (Unknown) (HD2) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull1.digitalcdn.net/live/47726939a7b140f69f1a8a52cbc70641/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/bce254035d3744a588a8c8d104723ed3.png" group-title="Phá Làng TV" , 08:00 03/10 ⚽ FK Csikszereda Miercurea Ciuc Women vs Vasas Odorhei Women (Unknown) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull.digitalcdn.net/live/f382ede1f3f345d4afca38bef03be442/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/bce254035d3744a588a8c8d104723ed3.png" group-title="Phá Làng TV" , 08:00 03/10 ⚽ FK Csikszereda Miercurea Ciuc Women vs Vasas Odorhei Women (Unknown) (HD2) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull1.digitalcdn.net/live/f382ede1f3f345d4afca38bef03be442/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/62b51644af6d602c38e9dd97ca45d5e3.png" group-title="Phá Làng TV" , 08:00 03/10 ⚽ CS Concordia Chiajna Women vs AFC Prahova Ploiesti (W) (Unknown) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull.digitalcdn.net/live/0e9c3a5fc9ec43dc99b3ea721ba3a0f1/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/62b51644af6d602c38e9dd97ca45d5e3.png" group-title="Phá Làng TV" , 08:00 03/10 ⚽ CS Concordia Chiajna Women vs AFC Prahova Ploiesti (W) (Unknown) (HD2) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull1.digitalcdn.net/live/0e9c3a5fc9ec43dc99b3ea721ba3a0f1/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/78032edddbd8c3c0c21c79f259b2185a.png" group-title="Phá Làng TV" , 08:00 03/10 ⚽ FC Ryukyu Okinawa vs Zweigen Kanazawa FC (Unknown) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull.digitalcdn.net/live/af9f15ee25314fdba61be13f6405faef/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/78032edddbd8c3c0c21c79f259b2185a.png" group-title="Phá Làng TV" , 08:00 03/10 ⚽ FC Ryukyu Okinawa vs Zweigen Kanazawa FC (Unknown) (HD2) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull1.digitalcdn.net/live/af9f15ee25314fdba61be13f6405faef/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/78032edddbd8c3c0c21c79f259b2185a.png" group-title="Phá Làng TV" , 08:00 03/10 ⚽ FC Ryukyu Okinawa vs Zweigen Kanazawa FC (Nhà đài)
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://lilive1.eu.cc/live/ccf970a8291fdd50c8a7eb2b5c2ebba0/playlist.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/970cdb79441d516ce0708f3c35b65755.png" group-title="Phá Làng TV" , 08:00 03/10 ⚽ SC Sagamihara vs FC Osaka (Unknown) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull.digitalcdn.net/live/5cd0e72eb18547fcab9e96cf82d75f89/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/970cdb79441d516ce0708f3c35b65755.png" group-title="Phá Làng TV" , 08:00 03/10 ⚽ SC Sagamihara vs FC Osaka (Unknown) (HD2) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull1.digitalcdn.net/live/5cd0e72eb18547fcab9e96cf82d75f89/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/970cdb79441d516ce0708f3c35b65755.png" group-title="Phá Làng TV" , 08:00 03/10 ⚽ SC Sagamihara vs FC Osaka (Nhà đài)
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://lilive1.eu.cc/live/f3c0d7e65ae3ee9f1574f17c6f54511a/playlist.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/fefa11f94d0efff34a0f98ee4440a34b.png" group-title="Phá Làng TV" , 08:00 03/10 ⚽ Giravanz Kitakyushu vs Kochi United (Unknown) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull.digitalcdn.net/live/352c5911a27549a8a70630fb65b738e8/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/fefa11f94d0efff34a0f98ee4440a34b.png" group-title="Phá Làng TV" , 08:00 03/10 ⚽ Giravanz Kitakyushu vs Kochi United (Unknown) (HD2) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull1.digitalcdn.net/live/352c5911a27549a8a70630fb65b738e8/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/fefa11f94d0efff34a0f98ee4440a34b.png" group-title="Phá Làng TV" , 08:00 03/10 ⚽ Giravanz Kitakyushu vs Kochi United (Nhà đài)
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://lilive1.eu.cc/live/c5bc9157b81d5e7aa7599be1dc6dbd7b/playlist.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/275c4eca0c3dd431c353013d073479b9.png" group-title="Phá Làng TV" , 08:00 03/10 ⚽ Chindia Targoviste vs Petrolul Ploiesti (Unknown) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull.digitalcdn.net/live/cd4c657c96d64a9daa62ef91dd0932cb/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/275c4eca0c3dd431c353013d073479b9.png" group-title="Phá Làng TV" , 08:00 03/10 ⚽ Chindia Targoviste vs Petrolul Ploiesti (Unknown) (HD2) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull1.digitalcdn.net/live/cd4c657c96d64a9daa62ef91dd0932cb/index.m3u8
