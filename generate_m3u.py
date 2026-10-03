@@ -34,7 +34,7 @@ SPORT_MAPPING = {
     "TABLE TENNIS": "🏓", "BONG BAN": "🏓",
     "BILLIARDS": "🎱", "POOL": "🎱",
     "ESPORTS": "🎮", "GAME": "🎮",
-    "RACING": "🏎️", "F1": "🏎️️"
+    "RACING": "🏎️", "F1": "🏎"
 }
 
 def parse_to_vn_time(date_val):
@@ -73,37 +73,37 @@ def get_sport_icon(desc, title=""):
     for key, icon in SPORT_MAPPING.items():
         if key in text_check:
             return icon
-    return "🏆"
+    return "⚽"
 
-def is_valid_time_window(dt_vn):
-    if not dt_vn:
-        return True
-    
-    tz_vn = timezone(timedelta(hours=7))
-    now_vn = datetime.now(tz_vn).replace(tzinfo=None)
-    
-    today_start = now_vn.replace(hour=0, minute=0, second=0, microsecond=0)
-    tomorrow_end = today_start + timedelta(days=2) - timedelta(seconds=1)
-    
-    if dt_vn < (now_vn - timedelta(hours=6)):
-        return False
-    if dt_vn > tomorrow_end:
-        return False
-        
-    return True
-
-def get_blv_from_obj(obj):
-    if not isinstance(obj, dict):
-        return ""
-    for key in ["blv", "blv_name", "commentator", "caster", "streamer", "author"]:
-        val = obj.get(key)
-        if isinstance(val, str) and val.strip():
-            return val.strip()
-        elif isinstance(val, dict):
-            name = val.get("name") or val.get("nickname") or val.get("title")
-            if name and str(name).strip():
-                return str(name).strip()
+def get_blv_name(item, detail):
+    """Lấy tên BLV từ chi tiết trận đấu"""
+    for src in [detail, item]:
+        if not isinstance(src, dict):
+            continue
+        for k in ["blv", "blv_name", "commentator", "caster", "streamer", "author"]:
+            val = src.get(k)
+            if isinstance(val, str) and val.strip():
+                return val.strip()
+            elif isinstance(val, dict):
+                name = val.get("name") or val.get("nickname") or val.get("title")
+                if name and str(name).strip():
+                    return str(name).strip()
     return ""
+
+def extract_urls(obj):
+    """Tự động trích xuất các link m3u8 từ JSON"""
+    urls = []
+    if not obj:
+        return urls
+    json_str = json.dumps(obj, ensure_ascii=False)
+    matches = re.findall(r'(?:https?:)?//[^\s"\'<>\\]+\.m3u8[^\s"\'<>\\]*', json_str)
+    for u in matches:
+        clean_u = u.strip()
+        if clean_u.startswith("//"):
+            clean_u = "https:" + clean_u
+        if clean_u not in urls:
+            urls.append(clean_u)
+    return urls
 
 def fetch_match_detail(session, base_api, match_id):
     if not match_id:
@@ -117,66 +117,22 @@ def fetch_match_detail(session, base_api, match_id):
         pass
     return None
 
-def extract_streams_regex(obj_list):
-    """
-    Sử dụng Regex quét toàn bộ URL xuất hiện trong JSON (bao gồm key path, file, embed, m3u8...)
-    """
-    found_streams = []
-    seen_urls = set()
-
-    for obj in obj_list:
-        if not obj:
-            continue
-        json_str = json.dumps(obj, ensure_ascii=False)
-        
-        # Regex tìm mọi URL dạng http(s):// hoặc //...
-        urls = re.findall(r'(?:https?:)?//[^\s"\'<>\\]+', json_str)
-        
-        for url in urls:
-            clean_url = url.strip()
-            if clean_url.startswith("//"):
-                clean_url = "https:" + clean_url
-            
-            # Bỏ qua hình ảnh, logo, CSS, JS
-            if any(ext in clean_url.lower() for ext in [".png", ".jpg", ".jpeg", ".webp", ".gif", ".svg", ".css", ".js", ".ico"]):
-                continue
-            
-            if clean_url not in seen_urls:
-                seen_urls.add(clean_url)
-                found_streams.append({
-                    "url": clean_url,
-                    "name": "",
-                    "blv": get_blv_from_obj(obj) if isinstance(obj, dict) else ""
-                })
-
-    # Tự động tạo luồng dự phòng HD2 nếu là domain digitalcdn
-    digitalcdn_additions = []
-    for st in found_streams:
-        if "pull.digitalcdn.net" in st["url"]:
-            alt_url = st["url"].replace("pull.digitalcdn.net", "pull1.digitalcdn.net")
-            if alt_url not in seen_urls:
-                seen_urls.add(alt_url)
-                digitalcdn_additions.append({
-                    "url": alt_url,
-                    "name": "HD2",
-                    "blv": st["blv"]
-                })
-    found_streams.extend(digitalcdn_additions)
-
-    return found_streams
-
 def fetch_single_detail(item, session):
     dt_vn = parse_to_vn_time(item.get("start_date"))
-    if is_valid_time_window(dt_vn):
-        m_id = item.get("id")
-        base_api = item.get("_base_api", API_DOMAINS[0])
-        detail = fetch_match_detail(session, base_api, m_id)
-        if detail:
-            item["_detail"] = detail
-        return True
-    return False
+    if dt_vn:
+        tz_vn = timezone(timedelta(hours=7))
+        now_vn = datetime.now(tz_vn).replace(tzinfo=None)
+        if dt_vn < (now_vn - timedelta(hours=6)) or dt_vn > (now_vn + timedelta(days=2)):
+            return False
+    
+    m_id = item.get("id")
+    base_api = item.get("_base_api", API_DOMAINS[0])
+    detail = fetch_match_detail(session, base_api, m_id)
+    if detail:
+        item["_detail"] = detail
+    return True
 
-def fetch_matches_by_post():
+def fetch_matches():
     all_matches = []
     seen_ids = set()
 
@@ -208,30 +164,23 @@ def fetch_matches_by_post():
                                 item["_base_api"] = base_api
                                 all_matches.append(item)
                         fetched_any = True
-                        print(f" -> Lấy thành công Page {page} từ {base_api} ({len(data)} trận)", flush=True)
                     else:
                         break
-            except Exception as e:
-                print(f" -> Lỗi gọi API {url}: {e}", flush=True)
+            except Exception:
                 break
 
         if fetched_any:
             break
 
-    print(" -> Đang tải dữ liệu chi tiết đa luồng cho các trận đấu...", flush=True)
-    
-    valid_count = 0
     with ThreadPoolExecutor(max_workers=15) as executor:
         futures = [executor.submit(fetch_single_detail, item, session) for item in all_matches]
         for future in as_completed(futures):
-            if future.result():
-                valid_count += 1
+            future.result()
 
-    print(f" -> Đã cập nhật chi tiết thành công cho {valid_count} trận hợp lệ.", flush=True)
     return all_matches
 
 def build_m3u(matches):
-    m3u_lines = ["#EXTM3U\n"]
+    m3u_entries = ["#EXTM3U\n"]
     total_channels = 0
 
     tz_vn = timezone(timedelta(hours=7))
@@ -241,17 +190,15 @@ def build_m3u(matches):
         if not isinstance(item, dict):
             continue
 
-        dt_vn = parse_to_vn_time(item.get("start_date"))
-        
-        if not is_valid_time_window(dt_vn):
-            continue
-
         detail_item = item.get("_detail") or {}
 
-        # Quét đệ quy + Regex lấy toàn bộ URL luồng phát
-        streams = extract_streams_regex([detail_item, item])
-        if not streams:
+        # 1. Chỉ lọc trận CÓ BLV (nếu không có BLV thì bỏ qua)
+        blv_name = get_blv_name(item, detail_item)
+        if not blv_name:
             continue
+
+        dt_vn = parse_to_vn_time(item.get("start_date"))
+        formatted_time = format_time_str(dt_vn)
 
         team1 = str(item.get("team_1") or detail_item.get("team_1") or "").strip()
         team2 = str(item.get("team_2") or detail_item.get("team_2") or "").strip()
@@ -266,55 +213,55 @@ def build_m3u(matches):
 
         desc = str(item.get("desc") or detail_item.get("desc") or "").strip()
         logo = str(item.get("team_1_logo") or detail_item.get("team_1_logo") or item.get("logo") or "").strip()
-        formatted_time = format_time_str(dt_vn)
         icon = get_sport_icon(desc, match_name)
 
+        # Trận đang diễn ra có icon 🟢
         is_live = False
         if dt_vn and (dt_vn <= now_vn <= dt_vn + timedelta(minutes=150)):
             is_live = True
-        
         live_prefix = "🟢 " if is_live else ""
-        main_blv = get_blv_from_obj(detail_item) or get_blv_from_obj(item)
 
-        for st in streams:
-            blv_name = st.get("blv") or main_blv
-            blv_tag = f"({blv_name})" if blv_name else ""
-            
-            quality_str = str(st.get("name") or "").strip()
-            quality_tag = f"({quality_str})" if quality_str else ""
+        # Lấy danh sách URL m3u8
+        urls = extract_urls(detail_item) or extract_urls(item)
+        if not urls:
+            continue
 
-            title_parts = [f"{live_prefix}{formatted_time}".strip(), icon, match_name, blv_tag, quality_tag, "[geo]"]
-            display_title = " ".join([p for p in title_parts if p])
-            display_title = re.sub(r'\s+', ' ', display_title)
+        # Tạo luồng Chuẩn và HD2
+        stream_list = []
+        for u in urls:
+            stream_list.append({"url": u, "tag": ""})
+            if "pull.digitalcdn.net" in u:
+                hd2_url = u.replace("pull.digitalcdn.net", "pull1.digitalcdn.net")
+                stream_list.append({"url": hd2_url, "tag": " (HD2)"})
 
-            entry_lines = (
+        for st in stream_list:
+            stream_url = st["url"]
+            tag_hd = st["tag"]
+
+            # Format chính xác theo yêu cầu:
+            # 🟢 07:00 03/10 🏐 Việt Nam vs Thái Lan (LÝ LIỀU LĨNH) [geo]
+            # 🟢 07:00 03/10 🏐 Việt Nam vs Thái Lan (LÝ LIỀU LĨNH) (HD2) [geo]
+            display_title = f"{live_prefix}{formatted_time} {icon} {match_name} ({blv_name}){tag_hd} [geo]"
+
+            entry = (
                 f'#EXTINF:-1 tvg-logo="{logo}" group-title="Phá Làng TV" , {display_title}\n'
                 f'#EXTVLCOPT:http-referrer=https://phalang.live/\n'
-                f'{st["url"]}\n'
+                f'{stream_url}\n'
             )
-
-            m3u_lines.append(entry_lines)
+            m3u_entries.append(entry)
             total_channels += 1
 
-    # In Debug nếu vẫn ra 0 luồng
-    if total_channels == 0 and matches:
-        print("\n[DEBUG CẢNH BÁO] Không tìm thấy luồng phát nào! Mẫu JSON phản hồi từ API:", flush=True)
-        sample = matches[0].get("_detail") or matches[0]
-        print(json.dumps(sample, ensure_ascii=False, indent=2)[:1000], flush=True)
-
-    return "\n".join(m3u_lines), total_channels
+    return "\n".join(m3u_entries), total_channels
 
 def main():
-    print("=== Bắt đầu cào dữ liệu Phá Làng TV ===", flush=True)
-    matches = fetch_matches_by_post()
-    print(f"Tổng số trận thu thập: {len(matches)}", flush=True)
-
+    print("Đang tải dữ liệu Phá Làng TV...", flush=True)
+    matches = fetch_matches()
     m3u_content, total_channels = build_m3u(matches)
 
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         f.write(m3u_content)
 
-    print(f"=== Xuất thành công {total_channels} luồng vào file: {OUTPUT_FILE} ===", flush=True)
+    print(f"Đã xuất thành công {total_channels} luồng vào {OUTPUT_FILE}", flush=True)
 
 if __name__ == "__main__":
     main()
