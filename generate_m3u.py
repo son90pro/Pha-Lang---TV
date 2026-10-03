@@ -35,13 +35,13 @@ SPORT_MAPPING = {
     "RACING": "🏎️", "F1": "🏎️"
 }
 
-INVALID_BLVS = ["nhà đài", "nha dai", "nhàđài", "none", "null", "undefined", "0", "đang cập nhật", ""]
+# Loại bỏ chuỗi rỗng "" khỏi INVALID_BLVS để tránh vô tình xoá toàn bộ trận đấu
+INVALID_BLVS = ["nhà đài", "nha dai", "nhàđài", "none", "null", "undefined", "0", "đang cập nhật"]
 
 def parse_to_vn_time(date_val):
     if not date_val:
         return None
     try:
-        # Xử lý Unix Timestamp
         if isinstance(date_val, (int, float)) or (isinstance(date_val, str) and date_val.isdigit()):
             ts = float(date_val)
             if ts > 1e11:
@@ -77,6 +77,9 @@ def get_sport_icon(desc, title=""):
     return "🏆"
 
 def is_valid_time_window(dt_vn):
+    """
+    Chỉ giữ lại danh sách trận của HÔM NAY và HÔM NAY + 1 (Hết ngày mai)
+    """
     if not dt_vn:
         return True
     
@@ -84,12 +87,12 @@ def is_valid_time_window(dt_vn):
     now_vn = datetime.now(tz_vn).replace(tzinfo=None)
     
     today_start = now_vn.replace(hour=0, minute=0, second=0, microsecond=0)
-    day_after_tomorrow_end = today_start + timedelta(days=3) - timedelta(seconds=1)
+    tomorrow_end = today_start + timedelta(days=2) - timedelta(seconds=1)  # 23:59:59 ngày mai
     
-    # Giữ lại các trận đấu từ 4 tiếng trước cho tới hết 2 ngày tới
-    if dt_vn < (now_vn - timedelta(hours=4)):
+    # Lấy từ các trận cách đây 3 tiếng cho tới hết ngày mai
+    if dt_vn < (now_vn - timedelta(hours=3)):
         return False
-    if dt_vn > day_after_tomorrow_end:
+    if dt_vn > tomorrow_end:
         return False
         
     return True
@@ -124,7 +127,6 @@ def extract_all_streams(item, detail_item=None):
 
     sources = [s for s in [detail_item, item] if s and isinstance(s, dict)]
     
-    # Tìm tên BLV ưu tiên
     default_blv = ""
     for src in sources:
         blv = get_blv_from_obj(src)
@@ -132,7 +134,7 @@ def extract_all_streams(item, detail_item=None):
             default_blv = blv
             break
 
-    # 1. Trích xuất từ mảng danh sách luồng
+    # 1. Trích xuất từ các mảng danh sách luồng
     raw_servers = []
     for src in sources:
         for k in ["servers", "streams", "sources", "play_urls", "links", "channels", "relates", "list_link"]:
@@ -164,7 +166,7 @@ def extract_all_streams(item, detail_item=None):
             })
             seen_urls.add(str(s_url).strip())
 
-    # 2. Trích xuất luồng chính trực tiếp
+    # 2. Trích xuất luồng trực tiếp
     for src in sources:
         for k in ["source_live", "play_url", "link", "m3u8", "url", "stream_url", "hls"]:
             val = str(src.get(k) or "").strip()
@@ -234,8 +236,8 @@ def fetch_matches_by_post():
         if fetched_any:
             break
 
-    # Chỉ gọi API Detail cho các trận đấu nằm trong khung giờ hợp lệ
-    print(" -> Đang tải dữ liệu chi tiết cho các trận trong khung giờ...")
+    # Chỉ gọi API Detail cho các trận thuộc ngày hôm nay và ngày mai
+    print(" -> Đang tải dữ liệu chi tiết cho các trận trong ngày hôm nay & ngày mai...")
     valid_count = 0
     for item in all_matches:
         dt_vn = parse_to_vn_time(item.get("start_date"))
@@ -263,14 +265,16 @@ def build_m3u(matches):
 
         dt_vn = parse_to_vn_time(item.get("start_date"))
         
+        # Bỏ qua nếu nằm ngoài khung giờ hôm nay & ngày mai
         if not is_valid_time_window(dt_vn):
             continue
 
         detail_item = item.get("_detail") or {}
         
-        # Kiểm tra BLV Tiếng Việt
         main_blv = get_blv_from_obj(detail_item) or get_blv_from_obj(item)
-        if main_blv.lower().strip() in INVALID_BLVS:
+        
+        # Chỉ loại bỏ nếu tên BLV thực sự nằm trong danh sách INVALID (không xóa nếu tên rỗng)
+        if main_blv and main_blv.lower().strip() in INVALID_BLVS:
             continue
 
         streams = extract_all_streams(item, detail_item)
@@ -323,7 +327,7 @@ def build_m3u(matches):
     return "\n".join(m3u_lines), total_channels
 
 def main():
-    print("=== Bắt đầu cào dữ liệu Phá Làng TV (Đa luồng & Lọc BLV Tiếng Việt) ===")
+    print("=== Bắt đầu cào dữ liệu Phá Làng TV (Lấy hôm nay & ngày mai) ===")
     matches = fetch_matches_by_post()
     print(f"Tổng số trận thu thập: {len(matches)}")
 
@@ -336,4 +340,4 @@ def main():
 
 if __name__ == "__main__":
     main()
-    
+        
