@@ -1,40 +1,28 @@
 #EXTM3U
 
-#EXTINF:-1 tvg-logo="https://sta.vnres.co/file/common/20260929/0dd224173cbbce9636adbc9e309aec6f.png" group-title="⚽ BÓNG ĐÁ" , 🔴 23:00 03/10 ⚽ 🔥 Croatia vs England (BLV LÝ LONG) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull.digitalcdn.net/live/09078b665457470580c09316bf0b033e/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://sta.vnres.co/file/common/20260929/0dd224173cbbce9636adbc9e309aec6f.png" group-title="⚽ BÓNG ĐÁ" , 🔴 23:00 03/10 ⚽ 🔥 Croatia vs England (BLV LÝ LONG) (HD2) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull1.digitalcdn.net/live/09078b665457470580c09316bf0b033e/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://sta.vnres.co/file/common/20260929/0dd224173cbbce9636adbc9e309aec6f.png" group-title="⚽ BÓNG ĐÁ" , 🔴 23:00 03/10 ⚽ 🔥 Croatia vs England (Nhà đài)
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://lilive1.eu.cc/live/b6f5df2e120738cfa4dc27beea5882ed/playlist.m3u8
-
-#EXTINF:-1 tvg-logo="https://sta.vnres.co/file/common/20261001/a88a03bd0a0cd9d5ef2e3f8ac7caac99.png" group-title="⚽ BÓNG ĐÁ" , 00:00 04/10 ⚽ 🔥 France U21 vs Luxembourg U21 (BLV LÝ LINH LỰC) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull.digitalcdn.net/live/74d06a051fb041a6af0fedf139fe68b9/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://sta.vnres.co/file/common/20261001/a88a03bd0a0cd9d5ef2e3f8ac7caac99.png" group-title="⚽ BÓNG ĐÁ" , 00:00 04/10 ⚽ 🔥 France U21 vs Luxembourg U21 (BLV LÝ LINH LỰC) (HD2) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull1.digitalcdn.net/live/74d06a051fb041a6af0fedf139fe68b9/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://sta.vnres.co/file/common/20261001/a99e389a0921b70b567fd9c3f4510591.png" group-title="⚽ BÓNG ĐÁ" , 01:45 04/10 ⚽ 🔥 Switzerland vs Slovenia (BLV LÝ LIỀU LĨNH) [geo]
+#EXTINF:-1 tvg-logo="https://sta.vnres.co/file/common/20261001/a99e389a0921b70b567fd9c3f4510591.png" group-title="⚽ BÓNG ĐÁ" , 🔴 01:45 04/10 ⚽ 🔥 Switzerland vs Slovenia (BLV LÝ LIỀU LĨNH) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull.digitalcdn.net/live/0706eadc5f684f09a9c45188e73ed6cd/index.m3u8
 
-#EXTINF:-1 tvg-logo="https://sta.vnres.co/file/common/20261001/a99e389a0921b70b567fd9c3f4510591.png" group-title="⚽ BÓNG ĐÁ" , 01:45 04/10 ⚽ 🔥 Switzerland vs Slovenia (BLV LÝ LIỀU LĨNH) (HD2) [geo]
+#EXTINF:-1 tvg-logo="https://sta.vnres.co/file/common/20261001/a99e389a0921b70b567fd9c3f4510591.png" group-title="⚽ BÓNG ĐÁ" , 🔴 01:45 04/10 ⚽ 🔥 Switzerland vs Slovenia (BLV LÝ LIỀU LĨNH) (HD2) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull1.digitalcdn.net/live/0706eadc5f684f09a9c45188e73ed6cd/index.m3u8
 
-#EXTINF:-1 tvg-logo="https://sta.vnres.co/file/common/20261001/c9ab934c9ff00a42174245081924b57c.png" group-title="⚽ BÓNG ĐÁ" , 01:45 04/10 ⚽ 🔥 Spain vs Czechia (BLV LÝ LA LÀNG) [geo]
+#EXTINF:-1 tvg-logo="https://sta.vnres.co/file/common/20261001/a99e389a0921b70b567fd9c3f4510591.png" group-title="⚽ BÓNG ĐÁ" , 🔴 01:45 04/10 ⚽ 🔥 Switzerland vs Slovenia (Nhà đài)
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://lilive1.eu.cc/live/a83f2f1bc58ecb3bbddcf4b07a964fed/playlist.m3u8
+
+#EXTINF:-1 tvg-logo="https://sta.vnres.co/file/common/20261001/c9ab934c9ff00a42174245081924b57c.png" group-title="⚽ BÓNG ĐÁ" , 🔴 01:45 04/10 ⚽ 🔥 Spain vs Czechia (BLV LÝ LA LÀNG) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull.digitalcdn.net/live/c720ff99c017499a9a4b04bdbfd1b345/index.m3u8
 
-#EXTINF:-1 tvg-logo="https://sta.vnres.co/file/common/20261001/c9ab934c9ff00a42174245081924b57c.png" group-title="⚽ BÓNG ĐÁ" , 01:45 04/10 ⚽ 🔥 Spain vs Czechia (BLV LÝ LA LÀNG) (HD2) [geo]
+#EXTINF:-1 tvg-logo="https://sta.vnres.co/file/common/20261001/c9ab934c9ff00a42174245081924b57c.png" group-title="⚽ BÓNG ĐÁ" , 🔴 01:45 04/10 ⚽ 🔥 Spain vs Czechia (BLV LÝ LA LÀNG) (HD2) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull1.digitalcdn.net/live/c720ff99c017499a9a4b04bdbfd1b345/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://sta.vnres.co/file/common/20261001/c9ab934c9ff00a42174245081924b57c.png" group-title="⚽ BÓNG ĐÁ" , 🔴 01:45 04/10 ⚽ 🔥 Spain vs Czechia (Nhà đài)
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://lilive1.eu.cc/live/6a311bb20b31a673c9b236d05976c0aa/playlist.m3u8
 
 #EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/d212b444eb151871d8fbbcafa8e36658.png" group-title="⚽ BÓNG ĐÁ" , 17:00 04/10 ⚽ 🔥 Tegevajaro Miyazaki vs RB Omiya Ardija (BLV LÝ LÀNG LÁ) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
@@ -67,6 +55,102 @@ https://pull.digitalcdn.net/live/5449405df9e84c7f8eff058a5ff0c0c2/index.m3u8
 #EXTINF:-1 tvg-logo="https://sta.vnres.co/file/common/20261001/5ce71ef291c8cfa27eac0f1960486470.png" group-title="⚽ BÓNG ĐÁ" , 23:00 04/10 ⚽ 🔥 Kosovo vs Austria (BLV LÝ LÀNG LÁ) (HD2) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull1.digitalcdn.net/live/5449405df9e84c7f8eff058a5ff0c0c2/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://sta.vnres.co/file/common/20261002/c068b43e2988e67c11e4c710b6867ff8.png" group-title="⚽ BÓNG ĐÁ" , 01:00 05/10 ⚽ 🔥 Egypt vs South Africa (BLV LÝ LIỀU LĨNH) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull.digitalcdn.net/live/098bf6dee22745e39f81db4a67e32f5c/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://sta.vnres.co/file/common/20261002/c068b43e2988e67c11e4c710b6867ff8.png" group-title="⚽ BÓNG ĐÁ" , 01:00 05/10 ⚽ 🔥 Egypt vs South Africa (BLV LÝ LIỀU LĨNH) (HD2) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull1.digitalcdn.net/live/098bf6dee22745e39f81db4a67e32f5c/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://sta.vnres.co/file/common/20261002/dc1bd1ddba0abef95c9fab7939d9405b.png" group-title="⚽ BÓNG ĐÁ" , 01:45 05/10 ⚽ 🔥 Portugal vs Norway (BLV LÝ LONG) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull.digitalcdn.net/live/c0a1cbb19daa48a4a9dfcef675425c64/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://sta.vnres.co/file/common/20261002/dc1bd1ddba0abef95c9fab7939d9405b.png" group-title="⚽ BÓNG ĐÁ" , 01:45 05/10 ⚽ 🔥 Portugal vs Norway (BLV LÝ LONG) (HD2) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull1.digitalcdn.net/live/c0a1cbb19daa48a4a9dfcef675425c64/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://sta.vnres.co/file/common/20261002/f10a9d853b386391f0eed7dc0a40d643.png" group-title="⚽ BÓNG ĐÁ" , 01:45 05/10 ⚽ 🔥 Greece vs Germany (BLV LÝ LÀNG LÁ) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull.digitalcdn.net/live/3228c25f7e67449fb8eed6d4ddc512ce/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://sta.vnres.co/file/common/20261002/f10a9d853b386391f0eed7dc0a40d643.png" group-title="⚽ BÓNG ĐÁ" , 01:45 05/10 ⚽ 🔥 Greece vs Germany (BLV LÝ LÀNG LÁ) (HD2) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull1.digitalcdn.net/live/3228c25f7e67449fb8eed6d4ddc512ce/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://sta.vnres.co/file/common/20261002/2305a7799a3925e34c2c148c1263e2ad.png" group-title="⚽ BÓNG ĐÁ" , 01:45 05/10 ⚽ 🔥 Netherlands vs Serbia (BLV LÝ LINH LỰC) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull.digitalcdn.net/live/e9bccd8b74e24976becf02698b20f157/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://sta.vnres.co/file/common/20261002/2305a7799a3925e34c2c148c1263e2ad.png" group-title="⚽ BÓNG ĐÁ" , 01:45 05/10 ⚽ 🔥 Netherlands vs Serbia (BLV LÝ LINH LỰC) (HD2) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull1.digitalcdn.net/live/e9bccd8b74e24976becf02698b20f157/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://static.bongda24h.vn/Medias/icon/2026/07/28/malaysia-logo-2807160158.jpg" group-title="⚽ BÓNG ĐÁ" , 16:00 05/10 ⚽ 🔥 Malaysia vs Vietnam (BLV LÝ LA LÀNG) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull.digitalcdn.net/live/097cdeddd5f94534982e3e7e5cee7044/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://static.bongda24h.vn/Medias/icon/2026/07/28/malaysia-logo-2807160158.jpg" group-title="⚽ BÓNG ĐÁ" , 16:00 05/10 ⚽ 🔥 Malaysia vs Vietnam (BLV LÝ LA LÀNG) (HD2) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull1.digitalcdn.net/live/097cdeddd5f94534982e3e7e5cee7044/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://static.bongda24h.vn/Medias/icon/2026/07/28/malaysia-logo-2807160158.jpg" group-title="⚽ BÓNG ĐÁ" , 16:00 05/10 ⚽ 🔥 Malaysia vs Vietnam (BLV LÝ LONG) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull.digitalcdn.net/live/17c5e5765eb948d4a68dcb001db0a707/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://static.bongda24h.vn/Medias/icon/2026/07/28/malaysia-logo-2807160158.jpg" group-title="⚽ BÓNG ĐÁ" , 16:00 05/10 ⚽ 🔥 Malaysia vs Vietnam (BLV LÝ LONG) (HD2) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull1.digitalcdn.net/live/17c5e5765eb948d4a68dcb001db0a707/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://sta.vnres.co/file/common/20261003/9932f554d53914e725871257c59987d5.png" group-title="⚽ BÓNG ĐÁ" , 17:30 05/10 ⚽ 🔥 Japan vs New Zealand (BLV LÝ LÀNG LÁ) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull.digitalcdn.net/live/019daa1149f4408690b049748e293331/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://sta.vnres.co/file/common/20261003/9932f554d53914e725871257c59987d5.png" group-title="⚽ BÓNG ĐÁ" , 17:30 05/10 ⚽ 🔥 Japan vs New Zealand (BLV LÝ LÀNG LÁ) (HD2) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull1.digitalcdn.net/live/019daa1149f4408690b049748e293331/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img0.aiscore.com/football/team/a68eee511575e8f28b16f27ff608234a.png!w80" group-title="⚽ BÓNG ĐÁ" , 18:00 05/10 ⚽ 🔥 Vietnam U17 Women vs Palestine  U17 Women (BLV LÝ LIỀU LĨNH) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull.digitalcdn.net/live/80f67ba7686347e6b6e29cc149f12b70/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img0.aiscore.com/football/team/a68eee511575e8f28b16f27ff608234a.png!w80" group-title="⚽ BÓNG ĐÁ" , 18:00 05/10 ⚽ 🔥 Vietnam U17 Women vs Palestine  U17 Women (BLV LÝ LIỀU LĨNH) (HD2) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull1.digitalcdn.net/live/80f67ba7686347e6b6e29cc149f12b70/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img0.aiscore.com/football/team/34bb77e2d1cd0d85444b8a855d155da4.png!w80" group-title="⚽ BÓNG ĐÁ" , 20:00 05/10 ⚽ 🔥 Indonesia vs Thailand (BLV LÝ LA LÀNG) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull.digitalcdn.net/live/644407d51bd14058ace47d6fadbc9b2f/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img0.aiscore.com/football/team/34bb77e2d1cd0d85444b8a855d155da4.png!w80" group-title="⚽ BÓNG ĐÁ" , 20:00 05/10 ⚽ 🔥 Indonesia vs Thailand (BLV LÝ LA LÀNG) (HD2) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull1.digitalcdn.net/live/644407d51bd14058ace47d6fadbc9b2f/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img0.aiscore.com/football/team/34bb77e2d1cd0d85444b8a855d155da4.png!w80" group-title="⚽ BÓNG ĐÁ" , 20:00 05/10 ⚽ 🔥 Indonesia vs Thailand (BLV LÝ LÀNG LÁ) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull.digitalcdn.net/live/f192df60960b4e04bc76b483d4b5b6d8/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img0.aiscore.com/football/team/34bb77e2d1cd0d85444b8a855d155da4.png!w80" group-title="⚽ BÓNG ĐÁ" , 20:00 05/10 ⚽ 🔥 Indonesia vs Thailand (BLV LÝ LÀNG LÁ) (HD2) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull1.digitalcdn.net/live/f192df60960b4e04bc76b483d4b5b6d8/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/f5e25c9ba9477b1fc336aec5e189370b.png" group-title="⚽ BÓNG ĐÁ" , 22:00 05/10 ⚽ 🔥 BeninU23 vs Tunisia U23 (BLV LÝ LÊN LỬA) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull.digitalcdn.net/live/7a60321258544ca2998059d98071df43/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/f5e25c9ba9477b1fc336aec5e189370b.png" group-title="⚽ BÓNG ĐÁ" , 22:00 05/10 ⚽ 🔥 BeninU23 vs Tunisia U23 (BLV LÝ LÊN LỬA) (HD2) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull1.digitalcdn.net/live/7a60321258544ca2998059d98071df43/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/89b97e57cbdac50cad2c04e17463e267.crdownload" group-title="⚽ BÓNG ĐÁ" , 23:00 05/10 ⚽ 🔥 Cyprus vs Latvia (BLV LÝ LINH LỰC) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull.digitalcdn.net/live/a817ca9e0b47476e95ce740a07b46422/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/89b97e57cbdac50cad2c04e17463e267.crdownload" group-title="⚽ BÓNG ĐÁ" , 23:00 05/10 ⚽ 🔥 Cyprus vs Latvia (BLV LÝ LINH LỰC) (HD2) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull1.digitalcdn.net/live/a817ca9e0b47476e95ce740a07b46422/index.m3u8
 
 #EXTINF:-1 tvg-logo="https://img0.aiscore.com/volleyball/team/faa46ea1d338402036b2e573b72f9b43.png!w80" group-title="🏐 BÓNG CHUYỀN" , 17:00 04/10 🏐 🔥 Fenerbahce Nữ vs Manisa BB Women (BLV LÝ LÊN LỬA) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
