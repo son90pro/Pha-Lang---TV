@@ -53,6 +53,7 @@ def parse_and_convert_to_vn_time(date_val):
                 pass
         
         if dt:
+            # Quy đổi UTC -> GMT+7
             return dt + timedelta(hours=7)
     except Exception:
         pass
@@ -105,67 +106,67 @@ def extract_all_streams(item, detail_item=None):
     source_obj = detail_item if detail_item else item
     default_blv = str(source_obj.get("blv") or item.get("blv") or "").strip()
 
-    # 1. Trích xuất luồng chính source_live
-    source_live = str(source_obj.get("source_live") or item.get("source_live") or "").strip()
-    if source_live and source_live.startswith("http") and source_live not in seen_urls:
-        streams.append({
-            "name": "",  # Luồng chính không ghi nhãn chất lượng
-            "url": source_live,
-            "blv": default_blv,
-            "is_geo": True
-        })
-        seen_urls.add(source_live)
-
-        # Tạo tự động luồng HD2 từ pull1 nếu có dạng pull.digitalcdn.net
-        if "pull.digitalcdn.net" in source_live:
-            pull1_url = source_live.replace("pull.digitalcdn.net", "pull1.digitalcdn.net")
-            if pull1_url not in seen_urls:
-                streams.append({
-                    "name": "HD2",
-                    "url": pull1_url,
-                    "blv": default_blv,
-                    "is_geo": True
-                })
-                seen_urls.add(pull1_url)
-
-    # 2. Bốc tách thêm các server phụ từ API
-    servers = []
-    for obj in [source_obj, item]:
-        for key in ["servers", "streams", "sources", "play_urls", "links", "channels"]:
-            val = obj.get(key)
+    # 1. Bốc tách danh sách servers/streams phụ từ API nếu có
+    raw_servers = []
+    for obj in [detail_item, item]:
+        if not obj:
+            continue
+        for k in ["servers", "streams", "sources", "play_urls", "links", "channels", "relates"]:
+            val = obj.get(k)
             if isinstance(val, list):
-                servers.extend(val)
+                raw_servers.extend(val)
 
-    for s in servers:
+    for s in raw_servers:
+        if not s:
+            continue
         s_url, s_name, s_blv = None, "", default_blv
         if isinstance(s, dict):
-            s_url = s.get("url") or s.get("source") or s.get("link") or s.get("m3u8")
-            s_name = str(s.get("name") or s.get("label") or s.get("quality") or s.get("title") or "").strip()
+            s_url = s.get("url") or s.get("source") or s.get("link") or s.get("m3u8") or s.get("play_url")
+            s_name = str(s.get("name") or s.get("label") or s.get("quality") or s.get("title") or s.get("type") or "").strip()
             if s.get("blv"):
                 s_blv = str(s.get("blv")).strip()
         elif isinstance(s, str):
             s_url = s
 
         if s_url and str(s_url).startswith("http") and s_url not in seen_urls:
+            clean_name = s_name.upper()
+            if clean_name in ["DEFAULT", "MAIN", "LUỒNG CHÍNH", "SERVER 1"]:
+                clean_name = ""
+            
             streams.append({
-                "name": s_name,
+                "name": clean_name,
                 "url": str(s_url).strip(),
                 "blv": s_blv,
                 "is_geo": True
             })
-            seen_urls.add(s_url)
+            seen_urls.add(str(s_url).strip())
 
-    # 3. Luồng dự phòng stream_key
-    stream_key = source_obj.get("stream_key") or item.get("stream_key")
-    if stream_key and len(streams) == 0:
-        sk_url = f"https://pull.digitalcdn.net/live/{stream_key}/index.m3u8"
-        streams.append({
-            "name": "",
-            "url": sk_url,
-            "blv": default_blv,
-            "is_geo": True
-        })
-        seen_urls.add(sk_url)
+    # 2. Bốc luồng source_live chính
+    for obj in [detail_item, item]:
+        if not obj:
+            continue
+        source_live = str(obj.get("source_live") or "").strip()
+        if source_live and source_live.startswith("http") and source_live not in seen_urls:
+            streams.insert(0, {
+                "name": "",  # Luồng chính không có nhãn phụ
+                "url": source_live,
+                "blv": default_blv,
+                "is_geo": True
+            })
+            seen_urls.add(source_live)
+
+    # 3. Tự động sinh luồng phụ (HD2) từ domain pull.digitalcdn.net nếu API chưa trả đủ
+    digitalcdn_streams = [s for s in streams if "pull.digitalcdn.net" in s["url"]]
+    for st in digitalcdn_streams:
+        pull1_url = st["url"].replace("pull.digitalcdn.net", "pull1.digitalcdn.net")
+        if pull1_url not in seen_urls:
+            streams.append({
+                "name": "HD2",
+                "url": pull1_url,
+                "blv": st["blv"],
+                "is_geo": True
+            })
+            seen_urls.add(pull1_url)
 
     return streams
 
@@ -232,8 +233,7 @@ def build_m3u(matches):
         
         # --- BỘ LỌC BLV TIẾNG VIỆT ---
         main_blv = str(detail_item.get("blv") or item.get("blv") or "").strip()
-        # Loại bỏ nếu không có BLV hoặc BLV là 'Nhà đài'
-        if not main_blv or main_blv.lower() in ["nhà đài", "nha dai", "none", "null"]:
+        if not main_blv or main_blv.lower() in ["nhà đài", "nha dai", "nhàđài", "none", "null", "undefined", "0"]:
             continue
 
         streams = extract_all_streams(item, detail_item)
@@ -256,7 +256,7 @@ def build_m3u(matches):
         formatted_time = format_time_str(dt_vn)
         icon = get_sport_icon(desc, match_name)
 
-        # Kiểm tra xem trận đấu có đang trực tiếp hay không (trong vòng 2.5h từ lúc bắt đầu)
+        # Kiểm tra trận đấu có đang trực tiếp hay không
         is_live = False
         if dt_vn and (dt_vn <= now_vn <= dt_vn + timedelta(minutes=150)):
             is_live = True
@@ -271,7 +271,7 @@ def build_m3u(matches):
             quality_tag = f"({quality_str})" if quality_str else ""
             geo_tag = "[geo]" if st.get("is_geo") else ""
 
-            # Tạo tiêu đề kênh đúng chuẩn mẫu:
+            # Tạo tiêu đề kênh đúng chuẩn mẫu M3U:
             # 🟢 07:00 03/10 🏐 Việt Nam vs Thái Lan (LÝ LIỀU LĨNH) [geo]
             # 🟢 07:00 03/10 🏐 Việt Nam vs Thái Lan (LÝ LIỀU LĨNH) (HD2) [geo]
             title_parts = [f"{live_prefix}{formatted_time}".strip(), icon, match_name, blv_tag, quality_tag, geo_tag]
@@ -290,7 +290,7 @@ def build_m3u(matches):
     return "\n".join(m3u_lines), total_channels
 
 def main():
-    print("=== Bắt đầu cào dữ liệu Phá Làng TV (Chỉ lấy trận có BLV) ===")
+    print("=== Bắt đầu cào dữ liệu Phá Làng TV (Đa luồng & Lọc BLV Tiếng Việt) ===")
     matches = fetch_matches_by_post()
     print(f"Tổng số trận cào được: {len(matches)}")
 
@@ -303,4 +303,4 @@ def main():
 
 if __name__ == "__main__":
     main()
-  
+    
