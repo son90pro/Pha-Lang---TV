@@ -23,51 +23,79 @@ def parse_sport_category(desc):
     else:
         return "🏆 THỂ THAO KHÁC", "🏆", 99
 
-def parse_vn_time(iso_str):
+def parse_vn_time(date_str):
+    """
+    Chuyển đổi start_date dạng "YYYY-MM-DD HH:MM:SS" (UTC) từ API sang múi giờ Việt Nam (UTC+7)
+    """
+    if not date_str:
+        return None
     try:
-        if not iso_str:
-            return None
-        if iso_str.endswith("Z"):
-            dt = datetime.fromisoformat(iso_str.replace("Z", "+00:00"))
-        else:
-            dt = datetime.fromisoformat(iso_str)
-            if dt.tzinfo is None:
-                dt = dt.replace(tzinfo=timezone.utc)
+        clean_str = date_str.replace("Z", "").replace("T", " ").split(".")[0].strip()
+        dt_utc = datetime.strptime(clean_str, "%Y-%m-%d %H:%M:%S").replace(tzinfo=timezone.utc)
         vn_tz = timezone(timedelta(hours=7))
-        return dt.astimezone(vn_tz)
+        return dt_utc.astimezone(vn_tz)
     except Exception:
         return None
 
-def fetch_matches():
+def fetch_hot_matches():
     headers = {
         "Accept": "application/json, text/plain, */*",
         "Content-Type": "application/json",
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
     }
     
-    # Lấy 500 trận để đảm bảo quét không bỏ sót bất kỳ trận Hot nào của hôm nay & ngày mai
+    # Mốc thời gian UTC: Lấy từ 3 tiếng trước để giữ trận đang LIVE
+    now_utc = datetime.now(timezone.utc) - timedelta(hours=3)
+    start_time_str = now_utc.strftime("%Y-%m-%d %H:%M:%S")
+    
+    # Gửi queries trực tiếp để lọc Trận HOT và Trận từ thời điểm hiện tại trở đi
     payload = {
-        "limit": 500,
+        "limit": 300,
         "page": 1,
         "order_asc": "start_date",
-        "queries": []
+        "queries": [
+            {"field": "is_hot", "type": "equal", "value": True},
+            {"field": "start_date", "type": "greater_than_or_equal", "value": start_time_str}
+        ]
     }
     
     try:
         res = requests.post(API_URL, json=payload, headers=headers, timeout=15)
         if res.status_code == 200:
+            data = res.json().get("data", [])
+            if data:
+                return data
+    except Exception as e:
+        print(f"Lỗi khi gọi API lọc Queries: {e}")
+        
+    # Dự phòng: Nếu API không hỗ trợ kết hợp 2 query, lọc riêng field is_hot
+    payload_fallback = {
+        "limit": 300,
+        "page": 1,
+        "order_asc": "start_date",
+        "queries": [{"field": "is_hot", "type": "equal", "value": True}]
+    }
+    try:
+        res = requests.post(API_URL, json=payload_fallback, headers=headers, timeout=15)
+        if res.status_code == 200:
             return res.json().get("data", [])
     except Exception as e:
-        print(f"Lỗi khi gọi API Phá Làng: {e}")
+        print(f"Lỗi khi gọi API Fallback: {e}")
+        
     return []
 
+def clean_team_name(name):
+    if not name:
+        return ""
+    # Xóa ký tự ngoặc kép rác \" và khoảng trắng thừa từ API
+    return str(name).replace('"', '').replace('\\', '').strip()
+
 def build_m3u():
-    matches = fetch_matches()
+    matches = fetch_hot_matches()
     
-    # Múi giờ Việt Nam (UTC+7)
     now_vn = datetime.now(timezone(timedelta(hours=7)))
     
-    # Mốc thời gian: Giữ trận đang Live (từ trước 2.5 tiếng) tới hết 23:59:59 ngày mai
+    # Mốc thời gian: Từ 2.5 tiếng trước tới 23:59:59 của ngày mai
     min_time = now_vn - timedelta(hours=2, minutes=30)
     max_time = (now_vn + timedelta(days=2)).replace(hour=0, minute=0, second=0, microsecond=0)
     
@@ -81,7 +109,7 @@ def build_m3u():
         is_live = bool(item.get("is_live", False))
         is_end = bool(item.get("is_end", False)) or str(item.get("status", "")).lower() in ["finished", "ended", "2"]
         
-        # 1. BỎ TRẬN ĐÃ KẾT THÚC
+        # 1. BỎ TRẬN ĐÃ KẾT THÚC HOẶC QUÁ HẠN NGHỆ SĨ
         if is_end:
             continue
         if not is_live and dt_vn < min_time:
@@ -89,15 +117,10 @@ def build_m3u():
         if dt_vn >= max_time:
             continue
 
-        # 2. CHỈ LẤY "TRẬN HOT" (Bỏ qua toàn bộ các trận thường)
-        is_hot = bool(item.get("is_hot") or item.get("hot") or item.get("pin") or item.get("is_pin"))
-        if not is_hot:
-            continue
-
         desc = item.get("desc", "")
         group_title, icon, priority = parse_sport_category(desc)
         
-        # 3. LẤY TÊN BLV PHÁ LÀNG TV
+        # 2. XỬ LÝ TÊN BLV
         raw_blv = item.get("blv")
         if not raw_blv or str(raw_blv).strip().lower() in ["unknown", "none", "null", ""]:
             blv_display = "Phá Làng TV"
@@ -112,10 +135,12 @@ def build_m3u():
         item["_priority"] = priority
         item["_blv_clean"] = blv_display
         item["_is_live"] = is_live
+        item["_team_1_clean"] = clean_team_name(item.get("team_1", "Team A"))
+        item["_team_2_clean"] = clean_team_name(item.get("team_2", "Team B"))
         
         processed_matches.append(item)
         
-    # Sắp xếp: Ưu tiên trận đang LIVE lên đầu -> Tiếp theo xếp theo môn thể thao -> Giờ thi đấu
+    # Sắp xếp: Ưu tiên Trận LIVE lên trước -> Môn thể thao -> Thời gian thi đấu
     processed_matches.sort(key=lambda x: (
         not x["_is_live"],
         x["_priority"], 
@@ -133,8 +158,8 @@ def build_m3u():
         group_title = item["_group_title"]
         blv = item["_blv_clean"]
         
-        team_1 = item.get("team_1", "Team A")
-        team_2 = item.get("team_2", "Team B")
+        team_1 = item["_team_1_clean"]
+        team_2 = item["_team_2_clean"]
         logo = item.get("team_1_logo") or "https://sta.vnres.co/file/common/20261001/095833a8f2a539c9e27ac3170b659237.png"
         
         stream_key = item.get("stream_key")
@@ -168,7 +193,7 @@ def build_m3u():
 
     with open("phalang.m3u", "w", encoding="utf-8") as f:
         f.write("\n".join(m3u_content))
-    print(f"Đã cào thành công {len(processed_matches)} TRẬN HOT (đang live & sắp diễn ra hôm nay + ngày mai) vào phalang.m3u")
+    print(f"Đã cập nhật thành công {len(processed_matches)} TRẬN HOT (đang LIVE & sắp diễn ra đến hết ngày mai) vào phalang.m3u")
 
 if __name__ == "__main__":
     build_m3u()
