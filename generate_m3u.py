@@ -24,17 +24,21 @@ HEADERS = {
     "Referer": "https://phalang1.tv/"
 }
 
-SPORT_MAPPING = {
-    "FOOTBALL": "⚽", "BONG DA": "⚽", "SOCCER": "⚽",
-    "VOLLEYBALL": "🏐", "BONG CHUYEN": "🏐",
-    "BASKETBALL": "🏀", "BONG RO": "🏀",
-    "TENNIS": "🎾",
-    "BADMINTON": "🏸", "CAU LONG": "🏸",
-    "TABLE TENNIS": "🏓", "BONG BAN": "🏓",
-    "BILLIARDS": "🎱", "POOL": "🎱",
-    "ESPORTS": "🎮", "GAME": "🎮",
-    "RACING": "🏎️", "F1": "🏎️"
-}
+# Cấu hình danh sách môn thể thao và thứ tự ưu tiên các Tab
+SPORT_CONFIG = [
+    {"name": "⚽ Bóng Đá", "icon": "⚽", "keys": ["FOOTBALL", "BONG DA", "SOCCER"]},
+    {"name": "🏐 Bóng Chuyền", "icon": "🏐", "keys": ["VOLLEYBALL", "BONG CHUYEN"]},
+    {"name": "🏀 Bóng Rổ", "icon": "🏀", "keys": ["BASKETBALL", "BONG RO"]},
+    {"name": "🏸 Cầu Lông", "icon": "🏸", "keys": ["BADMINTON", "CAU LONG"]},
+    {"name": "🏓 Bóng Bàn", "icon": "🏓", "keys": ["TABLE TENNIS", "BONG BAN"]},
+    {"name": "🎾 Tennis", "icon": "🎾", "keys": ["TENNIS"]},
+    {"name": "🎱 Billiards", "icon": "🎱", "keys": ["BILLIARDS", "POOL"]},
+    {"name": "🎮 Esports", "icon": "🎮", "keys": ["ESPORTS", "GAME"]},
+    {"name": "🏎️ Đua Xe", "icon": "🏎️", "keys": ["RACING", "F1"]},
+]
+
+DEFAULT_GROUP = "🏆 Thể Thao Khác"
+DEFAULT_ICON = "🏆"
 
 def parse_and_convert_to_vn_time(date_val):
     if not date_val:
@@ -63,12 +67,13 @@ def format_time_str(dt):
         return ""
     return dt.strftime("%H:%M %d/%m")
 
-def get_sport_icon(desc, title=""):
+def get_sport_category(desc, title=""):
     text_check = f"{desc} {title}".upper()
-    for key, icon in SPORT_MAPPING.items():
-        if key in text_check:
-            return icon
-    return "🏆"
+    for item in SPORT_CONFIG:
+        for key in item["keys"]:
+            if key in text_check:
+                return item["name"], item["icon"]
+    return DEFAULT_GROUP, DEFAULT_ICON
 
 def is_valid_time_window(dt_vn):
     if not dt_vn:
@@ -109,14 +114,13 @@ def extract_all_streams(item, detail_item=None):
     source_live = str(source_obj.get("source_live") or item.get("source_live") or "").strip()
     if source_live and source_live.startswith("http") and source_live not in seen_urls:
         streams.append({
-            "name": "",  # Luồng chính không ghi nhãn chất lượng
+            "name": "",
             "url": source_live,
             "blv": default_blv,
             "is_geo": True
         })
         seen_urls.add(source_live)
 
-        # Tạo tự động luồng HD2 từ pull1 nếu có dạng pull.digitalcdn.net
         if "pull.digitalcdn.net" in source_live:
             pull1_url = source_live.replace("pull.digitalcdn.net", "pull1.digitalcdn.net")
             if pull1_url not in seen_urls:
@@ -128,7 +132,7 @@ def extract_all_streams(item, detail_item=None):
                 })
                 seen_urls.add(pull1_url)
 
-    # 2. Bốc tách thêm các server phụ từ API
+    # 2. Bóc tách thêm các server phụ từ API
     servers = []
     for obj in [source_obj, item]:
         for key in ["servers", "streams", "sources", "play_urls", "links", "channels"]:
@@ -213,18 +217,19 @@ def fetch_matches_by_post():
     return all_matches
 
 def build_m3u(matches):
-    m3u_lines = ["#EXTM3U\n"]
     total_channels = 0
-
     tz_vn = timezone(timedelta(hours=7))
     now_vn = datetime.now(tz_vn).replace(tzinfo=None)
+
+    # Khởi tạo kho chứa luồng theo từng Tab để giữ đúng thứ tự
+    grouped_entries = {item["name"]: [] for item in SPORT_CONFIG}
+    grouped_entries[DEFAULT_GROUP] = []
 
     for item in matches:
         if not isinstance(item, dict):
             continue
 
         dt_vn = parse_and_convert_to_vn_time(item.get("start_date"))
-        
         if not is_valid_time_window(dt_vn):
             continue
 
@@ -232,7 +237,6 @@ def build_m3u(matches):
         
         # --- BỘ LỌC BLV TIẾNG VIỆT ---
         main_blv = str(detail_item.get("blv") or item.get("blv") or "").strip()
-        # Loại bỏ nếu không có BLV hoặc BLV là 'Nhà đài'
         if not main_blv or main_blv.lower() in ["nhà đài", "nha dai", "none", "null"]:
             continue
 
@@ -254,9 +258,11 @@ def build_m3u(matches):
         desc = str(item.get("desc") or detail_item.get("desc") or "").strip()
         logo = str(item.get("team_1_logo") or detail_item.get("team_1_logo") or item.get("logo") or "").strip()
         formatted_time = format_time_str(dt_vn)
-        icon = get_sport_icon(desc, match_name)
+        
+        # Xác định nhóm thể thao và icon
+        group_name, icon = get_sport_category(desc, match_name)
 
-        # Kiểm tra xem trận đấu có đang trực tiếp hay không (trong vòng 2.5h từ lúc bắt đầu)
+        # Trận đấu đang diễn ra trong vòng 2.5 giờ
         is_live = False
         if dt_vn and (dt_vn <= now_vn <= dt_vn + timedelta(minutes=150)):
             is_live = True
@@ -271,26 +277,29 @@ def build_m3u(matches):
             quality_tag = f"({quality_str})" if quality_str else ""
             geo_tag = "[geo]" if st.get("is_geo") else ""
 
-            # Tạo tiêu đề kênh đúng chuẩn mẫu:
-            # 🟢 07:00 03/10 🏐 Việt Nam vs Thái Lan (LÝ LIỀU LĨNH) [geo]
-            # 🟢 07:00 03/10 🏐 Việt Nam vs Thái Lan (LÝ LIỀU LĨNH) (HD2) [geo]
             title_parts = [f"{live_prefix}{formatted_time}".strip(), icon, match_name, blv_tag, quality_tag, geo_tag]
             display_title = " ".join([p for p in title_parts if p])
             display_title = re.sub(r'\s+', ' ', display_title)
 
             entry_lines = (
-                f'#EXTINF:-1 tvg-logo="{logo}" group-title="Phá Làng TV" , {display_title}\n'
+                f'#EXTINF:-1 tvg-logo="{logo}" group-title="{group_name}" , {display_title}\n'
                 f'#EXTVLCOPT:http-referrer=https://phalang.live/\n'
                 f'{st["url"]}\n'
             )
 
-            m3u_lines.append(entry_lines)
+            grouped_entries[group_name].append(entry_lines)
             total_channels += 1
+
+    # Gom các kênh theo thứ tự ưu tiên các Tab
+    m3u_lines = ["#EXTM3U\n"]
+    for group, entries in grouped_entries.items():
+        if entries:
+            m3u_lines.extend(entries)
 
     return "\n".join(m3u_lines), total_channels
 
 def main():
-    print("=== Bắt đầu cào dữ liệu Phá Làng TV (Chỉ lấy trận có BLV) ===")
+    print("=== Bắt đầu cào dữ liệu Phá Làng TV (Phân loại theo môn thể thao) ===")
     matches = fetch_matches_by_post()
     print(f"Tổng số trận cào được: {len(matches)}")
 
