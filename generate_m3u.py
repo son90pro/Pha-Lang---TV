@@ -25,6 +25,8 @@ def parse_sport_category(desc):
 
 def parse_vn_time(iso_str):
     try:
+        if not iso_str:
+            return None
         if iso_str.endswith("Z"):
             dt = datetime.fromisoformat(iso_str.replace("Z", "+00:00"))
         else:
@@ -43,9 +45,9 @@ def fetch_matches():
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
     }
     
-    # Lấy 300 trận mới nhất để bao quát hết lịch thi đấu hôm nay và ngày mai
+    # Nâng giới hạn lên 400 trận để đảm bảo quét sạch các trận hot/đang live và toàn bộ lịch ngày mai
     payload = {
-        "limit": 300,
+        "limit": 400,
         "page": 1,
         "order_asc": "start_date",
         "queries": []
@@ -65,10 +67,7 @@ def build_m3u():
     # Múi giờ Việt Nam (UTC+7)
     now_vn = datetime.now(timezone(timedelta(hours=7)))
     
-    # Giới hạn mốc thời gian: 
-    # - Từ 2.5 tiếng trước (giữ trận đang live)
-    # - Đến hết ngày mai (23:59:59)
-    min_time = now_vn - timedelta(hours=2, minutes=30)
+    # Mốc thời gian kết thúc: Hết 23:59:59 của ngày mai
     max_time = (now_vn + timedelta(days=2)).replace(hour=0, minute=0, second=0, microsecond=0)
     
     processed_matches = []
@@ -78,23 +77,34 @@ def build_m3u():
         if not dt_vn:
             continue
             
-        is_live = item.get("is_live", False)
+        is_live = bool(item.get("is_live", False))
+        is_end = bool(item.get("is_end", False)) or str(item.get("status", "")).lower() in ["finished", "ended", "2"]
         
-        # 1. LỌC THỜI GIAN: Chỉ lấy các trận đang diễn ra hoặc sắp diễn ra (Hôm nay + Ngày mai)
-        if not is_live and dt_vn < min_time:
+        # 1. BỎ CÁC TRẬN ĐÃ DIỄN RA:
+        # - Bỏ nếu API đánh dấu đã kết thúc
+        if is_end:
             continue
+            
+        # - Bỏ nếu trận không đang live và thời gian bắt đầu đã vượt quá 110 phút (thời gian trung bình 1 trận bóng)
+        if not is_live and (now_vn - dt_vn) > timedelta(minutes=110):
+            continue
+
+        # - Bỏ các trận vượt quá ngày mai
         if dt_vn >= max_time:
             continue
 
+        # 2. XỬ LÝ TRẬN HOT & TÊN BLV PHÁ LÀNG TV:
+        is_hot = bool(item.get("is_hot") or item.get("hot") or item.get("pin"))
+        
         desc = item.get("desc", "")
         group_title, icon, priority = parse_sport_category(desc)
         
-        # 2. XỬ LÝ BLV: Nếu chưa có BLV (null/Unknown) thì giữ trận và gán nhãn dự phòng
         raw_blv = item.get("blv")
         if not raw_blv or str(raw_blv).strip().lower() in ["unknown", "none", "null", ""]:
             blv_display = "Phá Làng TV"
         else:
-            blv_display = str(raw_blv).strip()
+            blv_clean = str(raw_blv).strip()
+            blv_display = f"BLV {blv_clean}" if not blv_clean.upper().startswith("BLV") else blv_clean
         
         item["_dt_vn"] = dt_vn
         item["_time_str"] = dt_vn.strftime("%H:%M %d/%m")
@@ -102,17 +112,33 @@ def build_m3u():
         item["_icon"] = icon
         item["_priority"] = priority
         item["_blv_clean"] = blv_display
+        item["_is_hot"] = is_hot
+        item["_is_live"] = is_live
         
         processed_matches.append(item)
         
-    # Sắp xếp: Ưu tiên Bóng đá lên trước -> Tiếp theo xếp theo giờ thi đấu
-    processed_matches.sort(key=lambda x: (x["_priority"], x["_dt_vn"]))
+    # 3. SẮP XẾP ƯU TIÊN:
+    # Môn thể thao -> Đang LIVE -> Trận HOT -> Thời gian thi đấu
+    processed_matches.sort(key=lambda x: (
+        x["_priority"], 
+        not x["_is_live"], 
+        not x["_is_hot"], 
+        x["_dt_vn"]
+    ))
 
     m3u_content = ["#EXTM3U\n"]
     
     for item in processed_matches:
-        is_live = item.get("is_live", False)
-        live_tag = "🟢 " if is_live else ""
+        is_live = item["_is_live"]
+        is_hot = item["_is_hot"]
+        
+        # Gắn biểu tượng LIVE (🟢) và HOT (🔥)
+        prefix_tags = ""
+        if is_live:
+            prefix_tags += "🟢 "
+        if is_hot:
+            prefix_tags += "🔥 "
+            
         time_str = item["_time_str"]
         sport_icon = item["_icon"]
         group_title = item["_group_title"]
@@ -129,7 +155,7 @@ def build_m3u():
         
         # 1. Luồng FHD / Mặc định
         if stream_key:
-            title_fhd = f"{live_tag}{match_title_base} ({blv}) [geo]"
+            title_fhd = f"{prefix_tags}{match_title_base} ({blv}) [geo]"
             url_fhd = f"https://pull.digitalcdn.net/live/{stream_key}/index.m3u8"
             
             m3u_content.append(f'#EXTINF:-1 tvg-logo="{logo}" group-title="{group_title}" , {title_fhd}')
@@ -137,7 +163,7 @@ def build_m3u():
             m3u_content.append(f'{url_fhd}\n')
 
             # 2. Luồng Dự Phòng HD2
-            title_hd2 = f"{live_tag}{match_title_base} ({blv}) (HD2) [geo]"
+            title_hd2 = f"{prefix_tags}{match_title_base} ({blv}) (HD2) [geo]"
             url_hd2 = f"https://pull1.digitalcdn.net/live/{stream_key}/index.m3u8"
             
             m3u_content.append(f'#EXTINF:-1 tvg-logo="{logo}" group-title="{group_title}" , {title_hd2}')
@@ -145,15 +171,15 @@ def build_m3u():
             m3u_content.append(f'{url_hd2}\n')
 
         # 3. Luồng Nhà Đài / Source Live (nếu có)
-        if source_live and source_live != "null":
-            title_source = f"{live_tag}{match_title_base} (Nhà đài)"
+        if source_live and str(source_live).strip().lower() not in ["null", "none", ""]:
+            title_source = f"{prefix_tags}{match_title_base} (Nhà đài)"
             m3u_content.append(f'#EXTINF:-1 tvg-logo="{logo}" group-title="{group_title}" , {title_source}')
             m3u_content.append('#EXTVLCOPT:http-referrer=https://phalang.live/')
             m3u_content.append(f'{source_live}\n')
 
     with open("phalang.m3u", "w", encoding="utf-8") as f:
         f.write("\n".join(m3u_content))
-    print(f"Đã cập nhật thành công {len(processed_matches)} trận đấu (đang và sắp diễn ra) vào phalang.m3u")
+    print(f"Đã cập nhật thành công {len(processed_matches)} trận đấu (đang live & sắp diễn ra đến hết ngày mai) vào phalang.m3u")
 
 if __name__ == "__main__":
     build_m3u()
