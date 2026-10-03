@@ -21,7 +21,8 @@ HEADERS = {
     "Content-Type": "application/json",
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36",
     "Origin": "https://phalang1.tv",
-    "Referer": "https://phalang1.tv/"
+    "Referer": "https://phalang1.tv/",
+    "Accept-Language": "vi-VN,vi;q=0.9,en-US;q=0.8,en;q=0.7"
 }
 
 SPORT_MAPPING = {
@@ -33,7 +34,7 @@ SPORT_MAPPING = {
     "TABLE TENNIS": "🏓", "BONG BAN": "🏓",
     "BILLIARDS": "🎱", "POOL": "🎱",
     "ESPORTS": "🎮", "GAME": "🎮",
-    "RACING": "🏎️", "F1": "🏎️"
+    "RACING": "🏎️", "F1": "🏎️️"
 }
 
 def parse_to_vn_time(date_val):
@@ -75,9 +76,6 @@ def get_sport_icon(desc, title=""):
     return "🏆"
 
 def is_valid_time_window(dt_vn):
-    """
-    Giữ lại các trận từ 6 tiếng trước cho tới hết ngày mai
-    """
     if not dt_vn:
         return True
     
@@ -112,68 +110,48 @@ def fetch_match_detail(session, base_api, match_id):
         return None
     url = f"{base_api}/matches/detail/{match_id}"
     try:
-        res = session.get(url, headers=HEADERS, timeout=5, verify=False)
+        res = session.get(url, headers=HEADERS, timeout=6, verify=False)
         if res.status_code == 200:
             return res.json()
     except Exception:
         pass
     return None
 
-def recursive_find_streams(obj, found_list=None, current_blv=""):
+def extract_streams_regex(obj_list):
     """
-    Tìm kiếm đệ quy toàn bộ các URL luồng phát (.m3u8 / http) nằm ở bất kỳ đâu trong JSON
+    Sử dụng Regex quét toàn bộ URL xuất hiện trong JSON (bao gồm key path, file, embed, m3u8...)
     """
-    if found_list is None:
-        found_list = []
+    found_streams = []
+    seen_urls = set()
 
-    if isinstance(obj, dict):
-        blv = get_blv_from_obj(obj) or current_blv
-
-        for key in ["url", "source", "link", "m3u8", "play_url", "stream", "hls", "src"]:
-            val = obj.get(key)
-            if isinstance(val, str) and val.strip().startswith("http"):
-                s_name = str(obj.get("name") or obj.get("label") or obj.get("quality") or obj.get("title") or "").strip()
-                found_list.append({
-                    "url": val.strip(),
-                    "name": s_name,
-                    "blv": blv
+    for obj in obj_list:
+        if not obj:
+            continue
+        json_str = json.dumps(obj, ensure_ascii=False)
+        
+        # Regex tìm mọi URL dạng http(s):// hoặc //...
+        urls = re.findall(r'(?:https?:)?//[^\s"\'<>\\]+', json_str)
+        
+        for url in urls:
+            clean_url = url.strip()
+            if clean_url.startswith("//"):
+                clean_url = "https:" + clean_url
+            
+            # Bỏ qua hình ảnh, logo, CSS, JS
+            if any(ext in clean_url.lower() for ext in [".png", ".jpg", ".jpeg", ".webp", ".gif", ".svg", ".css", ".js", ".ico"]):
+                continue
+            
+            if clean_url not in seen_urls:
+                seen_urls.add(clean_url)
+                found_streams.append({
+                    "url": clean_url,
+                    "name": "",
+                    "blv": get_blv_from_obj(obj) if isinstance(obj, dict) else ""
                 })
 
-        for v in obj.values():
-            if isinstance(v, (dict, list)):
-                recursive_find_streams(v, found_list, blv)
-
-    elif isinstance(obj, list):
-        for item in obj:
-            recursive_find_streams(item, found_list, current_blv)
-
-    return found_list
-
-def extract_all_streams(item, detail_item=None):
-    raw_streams = []
-    
-    # Quét đệ quy từ cả item chính và detail_item
-    if detail_item:
-        recursive_find_streams(detail_item, raw_streams)
-    if item:
-        recursive_find_streams(item, raw_streams)
-
-    seen_urls = set()
-    unique_streams = []
-
-    for st in raw_streams:
-        u = st["url"]
-        if u not in seen_urls:
-            seen_urls.add(u)
-            clean_name = st["name"].upper()
-            if clean_name in ["DEFAULT", "MAIN", "LUỒNG CHÍNH", "SERVER 1"]:
-                clean_name = ""
-            st["name"] = clean_name
-            unique_streams.append(st)
-
-    # Tự động tạo luồng phụ HD2 nếu là domain digitalcdn
+    # Tự động tạo luồng dự phòng HD2 nếu là domain digitalcdn
     digitalcdn_additions = []
-    for st in unique_streams:
+    for st in found_streams:
         if "pull.digitalcdn.net" in st["url"]:
             alt_url = st["url"].replace("pull.digitalcdn.net", "pull1.digitalcdn.net")
             if alt_url not in seen_urls:
@@ -183,9 +161,9 @@ def extract_all_streams(item, detail_item=None):
                     "name": "HD2",
                     "blv": st["blv"]
                 })
-    unique_streams.extend(digitalcdn_additions)
+    found_streams.extend(digitalcdn_additions)
 
-    return unique_streams
+    return found_streams
 
 def fetch_single_detail(item, session):
     dt_vn = parse_to_vn_time(item.get("start_date"))
@@ -242,7 +220,6 @@ def fetch_matches_by_post():
 
     print(" -> Đang tải dữ liệu chi tiết đa luồng cho các trận đấu...", flush=True)
     
-    # Sử dụng ThreadPoolExecutor để tăng tốc gấp 20 lần
     valid_count = 0
     with ThreadPoolExecutor(max_workers=15) as executor:
         futures = [executor.submit(fetch_single_detail, item, session) for item in all_matches]
@@ -271,7 +248,8 @@ def build_m3u(matches):
 
         detail_item = item.get("_detail") or {}
 
-        streams = extract_all_streams(item, detail_item)
+        # Quét đệ quy + Regex lấy toàn bộ URL luồng phát
+        streams = extract_streams_regex([detail_item, item])
         if not streams:
             continue
 
@@ -317,6 +295,12 @@ def build_m3u(matches):
 
             m3u_lines.append(entry_lines)
             total_channels += 1
+
+    # In Debug nếu vẫn ra 0 luồng
+    if total_channels == 0 and matches:
+        print("\n[DEBUG CẢNH BÁO] Không tìm thấy luồng phát nào! Mẫu JSON phản hồi từ API:", flush=True)
+        sample = matches[0].get("_detail") or matches[0]
+        print(json.dumps(sample, ensure_ascii=False, indent=2)[:1000], flush=True)
 
     return "\n".join(m3u_lines), total_channels
 
