@@ -76,7 +76,7 @@ def get_sport_icon(desc, title=""):
     return "⚽"
 
 def get_blv_name(item, detail):
-    """Lấy tên BLV từ chi tiết trận đấu"""
+    """Quét toàn bộ cấu trúc để tìm tên BLV"""
     for src in [detail, item]:
         if not isinstance(src, dict):
             continue
@@ -85,23 +85,38 @@ def get_blv_name(item, detail):
             if isinstance(val, str) and val.strip():
                 return val.strip()
             elif isinstance(val, dict):
-                name = val.get("name") or val.get("nickname") or val.get("title")
-                if name and str(name).strip():
-                    return str(name).strip()
+                n = val.get("name") or val.get("nickname") or val.get("title")
+                if n and str(n).strip():
+                    return str(n).strip()
+            elif isinstance(val, list) and len(val) > 0:
+                first = val[0]
+                if isinstance(first, str) and first.strip():
+                    return first.strip()
+                elif isinstance(first, dict):
+                    n = first.get("name") or first.get("nickname") or first.get("title")
+                    if n and str(n).strip():
+                        return str(n).strip()
+    
+    # Tìm kiếm theo dạng (LÝ ...) trong tiêu đề hoặc mô tả
+    combined_text = f"{item.get('title', '')} {detail.get('title', '')} {item.get('desc', '')} {detail.get('desc', '')}"
+    match = re.search(r'\((LÝ\s+[^)]+)\)', combined_text, re.IGNORECASE)
+    if match:
+        return match.group(1).strip()
+        
     return ""
 
-def extract_urls(obj):
-    """Tự động trích xuất các link m3u8 từ JSON"""
+def extract_stream_urls(obj):
+    """Rút trích tất cả luồng m3u8 hoặc pull.digitalcdn"""
     urls = []
     if not obj:
         return urls
     json_str = json.dumps(obj, ensure_ascii=False)
-    matches = re.findall(r'(?:https?:)?//[^\s"\'<>\\]+\.m3u8[^\s"\'<>\\]*', json_str)
+    matches = re.findall(r'(?:https?:)?//[^\s"\'<>\\]*(?:digitalcdn\.net|\.m3u8)[^\s"\'<>\\]*', json_str)
     for u in matches:
-        clean_u = u.strip()
+        clean_u = u.strip().rstrip('",;')
         if clean_u.startswith("//"):
             clean_u = "https:" + clean_u
-        if clean_u not in urls:
+        if clean_u not in urls and not any(ext in clean_u.lower() for ext in ['.png', '.jpg', '.jpeg', '.gif', '.svg', '.webp']):
             urls.append(clean_u)
     return urls
 
@@ -110,7 +125,7 @@ def fetch_match_detail(session, base_api, match_id):
         return None
     url = f"{base_api}/matches/detail/{match_id}"
     try:
-        res = session.get(url, headers=HEADERS, timeout=6, verify=False)
+        res = session.get(url, headers=HEADERS, timeout=8, verify=False)
         if res.status_code == 200:
             return res.json()
     except Exception:
@@ -118,19 +133,11 @@ def fetch_match_detail(session, base_api, match_id):
     return None
 
 def fetch_single_detail(item, session):
-    dt_vn = parse_to_vn_time(item.get("start_date"))
-    if dt_vn:
-        tz_vn = timezone(timedelta(hours=7))
-        now_vn = datetime.now(tz_vn).replace(tzinfo=None)
-        if dt_vn < (now_vn - timedelta(hours=6)) or dt_vn > (now_vn + timedelta(days=2)):
-            return False
-    
     m_id = item.get("id")
     base_api = item.get("_base_api", API_DOMAINS[0])
     detail = fetch_match_detail(session, base_api, m_id)
     if detail:
         item["_detail"] = detail
-    return True
 
 def fetch_matches():
     all_matches = []
@@ -172,6 +179,7 @@ def fetch_matches():
         if fetched_any:
             break
 
+    # Tải chi tiết cho tất cả các trận đấu
     with ThreadPoolExecutor(max_workers=15) as executor:
         futures = [executor.submit(fetch_single_detail, item, session) for item in all_matches]
         for future in as_completed(futures):
@@ -192,12 +200,18 @@ def build_m3u(matches):
 
         detail_item = item.get("_detail") or {}
 
-        # 1. Chỉ lọc trận CÓ BLV (nếu không có BLV thì bỏ qua)
+        # 1. Chỉ lọc trận CÓ BÌNH LUẬN VIÊN
         blv_name = get_blv_name(item, detail_item)
         if not blv_name:
             continue
 
         dt_vn = parse_to_vn_time(item.get("start_date"))
+        
+        # Chỉ lấy các trận trong khoảng từ 12 tiếng trước đến 48 tiếng tới
+        if dt_vn:
+            if dt_vn < (now_vn - timedelta(hours=12)) or dt_vn > (now_vn + timedelta(days=2)):
+                continue
+
         formatted_time = format_time_str(dt_vn)
 
         team1 = str(item.get("team_1") or detail_item.get("team_1") or "").strip()
@@ -207,7 +221,7 @@ def build_m3u(matches):
         if team1 and team2:
             match_name = f"{team1} vs {team2}"
         elif title_raw:
-            match_name = title_raw.replace(" - ", " vs ")
+            match_name = re.sub(r'\s*\([^)]*\)', '', title_raw).replace(" - ", " vs ").strip()
         else:
             match_name = "Trận đấu Phá Làng TV"
 
@@ -215,14 +229,14 @@ def build_m3u(matches):
         logo = str(item.get("team_1_logo") or detail_item.get("team_1_logo") or item.get("logo") or "").strip()
         icon = get_sport_icon(desc, match_name)
 
-        # Trận đang diễn ra có icon 🟢
+        # Trận đang diễn ra có biểu tượng 🟢
         is_live = False
         if dt_vn and (dt_vn <= now_vn <= dt_vn + timedelta(minutes=150)):
             is_live = True
         live_prefix = "🟢 " if is_live else ""
 
         # Lấy danh sách URL m3u8
-        urls = extract_urls(detail_item) or extract_urls(item)
+        urls = extract_stream_urls(detail_item) or extract_stream_urls(item)
         if not urls:
             continue
 
@@ -238,7 +252,7 @@ def build_m3u(matches):
             stream_url = st["url"]
             tag_hd = st["tag"]
 
-            # Format chính xác theo yêu cầu:
+            # Định dạng chính xác theo mẫu:
             # 🟢 07:00 03/10 🏐 Việt Nam vs Thái Lan (LÝ LIỀU LĨNH) [geo]
             # 🟢 07:00 03/10 🏐 Việt Nam vs Thái Lan (LÝ LIỀU LĨNH) (HD2) [geo]
             display_title = f"{live_prefix}{formatted_time} {icon} {match_name} ({blv_name}){tag_hd} [geo]"
