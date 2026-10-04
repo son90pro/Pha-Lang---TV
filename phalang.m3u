@@ -1,24 +1,16 @@
 #EXTM3U
 
-#EXTINF:-1 tvg-logo="https://static.flashscore.com/res/image/data/h0NBX6Xg-2qQgJCt6.png" group-title="⚽ BÓNG ĐÁ" , 17:00 04/10 ⚽ 🔥 Tegevajaro Miyazaki vs RB Omiya Ardija (BLV LÝ LÀNG LÁ) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull.digitalcdn.net/live/5451178cd2e1438cb13ae98be3293a19/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://static.flashscore.com/res/image/data/h0NBX6Xg-2qQgJCt6.png" group-title="⚽ BÓNG ĐÁ" , 17:00 04/10 ⚽ 🔥 Tegevajaro Miyazaki vs RB Omiya Ardija (BLV LÝ LÀNG LÁ) (HD2) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull1.digitalcdn.net/live/5451178cd2e1438cb13ae98be3293a19/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://static.flashscore.com/res/image/data/h0NBX6Xg-2qQgJCt6.png" group-title="⚽ BÓNG ĐÁ" , 17:00 04/10 ⚽ 🔥 Tegevajaro Miyazaki vs RB Omiya Ardija (Nhà đài)
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://lilive1.eu.cc/live/22b98755e24c258909444bed2228ca67/playlist.m3u8
-
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/d29164c8a90c597e5333f1bf14f289f2.png" group-title="⚽ BÓNG ĐÁ" , 19:00 04/10 ⚽ 🔥 Real Sociedad B vs Granada CF (BLV LÝ LA LÀNG) [geo]
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/d29164c8a90c597e5333f1bf14f289f2.png" group-title="⚽ BÓNG ĐÁ" , 🔴 19:00 04/10 ⚽ 🔥 Real Sociedad B vs Granada CF (BLV LÝ LA LÀNG) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull.digitalcdn.net/live/3aac0d58ab244e808c935fcccdbbb7df/index.m3u8
 
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/d29164c8a90c597e5333f1bf14f289f2.png" group-title="⚽ BÓNG ĐÁ" , 19:00 04/10 ⚽ 🔥 Real Sociedad B vs Granada CF (BLV LÝ LA LÀNG) (HD2) [geo]
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/d29164c8a90c597e5333f1bf14f289f2.png" group-title="⚽ BÓNG ĐÁ" , 🔴 19:00 04/10 ⚽ 🔥 Real Sociedad B vs Granada CF (BLV LÝ LA LÀNG) (HD2) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull1.digitalcdn.net/live/3aac0d58ab244e808c935fcccdbbb7df/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/d29164c8a90c597e5333f1bf14f289f2.png" group-title="⚽ BÓNG ĐÁ" , 🔴 19:00 04/10 ⚽ 🔥 Real Sociedad B vs Granada CF (Nhà đài)
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://lilive1.eu.cc/live/4eababd7b9a35e6a6265b541c56acefb/playlist.m3u8
 
 #EXTINF:-1 tvg-logo="https://sta.vnres.co/file/common/20261001/f6237df91a40da399fdbb17d21d85907.png" group-title="⚽ BÓNG ĐÁ" , 20:00 04/10 ⚽ 🔥 Azerbaijan vs Lithuania (BLV LÝ LONG) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
@@ -27,6 +19,10 @@ https://pull.digitalcdn.net/live/eb31c2fa21ec41f28c68e2d22e57cd9b/index.m3u8
 #EXTINF:-1 tvg-logo="https://sta.vnres.co/file/common/20261001/f6237df91a40da399fdbb17d21d85907.png" group-title="⚽ BÓNG ĐÁ" , 20:00 04/10 ⚽ 🔥 Azerbaijan vs Lithuania (BLV LÝ LONG) (HD2) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull1.digitalcdn.net/live/eb31c2fa21ec41f28c68e2d22e57cd9b/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://sta.vnres.co/file/common/20261001/f6237df91a40da399fdbb17d21d85907.png" group-title="⚽ BÓNG ĐÁ" , 20:00 04/10 ⚽ 🔥 Azerbaijan vs Lithuania (Nhà đài)
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://lilive1.eu.cc/live/993f318d0d195ccfb56b1109fa180130/playlist.m3u8
 
 #EXTINF:-1 tvg-logo="https://sta.vnres.co/file/common/20261001/5ce71ef291c8cfa27eac0f1960486470.png" group-title="⚽ BÓNG ĐÁ" , 23:00 04/10 ⚽ 🔥 Kosovo vs Austria (BLV LÝ LÀNG LÁ) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
@@ -131,14 +127,6 @@ https://pull.digitalcdn.net/live/a817ca9e0b47476e95ce740a07b46422/index.m3u8
 #EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/89b97e57cbdac50cad2c04e17463e267.crdownload" group-title="⚽ BÓNG ĐÁ" , 23:00 05/10 ⚽ 🔥 Cyprus vs Latvia (BLV LÝ LINH LỰC) (HD2) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull1.digitalcdn.net/live/a817ca9e0b47476e95ce740a07b46422/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://img0.aiscore.com/volleyball/team/faa46ea1d338402036b2e573b72f9b43.png!w80" group-title="🏐 BÓNG CHUYỀN" , 17:00 04/10 🏐 🔥 Fenerbahce Nữ vs Manisa BB Women (BLV LÝ LÊN LỬA) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull.digitalcdn.net/live/69db637676bf49509cfc3d359cdb2446/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://img0.aiscore.com/volleyball/team/faa46ea1d338402036b2e573b72f9b43.png!w80" group-title="🏐 BÓNG CHUYỀN" , 17:00 04/10 🏐 🔥 Fenerbahce Nữ vs Manisa BB Women (BLV LÝ LÊN LỬA) (HD2) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull1.digitalcdn.net/live/69db637676bf49509cfc3d359cdb2446/index.m3u8
 
 #EXTINF:-1 tvg-logo="https://img0.aiscore.com/volleyball/team/2328124576ecb552d4dec1c1c6d363a3.png!w80" group-title="🏐 BÓNG CHUYỀN" , 21:00 04/10 🏐 🔥 Scandicci Nữ vs Chieri '76 Nữ (BLV LÝ LÊN LỬA) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
