@@ -1,53 +1,5 @@
 #EXTM3U
 
-#EXTINF:-1 tvg-logo="https://sta.vnres.co/file/common/20261002/c068b43e2988e67c11e4c710b6867ff8.png" group-title="⚽ BÓNG ĐÁ" , 🔴 01:00 05/10 ⚽ 🔥 Egypt vs South Africa (BLV LÝ LIỀU LĨNH) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull.digitalcdn.net/live/098bf6dee22745e39f81db4a67e32f5c/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://sta.vnres.co/file/common/20261002/c068b43e2988e67c11e4c710b6867ff8.png" group-title="⚽ BÓNG ĐÁ" , 🔴 01:00 05/10 ⚽ 🔥 Egypt vs South Africa (BLV LÝ LIỀU LĨNH) (HD2) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull1.digitalcdn.net/live/098bf6dee22745e39f81db4a67e32f5c/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://sta.vnres.co/file/common/20261002/c068b43e2988e67c11e4c710b6867ff8.png" group-title="⚽ BÓNG ĐÁ" , 🔴 01:00 05/10 ⚽ 🔥 Egypt vs South Africa (Nhà đài)
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://lilive1.eu.cc/live/fd42ba6cd82e34aad72dc91dc1711739/playlist.m3u8
-
-#EXTINF:-1 tvg-logo="https://sta.vnres.co/file/common/20261002/dc1bd1ddba0abef95c9fab7939d9405b.png" group-title="⚽ BÓNG ĐÁ" , 🔴 01:45 05/10 ⚽ 🔥 Portugal vs Norway (BLV LÝ LONG) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull.digitalcdn.net/live/c0a1cbb19daa48a4a9dfcef675425c64/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://sta.vnres.co/file/common/20261002/dc1bd1ddba0abef95c9fab7939d9405b.png" group-title="⚽ BÓNG ĐÁ" , 🔴 01:45 05/10 ⚽ 🔥 Portugal vs Norway (BLV LÝ LONG) (HD2) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull1.digitalcdn.net/live/c0a1cbb19daa48a4a9dfcef675425c64/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://sta.vnres.co/file/common/20261002/dc1bd1ddba0abef95c9fab7939d9405b.png" group-title="⚽ BÓNG ĐÁ" , 🔴 01:45 05/10 ⚽ 🔥 Portugal vs Norway (Nhà đài)
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://lilive1.eu.cc/live/5aab31196f2bd6da5dab82a292f98f0a/playlist.m3u8
-
-#EXTINF:-1 tvg-logo="https://sta.vnres.co/file/common/20261002/f10a9d853b386391f0eed7dc0a40d643.png" group-title="⚽ BÓNG ĐÁ" , 🔴 01:45 05/10 ⚽ 🔥 Greece vs Germany (BLV LÝ LÀNG LÁ) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull.digitalcdn.net/live/3228c25f7e67449fb8eed6d4ddc512ce/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://sta.vnres.co/file/common/20261002/f10a9d853b386391f0eed7dc0a40d643.png" group-title="⚽ BÓNG ĐÁ" , 🔴 01:45 05/10 ⚽ 🔥 Greece vs Germany (BLV LÝ LÀNG LÁ) (HD2) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull1.digitalcdn.net/live/3228c25f7e67449fb8eed6d4ddc512ce/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://sta.vnres.co/file/common/20261002/f10a9d853b386391f0eed7dc0a40d643.png" group-title="⚽ BÓNG ĐÁ" , 🔴 01:45 05/10 ⚽ 🔥 Greece vs Germany (Nhà đài)
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://lilive1.eu.cc/live/90cfdf4623677a9726bd9ca6e47fa421/playlist.m3u8
-
-#EXTINF:-1 tvg-logo="https://sta.vnres.co/file/common/20261002/2305a7799a3925e34c2c148c1263e2ad.png" group-title="⚽ BÓNG ĐÁ" , 🔴 01:45 05/10 ⚽ 🔥 Netherlands vs Serbia (BLV LÝ LINH LỰC) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull.digitalcdn.net/live/e9bccd8b74e24976becf02698b20f157/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://sta.vnres.co/file/common/20261002/2305a7799a3925e34c2c148c1263e2ad.png" group-title="⚽ BÓNG ĐÁ" , 🔴 01:45 05/10 ⚽ 🔥 Netherlands vs Serbia (BLV LÝ LINH LỰC) (HD2) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull1.digitalcdn.net/live/e9bccd8b74e24976becf02698b20f157/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://sta.vnres.co/file/common/20261002/2305a7799a3925e34c2c148c1263e2ad.png" group-title="⚽ BÓNG ĐÁ" , 🔴 01:45 05/10 ⚽ 🔥 Netherlands vs Serbia (Nhà đài)
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://lilive1.eu.cc/live/8891e125f8d0ee157f34c0a36b464137/playlist.m3u8
-
 #EXTINF:-1 tvg-logo="https://static.bongda24h.vn/Medias/icon/2026/07/28/malaysia-logo-2807160158.jpg" group-title="⚽ BÓNG ĐÁ" , 16:00 05/10 ⚽ 🔥 Malaysia vs Vietnam (BLV LÝ LA LÀNG) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull.digitalcdn.net/live/097cdeddd5f94534982e3e7e5cee7044/index.m3u8
