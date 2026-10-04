@@ -1,17 +1,5 @@
 #EXTM3U
 
-#EXTINF:-1 tvg-logo="https://static.flashscore.com/res/image/data/xQCUe9zB-AmY8ktbk.png" group-title="⚽ BÓNG ĐÁ" , 🔴 07:00 04/10 ⚽ 🔥 Argentina vs Burkina Faso (BLV LÝ LONG) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull.digitalcdn.net/live/c0c8402120fe4463abfd3c0e366f76ac/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://static.flashscore.com/res/image/data/xQCUe9zB-AmY8ktbk.png" group-title="⚽ BÓNG ĐÁ" , 🔴 07:00 04/10 ⚽ 🔥 Argentina vs Burkina Faso (BLV LÝ LONG) (HD2) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull1.digitalcdn.net/live/c0c8402120fe4463abfd3c0e366f76ac/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://static.flashscore.com/res/image/data/xQCUe9zB-AmY8ktbk.png" group-title="⚽ BÓNG ĐÁ" , 🔴 07:00 04/10 ⚽ 🔥 Argentina vs Burkina Faso (Nhà đài)
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://lilive1.eu.cc/live/dd793602ef1b41f97d9b56da277f0ede/playlist.m3u8
-
 #EXTINF:-1 tvg-logo="https://static.flashscore.com/res/image/data/h0NBX6Xg-2qQgJCt6.png" group-title="⚽ BÓNG ĐÁ" , 17:00 04/10 ⚽ 🔥 Tegevajaro Miyazaki vs RB Omiya Ardija (BLV LÝ LÀNG LÁ) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull.digitalcdn.net/live/5451178cd2e1438cb13ae98be3293a19/index.m3u8
@@ -19,6 +7,10 @@ https://pull.digitalcdn.net/live/5451178cd2e1438cb13ae98be3293a19/index.m3u8
 #EXTINF:-1 tvg-logo="https://static.flashscore.com/res/image/data/h0NBX6Xg-2qQgJCt6.png" group-title="⚽ BÓNG ĐÁ" , 17:00 04/10 ⚽ 🔥 Tegevajaro Miyazaki vs RB Omiya Ardija (BLV LÝ LÀNG LÁ) (HD2) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull1.digitalcdn.net/live/5451178cd2e1438cb13ae98be3293a19/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://static.flashscore.com/res/image/data/h0NBX6Xg-2qQgJCt6.png" group-title="⚽ BÓNG ĐÁ" , 17:00 04/10 ⚽ 🔥 Tegevajaro Miyazaki vs RB Omiya Ardija (Nhà đài)
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://lilive1.eu.cc/live/22b98755e24c258909444bed2228ca67/playlist.m3u8
 
 #EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/d29164c8a90c597e5333f1bf14f289f2.png" group-title="⚽ BÓNG ĐÁ" , 19:00 04/10 ⚽ 🔥 Real Sociedad B vs Granada CF (BLV LÝ LA LÀNG) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
