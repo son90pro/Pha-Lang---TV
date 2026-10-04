@@ -1,14 +1,14 @@
 #EXTM3U
 
-#EXTINF:-1 tvg-logo="https://static.flashscore.com/res/image/data/xQCUe9zB-AmY8ktbk.png" group-title="⚽ BÓNG ĐÁ" , 07:00 04/10 ⚽ 🔥 Argentina vs Burkina Faso (BLV LÝ LONG) [geo]
+#EXTINF:-1 tvg-logo="https://static.flashscore.com/res/image/data/xQCUe9zB-AmY8ktbk.png" group-title="⚽ BÓNG ĐÁ" , 🔴 07:00 04/10 ⚽ 🔥 Argentina vs Burkina Faso (BLV LÝ LONG) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull.digitalcdn.net/live/c0c8402120fe4463abfd3c0e366f76ac/index.m3u8
 
-#EXTINF:-1 tvg-logo="https://static.flashscore.com/res/image/data/xQCUe9zB-AmY8ktbk.png" group-title="⚽ BÓNG ĐÁ" , 07:00 04/10 ⚽ 🔥 Argentina vs Burkina Faso (BLV LÝ LONG) (HD2) [geo]
+#EXTINF:-1 tvg-logo="https://static.flashscore.com/res/image/data/xQCUe9zB-AmY8ktbk.png" group-title="⚽ BÓNG ĐÁ" , 🔴 07:00 04/10 ⚽ 🔥 Argentina vs Burkina Faso (BLV LÝ LONG) (HD2) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull1.digitalcdn.net/live/c0c8402120fe4463abfd3c0e366f76ac/index.m3u8
 
-#EXTINF:-1 tvg-logo="https://static.flashscore.com/res/image/data/xQCUe9zB-AmY8ktbk.png" group-title="⚽ BÓNG ĐÁ" , 07:00 04/10 ⚽ 🔥 Argentina vs Burkina Faso (Nhà đài)
+#EXTINF:-1 tvg-logo="https://static.flashscore.com/res/image/data/xQCUe9zB-AmY8ktbk.png" group-title="⚽ BÓNG ĐÁ" , 🔴 07:00 04/10 ⚽ 🔥 Argentina vs Burkina Faso (Nhà đài)
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://lilive1.eu.cc/live/dd793602ef1b41f97d9b56da277f0ede/playlist.m3u8
 
