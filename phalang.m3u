@@ -1,77 +1,5 @@
 #EXTM3U
 
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/ca2b8d70931647840c78209be51763a3.png" group-title="⚽ BÓNG ĐÁ" , 🔴 19:00 07/10 ⚽ 🔥 Ratchaburi FC vs Cong An Ho Chi Minh City (BLV LÝ LA LÀNG) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull.digitalcdn.net/live/07720bda84a543abaf43168dc3ca4c46/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/ca2b8d70931647840c78209be51763a3.png" group-title="⚽ BÓNG ĐÁ" , 🔴 19:00 07/10 ⚽ 🔥 Ratchaburi FC vs Cong An Ho Chi Minh City (BLV LÝ LA LÀNG) (HD2) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull1.digitalcdn.net/live/07720bda84a543abaf43168dc3ca4c46/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/ca2b8d70931647840c78209be51763a3.png" group-title="⚽ BÓNG ĐÁ" , 🔴 19:00 07/10 ⚽ 🔥 Ratchaburi FC vs Cong An Ho Chi Minh City (Nhà đài)
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://lilive1.eu.cc/live/1326a4306d0aa4f805af46beb8a9e285/playlist.m3u8
-
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/649a85f258f62ec83a62983488e4b347.png" group-title="⚽ BÓNG ĐÁ" , 🔴 19:00 07/10 ⚽ 🔥 Buriram United vs Borneo FC Samarinda (BLV LÝ LIỀU LĨNH) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull.digitalcdn.net/live/9725015461774fab81e4019ca10bad04/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/649a85f258f62ec83a62983488e4b347.png" group-title="⚽ BÓNG ĐÁ" , 🔴 19:00 07/10 ⚽ 🔥 Buriram United vs Borneo FC Samarinda (BLV LÝ LIỀU LĨNH) (HD2) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull1.digitalcdn.net/live/9725015461774fab81e4019ca10bad04/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/649a85f258f62ec83a62983488e4b347.png" group-title="⚽ BÓNG ĐÁ" , 🔴 19:00 07/10 ⚽ 🔥 Buriram United vs Borneo FC Samarinda (Nhà đài)
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://lilive1.eu.cc/live/3810585caf2c830225f93c78a59e8d8a/playlist.m3u8
-
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/81f5727743f8759ae7a99b8d7f2557e3.png" group-title="⚽ BÓNG ĐÁ" , 🔴 20:00 07/10 ⚽ 🔥 Kuching City FC vs Tampines Rovers FC (BLV LÝ LÀNG LÁ) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull.digitalcdn.net/live/8d54b971a09348ac8a2db9cff22c4936/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/81f5727743f8759ae7a99b8d7f2557e3.png" group-title="⚽ BÓNG ĐÁ" , 🔴 20:00 07/10 ⚽ 🔥 Kuching City FC vs Tampines Rovers FC (BLV LÝ LÀNG LÁ) (HD2) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull1.digitalcdn.net/live/8d54b971a09348ac8a2db9cff22c4936/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/81f5727743f8759ae7a99b8d7f2557e3.png" group-title="⚽ BÓNG ĐÁ" , 🔴 20:00 07/10 ⚽ 🔥 Kuching City FC vs Tampines Rovers FC (Nhà đài)
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://lilive1.eu.cc/live/3592fffc5979884f560ed44402bc10e8/playlist.m3u8
-
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/0df54f53d0057c630ead3234b4a68b45.png" group-title="⚽ BÓNG ĐÁ" , 🔴 21:00 07/10 ⚽ 🔥 Neftchi Fergana vs Xorazm Urganch (BLV LÝ LINH LỰC) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull.digitalcdn.net/live/d76e64e57ae84e8a916cc5932f133cee/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/0df54f53d0057c630ead3234b4a68b45.png" group-title="⚽ BÓNG ĐÁ" , 🔴 21:00 07/10 ⚽ 🔥 Neftchi Fergana vs Xorazm Urganch (BLV LÝ LINH LỰC) (HD2) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull1.digitalcdn.net/live/d76e64e57ae84e8a916cc5932f133cee/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/0df54f53d0057c630ead3234b4a68b45.png" group-title="⚽ BÓNG ĐÁ" , 🔴 21:00 07/10 ⚽ 🔥 Neftchi Fergana vs Xorazm Urganch (Nhà đài)
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://lilive1.eu.cc/live/636f0801759eda7b29d00e1a7ed53253/playlist.m3u8
-
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/a19ee4a4454087b98d1f2bb9058a337e.png" group-title="⚽ BÓNG ĐÁ" , 23:00 07/10 ⚽ 🔥 Gnistan Helsinki vs Inter Turku (BLV LÝ LÊN LỬA) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull.digitalcdn.net/live/a43eba61462844509002a59adc9cb99f/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/a19ee4a4454087b98d1f2bb9058a337e.png" group-title="⚽ BÓNG ĐÁ" , 23:00 07/10 ⚽ 🔥 Gnistan Helsinki vs Inter Turku (BLV LÝ LÊN LỬA) (HD2) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull1.digitalcdn.net/live/a43eba61462844509002a59adc9cb99f/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/a19ee4a4454087b98d1f2bb9058a337e.png" group-title="⚽ BÓNG ĐÁ" , 23:00 07/10 ⚽ 🔥 Gnistan Helsinki vs Inter Turku (Nhà đài)
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://lilive1.eu.cc/live/92a0f1be4e0a524945093a8a2862394a/playlist.m3u8
-
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/6ad4e821a96f050ba29f431fbf57801e.png" group-title="⚽ BÓNG ĐÁ" , 00:00 08/10 ⚽ 🔥 Zamalek SC vs ZED FC (BLV LÝ LÀNG LÁ) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull.digitalcdn.net/live/28c2bb8382b64b2193e048e3daf3441d/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/6ad4e821a96f050ba29f431fbf57801e.png" group-title="⚽ BÓNG ĐÁ" , 00:00 08/10 ⚽ 🔥 Zamalek SC vs ZED FC (BLV LÝ LÀNG LÁ) (HD2) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull1.digitalcdn.net/live/28c2bb8382b64b2193e048e3daf3441d/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/6ad4e821a96f050ba29f431fbf57801e.png" group-title="⚽ BÓNG ĐÁ" , 00:00 08/10 ⚽ 🔥 Zamalek SC vs ZED FC (Nhà đài)
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://lilive1.eu.cc/live/a71f131fc97d5c7cd3c5a1cf35528347/playlist.m3u8
-
 #EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/2ee0214c45e742b6ae9a1107593918d5.png" group-title="⚽ BÓNG ĐÁ" , 16:00 08/10 ⚽ 🔥 Phong Phu Ha Nam Women vs Ha Noi Women (BLV LÝ LINH LỰC) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull.digitalcdn.net/live/161b11aecfa344dd808ccbe09cf9b506/index.m3u8
@@ -135,3 +63,79 @@ https://pull.digitalcdn.net/live/3ce29d5a046544218962a0c6ef3b88f9/index.m3u8
 #EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/1fced0158de1169e9bc3209f4ab98e84.png" group-title="⚽ BÓNG ĐÁ" , 23:00 08/10 ⚽ 🔥 KuPs vs AC Oulu (BLV LÝ LA LÀNG) (HD2) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull1.digitalcdn.net/live/3ce29d5a046544218962a0c6ef3b88f9/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/6f927eb040bdd5c972a9343fd9c8b873.png" group-title="⚽ BÓNG ĐÁ" , 00:30 09/10 ⚽ 🔥 CFR Cluj vs FC Universitatea Cluj (BLV LÝ LÀNG LÁ) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull.digitalcdn.net/live/6eafa903661843e0a8517ec664343993/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/6f927eb040bdd5c972a9343fd9c8b873.png" group-title="⚽ BÓNG ĐÁ" , 00:30 09/10 ⚽ 🔥 CFR Cluj vs FC Universitatea Cluj (BLV LÝ LÀNG LÁ) (HD2) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull1.digitalcdn.net/live/6eafa903661843e0a8517ec664343993/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/6f927eb040bdd5c972a9343fd9c8b873.png" group-title="⚽ BÓNG ĐÁ" , 00:30 09/10 ⚽ 🔥 CFR Cluj vs FC Universitatea Cluj (Nhà đài)
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://lilive1.eu.cc/live/de62bef28b8842261654a5144acb5880/playlist.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/c80d70c62b8f67dd121a1be0d574bfd5.png" group-title="⚽ BÓNG ĐÁ" , 15:30 09/10 ⚽ 🔥 Persatuan sepak bola Indonesia Kediri vs Madura United (BLV LÝ LINH LỰC) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull.digitalcdn.net/live/023fb034a2ee4bfa92c89cd77ee43339/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/c80d70c62b8f67dd121a1be0d574bfd5.png" group-title="⚽ BÓNG ĐÁ" , 15:30 09/10 ⚽ 🔥 Persatuan sepak bola Indonesia Kediri vs Madura United (BLV LÝ LINH LỰC) (HD2) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull1.digitalcdn.net/live/023fb034a2ee4bfa92c89cd77ee43339/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/d272859d78eb8ca7a14753f4293fbf45.png" group-title="⚽ BÓNG ĐÁ" , 17:00 09/10 ⚽ 🔥 Kashiwa Reysol vs Vissel Kobe (BLV LÝ LÊN LỬA) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull.digitalcdn.net/live/7d560d4e78fc47488f6ed4c0746b01e0/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/d272859d78eb8ca7a14753f4293fbf45.png" group-title="⚽ BÓNG ĐÁ" , 17:00 09/10 ⚽ 🔥 Kashiwa Reysol vs Vissel Kobe (BLV LÝ LÊN LỬA) (HD2) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull1.digitalcdn.net/live/7d560d4e78fc47488f6ed4c0746b01e0/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/90ca524b1b1c17911b1bf8e425c8d96d.png" group-title="⚽ BÓNG ĐÁ" , 17:00 09/10 ⚽ 🔥 Kashima Antlers vs Gamba Osaka (BLV LÝ LA LÀNG) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull.digitalcdn.net/live/d1d083087c9a4c138930b4e7faf786b3/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/90ca524b1b1c17911b1bf8e425c8d96d.png" group-title="⚽ BÓNG ĐÁ" , 17:00 09/10 ⚽ 🔥 Kashima Antlers vs Gamba Osaka (BLV LÝ LA LÀNG) (HD2) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull1.digitalcdn.net/live/d1d083087c9a4c138930b4e7faf786b3/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/9169d8ee689517c3a390d6062b5d01ce.png" group-title="⚽ BÓNG ĐÁ" , 18:00 09/10 ⚽ 🔥 Kazakhstan Women vs Ireland Women (BLV LÝ LINH LỰC) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull.digitalcdn.net/live/f46c199f30c446a68405c50846246927/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/9169d8ee689517c3a390d6062b5d01ce.png" group-title="⚽ BÓNG ĐÁ" , 18:00 09/10 ⚽ 🔥 Kazakhstan Women vs Ireland Women (BLV LÝ LINH LỰC) (HD2) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull1.digitalcdn.net/live/f46c199f30c446a68405c50846246927/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/cc1aef5e69e8d01ba3d3712f24040347.png" group-title="⚽ BÓNG ĐÁ" , 19:00 09/10 ⚽ 🔥 Zhejiang Professional FC vs Shanghai Port (BLV LÝ LIỀU LĨNH) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull.digitalcdn.net/live/9a78763306d8488a96bb27de33953aa8/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/cc1aef5e69e8d01ba3d3712f24040347.png" group-title="⚽ BÓNG ĐÁ" , 19:00 09/10 ⚽ 🔥 Zhejiang Professional FC vs Shanghai Port (BLV LÝ LIỀU LĨNH) (HD2) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull1.digitalcdn.net/live/9a78763306d8488a96bb27de33953aa8/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/f68cdd9a1511a39c64d451766c30c3bf.png" group-title="⚽ BÓNG ĐÁ" , 20:50 09/10 ⚽ 🔥 Al Kholood vs Al Qadsiah (BLV LÝ LÀNG LÁ) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull.digitalcdn.net/live/d4b1706db47d458db13608b4f8b1b153/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/f68cdd9a1511a39c64d451766c30c3bf.png" group-title="⚽ BÓNG ĐÁ" , 20:50 09/10 ⚽ 🔥 Al Kholood vs Al Qadsiah (BLV LÝ LÀNG LÁ) (HD2) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull1.digitalcdn.net/live/d4b1706db47d458db13608b4f8b1b153/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/ae23ea18931ebe834ef6fe4799572e7f.png" group-title="⚽ BÓNG ĐÁ" , 21:55 09/10 ⚽ 🔥 Al Fateh vs Al Ahli SC (BLV LÝ LÊN LỬA) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull.digitalcdn.net/live/97067ce9d06c44aebade16273dda11d6/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/ae23ea18931ebe834ef6fe4799572e7f.png" group-title="⚽ BÓNG ĐÁ" , 21:55 09/10 ⚽ 🔥 Al Fateh vs Al Ahli SC (BLV LÝ LÊN LỬA) (HD2) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull1.digitalcdn.net/live/97067ce9d06c44aebade16273dda11d6/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/87bb5a518063bbac24b51048dfb5c996.png" group-title="⚽ BÓNG ĐÁ" , 23:30 09/10 ⚽ 🔥 Eintracht Braunschweig vs Holstein Kiel (BLV LÝ LA LÀNG) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull.digitalcdn.net/live/36319b38ac8b41eab0adf6d12d77dd27/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/87bb5a518063bbac24b51048dfb5c996.png" group-title="⚽ BÓNG ĐÁ" , 23:30 09/10 ⚽ 🔥 Eintracht Braunschweig vs Holstein Kiel (BLV LÝ LA LÀNG) (HD2) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull1.digitalcdn.net/live/36319b38ac8b41eab0adf6d12d77dd27/index.m3u8
