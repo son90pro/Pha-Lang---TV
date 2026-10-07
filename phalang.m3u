@@ -1,24 +1,24 @@
 #EXTM3U
 
-#EXTINF:-1 tvg-logo="https://sta.vnres.co/file/common/20261004/65d15340f62440e61295cb1d60b72b93.png" group-title="⚽ BÓNG ĐÁ" , 06:00 07/10 ⚽ 🔥 Argentina vs Benin (BLV LÝ LA LÀNG) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull.digitalcdn.net/live/a96faaed11754b8a8dbc766eb53846e9/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://sta.vnres.co/file/common/20261004/65d15340f62440e61295cb1d60b72b93.png" group-title="⚽ BÓNG ĐÁ" , 06:00 07/10 ⚽ 🔥 Argentina vs Benin (BLV LÝ LA LÀNG) (HD2) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull1.digitalcdn.net/live/a96faaed11754b8a8dbc766eb53846e9/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://sta.vnres.co/file/common/20261004/65d15340f62440e61295cb1d60b72b93.png" group-title="⚽ BÓNG ĐÁ" , 06:00 07/10 ⚽ 🔥 Argentina vs Benin (Nhà đài)
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://lilive1.eu.cc/live/47abe0b30a45cfdac31d10a41335d295/playlist.m3u8
-
-#EXTINF:-1 tvg-logo="https://sta.vnres.co/file/common/20261004/65d15340f62440e61295cb1d60b72b93.png" group-title="⚽ BÓNG ĐÁ" , 06:00 07/10 ⚽ 🔥 Argentina vs Benin (BLV LÝ LONG) [geo]
+#EXTINF:-1 tvg-logo="https://sta.vnres.co/file/common/20261004/65d15340f62440e61295cb1d60b72b93.png" group-title="⚽ BÓNG ĐÁ" , 🔴 06:00 07/10 ⚽ 🔥 Argentina vs Benin (BLV LÝ LONG) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull.digitalcdn.net/live/dd8c98e5376e4bd38eb851e0c4831a7e/index.m3u8
 
-#EXTINF:-1 tvg-logo="https://sta.vnres.co/file/common/20261004/65d15340f62440e61295cb1d60b72b93.png" group-title="⚽ BÓNG ĐÁ" , 06:00 07/10 ⚽ 🔥 Argentina vs Benin (BLV LÝ LONG) (HD2) [geo]
+#EXTINF:-1 tvg-logo="https://sta.vnres.co/file/common/20261004/65d15340f62440e61295cb1d60b72b93.png" group-title="⚽ BÓNG ĐÁ" , 🔴 06:00 07/10 ⚽ 🔥 Argentina vs Benin (BLV LÝ LONG) (HD2) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull1.digitalcdn.net/live/dd8c98e5376e4bd38eb851e0c4831a7e/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://sta.vnres.co/file/common/20261004/65d15340f62440e61295cb1d60b72b93.png" group-title="⚽ BÓNG ĐÁ" , 🔴 06:30 07/10 ⚽ 🔥 Argentina vs Benin (BLV LÝ LA LÀNG) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull.digitalcdn.net/live/a96faaed11754b8a8dbc766eb53846e9/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://sta.vnres.co/file/common/20261004/65d15340f62440e61295cb1d60b72b93.png" group-title="⚽ BÓNG ĐÁ" , 🔴 06:30 07/10 ⚽ 🔥 Argentina vs Benin (BLV LÝ LA LÀNG) (HD2) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull1.digitalcdn.net/live/a96faaed11754b8a8dbc766eb53846e9/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://sta.vnres.co/file/common/20261004/65d15340f62440e61295cb1d60b72b93.png" group-title="⚽ BÓNG ĐÁ" , 🔴 06:30 07/10 ⚽ 🔥 Argentina vs Benin (Nhà đài)
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://lilive1.eu.cc/live/47abe0b30a45cfdac31d10a41335d295/playlist.m3u8
 
 #EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/c81d5ff7a33a4f6a9312a8703f619352.png" group-title="⚽ BÓNG ĐÁ" , 16:30 07/10 ⚽ 🔥 Sanfrecce Hiroshima vs Iwaki FC (BLV LÝ LÊN LỬA) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
