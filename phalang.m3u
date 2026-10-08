@@ -1,29 +1,5 @@
 #EXTM3U
 
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/1fced0158de1169e9bc3209f4ab98e84.png" group-title="⚽ BÓNG ĐÁ" , 🔴 23:00 08/10 ⚽ 🔥 KuPs vs AC Oulu (BLV LÝ LA LÀNG) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull.digitalcdn.net/live/3ce29d5a046544218962a0c6ef3b88f9/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/1fced0158de1169e9bc3209f4ab98e84.png" group-title="⚽ BÓNG ĐÁ" , 🔴 23:00 08/10 ⚽ 🔥 KuPs vs AC Oulu (BLV LÝ LA LÀNG) (HD2) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull1.digitalcdn.net/live/3ce29d5a046544218962a0c6ef3b88f9/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/1fced0158de1169e9bc3209f4ab98e84.png" group-title="⚽ BÓNG ĐÁ" , 🔴 23:00 08/10 ⚽ 🔥 KuPs vs AC Oulu (Nhà đài)
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://lilive1.eu.cc/live/405ba8e8c4748ac722e179c9859592a5/playlist.m3u8
-
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/6f927eb040bdd5c972a9343fd9c8b873.png" group-title="⚽ BÓNG ĐÁ" , 🔴 00:30 09/10 ⚽ 🔥 CFR Cluj vs FC Universitatea Cluj (BLV LÝ LÀNG LÁ) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull.digitalcdn.net/live/6eafa903661843e0a8517ec664343993/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/6f927eb040bdd5c972a9343fd9c8b873.png" group-title="⚽ BÓNG ĐÁ" , 🔴 00:30 09/10 ⚽ 🔥 CFR Cluj vs FC Universitatea Cluj (BLV LÝ LÀNG LÁ) (HD2) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull1.digitalcdn.net/live/6eafa903661843e0a8517ec664343993/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/6f927eb040bdd5c972a9343fd9c8b873.png" group-title="⚽ BÓNG ĐÁ" , 🔴 00:30 09/10 ⚽ 🔥 CFR Cluj vs FC Universitatea Cluj (Nhà đài)
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://lilive1.eu.cc/live/de62bef28b8842261654a5144acb5880/playlist.m3u8
-
 #EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/c80d70c62b8f67dd121a1be0d574bfd5.png" group-title="⚽ BÓNG ĐÁ" , 15:30 09/10 ⚽ 🔥 Persatuan sepak bola Indonesia Kediri vs Madura United (BLV LÝ LINH LỰC) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull.digitalcdn.net/live/023fb034a2ee4bfa92c89cd77ee43339/index.m3u8
