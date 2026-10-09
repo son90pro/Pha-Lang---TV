@@ -1,12 +1,16 @@
 #EXTM3U
 
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/c80d70c62b8f67dd121a1be0d574bfd5.png" group-title="⚽ BÓNG ĐÁ" , 15:30 09/10 ⚽ 🔥 Persatuan sepak bola Indonesia Kediri vs Madura United (BLV LÝ LINH LỰC) [geo]
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/c80d70c62b8f67dd121a1be0d574bfd5.png" group-title="⚽ BÓNG ĐÁ" , 🔴 15:30 09/10 ⚽ 🔥 Persatuan sepak bola Indonesia Kediri vs Madura United (BLV LÝ LINH LỰC) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull.digitalcdn.net/live/023fb034a2ee4bfa92c89cd77ee43339/index.m3u8
 
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/c80d70c62b8f67dd121a1be0d574bfd5.png" group-title="⚽ BÓNG ĐÁ" , 15:30 09/10 ⚽ 🔥 Persatuan sepak bola Indonesia Kediri vs Madura United (BLV LÝ LINH LỰC) (HD2) [geo]
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/c80d70c62b8f67dd121a1be0d574bfd5.png" group-title="⚽ BÓNG ĐÁ" , 🔴 15:30 09/10 ⚽ 🔥 Persatuan sepak bola Indonesia Kediri vs Madura United (BLV LÝ LINH LỰC) (HD2) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull1.digitalcdn.net/live/023fb034a2ee4bfa92c89cd77ee43339/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/c80d70c62b8f67dd121a1be0d574bfd5.png" group-title="⚽ BÓNG ĐÁ" , 🔴 15:30 09/10 ⚽ 🔥 Persatuan sepak bola Indonesia Kediri vs Madura United (Nhà đài)
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://lilive1.eu.cc/live/5309bf8da9f46a78492a143363360787/playlist.m3u8
 
 #EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/d272859d78eb8ca7a14753f4293fbf45.png" group-title="⚽ BÓNG ĐÁ" , 17:00 09/10 ⚽ 🔥 Kashiwa Reysol vs Vissel Kobe (BLV LÝ LÊN LỬA) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
@@ -23,6 +27,10 @@ https://pull.digitalcdn.net/live/d1d083087c9a4c138930b4e7faf786b3/index.m3u8
 #EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/90ca524b1b1c17911b1bf8e425c8d96d.png" group-title="⚽ BÓNG ĐÁ" , 17:00 09/10 ⚽ 🔥 Kashima Antlers vs Gamba Osaka (BLV LÝ LA LÀNG) (HD2) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull1.digitalcdn.net/live/d1d083087c9a4c138930b4e7faf786b3/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/90ca524b1b1c17911b1bf8e425c8d96d.png" group-title="⚽ BÓNG ĐÁ" , 17:00 09/10 ⚽ 🔥 Kashima Antlers vs Gamba Osaka (Nhà đài)
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://lilive1.eu.cc/live/ce1f247b708d5eb0d4a17158fbdb6b0f/playlist.m3u8
 
 #EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/c1bc80f45a0bf86310ec6e56980c1757.png" group-title="⚽ BÓNG ĐÁ" , 18:35 09/10 ⚽ 🔥 Qingdao Hainiu vs Beijing Guoan (BLV LÝ LINH LỰC) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
