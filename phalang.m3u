@@ -1,12 +1,24 @@
 #EXTM3U
 
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/df2ae58b9e658494b940b0bd782901b8.png" group-title="⚽ BÓNG ĐÁ" , 17:00 10/10 ⚽ 🔥 Hoang Anh Gia Lai vs SHB Da Nang (BLV LÝ LÊN LỬA) [geo]
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/df2ae58b9e658494b940b0bd782901b8.png" group-title="⚽ BÓNG ĐÁ" , 🔴 17:00 10/10 ⚽ 🔥 Hoang Anh Gia Lai vs SHB Da Nang (BLV LÝ LÊN LỬA) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull.digitalcdn.net/live/2521d4ae795c4bd59f5445d53d46c71d/index.m3u8
 
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/df2ae58b9e658494b940b0bd782901b8.png" group-title="⚽ BÓNG ĐÁ" , 17:00 10/10 ⚽ 🔥 Hoang Anh Gia Lai vs SHB Da Nang (BLV LÝ LÊN LỬA) (HD2) [geo]
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/df2ae58b9e658494b940b0bd782901b8.png" group-title="⚽ BÓNG ĐÁ" , 🔴 17:00 10/10 ⚽ 🔥 Hoang Anh Gia Lai vs SHB Da Nang (BLV LÝ LÊN LỬA) (HD2) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull1.digitalcdn.net/live/2521d4ae795c4bd59f5445d53d46c71d/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/df2ae58b9e658494b940b0bd782901b8.png" group-title="⚽ BÓNG ĐÁ" , 🔴 17:00 10/10 ⚽ 🔥 Hoang Anh Gia Lai vs SHB Da Nang (Nhà đài)
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://lilive1.eu.cc/live/ba13f752cd35187101fdb8ce8b97b189/playlist.m3u8
+
+#EXTINF:-1 tvg-logo="https://img0.aiscore.com/volleyball/team/30a8757bc201fed57fcb779c30bb14db.png!w80" group-title="🏐 BÓNG CHUYỀN" , 🔴 16:00 10/10 🏐 🔥 Hisamitsu Springs Nữ vs Body Queenseis Nữ (BLV LÝ LIỀU LĨNH) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull.digitalcdn.net/live/de4e8c774fc0410eb61fd2a878d4d6a2/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img0.aiscore.com/volleyball/team/30a8757bc201fed57fcb779c30bb14db.png!w80" group-title="🏐 BÓNG CHUYỀN" , 🔴 16:00 10/10 🏐 🔥 Hisamitsu Springs Nữ vs Body Queenseis Nữ (BLV LÝ LIỀU LĨNH) (HD2) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull1.digitalcdn.net/live/de4e8c774fc0410eb61fd2a878d4d6a2/index.m3u8
 
 #EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/fed18f35e0d187fb4c812f24a97c3e6a.png" group-title="⚽ BÓNG ĐÁ" , 18:00 10/10 ⚽ 🔥 XM Hai Phong FC vs CLB Thanh Hoa (BLV LÝ LÀNG LÁ) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
@@ -275,14 +287,6 @@ https://pull.digitalcdn.net/live/cd4729482a994ce1a93b6e17f9c6c3ec/index.m3u8
 #EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/018e260ad68bdad741c61e3171c4c608.png" group-title="⚽ BÓNG ĐÁ" , 23:30 11/10 ⚽ 🔥 Real Betis vs CA Osasuna (BLV LÝ LÀNG LÁ) (HD2) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull1.digitalcdn.net/live/cd4729482a994ce1a93b6e17f9c6c3ec/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://img0.aiscore.com/volleyball/team/30a8757bc201fed57fcb779c30bb14db.png!w80" group-title="🏐 BÓNG CHUYỀN" , 16:00 10/10 🏐 🔥 Hisamitsu Springs Nữ vs Body Queenseis Nữ (BLV LÝ LIỀU LĨNH) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull.digitalcdn.net/live/de4e8c774fc0410eb61fd2a878d4d6a2/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://img0.aiscore.com/volleyball/team/30a8757bc201fed57fcb779c30bb14db.png!w80" group-title="🏐 BÓNG CHUYỀN" , 16:00 10/10 🏐 🔥 Hisamitsu Springs Nữ vs Body Queenseis Nữ (BLV LÝ LIỀU LĨNH) (HD2) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull1.digitalcdn.net/live/de4e8c774fc0410eb61fd2a878d4d6a2/index.m3u8
 
 #EXTINF:-1 tvg-logo="https://img0.aiscore.com/volleyball/team/b3bcdb0236b8f0a249ad08f13f717dbc.png!w30" group-title="🏐 BÓNG CHUYỀN" , 01:30 11/10 🏐 🔥 Conegliano Nữ vs UYBA Busto Arsizio Nữ (BLV LÝ LIỀU LĨNH) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
