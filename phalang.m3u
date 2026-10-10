@@ -1,24 +1,16 @@
 #EXTM3U
 
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/7dacaa934fe4be00f23c1e209b5ef947.png" group-title="⚽ BÓNG ĐÁ" , 🔴 02:00 11/10 ⚽ 🔥 Real Madrid vs Villarreal CF (BLV LÝ LÀNG LÁ) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull.digitalcdn.net/live/e867621edf3344d0beed6bd4d336b088/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/7dacaa934fe4be00f23c1e209b5ef947.png" group-title="⚽ BÓNG ĐÁ" , 🔴 02:00 11/10 ⚽ 🔥 Real Madrid vs Villarreal CF (BLV LÝ LÀNG LÁ) (HD2) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull1.digitalcdn.net/live/e867621edf3344d0beed6bd4d336b088/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/7dacaa934fe4be00f23c1e209b5ef947.png" group-title="⚽ BÓNG ĐÁ" , 🔴 02:00 11/10 ⚽ 🔥 Real Madrid vs Villarreal CF (Nhà đài)
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://lilive1.eu.cc/live/d6993afa2d32499c353c90afe12b6ad9/playlist.m3u8
-
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/976fe1d29c112f4baeb844cdda2f04cb.png" group-title="⚽ BÓNG ĐÁ" , 06:30 11/10 ⚽ 🔥 Inter Miami CF vs DC United (BLV LÝ LA LÀNG) [geo]
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/976fe1d29c112f4baeb844cdda2f04cb.png" group-title="⚽ BÓNG ĐÁ" , 🔴 06:40 11/10 ⚽ 🔥 Inter Miami CF vs DC United (BLV LÝ LA LÀNG) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull.digitalcdn.net/live/ffebb5d6e0984031aef126e64e864dde/index.m3u8
 
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/976fe1d29c112f4baeb844cdda2f04cb.png" group-title="⚽ BÓNG ĐÁ" , 06:30 11/10 ⚽ 🔥 Inter Miami CF vs DC United (BLV LÝ LA LÀNG) (HD2) [geo]
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/976fe1d29c112f4baeb844cdda2f04cb.png" group-title="⚽ BÓNG ĐÁ" , 🔴 06:40 11/10 ⚽ 🔥 Inter Miami CF vs DC United (BLV LÝ LA LÀNG) (HD2) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull1.digitalcdn.net/live/ffebb5d6e0984031aef126e64e864dde/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/976fe1d29c112f4baeb844cdda2f04cb.png" group-title="⚽ BÓNG ĐÁ" , 🔴 06:40 11/10 ⚽ 🔥 Inter Miami CF vs DC United (Nhà đài)
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://lilive1.eu.cc/live/886b0a754bc9464613ed25e1bf97922c/playlist.m3u8
 
 #EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/5f7059f40965e5a2cc00987e6bac2f32.png" group-title="⚽ BÓNG ĐÁ" , 17:30 11/10 ⚽ 🔥 Como vs AS Roma (BLV LÝ LÊN LỬA) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
