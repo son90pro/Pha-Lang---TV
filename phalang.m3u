@@ -40,6 +40,10 @@ https://pull.digitalcdn.net/live/f9172a8bb116424ba705fe48df4fd278/index.m3u8
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull1.digitalcdn.net/live/f9172a8bb116424ba705fe48df4fd278/index.m3u8
 
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/d6f5debc456da1119256ab66462ab510.png" group-title="⚽ BÓNG ĐÁ" , 18:30 10/10 ⚽ 🔥 Arsenal vs Leeds United (Nhà đài)
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://lilive1.eu.cc/live/f6f1382f485f2558cff482a23f00283c/playlist.m3u8
+
 #EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/5005d8feab109ce64e40beb98073cc1f.png" group-title="⚽ BÓNG ĐÁ" , 19:00 10/10 ⚽ 🔥 Rayo Vallecano vs Athletic Club (BLV LÝ LINH LỰC) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull.digitalcdn.net/live/8b9c6bec5ac04dc1a70872046db47911/index.m3u8
@@ -47,6 +51,10 @@ https://pull.digitalcdn.net/live/8b9c6bec5ac04dc1a70872046db47911/index.m3u8
 #EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/5005d8feab109ce64e40beb98073cc1f.png" group-title="⚽ BÓNG ĐÁ" , 19:00 10/10 ⚽ 🔥 Rayo Vallecano vs Athletic Club (BLV LÝ LINH LỰC) (HD2) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull1.digitalcdn.net/live/8b9c6bec5ac04dc1a70872046db47911/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/5005d8feab109ce64e40beb98073cc1f.png" group-title="⚽ BÓNG ĐÁ" , 19:00 10/10 ⚽ 🔥 Rayo Vallecano vs Athletic Club (Nhà đài)
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://lilive1.eu.cc/live/7c16af272c986b9a6a5a945a8cffc165/playlist.m3u8
 
 #EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/db4411a3c4ce1d0f092f5b9d1df08664.png" group-title="⚽ BÓNG ĐÁ" , 20:30 10/10 ⚽ 🔥 FC Augsburg vs FC Bayern Munich (BLV LÝ LÀNG LÁ) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
