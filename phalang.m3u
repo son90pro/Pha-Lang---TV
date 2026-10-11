@@ -1,53 +1,5 @@
 #EXTM3U
 
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/dba65c184e03c860ed919ce192b86c5e.png" group-title="⚽ BÓNG ĐÁ" , 🔴 01:45 12/10 ⚽ 🔥 Cagliari vs Juventus (BLV LÝ LONG) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull.digitalcdn.net/live/f973dd3d8ace4a5c9b0bbd3ef5d41315/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/dba65c184e03c860ed919ce192b86c5e.png" group-title="⚽ BÓNG ĐÁ" , 🔴 01:45 12/10 ⚽ 🔥 Cagliari vs Juventus (BLV LÝ LONG) (HD2) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull1.digitalcdn.net/live/f973dd3d8ace4a5c9b0bbd3ef5d41315/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/dba65c184e03c860ed919ce192b86c5e.png" group-title="⚽ BÓNG ĐÁ" , 🔴 01:45 12/10 ⚽ 🔥 Cagliari vs Juventus (Nhà đài)
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://lilive1.eu.cc/live/8a906ab6e74ed712eefdfc741ec72e42/playlist.m3u8
-
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/951a522c131e8d2a0a32185858ba6300.png" group-title="⚽ BÓNG ĐÁ" , 🔴 01:45 12/10 ⚽ 🔥 Troyes vs Marseille (BLV LÝ LÊN LỬA) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull.digitalcdn.net/live/4a4b13a95d8b4120a6b394fd756c9ca3/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/951a522c131e8d2a0a32185858ba6300.png" group-title="⚽ BÓNG ĐÁ" , 🔴 01:45 12/10 ⚽ 🔥 Troyes vs Marseille (BLV LÝ LÊN LỬA) (HD2) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull1.digitalcdn.net/live/4a4b13a95d8b4120a6b394fd756c9ca3/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/951a522c131e8d2a0a32185858ba6300.png" group-title="⚽ BÓNG ĐÁ" , 🔴 01:45 12/10 ⚽ 🔥 Troyes vs Marseille (Nhà đài)
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://lilive1.eu.cc/live/a27c317ec1c3d12ade3749a4614de9f0/playlist.m3u8
-
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/8db7260a18b1be68e8710cfdbf6be3df.png" group-title="⚽ BÓNG ĐÁ" , 🔴 02:00 12/10 ⚽ 🔥 Racing Santander vs Valencia CF (BLV LÝ LIỀU LĨNH) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull.digitalcdn.net/live/c056a5baaba74dc1a92079cf53a52d7a/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/8db7260a18b1be68e8710cfdbf6be3df.png" group-title="⚽ BÓNG ĐÁ" , 🔴 02:00 12/10 ⚽ 🔥 Racing Santander vs Valencia CF (BLV LÝ LIỀU LĨNH) (HD2) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull1.digitalcdn.net/live/c056a5baaba74dc1a92079cf53a52d7a/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/8db7260a18b1be68e8710cfdbf6be3df.png" group-title="⚽ BÓNG ĐÁ" , 🔴 02:00 12/10 ⚽ 🔥 Racing Santander vs Valencia CF (Nhà đài)
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://lilive1.eu.cc/live/f0d04be5cfe71c691fefdfefa5a226de/playlist.m3u8
-
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/b16d1e3b04364c5cd64203d8b4ef76e2.png" group-title="⚽ BÓNG ĐÁ" , 01:00 12/10 ⚽ 🔥 Al Shabab vs Al Taawoun (Phá Làng TV) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull.digitalcdn.net/live/5442d2c972e4415e8f7db553ad02e1e8/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/b16d1e3b04364c5cd64203d8b4ef76e2.png" group-title="⚽ BÓNG ĐÁ" , 01:00 12/10 ⚽ 🔥 Al Shabab vs Al Taawoun (Phá Làng TV) (HD2) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull1.digitalcdn.net/live/5442d2c972e4415e8f7db553ad02e1e8/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/b16d1e3b04364c5cd64203d8b4ef76e2.png" group-title="⚽ BÓNG ĐÁ" , 01:00 12/10 ⚽ 🔥 Al Shabab vs Al Taawoun (Nhà đài)
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://lilive1.eu.cc/live/41b0f07cd99fd839c428be6afcbf8f04/playlist.m3u8
-
 #EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/ec2dbd5c069753ced4b26b40d826ae60.png" group-title="⚽ BÓNG ĐÁ" , 15:00 12/10 ⚽ 🔥 Ho Chi Minh City B Women vs Than KSVN Women (BLV LÝ LÀNG LÁ) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull.digitalcdn.net/live/56cdb05d809c411c983542f3887b534d/index.m3u8
@@ -87,6 +39,10 @@ https://pull.digitalcdn.net/live/4ee0096d8aaa4b32bd723d6e96d1b704/index.m3u8
 #EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/1e888ca542d892600d3b2818d1c40e22.png" group-title="⚽ BÓNG ĐÁ" , 21:15 12/10 ⚽ 🔥 Burgos CF vs Granada CF (BLV LÝ LỀNH) (HD2) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull1.digitalcdn.net/live/4ee0096d8aaa4b32bd723d6e96d1b704/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/1e888ca542d892600d3b2818d1c40e22.png" group-title="⚽ BÓNG ĐÁ" , 21:15 12/10 ⚽ 🔥 Burgos CF vs Granada CF (Nhà đài)
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://lilive1.eu.cc/live/840f79fba8002feba09edcd7f055d2d1/playlist.m3u8
 
 #EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/17b767b98695df2fb512e992dd8a7af4.png" group-title="⚽ BÓNG ĐÁ" , 23:00 12/10 ⚽ 🔥 Al-Wasl SC vs Al Ahli SC (BLV LÝ LÀNG LÁ) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
