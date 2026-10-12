@@ -2,8 +2,8 @@ name: Auto Update M3U Playlist
 
 on:
   schedule:
-    # Chạy tự động mỗi 15 phút một lần
-    - cron: '*/15 * * * *'
+    # Chạy tự động 1 giờ một lần (vào đầu mỗi giờ)
+    - cron: '0 * * * *'
   workflow_dispatch: # Cho phép bấm chạy thủ công trên GitHub
 
 jobs:
@@ -33,3 +33,4 @@ jobs:
           git add phalang.m3u
           git diff-index --quiet HEAD || git commit -m "Auto-update IPTV playlist [skip ci]"
           git push
+          
