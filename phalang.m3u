@@ -1,12 +1,16 @@
 #EXTM3U
 
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/ec2dbd5c069753ced4b26b40d826ae60.png" group-title="⚽ BÓNG ĐÁ" , 15:00 12/10 ⚽ 🔥 Ho Chi Minh City B Women vs Than KSVN Women (BLV LÝ LÀNG LÁ) [geo]
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/2ee0214c45e742b6ae9a1107593918d5.png" group-title="⚽ BÓNG ĐÁ" , 🔴 16:00 12/10 ⚽ 🔥 Phong Phu Ha Nam Women vs Ha Noi IIWomen (BLV LÝ LÀNG LÁ) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull.digitalcdn.net/live/56cdb05d809c411c983542f3887b534d/index.m3u8
+https://pull.digitalcdn.net/live/075cba98c0734558b33baf94a0371f8d/index.m3u8
 
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/ec2dbd5c069753ced4b26b40d826ae60.png" group-title="⚽ BÓNG ĐÁ" , 15:00 12/10 ⚽ 🔥 Ho Chi Minh City B Women vs Than KSVN Women (BLV LÝ LÀNG LÁ) (HD2) [geo]
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/2ee0214c45e742b6ae9a1107593918d5.png" group-title="⚽ BÓNG ĐÁ" , 🔴 16:00 12/10 ⚽ 🔥 Phong Phu Ha Nam Women vs Ha Noi IIWomen (BLV LÝ LÀNG LÁ) (HD2) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull1.digitalcdn.net/live/56cdb05d809c411c983542f3887b534d/index.m3u8
+https://pull1.digitalcdn.net/live/075cba98c0734558b33baf94a0371f8d/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/2ee0214c45e742b6ae9a1107593918d5.png" group-title="⚽ BÓNG ĐÁ" , 🔴 16:00 12/10 ⚽ 🔥 Phong Phu Ha Nam Women vs Ha Noi IIWomen (Nhà đài)
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://lilive1.eu.cc/live/afad2aba62e449203694b107225834b0/playlist.m3u8
 
 #EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/761b47aa242b8e4a5bf183da184304d7.png" group-title="⚽ BÓNG ĐÁ" , 18:00 12/10 ⚽ 🔥 Thai Nguyen T&T Women vs Ha Noi Women (BLV LÝ LINH LỰC) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
@@ -23,6 +27,10 @@ https://pull.digitalcdn.net/live/6cf8069e5f3c44d1972cd757d9c67a02/index.m3u8
 #EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/fdf63461c00668597319a4f0db14dcee.png" group-title="⚽ BÓNG ĐÁ" , 19:00 12/10 ⚽ 🔥 Real Valladolid CF vs Albacete Balompié SAD (BLV LÝ LÊN LỬA) (HD2) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull1.digitalcdn.net/live/6cf8069e5f3c44d1972cd757d9c67a02/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/fdf63461c00668597319a4f0db14dcee.png" group-title="⚽ BÓNG ĐÁ" , 19:00 12/10 ⚽ 🔥 Real Valladolid CF vs Albacete Balompié SAD (Nhà đài)
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://lilive1.eu.cc/live/8934ed4523d9b1e8f918395b1d68c18c/playlist.m3u8
 
 #EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/78dd333913352de8fc4e8b0834636245.png" group-title="⚽ BÓNG ĐÁ" , 20:45 12/10 ⚽ 🔥 Pakhtakor vs Al Qadsiah (BLV LÝ LONG) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
@@ -100,14 +108,6 @@ https://pull.digitalcdn.net/live/933d4088892147ff9894734b9111f2d2/index.m3u8
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull1.digitalcdn.net/live/933d4088892147ff9894734b9111f2d2/index.m3u8
 
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/6f05c460789939ac83282bd0686446f1.png" group-title="⚽ BÓNG ĐÁ" , 17:00 13/10 ⚽ 🔥 Pohang Steelers vs Johor Darul Ta'zim FC (BLV LÝ LIỀU LĨNH) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull.digitalcdn.net/live/0409d35fe93d47af98ddc57ab0e02240/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/6f05c460789939ac83282bd0686446f1.png" group-title="⚽ BÓNG ĐÁ" , 17:00 13/10 ⚽ 🔥 Pohang Steelers vs Johor Darul Ta'zim FC (BLV LÝ LIỀU LĨNH) (HD2) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull1.digitalcdn.net/live/0409d35fe93d47af98ddc57ab0e02240/index.m3u8
-
 #EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/c4e143e537412003565cdb7c2d212538.png" group-title="⚽ BÓNG ĐÁ" , 17:00 13/10 ⚽ 🔥 Shanghai Port vs Daejeon Hana Citizen (BLV LÝ LA LÀNG) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull.digitalcdn.net/live/db98dbdedd5e4b1e8a65c7fd97fa4a51/index.m3u8
@@ -115,6 +115,14 @@ https://pull.digitalcdn.net/live/db98dbdedd5e4b1e8a65c7fd97fa4a51/index.m3u8
 #EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/c4e143e537412003565cdb7c2d212538.png" group-title="⚽ BÓNG ĐÁ" , 17:00 13/10 ⚽ 🔥 Shanghai Port vs Daejeon Hana Citizen (BLV LÝ LA LÀNG) (HD2) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull1.digitalcdn.net/live/db98dbdedd5e4b1e8a65c7fd97fa4a51/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/7d6fa50ea67cde7d66612a8189897ba5.png" group-title="⚽ BÓNG ĐÁ" , 17:00 13/10 ⚽ 🔥 Kyoto Sanga vs Ratchaburi FC (BLV LÝ LIỀU LĨNH) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull.digitalcdn.net/live/e1efccd67f464bbdb031d4fbc8e74e25/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/7d6fa50ea67cde7d66612a8189897ba5.png" group-title="⚽ BÓNG ĐÁ" , 17:00 13/10 ⚽ 🔥 Kyoto Sanga vs Ratchaburi FC (BLV LÝ LIỀU LĨNH) (HD2) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull1.digitalcdn.net/live/e1efccd67f464bbdb031d4fbc8e74e25/index.m3u8
 
 #EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/3304b66faaa7843336b931db14e7fbc7.png" group-title="⚽ BÓNG ĐÁ" , 18:00 13/10 ⚽ 🔥 Muangthong United vs Phrae United FC (BLV LÝ LÊN LỬA) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
@@ -148,13 +156,13 @@ https://pull.digitalcdn.net/live/ce9d282f718c4a0e92cb355f55f898aa/index.m3u8
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull1.digitalcdn.net/live/ce9d282f718c4a0e92cb355f55f898aa/index.m3u8
 
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/5517b8865aa5280667bd899f6810d466.png" group-title="⚽ BÓNG ĐÁ" , 22:30 13/10 ⚽ 🔥 Lokomotiv Moscow vs Akron Togliatti (BLV LÝ LINH LỰC) [geo]
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/dd126282a3ed968b622055c808ad82c4.png" group-title="⚽ BÓNG ĐÁ" , 21:00 13/10 ⚽ 🔥 Atletico de Madrid U19 vs Manchester United U19 (BLV LÝ LINH LỰC) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull.digitalcdn.net/live/999f29ffb6394532957423af152386ff/index.m3u8
+https://pull.digitalcdn.net/live/f59d81ce6ad044adb4977d3474683c9d/index.m3u8
 
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/5517b8865aa5280667bd899f6810d466.png" group-title="⚽ BÓNG ĐÁ" , 22:30 13/10 ⚽ 🔥 Lokomotiv Moscow vs Akron Togliatti (BLV LÝ LINH LỰC) (HD2) [geo]
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/dd126282a3ed968b622055c808ad82c4.png" group-title="⚽ BÓNG ĐÁ" , 21:00 13/10 ⚽ 🔥 Atletico de Madrid U19 vs Manchester United U19 (BLV LÝ LINH LỰC) (HD2) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull1.digitalcdn.net/live/999f29ffb6394532957423af152386ff/index.m3u8
+https://pull1.digitalcdn.net/live/f59d81ce6ad044adb4977d3474683c9d/index.m3u8
 
 #EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/5c794bfbf3227563c85323bb624721ec.png" group-title="⚽ BÓNG ĐÁ" , 23:00 13/10 ⚽ 🔥 Al-Sadd Sports Club vs Al Hilal (BLV LÝ LÊN LỬA) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
