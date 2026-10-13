@@ -1,49 +1,5 @@
 #EXTM3U
 
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/f0856c1b16c32245a8d2c702ffe89ac5.png" group-title="⚽ BÓNG ĐÁ" , 🔴 01:45 13/10 ⚽ 🔥 Torino vs Udinese (BLV LÝ LÊN LỬA) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull.digitalcdn.net/live/84dbc06a56364aba95a0578ad750b8b8/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/f0856c1b16c32245a8d2c702ffe89ac5.png" group-title="⚽ BÓNG ĐÁ" , 🔴 01:45 13/10 ⚽ 🔥 Torino vs Udinese (BLV LÝ LÊN LỬA) (HD2) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull1.digitalcdn.net/live/84dbc06a56364aba95a0578ad750b8b8/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/f0856c1b16c32245a8d2c702ffe89ac5.png" group-title="⚽ BÓNG ĐÁ" , 🔴 01:45 13/10 ⚽ 🔥 Torino vs Udinese (Nhà đài)
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://lilive1.eu.cc/live/600df681fb0eec81cd586199c73a00ce/playlist.m3u8
-
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/759f19ccaecadd33a5c09b535e543410.png" group-title="⚽ BÓNG ĐÁ" , 🔴 02:00 13/10 ⚽ 🔥 Coventry City vs Newcastle United (BLV LÝ LONG) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull.digitalcdn.net/live/abc70c5d5fae4844ad953bd01cf311e1/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/759f19ccaecadd33a5c09b535e543410.png" group-title="⚽ BÓNG ĐÁ" , 🔴 02:00 13/10 ⚽ 🔥 Coventry City vs Newcastle United (BLV LÝ LONG) (HD2) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull1.digitalcdn.net/live/abc70c5d5fae4844ad953bd01cf311e1/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/759f19ccaecadd33a5c09b535e543410.png" group-title="⚽ BÓNG ĐÁ" , 🔴 02:00 13/10 ⚽ 🔥 Coventry City vs Newcastle United (Nhà đài)
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://lilive1.eu.cc/live/30cabbbb8abeecfdd87e9f080f7c8865/playlist.m3u8
-
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/0d9975f7e846a1ecb099f4cd62d1b8f7.png" group-title="⚽ BÓNG ĐÁ" , 🔴 02:15 13/10 ⚽ 🔥 Al Nassr vs Neftchi Fergana (BLV LÝ LỀNH) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull.digitalcdn.net/live/676df5ee2c2c40ba841504ebb6476ea6/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/0d9975f7e846a1ecb099f4cd62d1b8f7.png" group-title="⚽ BÓNG ĐÁ" , 🔴 02:15 13/10 ⚽ 🔥 Al Nassr vs Neftchi Fergana (BLV LÝ LỀNH) (HD2) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull1.digitalcdn.net/live/676df5ee2c2c40ba841504ebb6476ea6/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/0d9975f7e846a1ecb099f4cd62d1b8f7.png" group-title="⚽ BÓNG ĐÁ" , 🔴 02:15 13/10 ⚽ 🔥 Al Nassr vs Neftchi Fergana (Nhà đài)
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://lilive1.eu.cc/live/228bbb744701ff02674ff87c8fb5e8df/playlist.m3u8
-
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/c4e143e537412003565cdb7c2d212538.png" group-title="⚽ BÓNG ĐÁ" , 🔴 17:00 13/10 ⚽ 🔥 Shanghai Port vs Daejeon Hana Citizen (BLV LÝ LA LÀNG) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull.digitalcdn.net/live/db98dbdedd5e4b1e8a65c7fd97fa4a51/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/c4e143e537412003565cdb7c2d212538.png" group-title="⚽ BÓNG ĐÁ" , 🔴 17:00 13/10 ⚽ 🔥 Shanghai Port vs Daejeon Hana Citizen (BLV LÝ LA LÀNG) (HD2) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull1.digitalcdn.net/live/db98dbdedd5e4b1e8a65c7fd97fa4a51/index.m3u8
-
 #EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/296c68ac5ad3ff621c10c6ebfb9954ca.png" group-title="⚽ BÓNG ĐÁ" , 14:45 13/10 ⚽ 🔥 Newcastle Jets vs Gamba Osaka (BLV LÝ LÀNG LÁ) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull.digitalcdn.net/live/933d4088892147ff9894734b9111f2d2/index.m3u8
@@ -51,6 +7,14 @@ https://pull.digitalcdn.net/live/933d4088892147ff9894734b9111f2d2/index.m3u8
 #EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/296c68ac5ad3ff621c10c6ebfb9954ca.png" group-title="⚽ BÓNG ĐÁ" , 14:45 13/10 ⚽ 🔥 Newcastle Jets vs Gamba Osaka (BLV LÝ LÀNG LÁ) (HD2) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull1.digitalcdn.net/live/933d4088892147ff9894734b9111f2d2/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/c4e143e537412003565cdb7c2d212538.png" group-title="⚽ BÓNG ĐÁ" , 17:00 13/10 ⚽ 🔥 Shanghai Port vs Daejeon Hana Citizen (BLV LÝ LA LÀNG) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull.digitalcdn.net/live/db98dbdedd5e4b1e8a65c7fd97fa4a51/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/c4e143e537412003565cdb7c2d212538.png" group-title="⚽ BÓNG ĐÁ" , 17:00 13/10 ⚽ 🔥 Shanghai Port vs Daejeon Hana Citizen (BLV LÝ LA LÀNG) (HD2) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull1.digitalcdn.net/live/db98dbdedd5e4b1e8a65c7fd97fa4a51/index.m3u8
 
 #EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/7d6fa50ea67cde7d66612a8189897ba5.png" group-title="⚽ BÓNG ĐÁ" , 17:00 13/10 ⚽ 🔥 Kyoto Sanga vs Ratchaburi FC (BLV LÝ LIỀU LĨNH) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
