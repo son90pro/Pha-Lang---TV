@@ -1,5 +1,13 @@
 #EXTM3U
 
+#EXTINF:-1 tvg-logo="https://thumb.wikimedia.org/wikipedia/vi/thumb/6/6a/Logo_H%C3%A0_N%E1%BB%99i_Tasco_Auto.png/250px-Logo_H%C3%A0_N%E1%BB%99i_Tasco_Auto.png" group-title="🏐 BÓNG CHUYỀN" , 🔴 12:00 14/10 🏐 🔥 Hà Nội Tasco Auto vs BC Thông Tin BĐ19 (BLV LÝ LIỀU LĨNH) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull.digitalcdn.net/live/8d1b2c25546f47c5aa1f8f6ee750b217/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://thumb.wikimedia.org/wikipedia/vi/thumb/6/6a/Logo_H%C3%A0_N%E1%BB%99i_Tasco_Auto.png/250px-Logo_H%C3%A0_N%E1%BB%99i_Tasco_Auto.png" group-title="🏐 BÓNG CHUYỀN" , 🔴 12:00 14/10 🏐 🔥 Hà Nội Tasco Auto vs BC Thông Tin BĐ19 (BLV LÝ LIỀU LĨNH) (HD2) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull1.digitalcdn.net/live/8d1b2c25546f47c5aa1f8f6ee750b217/index.m3u8
+
 #EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/c540f8f279c09a2a3df1cbbfe82d7184.png" group-title="⚽ BÓNG ĐÁ" , 14:45 14/10 ⚽ 🔥 Melbourne Victory vs FC Seoul (BLV LÝ LÀNG LÁ) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull.digitalcdn.net/live/731e06daf3214324bef38187de7b49e5/index.m3u8
@@ -7,6 +15,10 @@ https://pull.digitalcdn.net/live/731e06daf3214324bef38187de7b49e5/index.m3u8
 #EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/c540f8f279c09a2a3df1cbbfe82d7184.png" group-title="⚽ BÓNG ĐÁ" , 14:45 14/10 ⚽ 🔥 Melbourne Victory vs FC Seoul (BLV LÝ LÀNG LÁ) (HD2) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull1.digitalcdn.net/live/731e06daf3214324bef38187de7b49e5/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/c540f8f279c09a2a3df1cbbfe82d7184.png" group-title="⚽ BÓNG ĐÁ" , 14:45 14/10 ⚽ 🔥 Melbourne Victory vs FC Seoul (Nhà đài)
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://lilive1.eu.cc/live/ba690f9309980f1f5240eba60113230e/playlist.m3u8
 
 #EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/d85cce27ab583e5b3cead155f02b098a.png" group-title="⚽ BÓNG ĐÁ" , 17:00 14/10 ⚽ 🔥 Vissel Kobe vs Jeonbuk Hyundai Motors (BLV LÝ LỀNH) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
@@ -16,11 +28,15 @@ https://pull.digitalcdn.net/live/dbd0a55bf2434a33b0245eed3d7d784c/index.m3u8
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull1.digitalcdn.net/live/dbd0a55bf2434a33b0245eed3d7d784c/index.m3u8
 
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/9d077ef19824852efe128dd9ddeae68a.png" group-title="⚽ BÓNG ĐÁ" , 18:00 14/10 ⚽ 🔥 Nongbua Pitchaya FC vs Chiangmai United FC (BLV LÝ LINH LỰC) [geo]
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/d85cce27ab583e5b3cead155f02b098a.png" group-title="⚽ BÓNG ĐÁ" , 17:00 14/10 ⚽ 🔥 Vissel Kobe vs Jeonbuk Hyundai Motors (Nhà đài)
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://lilive1.eu.cc/live/97c28bfa10ca2f978a8ff6719495371c/playlist.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/9d077ef19824852efe128dd9ddeae68a.png" group-title="⚽ BÓNG ĐÁ" , 18:00 14/10 ⚽ 🔥 Nongbua Pitchaya FC vs Chiangmai United FC (BLV LÝ LÀNG LÁ) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull.digitalcdn.net/live/83ae74c9895b48a0ac7104f22340de60/index.m3u8
 
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/9d077ef19824852efe128dd9ddeae68a.png" group-title="⚽ BÓNG ĐÁ" , 18:00 14/10 ⚽ 🔥 Nongbua Pitchaya FC vs Chiangmai United FC (BLV LÝ LINH LỰC) (HD2) [geo]
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/9d077ef19824852efe128dd9ddeae68a.png" group-title="⚽ BÓNG ĐÁ" , 18:00 14/10 ⚽ 🔥 Nongbua Pitchaya FC vs Chiangmai United FC (BLV LÝ LÀNG LÁ) (HD2) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull1.digitalcdn.net/live/83ae74c9895b48a0ac7104f22340de60/index.m3u8
 
@@ -32,11 +48,11 @@ https://pull.digitalcdn.net/live/888f065b0d2f42e393a52c609e94b641/index.m3u8
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull1.digitalcdn.net/live/888f065b0d2f42e393a52c609e94b641/index.m3u8
 
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/bef3a45bcf56447c8acfb7b077820022.png" group-title="⚽ BÓNG ĐÁ" , 20:45 14/10 ⚽ 🔥 Nasaf Qarshi vs Al Wahda(UAE) (BLV LÝ LÀNG LÁ) [geo]
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/bef3a45bcf56447c8acfb7b077820022.png" group-title="⚽ BÓNG ĐÁ" , 20:45 14/10 ⚽ 🔥 Nasaf Qarshi vs Al Wahda(UAE) (BLV LÝ LINH LỰC) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull.digitalcdn.net/live/d70f55d868cf4c35ad0bb777e53bb499/index.m3u8
 
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/bef3a45bcf56447c8acfb7b077820022.png" group-title="⚽ BÓNG ĐÁ" , 20:45 14/10 ⚽ 🔥 Nasaf Qarshi vs Al Wahda(UAE) (BLV LÝ LÀNG LÁ) (HD2) [geo]
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/bef3a45bcf56447c8acfb7b077820022.png" group-title="⚽ BÓNG ĐÁ" , 20:45 14/10 ⚽ 🔥 Nasaf Qarshi vs Al Wahda(UAE) (BLV LÝ LINH LỰC) (HD2) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull1.digitalcdn.net/live/d70f55d868cf4c35ad0bb777e53bb499/index.m3u8
 
@@ -119,14 +135,6 @@ https://pull.digitalcdn.net/live/8bc1567edd4c4e6eb44024a0a44025c9/index.m3u8
 #EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/976fe1d29c112f4baeb844cdda2f04cb.png" group-title="⚽ BÓNG ĐÁ" , 06:30 15/10 ⚽ 🔥 Inter Miami CF vs New York City Football Club (BLV LÝ LA LÀNG) (HD2) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull1.digitalcdn.net/live/8bc1567edd4c4e6eb44024a0a44025c9/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://thumb.wikimedia.org/wikipedia/vi/thumb/6/6a/Logo_H%C3%A0_N%E1%BB%99i_Tasco_Auto.png/250px-Logo_H%C3%A0_N%E1%BB%99i_Tasco_Auto.png" group-title="🏐 BÓNG CHUYỀN" , 12:00 14/10 🏐 🔥 Hà Nội Tasco Auto vs BC Thông Tin BĐ19 (BLV LÝ LIỀU LĨNH) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull.digitalcdn.net/live/8d1b2c25546f47c5aa1f8f6ee750b217/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://thumb.wikimedia.org/wikipedia/vi/thumb/6/6a/Logo_H%C3%A0_N%E1%BB%99i_Tasco_Auto.png/250px-Logo_H%C3%A0_N%E1%BB%99i_Tasco_Auto.png" group-title="🏐 BÓNG CHUYỀN" , 12:00 14/10 🏐 🔥 Hà Nội Tasco Auto vs BC Thông Tin BĐ19 (BLV LÝ LIỀU LĨNH) (HD2) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull1.digitalcdn.net/live/8d1b2c25546f47c5aa1f8f6ee750b217/index.m3u8
 
 #EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/vi/7/7a/Logo_Geleximco_H%C6%B0ng_Y%C3%AAn.png" group-title="🏐 BÓNG CHUYỀN" , 14:30 14/10 🏐 🔥 Geleximco Hưng Yên vs HCĐG Lào Cai (BLV LÝ LÊN LỬA) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
