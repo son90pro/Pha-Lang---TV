@@ -1,29 +1,5 @@
 #EXTM3U
 
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/240b30d333c97d293752ab7afd77ccd6.png" group-title="⚽ BÓNG ĐÁ" , 🔴 02:00 16/10 ⚽ 🔥 Bournemouth AFC vs Sturm Graz (BLV LÝ LÊN LỬA) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull.digitalcdn.net/live/a87658238a87487ea688d02461a4b853/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/240b30d333c97d293752ab7afd77ccd6.png" group-title="⚽ BÓNG ĐÁ" , 🔴 02:00 16/10 ⚽ 🔥 Bournemouth AFC vs Sturm Graz (BLV LÝ LÊN LỬA) (HD2) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull1.digitalcdn.net/live/a87658238a87487ea688d02461a4b853/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/240b30d333c97d293752ab7afd77ccd6.png" group-title="⚽ BÓNG ĐÁ" , 🔴 02:00 16/10 ⚽ 🔥 Bournemouth AFC vs Sturm Graz (Nhà đài)
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://lilive1.eu.cc/live/9e3f6760e8bc62d0ec8c83d7c28dbada/playlist.m3u8
-
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/fd954d083ee85a6f1a3f2471dc756242.png" group-title="⚽ BÓNG ĐÁ" , 🔴 02:00 16/10 ⚽ 🔥 RC Celta vs Juventus (BLV LÝ LỀNH) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull.digitalcdn.net/live/e4c1e443321248ebac5113105817e8ba/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/fd954d083ee85a6f1a3f2471dc756242.png" group-title="⚽ BÓNG ĐÁ" , 🔴 02:00 16/10 ⚽ 🔥 RC Celta vs Juventus (BLV LÝ LỀNH) (HD2) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull1.digitalcdn.net/live/e4c1e443321248ebac5113105817e8ba/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/fd954d083ee85a6f1a3f2471dc756242.png" group-title="⚽ BÓNG ĐÁ" , 🔴 02:00 16/10 ⚽ 🔥 RC Celta vs Juventus (Nhà đài)
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://lilive1.eu.cc/live/28f3e136abd82b484b13437877fe60ad/playlist.m3u8
-
 #EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/a0c772584c00e1b6efd1c421344cd005.png" group-title="⚽ BÓNG ĐÁ" , 16:00 16/10 ⚽ 🔥 Sydney FC vs Western Sydney Wanderers FC (BLV LÝ LINH LỰC) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull.digitalcdn.net/live/f84dac1970b047c795e050975dbb4c5e/index.m3u8
