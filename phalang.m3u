@@ -1,40 +1,28 @@
 #EXTM3U
 
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/a0c772584c00e1b6efd1c421344cd005.png" group-title="⚽ BÓNG ĐÁ" , 16:00 16/10 ⚽ 🔥 Sydney FC vs Western Sydney Wanderers FC (BLV LÝ LINH LỰC) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull.digitalcdn.net/live/f84dac1970b047c795e050975dbb4c5e/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/a0c772584c00e1b6efd1c421344cd005.png" group-title="⚽ BÓNG ĐÁ" , 16:00 16/10 ⚽ 🔥 Sydney FC vs Western Sydney Wanderers FC (BLV LÝ LINH LỰC) (HD2) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull1.digitalcdn.net/live/f84dac1970b047c795e050975dbb4c5e/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/a0c772584c00e1b6efd1c421344cd005.png" group-title="⚽ BÓNG ĐÁ" , 16:00 16/10 ⚽ 🔥 Sydney FC vs Western Sydney Wanderers FC (Nhà đài)
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://lilive1.eu.cc/live/81adabdc8553b3ec474fdb0239f5838c/playlist.m3u8
-
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/aaf7ff777567dba636caf52a05a45c31.png" group-title="⚽ BÓNG ĐÁ" , 17:00 16/10 ⚽ 🔥 Dong Thap vs Quy Nhon United (BLV LÝ LÀNG LÁ) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull.digitalcdn.net/live/4413c8e5950c4ae9b7bce2bebee4faf7/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/aaf7ff777567dba636caf52a05a45c31.png" group-title="⚽ BÓNG ĐÁ" , 17:00 16/10 ⚽ 🔥 Dong Thap vs Quy Nhon United (BLV LÝ LÀNG LÁ) (HD2) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull1.digitalcdn.net/live/4413c8e5950c4ae9b7bce2bebee4faf7/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/f336520db254da6d6d5294b720d26d83.png" group-title="⚽ BÓNG ĐÁ" , 18:35 16/10 ⚽ 🔥 Henan FC vs Tianjin Jinmen Tiger (BLV LÝ LIỀU LĨNH) [geo]
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/f336520db254da6d6d5294b720d26d83.png" group-title="⚽ BÓNG ĐÁ" , 🔴 18:35 16/10 ⚽ 🔥 Henan FC vs Tianjin Jinmen Tiger (BLV LÝ LIỀU LĨNH) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull.digitalcdn.net/live/bdf00c25c56140bc9652f791515f6d1a/index.m3u8
 
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/f336520db254da6d6d5294b720d26d83.png" group-title="⚽ BÓNG ĐÁ" , 18:35 16/10 ⚽ 🔥 Henan FC vs Tianjin Jinmen Tiger (BLV LÝ LIỀU LĨNH) (HD2) [geo]
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/f336520db254da6d6d5294b720d26d83.png" group-title="⚽ BÓNG ĐÁ" , 🔴 18:35 16/10 ⚽ 🔥 Henan FC vs Tianjin Jinmen Tiger (BLV LÝ LIỀU LĨNH) (HD2) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull1.digitalcdn.net/live/bdf00c25c56140bc9652f791515f6d1a/index.m3u8
 
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/bc74439d19c8bbaa17c57406b120b86d.png" group-title="⚽ BÓNG ĐÁ" , 20:15 16/10 ⚽ 🔥 Al Qadsiah vs Abha (BLV LÝ LÊN LỬA) [geo]
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/f336520db254da6d6d5294b720d26d83.png" group-title="⚽ BÓNG ĐÁ" , 🔴 18:35 16/10 ⚽ 🔥 Henan FC vs Tianjin Jinmen Tiger (Nhà đài)
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://lilive1.eu.cc/live/40ebe1840a41e67c924a62ddb9d1f428/playlist.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/bc74439d19c8bbaa17c57406b120b86d.png" group-title="⚽ BÓNG ĐÁ" , 🔴 20:15 16/10 ⚽ 🔥 Al Qadsiah vs Abha (BLV LÝ LINH LỰC) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull.digitalcdn.net/live/ccd78db10eca4b83bf9971924b1258f2/index.m3u8
 
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/bc74439d19c8bbaa17c57406b120b86d.png" group-title="⚽ BÓNG ĐÁ" , 20:15 16/10 ⚽ 🔥 Al Qadsiah vs Abha (BLV LÝ LÊN LỬA) (HD2) [geo]
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/bc74439d19c8bbaa17c57406b120b86d.png" group-title="⚽ BÓNG ĐÁ" , 🔴 20:15 16/10 ⚽ 🔥 Al Qadsiah vs Abha (BLV LÝ LINH LỰC) (HD2) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull1.digitalcdn.net/live/ccd78db10eca4b83bf9971924b1258f2/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/bc74439d19c8bbaa17c57406b120b86d.png" group-title="⚽ BÓNG ĐÁ" , 🔴 20:15 16/10 ⚽ 🔥 Al Qadsiah vs Abha (Nhà đài)
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://lilive1.eu.cc/live/f06b33c5870a407214614434703249f0/playlist.m3u8
 
 #EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/99b9e5475b90aa5b91fe68685bcd5e78.png" group-title="⚽ BÓNG ĐÁ" , 21:30 16/10 ⚽ 🔥 Al-Ahli Sports Club(Qatar) vs Al-Wakrah Sports Club (BLV LÝ LONG) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
@@ -44,13 +32,21 @@ https://pull.digitalcdn.net/live/eeb6f0b0c8494fad8c48b2f832e53498/index.m3u8
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull1.digitalcdn.net/live/eeb6f0b0c8494fad8c48b2f832e53498/index.m3u8
 
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/a285cb29d36e8d0e6fb35def1fbf442c.png" group-title="⚽ BÓNG ĐÁ" , 23:30 16/10 ⚽ 🔥 Holstein Kiel vs Hertha Berlin (BLV LÝ LINH LỰC) [geo]
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/99b9e5475b90aa5b91fe68685bcd5e78.png" group-title="⚽ BÓNG ĐÁ" , 21:30 16/10 ⚽ 🔥 Al-Ahli Sports Club(Qatar) vs Al-Wakrah Sports Club (Nhà đài)
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://lilive1.eu.cc/live/b190e35af55f00b855fc97116e89b854/playlist.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/a285cb29d36e8d0e6fb35def1fbf442c.png" group-title="⚽ BÓNG ĐÁ" , 23:30 16/10 ⚽ 🔥 Holstein Kiel vs Hertha Berlin (BLV LÝ LÊN LỬA) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull.digitalcdn.net/live/690926cd763b448eb61535cecb7469a1/index.m3u8
 
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/a285cb29d36e8d0e6fb35def1fbf442c.png" group-title="⚽ BÓNG ĐÁ" , 23:30 16/10 ⚽ 🔥 Holstein Kiel vs Hertha Berlin (BLV LÝ LINH LỰC) (HD2) [geo]
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/a285cb29d36e8d0e6fb35def1fbf442c.png" group-title="⚽ BÓNG ĐÁ" , 23:30 16/10 ⚽ 🔥 Holstein Kiel vs Hertha Berlin (BLV LÝ LÊN LỬA) (HD2) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull1.digitalcdn.net/live/690926cd763b448eb61535cecb7469a1/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/a285cb29d36e8d0e6fb35def1fbf442c.png" group-title="⚽ BÓNG ĐÁ" , 23:30 16/10 ⚽ 🔥 Holstein Kiel vs Hertha Berlin (Nhà đài)
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://lilive1.eu.cc/live/dc21e3211d75e9d4f7faa0277d68c458/playlist.m3u8
 
 #EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/fe636189a2f3db78d0554c34f0bdaae6.png" group-title="⚽ BÓNG ĐÁ" , 01:30 17/10 ⚽ 🔥 Eintracht Frankfurt vs FC Köln (BLV LÝ LỀNH) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
@@ -172,11 +168,11 @@ https://pull.digitalcdn.net/live/b53bffcd6879477d9250c522f939f3af/index.m3u8
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull1.digitalcdn.net/live/b53bffcd6879477d9250c522f939f3af/index.m3u8
 
-#EXTINF:-1 tvg-logo="https://img0.aiscore.com/volleyball/team/8180ff885d2632dcb29343c4f825c3de.png!w80" group-title="🏐 BÓNG CHUYỀN" , 12:00 17/10 🏐 🔥 Hitachi Nữ vs Gunma Bank Green Wings Women (BLV LÝ LIỀU LĨNH) [geo]
+#EXTINF:-1 tvg-logo="https://static.flashscore.com/res/image/data/0rpuWOAr-6FZ2yXJ6.png" group-title="🏐 BÓNG CHUYỀN" , 12:00 17/10 🏐 🔥 Astemo Rivale Ibaraki Nữ vs Gunma Bank Green Wings Women (BLV LÝ LIỀU LĨNH) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull.digitalcdn.net/live/fe9e64e86d544f1b8fc9cab4db6838b8/index.m3u8
 
-#EXTINF:-1 tvg-logo="https://img0.aiscore.com/volleyball/team/8180ff885d2632dcb29343c4f825c3de.png!w80" group-title="🏐 BÓNG CHUYỀN" , 12:00 17/10 🏐 🔥 Hitachi Nữ vs Gunma Bank Green Wings Women (BLV LÝ LIỀU LĨNH) (HD2) [geo]
+#EXTINF:-1 tvg-logo="https://static.flashscore.com/res/image/data/0rpuWOAr-6FZ2yXJ6.png" group-title="🏐 BÓNG CHUYỀN" , 12:00 17/10 🏐 🔥 Astemo Rivale Ibaraki Nữ vs Gunma Bank Green Wings Women (BLV LÝ LIỀU LĨNH) (HD2) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull1.digitalcdn.net/live/fe9e64e86d544f1b8fc9cab4db6838b8/index.m3u8
 
