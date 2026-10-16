@@ -8,6 +8,10 @@ https://pull.digitalcdn.net/live/f84dac1970b047c795e050975dbb4c5e/index.m3u8
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull1.digitalcdn.net/live/f84dac1970b047c795e050975dbb4c5e/index.m3u8
 
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/a0c772584c00e1b6efd1c421344cd005.png" group-title="⚽ BÓNG ĐÁ" , 16:00 16/10 ⚽ 🔥 Sydney FC vs Western Sydney Wanderers FC (Nhà đài)
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://lilive1.eu.cc/live/81adabdc8553b3ec474fdb0239f5838c/playlist.m3u8
+
 #EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/aaf7ff777567dba636caf52a05a45c31.png" group-title="⚽ BÓNG ĐÁ" , 17:00 16/10 ⚽ 🔥 Dong Thap vs Quy Nhon United (BLV LÝ LÀNG LÁ) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull.digitalcdn.net/live/4413c8e5950c4ae9b7bce2bebee4faf7/index.m3u8
