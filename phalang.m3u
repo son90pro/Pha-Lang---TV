@@ -1,29 +1,5 @@
 #EXTM3U
 
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/fe636189a2f3db78d0554c34f0bdaae6.png" group-title="⚽ BÓNG ĐÁ" , 🔴 01:30 17/10 ⚽ 🔥 Eintracht Frankfurt vs FC Köln (BLV LÝ LỀNH) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull.digitalcdn.net/live/9d63e7b7329e4a83998a17d5e4d7429b/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/fe636189a2f3db78d0554c34f0bdaae6.png" group-title="⚽ BÓNG ĐÁ" , 🔴 01:30 17/10 ⚽ 🔥 Eintracht Frankfurt vs FC Köln (BLV LÝ LỀNH) (HD2) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull1.digitalcdn.net/live/9d63e7b7329e4a83998a17d5e4d7429b/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/fe636189a2f3db78d0554c34f0bdaae6.png" group-title="⚽ BÓNG ĐÁ" , 🔴 01:30 17/10 ⚽ 🔥 Eintracht Frankfurt vs FC Köln (Nhà đài)
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://lilive1.eu.cc/live/198442ba6da24de27ce6f2ecc378d77b/playlist.m3u8
-
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/d7f9ac6cceee4a1d472eea59be7f8581.png" group-title="⚽ BÓNG ĐÁ" , 🔴 02:00 17/10 ⚽ 🔥 RC Deportivo vs Levante (BLV LÝ LÀNG LÁ) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull.digitalcdn.net/live/96e6703ec0a74a90a7773f8299355182/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/d7f9ac6cceee4a1d472eea59be7f8581.png" group-title="⚽ BÓNG ĐÁ" , 🔴 02:00 17/10 ⚽ 🔥 RC Deportivo vs Levante (BLV LÝ LÀNG LÁ) (HD2) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull1.digitalcdn.net/live/96e6703ec0a74a90a7773f8299355182/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/d7f9ac6cceee4a1d472eea59be7f8581.png" group-title="⚽ BÓNG ĐÁ" , 🔴 02:00 17/10 ⚽ 🔥 RC Deportivo vs Levante (Nhà đài)
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://lilive1.eu.cc/live/1e28f95378643b219a63cd71abe094bf/playlist.m3u8
-
 #EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/56ce2ac5d2d7477de4df40e27bcdfd7b.png" group-title="⚽ BÓNG ĐÁ" , 17:00 17/10 ⚽ 🔥 CLB Thanh Hoa vs Thep Xanh Nam Dinh FC (BLV LÝ LONG) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull.digitalcdn.net/live/dca643967dcd47458e54d087ca0b6f81/index.m3u8
@@ -172,6 +148,10 @@ https://pull.digitalcdn.net/live/cf2938c3e793404fa7b54adf06ecd098/index.m3u8
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull1.digitalcdn.net/live/cf2938c3e793404fa7b54adf06ecd098/index.m3u8
 
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/5452226660be0829fdb40967dd4b0b77.png" group-title="⚽ BÓNG ĐÁ" , 18:00 18/10 ⚽ 🔥 Ninh Binh FC vs Hoang Anh Gia Lai (Nhà đài)
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://lilive1.eu.cc/live/58247fc1640cff829c8a58274b585178/playlist.m3u8
+
 #EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/40b7d679de613aedfb80bcaba85fa7e0.png" group-title="⚽ BÓNG ĐÁ" , 18:00 18/10 ⚽ 🔥 Bac Ninh vs Truong Tuoi Dong Nai (BLV LÝ LONG) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull.digitalcdn.net/live/703f91874f634ed1b1272e6fa75ce68f/index.m3u8
@@ -179,6 +159,10 @@ https://pull.digitalcdn.net/live/703f91874f634ed1b1272e6fa75ce68f/index.m3u8
 #EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/40b7d679de613aedfb80bcaba85fa7e0.png" group-title="⚽ BÓNG ĐÁ" , 18:00 18/10 ⚽ 🔥 Bac Ninh vs Truong Tuoi Dong Nai (BLV LÝ LONG) (HD2) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull1.digitalcdn.net/live/703f91874f634ed1b1272e6fa75ce68f/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/40b7d679de613aedfb80bcaba85fa7e0.png" group-title="⚽ BÓNG ĐÁ" , 18:00 18/10 ⚽ 🔥 Bac Ninh vs Truong Tuoi Dong Nai (Nhà đài)
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://lilive1.eu.cc/live/92bdc0dc8c7540fa3e658af71280f664/playlist.m3u8
 
 #EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/9882bbda1cd86a2af4e724f399d1a1c8.png" group-title="⚽ BÓNG ĐÁ" , 19:15 18/10 ⚽ 🔥 Cong An Ha Noi FC vs Hanoi FC (BLV LÝ LỀNH) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
