@@ -8,6 +8,10 @@ https://pull.digitalcdn.net/live/dca643967dcd47458e54d087ca0b6f81/index.m3u8
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull1.digitalcdn.net/live/dca643967dcd47458e54d087ca0b6f81/index.m3u8
 
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/56ce2ac5d2d7477de4df40e27bcdfd7b.png" group-title="⚽ BÓNG ĐÁ" , 17:00 17/10 ⚽ 🔥 CLB Thanh Hoa vs Thep Xanh Nam Dinh FC (Nhà đài)
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://lilive1.eu.cc/live/070ba0ac2651823ac7dd2fa316a13a9b/playlist.m3u8
+
 #EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/83dd94c5ca68e8f9a3980f036afcb511.png" group-title="⚽ BÓNG ĐÁ" , 18:00 17/10 ⚽ 🔥 Hong Linh Ha Tinh vs Song Lam Nghe An (BLV LÝ LÀNG LÁ) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull.digitalcdn.net/live/017e5f9ec0324aeabbec3256bf3d82f4/index.m3u8
@@ -24,6 +28,10 @@ https://pull.digitalcdn.net/live/1074cc11c345493d91c2f19316b992e2/index.m3u8
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull1.digitalcdn.net/live/1074cc11c345493d91c2f19316b992e2/index.m3u8
 
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/9592d1e0be6375b9e6c5ef169b7aa864.png" group-title="⚽ BÓNG ĐÁ" , 18:30 17/10 ⚽ 🔥 Everton vs Chelsea (Nhà đài)
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://lilive1.eu.cc/live/ef44b409a29a433855c21595843c3c63/playlist.m3u8
+
 #EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/214049d4df11756a2eb21bbd8266e2a1.png" group-title="⚽ BÓNG ĐÁ" , 19:00 17/10 ⚽ 🔥 RCD Espanyol de Barcelona vs Atletico Madrid (BLV LÝ LINH LỰC) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull.digitalcdn.net/live/13c077b847754979ac848747896bbb74/index.m3u8
@@ -31,6 +39,10 @@ https://pull.digitalcdn.net/live/13c077b847754979ac848747896bbb74/index.m3u8
 #EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/214049d4df11756a2eb21bbd8266e2a1.png" group-title="⚽ BÓNG ĐÁ" , 19:00 17/10 ⚽ 🔥 RCD Espanyol de Barcelona vs Atletico Madrid (BLV LÝ LINH LỰC) (HD2) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull1.digitalcdn.net/live/13c077b847754979ac848747896bbb74/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/214049d4df11756a2eb21bbd8266e2a1.png" group-title="⚽ BÓNG ĐÁ" , 19:00 17/10 ⚽ 🔥 RCD Espanyol de Barcelona vs Atletico Madrid (Nhà đài)
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://lilive1.eu.cc/live/9b62fe76ecfc6b6a2f90a64162219766/playlist.m3u8
 
 #EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/45ab4c846b0d4df5b002c571b16112dc.png" group-title="⚽ BÓNG ĐÁ" , 20:30 17/10 ⚽ 🔥 1. FC Union Berlin vs Borussia Dortmund (BLV LÝ LÊN LỬA) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
@@ -40,6 +52,10 @@ https://pull.digitalcdn.net/live/adf592146e0b40b08dd12b2bce32768a/index.m3u8
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull1.digitalcdn.net/live/adf592146e0b40b08dd12b2bce32768a/index.m3u8
 
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/45ab4c846b0d4df5b002c571b16112dc.png" group-title="⚽ BÓNG ĐÁ" , 20:30 17/10 ⚽ 🔥 1. FC Union Berlin vs Borussia Dortmund (Nhà đài)
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://lilive1.eu.cc/live/a741923383d90517a46df379844f81c9/playlist.m3u8
+
 #EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/60f1c7788be3148a370dbf59f914abfe.png" group-title="⚽ BÓNG ĐÁ" , 21:00 17/10 ⚽ 🔥 Brentford vs Liverpool (BLV LÝ LỀNH) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull.digitalcdn.net/live/48a93ad684be40d380b316e8cf4e8acc/index.m3u8
@@ -47,6 +63,10 @@ https://pull.digitalcdn.net/live/48a93ad684be40d380b316e8cf4e8acc/index.m3u8
 #EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/60f1c7788be3148a370dbf59f914abfe.png" group-title="⚽ BÓNG ĐÁ" , 21:00 17/10 ⚽ 🔥 Brentford vs Liverpool (BLV LÝ LỀNH) (HD2) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull1.digitalcdn.net/live/48a93ad684be40d380b316e8cf4e8acc/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/60f1c7788be3148a370dbf59f914abfe.png" group-title="⚽ BÓNG ĐÁ" , 21:00 17/10 ⚽ 🔥 Brentford vs Liverpool (Nhà đài)
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://lilive1.eu.cc/live/f73126a691ba85e7462a19300157b8e8/playlist.m3u8
 
 #EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/29982511f1ea861967c3e6478d6a8a68.png" group-title="⚽ BÓNG ĐÁ" , 21:00 17/10 ⚽ 🔥 Fulham vs Hull City (BLV LÝ LINH LỰC) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
@@ -56,6 +76,10 @@ https://pull.digitalcdn.net/live/0792d6e6a08c4c22b50f7b8b4a2365ba/index.m3u8
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull1.digitalcdn.net/live/0792d6e6a08c4c22b50f7b8b4a2365ba/index.m3u8
 
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/29982511f1ea861967c3e6478d6a8a68.png" group-title="⚽ BÓNG ĐÁ" , 21:00 17/10 ⚽ 🔥 Fulham vs Hull City (Nhà đài)
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://lilive1.eu.cc/live/5ba06042bc5c7944a8aba58551f422e2/playlist.m3u8
+
 #EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/c4a6528a2ee147b99c9885ef24385a4e.png" group-title="⚽ BÓNG ĐÁ" , 21:00 17/10 ⚽ 🔥 Manchester City vs Ipswich Town (BLV LÝ LONG) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull.digitalcdn.net/live/a6fad7c88c8c4b98879ca0b67343ab8c/index.m3u8
@@ -63,6 +87,10 @@ https://pull.digitalcdn.net/live/a6fad7c88c8c4b98879ca0b67343ab8c/index.m3u8
 #EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/c4a6528a2ee147b99c9885ef24385a4e.png" group-title="⚽ BÓNG ĐÁ" , 21:00 17/10 ⚽ 🔥 Manchester City vs Ipswich Town (BLV LÝ LONG) (HD2) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull1.digitalcdn.net/live/a6fad7c88c8c4b98879ca0b67343ab8c/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/c4a6528a2ee147b99c9885ef24385a4e.png" group-title="⚽ BÓNG ĐÁ" , 21:00 17/10 ⚽ 🔥 Manchester City vs Ipswich Town (Nhà đài)
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://lilive1.eu.cc/live/2ba6a16cfb66332856a9a38182658d14/playlist.m3u8
 
 #EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/998db478bf7c06d5817bf846987a0d0a.png" group-title="⚽ BÓNG ĐÁ" , 22:15 17/10 ⚽ 🔥 RC Strasbourg Alsace vs Paris Saint Germain (BLV LÝ LÀNG LÁ) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
