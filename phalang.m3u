@@ -1,40 +1,12 @@
 #EXTM3U
 
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/ae23ea18931ebe834ef6fe4799572e7f.png" group-title="⚽ BÓNG ĐÁ" , 🔴 01:00 19/10 ⚽ 🔥 Al Fateh vs Al Khaleej (BLV LÝ LINH LỰC) [geo]
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/vi/a/af/Logo_H%C3%B3a_ch%E1%BA%A5t_%C4%90%E1%BB%A9c_Giang_%28b%C3%B3ng_chuy%E1%BB%81n%29.png" group-title="🏐 BÓNG CHUYỀN" , 🔴 19:30 19/10 🏐 🔥 HCĐG Lào Cai vs BC Thông Tin BĐ19 (BLV LÝ LIỀU LĨNH) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull.digitalcdn.net/live/011d5e1f23384e2097c43fc500bedaf4/index.m3u8
+https://pull.digitalcdn.net/live/ecbee0a9f2db4db8ab101c0180d06967/index.m3u8
 
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/ae23ea18931ebe834ef6fe4799572e7f.png" group-title="⚽ BÓNG ĐÁ" , 🔴 01:00 19/10 ⚽ 🔥 Al Fateh vs Al Khaleej (BLV LÝ LINH LỰC) (HD2) [geo]
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/vi/a/af/Logo_H%C3%B3a_ch%E1%BA%A5t_%C4%90%E1%BB%A9c_Giang_%28b%C3%B3ng_chuy%E1%BB%81n%29.png" group-title="🏐 BÓNG CHUYỀN" , 🔴 19:30 19/10 🏐 🔥 HCĐG Lào Cai vs BC Thông Tin BĐ19 (BLV LÝ LIỀU LĨNH) (HD2) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull1.digitalcdn.net/live/011d5e1f23384e2097c43fc500bedaf4/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/ae23ea18931ebe834ef6fe4799572e7f.png" group-title="⚽ BÓNG ĐÁ" , 🔴 01:00 19/10 ⚽ 🔥 Al Fateh vs Al Khaleej (Nhà đài)
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://lilive1.eu.cc/live/66cf49d49485138382b3940f5e9d1d1e/playlist.m3u8
-
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/dc0e43b95c6676c54415bac168472aa4.png" group-title="⚽ BÓNG ĐÁ" , 🔴 01:45 19/10 ⚽ 🔥 Juventus vs Lazio (BLV LÝ LONG) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull.digitalcdn.net/live/4de258eae22344929cf3b0b5f1aa5f78/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/dc0e43b95c6676c54415bac168472aa4.png" group-title="⚽ BÓNG ĐÁ" , 🔴 01:45 19/10 ⚽ 🔥 Juventus vs Lazio (BLV LÝ LONG) (HD2) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull1.digitalcdn.net/live/4de258eae22344929cf3b0b5f1aa5f78/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/dc0e43b95c6676c54415bac168472aa4.png" group-title="⚽ BÓNG ĐÁ" , 🔴 01:45 19/10 ⚽ 🔥 Juventus vs Lazio (Nhà đài)
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://lilive1.eu.cc/live/fd06948909f3592540814401f4510a25/playlist.m3u8
-
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/7dacaa934fe4be00f23c1e209b5ef947.png" group-title="⚽ BÓNG ĐÁ" , 🔴 02:00 19/10 ⚽ 🔥 Real Madrid vs Sevilla FC (BLV LÝ LÀNG LÁ) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull.digitalcdn.net/live/51123c6c3b1d4b8db4012e2118a7e2e6/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/7dacaa934fe4be00f23c1e209b5ef947.png" group-title="⚽ BÓNG ĐÁ" , 🔴 02:00 19/10 ⚽ 🔥 Real Madrid vs Sevilla FC (BLV LÝ LÀNG LÁ) (HD2) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull1.digitalcdn.net/live/51123c6c3b1d4b8db4012e2118a7e2e6/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/7dacaa934fe4be00f23c1e209b5ef947.png" group-title="⚽ BÓNG ĐÁ" , 🔴 02:00 19/10 ⚽ 🔥 Real Madrid vs Sevilla FC (Nhà đài)
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://lilive1.eu.cc/live/f82073197086ef776cf3104e641ba422/playlist.m3u8
+https://pull1.digitalcdn.net/live/ecbee0a9f2db4db8ab101c0180d06967/index.m3u8
 
 #EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/99dd3ac7267c0e3870d9ad785e6f9661.png" group-title="⚽ BÓNG ĐÁ" , 18:00 19/10 ⚽ 🔥 Cong An Ho Chi Minh City vs The Cong-Viettel (BLV LÝ LA LÀNG) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
@@ -115,11 +87,3 @@ https://pull.digitalcdn.net/live/911f37af10b84121ab3fc2dbb69ce680/index.m3u8
 #EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/vi/9/9d/Logo_Vietinbank.png" group-title="🏐 BÓNG CHUYỀN" , 17:00 19/10 🏐 🔥 Vietinbank vs Geleximco Hưng Yên (BLV LÝ LÊN LỬA) (HD2) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull1.digitalcdn.net/live/911f37af10b84121ab3fc2dbb69ce680/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/vi/a/af/Logo_H%C3%B3a_ch%E1%BA%A5t_%C4%90%E1%BB%A9c_Giang_%28b%C3%B3ng_chuy%E1%BB%81n%29.png" group-title="🏐 BÓNG CHUYỀN" , 19:30 19/10 🏐 🔥 HCĐG Lào Cai vs BC Thông Tin BĐ19 (BLV LÝ LIỀU LĨNH) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull.digitalcdn.net/live/ecbee0a9f2db4db8ab101c0180d06967/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/vi/a/af/Logo_H%C3%B3a_ch%E1%BA%A5t_%C4%90%E1%BB%A9c_Giang_%28b%C3%B3ng_chuy%E1%BB%81n%29.png" group-title="🏐 BÓNG CHUYỀN" , 19:30 19/10 🏐 🔥 HCĐG Lào Cai vs BC Thông Tin BĐ19 (BLV LÝ LIỀU LĨNH) (HD2) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull1.digitalcdn.net/live/ecbee0a9f2db4db8ab101c0180d06967/index.m3u8
