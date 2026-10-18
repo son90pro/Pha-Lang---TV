@@ -1,17 +1,5 @@
 #EXTM3U
 
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/dcb67dd58619e29d84853ac2e4ac5e27.png" group-title="⚽ BÓNG ĐÁ" , 🔴 06:30 18/10 ⚽ 🔥 Atlanta United vs Inter Miami CF (BLV LÝ LA LÀNG) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull.digitalcdn.net/live/33885bd527e0404d9cf010eb43580af5/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/dcb67dd58619e29d84853ac2e4ac5e27.png" group-title="⚽ BÓNG ĐÁ" , 🔴 06:30 18/10 ⚽ 🔥 Atlanta United vs Inter Miami CF (BLV LÝ LA LÀNG) (HD2) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull1.digitalcdn.net/live/33885bd527e0404d9cf010eb43580af5/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/dcb67dd58619e29d84853ac2e4ac5e27.png" group-title="⚽ BÓNG ĐÁ" , 🔴 06:30 18/10 ⚽ 🔥 Atlanta United vs Inter Miami CF (Nhà đài)
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://lilive1.eu.cc/live/7b3bca8049f6ee6903ea6c9b1c30fc85/playlist.m3u8
-
 #EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/5452226660be0829fdb40967dd4b0b77.png" group-title="⚽ BÓNG ĐÁ" , 18:00 18/10 ⚽ 🔥 Ninh Binh FC vs Hoang Anh Gia Lai (BLV LÝ LINH LỰC) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull.digitalcdn.net/live/cf2938c3e793404fa7b54adf06ecd098/index.m3u8
