@@ -1,56 +1,48 @@
 #EXTM3U
 
-#EXTINF:-1 tvg-logo="https://static.flashscore.com/res/image/data/0rpuWOAr-6FZ2yXJ6.png" group-title="🏐 BÓNG CHUYỀN" , 🔴 12:00 18/10 🏐 🔥 Astemo Rivale vs Gunma Bank Green Wings (BLV LÝ LIỀU LĨNH) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull.digitalcdn.net/live/8bfcb4205c0f44a1a128e55e1c6abab5/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://static.flashscore.com/res/image/data/0rpuWOAr-6FZ2yXJ6.png" group-title="🏐 BÓNG CHUYỀN" , 🔴 12:00 18/10 🏐 🔥 Astemo Rivale vs Gunma Bank Green Wings (BLV LÝ LIỀU LĨNH) (HD2) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull1.digitalcdn.net/live/8bfcb4205c0f44a1a128e55e1c6abab5/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/vi/9/9d/Logo_Vietinbank.png" group-title="🏐 BÓNG CHUYỀN" , 🔴 14:30 18/10 🏐 🔥 Vietinbank vs XMLS Thanh Hoá (BLV LÝ LÊN LỬA) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull.digitalcdn.net/live/8790d25452ba4ec8a6e7c9b8439e45c3/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/vi/9/9d/Logo_Vietinbank.png" group-title="🏐 BÓNG CHUYỀN" , 🔴 14:30 18/10 🏐 🔥 Vietinbank vs XMLS Thanh Hoá (BLV LÝ LÊN LỬA) (HD2) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull1.digitalcdn.net/live/8790d25452ba4ec8a6e7c9b8439e45c3/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/5452226660be0829fdb40967dd4b0b77.png" group-title="⚽ BÓNG ĐÁ" , 18:00 18/10 ⚽ 🔥 Ninh Binh FC vs Hoang Anh Gia Lai (BLV LÝ LINH LỰC) [geo]
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/5452226660be0829fdb40967dd4b0b77.png" group-title="⚽ BÓNG ĐÁ" , 🔴 18:00 18/10 ⚽ 🔥 Ninh Binh FC vs Hoang Anh Gia Lai (BLV LÝ LINH LỰC) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull.digitalcdn.net/live/cf2938c3e793404fa7b54adf06ecd098/index.m3u8
 
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/5452226660be0829fdb40967dd4b0b77.png" group-title="⚽ BÓNG ĐÁ" , 18:00 18/10 ⚽ 🔥 Ninh Binh FC vs Hoang Anh Gia Lai (BLV LÝ LINH LỰC) (HD2) [geo]
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/5452226660be0829fdb40967dd4b0b77.png" group-title="⚽ BÓNG ĐÁ" , 🔴 18:00 18/10 ⚽ 🔥 Ninh Binh FC vs Hoang Anh Gia Lai (BLV LÝ LINH LỰC) (HD2) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull1.digitalcdn.net/live/cf2938c3e793404fa7b54adf06ecd098/index.m3u8
 
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/5452226660be0829fdb40967dd4b0b77.png" group-title="⚽ BÓNG ĐÁ" , 18:00 18/10 ⚽ 🔥 Ninh Binh FC vs Hoang Anh Gia Lai (Nhà đài)
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/5452226660be0829fdb40967dd4b0b77.png" group-title="⚽ BÓNG ĐÁ" , 🔴 18:00 18/10 ⚽ 🔥 Ninh Binh FC vs Hoang Anh Gia Lai (Nhà đài)
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://lilive1.eu.cc/live/58247fc1640cff829c8a58274b585178/playlist.m3u8
 
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/40b7d679de613aedfb80bcaba85fa7e0.png" group-title="⚽ BÓNG ĐÁ" , 18:00 18/10 ⚽ 🔥 Bac Ninh vs Truong Tuoi Dong Nai (BLV LÝ LONG) [geo]
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/40b7d679de613aedfb80bcaba85fa7e0.png" group-title="⚽ BÓNG ĐÁ" , 🔴 18:00 18/10 ⚽ 🔥 Bac Ninh vs Truong Tuoi Dong Nai (BLV LÝ LONG) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull.digitalcdn.net/live/703f91874f634ed1b1272e6fa75ce68f/index.m3u8
 
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/40b7d679de613aedfb80bcaba85fa7e0.png" group-title="⚽ BÓNG ĐÁ" , 18:00 18/10 ⚽ 🔥 Bac Ninh vs Truong Tuoi Dong Nai (BLV LÝ LONG) (HD2) [geo]
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/40b7d679de613aedfb80bcaba85fa7e0.png" group-title="⚽ BÓNG ĐÁ" , 🔴 18:00 18/10 ⚽ 🔥 Bac Ninh vs Truong Tuoi Dong Nai (BLV LÝ LONG) (HD2) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull1.digitalcdn.net/live/703f91874f634ed1b1272e6fa75ce68f/index.m3u8
 
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/40b7d679de613aedfb80bcaba85fa7e0.png" group-title="⚽ BÓNG ĐÁ" , 18:00 18/10 ⚽ 🔥 Bac Ninh vs Truong Tuoi Dong Nai (Nhà đài)
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/40b7d679de613aedfb80bcaba85fa7e0.png" group-title="⚽ BÓNG ĐÁ" , 🔴 18:00 18/10 ⚽ 🔥 Bac Ninh vs Truong Tuoi Dong Nai (Nhà đài)
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://lilive1.eu.cc/live/92bdc0dc8c7540fa3e658af71280f664/playlist.m3u8
 
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/9882bbda1cd86a2af4e724f399d1a1c8.png" group-title="⚽ BÓNG ĐÁ" , 19:15 18/10 ⚽ 🔥 Cong An Ha Noi FC vs Hanoi FC (BLV LÝ LỀNH) [geo]
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/9882bbda1cd86a2af4e724f399d1a1c8.png" group-title="⚽ BÓNG ĐÁ" , 🔴 19:15 18/10 ⚽ 🔥 Cong An Ha Noi FC vs Hanoi FC (BLV LÝ LỀNH) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull.digitalcdn.net/live/b356df533c09468cb9e37ab9d32c9fe1/index.m3u8
 
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/9882bbda1cd86a2af4e724f399d1a1c8.png" group-title="⚽ BÓNG ĐÁ" , 19:15 18/10 ⚽ 🔥 Cong An Ha Noi FC vs Hanoi FC (BLV LÝ LỀNH) (HD2) [geo]
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/9882bbda1cd86a2af4e724f399d1a1c8.png" group-title="⚽ BÓNG ĐÁ" , 🔴 19:15 18/10 ⚽ 🔥 Cong An Ha Noi FC vs Hanoi FC (BLV LÝ LỀNH) (HD2) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull1.digitalcdn.net/live/b356df533c09468cb9e37ab9d32c9fe1/index.m3u8
 
-#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/9882bbda1cd86a2af4e724f399d1a1c8.png" group-title="⚽ BÓNG ĐÁ" , 19:15 18/10 ⚽ 🔥 Cong An Ha Noi FC vs Hanoi FC (Nhà đài)
+#EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/9882bbda1cd86a2af4e724f399d1a1c8.png" group-title="⚽ BÓNG ĐÁ" , 🔴 19:15 18/10 ⚽ 🔥 Cong An Ha Noi FC vs Hanoi FC (Nhà đài)
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://lilive1.eu.cc/live/c2b9506bfff2b16f6a306a3340bc7ea2/playlist.m3u8
+
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/vi/a/af/Logo_H%C3%B3a_ch%E1%BA%A5t_%C4%90%E1%BB%A9c_Giang_%28b%C3%B3ng_chuy%E1%BB%81n%29.png" group-title="🏐 BÓNG CHUYỀN" , 🔴 17:00 18/10 🏐 🔥 HCĐG Lào Cai vs VTV BĐ Long An (BLV LÝ LIỀU LĨNH) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull.digitalcdn.net/live/de1b69e6c42d4ab0979f137ca3fc67b1/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/vi/a/af/Logo_H%C3%B3a_ch%E1%BA%A5t_%C4%90%E1%BB%A9c_Giang_%28b%C3%B3ng_chuy%E1%BB%81n%29.png" group-title="🏐 BÓNG CHUYỀN" , 🔴 17:00 18/10 🏐 🔥 HCĐG Lào Cai vs VTV BĐ Long An (BLV LÝ LIỀU LĨNH) (HD2) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull1.digitalcdn.net/live/de1b69e6c42d4ab0979f137ca3fc67b1/index.m3u8
 
 #EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/240b30d333c97d293752ab7afd77ccd6.png" group-title="⚽ BÓNG ĐÁ" , 20:00 18/10 ⚽ 🔥 Bournemouth AFC vs Sunderland (BLV LÝ LONG) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
@@ -175,14 +167,6 @@ https://pull.digitalcdn.net/live/89fa950b20c24025b08cf43f86b3a746/index.m3u8
 #EXTINF:-1 tvg-logo="https://img.sports-data.online/football/team/18ccab720cfda6be0c39fef579c13c5a.png" group-title="⚽ BÓNG ĐÁ" , 23:30 19/10 ⚽ 🔥 Monza vs Cagliari (BLV LÝ LỀNH) (HD2) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull1.digitalcdn.net/live/89fa950b20c24025b08cf43f86b3a746/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/vi/a/af/Logo_H%C3%B3a_ch%E1%BA%A5t_%C4%90%E1%BB%A9c_Giang_%28b%C3%B3ng_chuy%E1%BB%81n%29.png" group-title="🏐 BÓNG CHUYỀN" , 17:00 18/10 🏐 🔥 HCĐG Lào Cai vs VTV BĐ Long An (BLV LÝ LIỀU LĨNH) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull.digitalcdn.net/live/de1b69e6c42d4ab0979f137ca3fc67b1/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/vi/a/af/Logo_H%C3%B3a_ch%E1%BA%A5t_%C4%90%E1%BB%A9c_Giang_%28b%C3%B3ng_chuy%E1%BB%81n%29.png" group-title="🏐 BÓNG CHUYỀN" , 17:00 18/10 🏐 🔥 HCĐG Lào Cai vs VTV BĐ Long An (BLV LÝ LIỀU LĨNH) (HD2) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull1.digitalcdn.net/live/de1b69e6c42d4ab0979f137ca3fc67b1/index.m3u8
 
 #EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/vi/0/02/Logo_Binh_ch%E1%BB%A7ng_Th%C3%B4ng_tin_%28b%C3%B3ng_chuy%E1%BB%81n%29.png" group-title="🏐 BÓNG CHUYỀN" , 19:30 18/10 🏐 🔥 BC Thông Tin BĐ19 vs Geleximco Hưng Yên (BLV LÝ LÊN LỬA) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
