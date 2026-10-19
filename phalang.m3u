@@ -1,53 +1,5 @@
 #EXTM3U
 
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/l7oqdehn42er510/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 23:30 19/10 ⚽ 🔥 Monza vs Cagliari (BLV LÝ LỀNH) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull.digitalcdn.net/live/89fa950b20c24025b08cf43f86b3a746/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/l7oqdehn42er510/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 23:30 19/10 ⚽ 🔥 Monza vs Cagliari (BLV LÝ LỀNH) (HD2) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull1.digitalcdn.net/live/89fa950b20c24025b08cf43f86b3a746/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/l7oqdehn42er510/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 23:30 19/10 ⚽ 🔥 Monza vs Cagliari (Nhà đài)
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://lilive1.eu.cc/live/f0a3358e4c930c19954c6ac4309c3e0a/playlist.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/kdj2ryohw6wq1zp/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 01:00 20/10 ⚽ 🔥 Al Hilal vs Al Hazem (BLV LÝ LÀNG LÁ) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull.digitalcdn.net/live/e2dd387c7505415e9f2e5f507e4109df/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/kdj2ryohw6wq1zp/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 01:00 20/10 ⚽ 🔥 Al Hilal vs Al Hazem (BLV LÝ LÀNG LÁ) (HD2) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull1.digitalcdn.net/live/e2dd387c7505415e9f2e5f507e4109df/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/kdj2ryohw6wq1zp/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 01:00 20/10 ⚽ 🔥 Al Hilal vs Al Hazem (Nhà đài)
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://lilive1.eu.cc/live/899d92b9f7e26201a9d1f691e4d7b146/playlist.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/l965mkyh90gr1ge/image/small" group-title="⚽ BÓNG ĐÁ" , 02:00 20/10 ⚽ 🔥 Tottenham vs Coventry City (BLV LÝ LỀNH) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull.digitalcdn.net/live/beff19f3d89c4ff1b978d1c6889b666b/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/l965mkyh90gr1ge/image/small" group-title="⚽ BÓNG ĐÁ" , 02:00 20/10 ⚽ 🔥 Tottenham vs Coventry City (BLV LÝ LỀNH) (HD2) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull1.digitalcdn.net/live/beff19f3d89c4ff1b978d1c6889b666b/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/l965mkyh90gr1ge/image/small" group-title="⚽ BÓNG ĐÁ" , 02:00 20/10 ⚽ 🔥 Tottenham vs Coventry City (Nhà đài)
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://lilive1.eu.cc/live/09352650009f3e1989405d9c6a456aff/playlist.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/vl7oqdehz33r510/image/small" group-title="⚽ BÓNG ĐÁ" , 02:00 20/10 ⚽ 🔥 Getafe vs Vallecano (BLV LÝ LONG) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull.digitalcdn.net/live/0bc713fe6a5343eaa215a3fcd3c120c8/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/vl7oqdehz33r510/image/small" group-title="⚽ BÓNG ĐÁ" , 02:00 20/10 ⚽ 🔥 Getafe vs Vallecano (BLV LÝ LONG) (HD2) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull1.digitalcdn.net/live/0bc713fe6a5343eaa215a3fcd3c120c8/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/vl7oqdehz33r510/image/small" group-title="⚽ BÓNG ĐÁ" , 02:00 20/10 ⚽ 🔥 Getafe vs Vallecano (Nhà đài)
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://lilive1.eu.cc/live/e8958d7c4ef87e4b245d45ee8651e469/playlist.m3u8
-
 #EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/6ypq3nh16p9md7o/image/small" group-title="⚽ BÓNG ĐÁ" , 15:30 20/10 ⚽ 🔥 Isenmulang Kalteng vs Java United F.C. (BLV LÝ LINH LỰC) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull.digitalcdn.net/live/93a2b358ca2243c79cb750fa5ff8f401/index.m3u8
