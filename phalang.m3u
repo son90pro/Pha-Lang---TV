@@ -1,5 +1,13 @@
 #EXTM3U
 
+#EXTINF:-1 tvg-logo="https://thumb.wikimedia.org/wikipedia/vi/thumb/e/e3/Logo_XMLS_Thanh_H%C3%B3a.png/250px-Logo_XMLS_Thanh_H%C3%B3a.png " group-title="🏐 BÓNG CHUYỀN" , 🔴 14:30 21/10 🏐 🔥 XMLS Thanh Hoá vs Geleximco Hưng Yên (BLV LÝ LÊN LỬA) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull.digitalcdn.net/live/02d38477163b4d958d764ed0c3b384e7/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://thumb.wikimedia.org/wikipedia/vi/thumb/e/e3/Logo_XMLS_Thanh_H%C3%B3a.png/250px-Logo_XMLS_Thanh_H%C3%B3a.png " group-title="🏐 BÓNG CHUYỀN" , 🔴 14:30 21/10 🏐 🔥 XMLS Thanh Hoá vs Geleximco Hưng Yên (BLV LÝ LÊN LỬA) (HD2) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull1.digitalcdn.net/live/02d38477163b4d958d764ed0c3b384e7/index.m3u8
+
 #EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/gpxwrxlho65ryk0/image/small" group-title="⚽ BÓNG ĐÁ" , 17:00 21/10 ⚽ 🔥 Kawasaki Frontale vs Vissel Kobe (BLV LÝ LÀNG LÁ) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull.digitalcdn.net/live/bf5c364759ed48b89be79d1526e7e39a/index.m3u8
@@ -7,6 +15,10 @@ https://pull.digitalcdn.net/live/bf5c364759ed48b89be79d1526e7e39a/index.m3u8
 #EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/gpxwrxlho65ryk0/image/small" group-title="⚽ BÓNG ĐÁ" , 17:00 21/10 ⚽ 🔥 Kawasaki Frontale vs Vissel Kobe (BLV LÝ LÀNG LÁ) (HD2) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull1.digitalcdn.net/live/bf5c364759ed48b89be79d1526e7e39a/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/gpxwrxlho65ryk0/image/small" group-title="⚽ BÓNG ĐÁ" , 17:00 21/10 ⚽ 🔥 Kawasaki Frontale vs Vissel Kobe (Nhà đài)
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://lilive1.eu.cc/live/237262a8db94cb8b76f6dc9131ebc725/playlist.m3u8
 
 #EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/l7oqdeh6dz6r510/image/small" group-title="⚽ BÓNG ĐÁ" , 18:00 21/10 ⚽ 🔥 Como U19 vs Manchester Utd U19 (BLV LÝ LONG) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
@@ -171,22 +183,6 @@ https://pull.digitalcdn.net/live/ddbad4c9671b413fb6d0a81e16eaa0ed/index.m3u8
 #EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/p4jwq2ghj25m0ve/image/small" group-title="⚽ BÓNG ĐÁ" , 23:45 22/10 ⚽ 🔥 Lech Poznan vs Sunderland (BLV LÝ LIỀU LĨNH) (HD2) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull1.digitalcdn.net/live/ddbad4c9671b413fb6d0a81e16eaa0ed/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/vi/6/6a/Logo_H%C3%A0_N%E1%BB%99i_Tasco_Auto.png " group-title="🏐 BÓNG CHUYỀN" , 12:00 21/10 🏐 🔥 Hà Nội Tasco Auto vs VTV BĐ Long An (BLV LÝ LIỀU LĨNH) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull.digitalcdn.net/live/ef25e8909a3240878069aaa283d0cbd5/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/vi/6/6a/Logo_H%C3%A0_N%E1%BB%99i_Tasco_Auto.png " group-title="🏐 BÓNG CHUYỀN" , 12:00 21/10 🏐 🔥 Hà Nội Tasco Auto vs VTV BĐ Long An (BLV LÝ LIỀU LĨNH) (HD2) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull1.digitalcdn.net/live/ef25e8909a3240878069aaa283d0cbd5/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://thumb.wikimedia.org/wikipedia/vi/thumb/e/e3/Logo_XMLS_Thanh_H%C3%B3a.png/250px-Logo_XMLS_Thanh_H%C3%B3a.png " group-title="🏐 BÓNG CHUYỀN" , 14:30 21/10 🏐 🔥 XMLS Thanh Hoá vs Geleximco Hưng Yên (BLV LÝ LÊN LỬA) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull.digitalcdn.net/live/02d38477163b4d958d764ed0c3b384e7/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://thumb.wikimedia.org/wikipedia/vi/thumb/e/e3/Logo_XMLS_Thanh_H%C3%B3a.png/250px-Logo_XMLS_Thanh_H%C3%B3a.png " group-title="🏐 BÓNG CHUYỀN" , 14:30 21/10 🏐 🔥 XMLS Thanh Hoá vs Geleximco Hưng Yên (BLV LÝ LÊN LỬA) (HD2) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull1.digitalcdn.net/live/02d38477163b4d958d764ed0c3b384e7/index.m3u8
 
 #EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/vi/d/da/Logo_LP_Bank_Ninh_B%C3%ACnh.png" group-title="🏐 BÓNG CHUYỀN" , 17:00 21/10 🏐 🔥 LB Bank Ninh Bình vs BC Thông Tin BĐ19 (BLV LÝ LÊN LỬA) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
