@@ -8,6 +8,10 @@ https://pull.digitalcdn.net/live/4a9ee907bfb1448e952a9fcbd142c4bb/index.m3u8
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull1.digitalcdn.net/live/4a9ee907bfb1448e952a9fcbd142c4bb/index.m3u8
 
+#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/dj2ryohj834q1zp/image/small" group-title="⚽ BÓNG ĐÁ" , 17:00 22/10 ⚽ 🔥 Văn Hiến vs Đồng Tháp (Nhà đài)
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://lilive1.eu.cc/live/a094bc713f37944220ae6457bff2b3f7/playlist.m3u8
+
 #EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/y0or5jhedgxqwzv/image/small" group-title="⚽ BÓNG ĐÁ" , 18:00 22/10 ⚽ 🔥 Gia Định vs PVF-CAND FC (BLV LÝ LÀNG LÁ) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull.digitalcdn.net/live/99d9a5e2e10b44cead7247073559942f/index.m3u8
