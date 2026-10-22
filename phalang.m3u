@@ -1,41 +1,5 @@
 #EXTM3U
 
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/kdj2ryoh3wyq1zp/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 02:00 23/10 ⚽ 🔥 Hoffenheim vs OL (BLV LÝ LÀNG LÁ) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull.digitalcdn.net/live/3f213597922f4b068d48d4ce673840c0/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/kdj2ryoh3wyq1zp/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 02:00 23/10 ⚽ 🔥 Hoffenheim vs OL (BLV LÝ LÀNG LÁ) (HD2) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull1.digitalcdn.net/live/3f213597922f4b068d48d4ce673840c0/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/kdj2ryoh3wyq1zp/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 02:00 23/10 ⚽ 🔥 Hoffenheim vs OL (Nhà đài)
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://lilive1.eu.cc/live/429fb855436bddc8a2d10c99e4458fee/playlist.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/9dn1m1ghdlpmoep/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 02:00 23/10 ⚽ 🔥 AFC Bournemouth vs Milan (BLV LÝ LA LÀNG) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull.digitalcdn.net/live/52553b6a9ea545db970bdb4c88deb0ab/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/9dn1m1ghdlpmoep/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 02:00 23/10 ⚽ 🔥 AFC Bournemouth vs Milan (BLV LÝ LA LÀNG) (HD2) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull1.digitalcdn.net/live/52553b6a9ea545db970bdb4c88deb0ab/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/9dn1m1ghdlpmoep/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 02:00 23/10 ⚽ 🔥 AFC Bournemouth vs Milan (Nhà đài)
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://lilive1.eu.cc/live/509e33ce1f5357be72369edd3d93f308/playlist.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/gy0or5jhdpgqwzv/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 02:00 23/10 ⚽ 🔥 Besiktas JK vs Crystal Palace (BLV LÝ LONG) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull.digitalcdn.net/live/20f92ad582b4471097202b41ce891b77/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/gy0or5jhdpgqwzv/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 02:00 23/10 ⚽ 🔥 Besiktas JK vs Crystal Palace (BLV LÝ LONG) (HD2) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull1.digitalcdn.net/live/20f92ad582b4471097202b41ce891b77/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/gy0or5jhdpgqwzv/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 02:00 23/10 ⚽ 🔥 Besiktas JK vs Crystal Palace (Nhà đài)
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://lilive1.eu.cc/live/2a5af07caf44afd6f0a782fc177bc6d8/playlist.m3u8
-
 #EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/23xmvkh3vxvqg8n/image/small" group-title="⚽ BÓNG ĐÁ" , 16:00 23/10 ⚽ 🔥 Brisbane Roar vs Perth Glory (BLV LÝ LINH LỰC) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull.digitalcdn.net/live/3e3776bb232248828693f9bdb3a91119/index.m3u8
