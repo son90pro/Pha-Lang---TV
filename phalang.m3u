@@ -1,17 +1,5 @@
 #EXTM3U
 
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/j1l4rjnhpo5m7vx/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 02:00 24/10 ⚽ 🔥 Ipswich vs Nott'm Forest (BLV LÝ LONG) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull.digitalcdn.net/live/cad223593b1f4200a66d5e0215fe66be/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/j1l4rjnhpo5m7vx/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 02:00 24/10 ⚽ 🔥 Ipswich vs Nott'm Forest (BLV LÝ LONG) (HD2) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull1.digitalcdn.net/live/cad223593b1f4200a66d5e0215fe66be/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/j1l4rjnhpo5m7vx/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 02:00 24/10 ⚽ 🔥 Ipswich vs Nott'm Forest (Nhà đài)
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://lilive1.eu.cc/live/f9543581592c51789ca112b50c6e8555/playlist.m3u8
-
 #EXTINF:-1 tvg-logo="https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/Flag_of_Vietnam.svg/330px-Flag_of_Vietnam.svg.png" group-title="⚽ BÓNG ĐÁ" , 14:30 24/10 ⚽ 🔥 VIỆT NAM vs BOSNIA (BLV LÝ LINH LỰC) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull.digitalcdn.net/live/440bdf2c0e9745199389bf51893888bc/index.m3u8
@@ -36,6 +24,10 @@ https://pull.digitalcdn.net/live/550bef73498843a89cf5657f03e130d4/index.m3u8
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull1.digitalcdn.net/live/550bef73498843a89cf5657f03e130d4/index.m3u8
 
+#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/318q66h06dgqo9j/image/small" group-title="⚽ BÓNG ĐÁ" , 18:00 24/10 ⚽ 🔥 HL Hà Tĩnh vs XM Hải Phòng FC (Nhà đài)
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://lilive1.eu.cc/live/d11c4978e0bcec5fdbb232218adc6236/playlist.m3u8
+
 #EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/4wyrn4he7kjq86p/image/small" group-title="⚽ BÓNG ĐÁ" , 18:00 24/10 ⚽ 🔥 Bình Phước vs Nam Định (BLV LÝ LỀNH) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull.digitalcdn.net/live/84b9cfe0028e4baab0457f1d7eee048c/index.m3u8
@@ -43,6 +35,10 @@ https://pull.digitalcdn.net/live/84b9cfe0028e4baab0457f1d7eee048c/index.m3u8
 #EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/4wyrn4he7kjq86p/image/small" group-title="⚽ BÓNG ĐÁ" , 18:00 24/10 ⚽ 🔥 Bình Phước vs Nam Định (BLV LÝ LỀNH) (HD2) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull1.digitalcdn.net/live/84b9cfe0028e4baab0457f1d7eee048c/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/4wyrn4he7kjq86p/image/small" group-title="⚽ BÓNG ĐÁ" , 18:00 24/10 ⚽ 🔥 Bình Phước vs Nam Định (Nhà đài)
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://lilive1.eu.cc/live/4308611a141a0c18ef053d7cbc8880c1/playlist.m3u8
 
 #EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/j1l4rjnh06om7vx/image/small" group-title="⚽ BÓNG ĐÁ" , 18:30 24/10 ⚽ 🔥 Aston Villa vs Man City (BLV LÝ LA LÀNG) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
