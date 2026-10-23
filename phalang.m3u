@@ -1,44 +1,16 @@
 #EXTM3U
 
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/kn54qllhy10qvy9/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 23:30 23/10 ⚽ 🔥 VfL Bochum vs Wolfsburg (BLV LÝ LỀNH) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull.digitalcdn.net/live/161803b5ebfd413a828027c5059b84e4/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/kn54qllhy10qvy9/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 23:30 23/10 ⚽ 🔥 VfL Bochum vs Wolfsburg (BLV LÝ LỀNH) (HD2) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull1.digitalcdn.net/live/161803b5ebfd413a828027c5059b84e4/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/kn54qllhy10qvy9/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 23:30 23/10 ⚽ 🔥 VfL Bochum vs Wolfsburg (Nhà đài)
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://lilive1.eu.cc/live/3b0062e7adb85817aebbed18ea55ec9a/playlist.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/d23xmvkh5p0qg8n/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 01:00 24/10 ⚽ 🔥 Al Qadsiah vs Al Hilal (BLV LÝ LINH LỰC) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull.digitalcdn.net/live/42914045b4f146d29dfa1f17b0ea45f6/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/d23xmvkh5p0qg8n/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 01:00 24/10 ⚽ 🔥 Al Qadsiah vs Al Hilal (BLV LÝ LINH LỰC) (HD2) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull1.digitalcdn.net/live/42914045b4f146d29dfa1f17b0ea45f6/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/d23xmvkh5p0qg8n/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 01:00 24/10 ⚽ 🔥 Al Qadsiah vs Al Hilal (Nhà đài)
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://lilive1.eu.cc/live/92c99932a67f6a4a56835e43a02a3532/playlist.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/gx7lm7phd7em2wd/image/small" group-title="⚽ BÓNG ĐÁ" , 01:30 24/10 ⚽ 🔥 Stuttgart vs B. Monchengladbach (BLV LÝ LÀNG LÁ) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull.digitalcdn.net/live/f241d70e88934b5787187ec1ad2421ee/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/gx7lm7phd7em2wd/image/small" group-title="⚽ BÓNG ĐÁ" , 01:30 24/10 ⚽ 🔥 Stuttgart vs B. Monchengladbach (BLV LÝ LÀNG LÁ) (HD2) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull1.digitalcdn.net/live/f241d70e88934b5787187ec1ad2421ee/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/j1l4rjnhpo5m7vx/image/small" group-title="⚽ BÓNG ĐÁ" , 02:00 24/10 ⚽ 🔥 Ipswich vs Nott'm Forest (BLV LÝ LONG) [geo]
+#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/j1l4rjnhpo5m7vx/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 02:00 24/10 ⚽ 🔥 Ipswich vs Nott'm Forest (BLV LÝ LONG) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull.digitalcdn.net/live/cad223593b1f4200a66d5e0215fe66be/index.m3u8
 
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/j1l4rjnhpo5m7vx/image/small" group-title="⚽ BÓNG ĐÁ" , 02:00 24/10 ⚽ 🔥 Ipswich vs Nott'm Forest (BLV LÝ LONG) (HD2) [geo]
+#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/j1l4rjnhpo5m7vx/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 02:00 24/10 ⚽ 🔥 Ipswich vs Nott'm Forest (BLV LÝ LONG) (HD2) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull1.digitalcdn.net/live/cad223593b1f4200a66d5e0215fe66be/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/j1l4rjnhpo5m7vx/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 02:00 24/10 ⚽ 🔥 Ipswich vs Nott'm Forest (Nhà đài)
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://lilive1.eu.cc/live/f9543581592c51789ca112b50c6e8555/playlist.m3u8
 
 #EXTINF:-1 tvg-logo="https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/Flag_of_Vietnam.svg/330px-Flag_of_Vietnam.svg.png" group-title="⚽ BÓNG ĐÁ" , 14:30 24/10 ⚽ 🔥 VIỆT NAM vs BOSNIA (BLV LÝ LINH LỰC) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
