@@ -1,72 +1,28 @@
 #EXTM3U
 
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/vjxm8ghg9nkr6od/image/small" group-title="⚽ BÓNG ĐÁ" , 15:30 27/10 ⚽ 🔥 Lâm Đồng vs PVF-CAND FC (BLV LÝ LINH LỰC) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull.digitalcdn.net/live/0e6e0cea29924075af6126d47157bd94/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/vjxm8ghg9nkr6od/image/small" group-title="⚽ BÓNG ĐÁ" , 15:30 27/10 ⚽ 🔥 Lâm Đồng vs PVF-CAND FC (BLV LÝ LINH LỰC) (HD2) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull1.digitalcdn.net/live/0e6e0cea29924075af6126d47157bd94/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/vjxm8ghg9nkr6od/image/small" group-title="⚽ BÓNG ĐÁ" , 15:30 27/10 ⚽ 🔥 Lâm Đồng vs PVF-CAND FC (Nhà đài)
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://lilive1.eu.cc/live/fe2a7690605ba076ae9ef45beab82e54/playlist.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/dj2ryohj834q1zp/image/small" group-title="⚽ BÓNG ĐÁ" , 17:00 27/10 ⚽ 🔥 Văn Hiến vs Gia Định (BLV LÝ LÀNG LÁ) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull.digitalcdn.net/live/f2285c18975d4274a58d1820596185e7/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/dj2ryohj834q1zp/image/small" group-title="⚽ BÓNG ĐÁ" , 17:00 27/10 ⚽ 🔥 Văn Hiến vs Gia Định (BLV LÝ LÀNG LÁ) (HD2) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull1.digitalcdn.net/live/f2285c18975d4274a58d1820596185e7/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/l965mkyhx4jr1ge/image/small" group-title="⚽ BÓNG ĐÁ" , 17:00 27/10 ⚽ 🔥 Daejeon Citizen vs Vissel Kobe (Phá Làng TV) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull.digitalcdn.net/live/2b4c07a2c89341dbb8931c03e6deb10e/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/l965mkyhx4jr1ge/image/small" group-title="⚽ BÓNG ĐÁ" , 17:00 27/10 ⚽ 🔥 Daejeon Citizen vs Vissel Kobe (Phá Làng TV) (HD2) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull1.digitalcdn.net/live/2b4c07a2c89341dbb8931c03e6deb10e/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/l965mkyhx4jr1ge/image/small" group-title="⚽ BÓNG ĐÁ" , 17:00 27/10 ⚽ 🔥 Daejeon Citizen vs Vissel Kobe (Nhà đài)
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://lilive1.eu.cc/live/ceac542e9e9163ea46b4538e4ca24efa/playlist.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/8yomo4h7401q0j6/image/small" group-title="⚽ BÓNG ĐÁ" , 17:00 27/10 ⚽ 🔥 Shanghai Port vs Công An Hà Nội (BLV LÝ LA LÀNG) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull.digitalcdn.net/live/bed0d5820fd34c71b05cc1c8886b607a/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/8yomo4h7401q0j6/image/small" group-title="⚽ BÓNG ĐÁ" , 17:00 27/10 ⚽ 🔥 Shanghai Port vs Công An Hà Nội (BLV LÝ LA LÀNG) (HD2) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull1.digitalcdn.net/live/bed0d5820fd34c71b05cc1c8886b607a/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/8yomo4h7401q0j6/image/small" group-title="⚽ BÓNG ĐÁ" , 17:00 27/10 ⚽ 🔥 Shanghai Port vs Công An Hà Nội (Nhà đài)
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://lilive1.eu.cc/live/e3af183a9118695a729c917a8c0b9033/playlist.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/4wyrn4h8d9gq86p/image/small" group-title="⚽ BÓNG ĐÁ" , 18:00 27/10 ⚽ 🔥 Becamex Hồ Chí Minh vs Than Quảng Ninh (BLV LÝ LONG) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull.digitalcdn.net/live/adca3e75a7844d97a7a739e56f4cb594/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/4wyrn4h8d9gq86p/image/small" group-title="⚽ BÓNG ĐÁ" , 18:00 27/10 ⚽ 🔥 Becamex Hồ Chí Minh vs Than Quảng Ninh (BLV LÝ LONG) (HD2) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull1.digitalcdn.net/live/adca3e75a7844d97a7a739e56f4cb594/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/jednm9whlxkryox/image/small" group-title="⚽ BÓNG ĐÁ" , 19:15 27/10 ⚽ 🔥 Beijing Guoan vs Jeonbuk Hyundai (BLV LÃM LÀNG) [geo]
+#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/jednm9whlxkryox/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 19:15 27/10 ⚽ 🔥 Beijing Guoan vs Jeonbuk Hyundai (BLV LÃM LÀNG) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull.digitalcdn.net/live/e625818649434640b47937d4813471cc/index.m3u8
 
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/jednm9whlxkryox/image/small" group-title="⚽ BÓNG ĐÁ" , 19:15 27/10 ⚽ 🔥 Beijing Guoan vs Jeonbuk Hyundai (BLV LÃM LÀNG) (HD2) [geo]
+#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/jednm9whlxkryox/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 19:15 27/10 ⚽ 🔥 Beijing Guoan vs Jeonbuk Hyundai (BLV LÃM LÀNG) (HD2) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull1.digitalcdn.net/live/e625818649434640b47937d4813471cc/index.m3u8
 
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/n54qllh2d7pqvy9/image/small" group-title="⚽ BÓNG ĐÁ" , 21:00 27/10 ⚽ 🔥 Kazma vs Ajman (BLV LÝ LÊN LỬA) [geo]
+#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/jednm9whlxkryox/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 19:15 27/10 ⚽ 🔥 Beijing Guoan vs Jeonbuk Hyundai (Nhà đài)
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://lilive1.eu.cc/live/10d14b90bdb28c97073481fb8aec9f53/playlist.m3u8
+
+#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/n54qllh2d7pqvy9/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 21:30 27/10 ⚽ 🔥 Kazma vs Ajman (BLV LÝ LÊN LỬA) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull.digitalcdn.net/live/11c3e474f0544e6db6a601af28403d62/index.m3u8
 
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/n54qllh2d7pqvy9/image/small" group-title="⚽ BÓNG ĐÁ" , 21:00 27/10 ⚽ 🔥 Kazma vs Ajman (BLV LÝ LÊN LỬA) (HD2) [geo]
+#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/n54qllh2d7pqvy9/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 21:30 27/10 ⚽ 🔥 Kazma vs Ajman (BLV LÝ LÊN LỬA) (HD2) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull1.digitalcdn.net/live/11c3e474f0544e6db6a601af28403d62/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/n54qllh2d7pqvy9/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 21:30 27/10 ⚽ 🔥 Kazma vs Ajman (Nhà đài)
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://lilive1.eu.cc/live/0aaef0ad67578a4f2562d648b973fe12/playlist.m3u8
 
 #EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/kjw2r09ho78rz84/image/small" group-title="⚽ BÓNG ĐÁ" , 00:00 28/10 ⚽ 🔥 Essen vs RB Leipzig (BLV LÝ LINH LỰC) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
@@ -163,3 +119,35 @@ https://pull.digitalcdn.net/live/fb601b588b3048bd9a4c942873a3d5bc/index.m3u8
 #EXTINF:-1 tvg-logo="https://img0.aiscore.com/volleyball/team/509aa9190a2b64dac9ffa248906a94d9.png!w80" group-title="🏐 BÓNG CHUYỀN" , 23:00 27/10 🏐 🔥 Ziraat Bankasi vs Gaziantep Genclik (BLV LÝ LIỀU LĨNH) (HD2) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull1.digitalcdn.net/live/fb601b588b3048bd9a4c942873a3d5bc/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/vi/c/c3/Logo_Th%E1%BB%83_C%C3%B4ng_T%C3%A2n_C%E1%BA%A3ng.png" group-title="🏐 BÓNG CHUYỀN" , 12:00 28/10 🏐 🔥 Thể Công Tân Cảng vs LP Bank Ninh Bình (BLV LÝ LIỀU LĨNH) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull.digitalcdn.net/live/29d94ba5c19249b2b43f7d882bcb3e88/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/vi/c/c3/Logo_Th%E1%BB%83_C%C3%B4ng_T%C3%A2n_C%E1%BA%A3ng.png" group-title="🏐 BÓNG CHUYỀN" , 12:00 28/10 🏐 🔥 Thể Công Tân Cảng vs LP Bank Ninh Bình (BLV LÝ LIỀU LĨNH) (HD2) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull1.digitalcdn.net/live/29d94ba5c19249b2b43f7d882bcb3e88/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/vi/7/73/Logo_Sanest_Kh%C3%A1nh_H%C3%B2a_%28b%C3%B3ng_chuy%E1%BB%81n%29.png" group-title="🏐 BÓNG CHUYỀN" , 14:30 28/10 🏐 🔥 Sanest Khánh Hoà vs Hà Nội (BLV LÝ LÊN LỬA) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull.digitalcdn.net/live/9f8e37db7fa64751bac445560ea0e027/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/vi/7/73/Logo_Sanest_Kh%C3%A1nh_H%C3%B2a_%28b%C3%B3ng_chuy%E1%BB%81n%29.png" group-title="🏐 BÓNG CHUYỀN" , 14:30 28/10 🏐 🔥 Sanest Khánh Hoà vs Hà Nội (BLV LÝ LÊN LỬA) (HD2) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull1.digitalcdn.net/live/9f8e37db7fa64751bac445560ea0e027/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/vi/7/7c/Logo_B%C4%90BPVN.png" group-title="🏐 BÓNG CHUYỀN" , 17:00 28/10 🏐 🔥 Biên Phòng MB vs Đà Nẵng (BLV LÃM LÀNG) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull.digitalcdn.net/live/d6a42b66bb3d478da8c7d3cbaed7ae59/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/vi/7/7c/Logo_B%C4%90BPVN.png" group-title="🏐 BÓNG CHUYỀN" , 17:00 28/10 🏐 🔥 Biên Phòng MB vs Đà Nẵng (BLV LÃM LÀNG) (HD2) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull1.digitalcdn.net/live/d6a42b66bb3d478da8c7d3cbaed7ae59/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://thumb.wikimedia.org/wikipedia/vi/thumb/1/12/Bi%E1%BB%83u_tr%C6%B0ng_c%E1%BB%A7a_TP_HCM.svg/500px-Bi%E1%BB%83u_tr%C6%B0ng_c%E1%BB%A7a_TP_HCM.svg.png" group-title="🏐 BÓNG CHUYỀN" , 20:00 28/10 🏐 🔥 TP. Hồ Chí Minh vs Công An TP.HCM (BLV LÝ LIỀU LĨNH) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull.digitalcdn.net/live/79db1d8e0c144f358decc009d2ee80ed/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://thumb.wikimedia.org/wikipedia/vi/thumb/1/12/Bi%E1%BB%83u_tr%C6%B0ng_c%E1%BB%A7a_TP_HCM.svg/500px-Bi%E1%BB%83u_tr%C6%B0ng_c%E1%BB%A7a_TP_HCM.svg.png" group-title="🏐 BÓNG CHUYỀN" , 20:00 28/10 🏐 🔥 TP. Hồ Chí Minh vs Công An TP.HCM (BLV LÝ LIỀU LĨNH) (HD2) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull1.digitalcdn.net/live/79db1d8e0c144f358decc009d2ee80ed/index.m3u8
