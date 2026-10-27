@@ -28,6 +28,10 @@ https://pull.digitalcdn.net/live/2b4c07a2c89341dbb8931c03e6deb10e/index.m3u8
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull1.digitalcdn.net/live/2b4c07a2c89341dbb8931c03e6deb10e/index.m3u8
 
+#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/l965mkyhx4jr1ge/image/small" group-title="⚽ BÓNG ĐÁ" , 17:00 27/10 ⚽ 🔥 Daejeon Citizen vs Vissel Kobe (Nhà đài)
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://lilive1.eu.cc/live/ceac542e9e9163ea46b4538e4ca24efa/playlist.m3u8
+
 #EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/8yomo4h7401q0j6/image/small" group-title="⚽ BÓNG ĐÁ" , 17:00 27/10 ⚽ 🔥 Shanghai Port vs Công An Hà Nội (BLV LÝ LA LÀNG) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull.digitalcdn.net/live/bed0d5820fd34c71b05cc1c8886b607a/index.m3u8
@@ -35,6 +39,10 @@ https://pull.digitalcdn.net/live/bed0d5820fd34c71b05cc1c8886b607a/index.m3u8
 #EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/8yomo4h7401q0j6/image/small" group-title="⚽ BÓNG ĐÁ" , 17:00 27/10 ⚽ 🔥 Shanghai Port vs Công An Hà Nội (BLV LÝ LA LÀNG) (HD2) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull1.digitalcdn.net/live/bed0d5820fd34c71b05cc1c8886b607a/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/8yomo4h7401q0j6/image/small" group-title="⚽ BÓNG ĐÁ" , 17:00 27/10 ⚽ 🔥 Shanghai Port vs Công An Hà Nội (Nhà đài)
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://lilive1.eu.cc/live/e3af183a9118695a729c917a8c0b9033/playlist.m3u8
 
 #EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/4wyrn4h8d9gq86p/image/small" group-title="⚽ BÓNG ĐÁ" , 18:00 27/10 ⚽ 🔥 Becamex Hồ Chí Minh vs Than Quảng Ninh (BLV LÝ LONG) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
