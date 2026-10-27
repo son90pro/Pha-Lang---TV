@@ -1,13 +1,5 @@
 #EXTM3U
 
-#EXTINF:-1 tvg-logo="https://png.pngtree.com/png-vector/20230915/ourmid/pngtree-3d-rendering-sequential-golden-soccer-ball-rotating-perspective-view-png-image_10086397.png" group-title="⚽ BÓNG ĐÁ" , 🔴 02:00 27/10 ⚽ 🔥 QUẢ BÓNG VÀNG 2026 vs QUẢ BÓNG VÀNG 2026 (BLV LÝ LA LÀNG) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull.digitalcdn.net/live/7f65c92463d847469d853d60f752de24/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://png.pngtree.com/png-vector/20230915/ourmid/pngtree-3d-rendering-sequential-golden-soccer-ball-rotating-perspective-view-png-image_10086397.png" group-title="⚽ BÓNG ĐÁ" , 🔴 02:00 27/10 ⚽ 🔥 QUẢ BÓNG VÀNG 2026 vs QUẢ BÓNG VÀNG 2026 (BLV LÝ LA LÀNG) (HD2) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull1.digitalcdn.net/live/7f65c92463d847469d853d60f752de24/index.m3u8
-
 #EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/vjxm8ghg9nkr6od/image/small" group-title="⚽ BÓNG ĐÁ" , 15:30 27/10 ⚽ 🔥 Lâm Đồng vs PVF-CAND FC (BLV LÝ LINH LỰC) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull.digitalcdn.net/live/0e6e0cea29924075af6126d47157bd94/index.m3u8
@@ -15,6 +7,10 @@ https://pull.digitalcdn.net/live/0e6e0cea29924075af6126d47157bd94/index.m3u8
 #EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/vjxm8ghg9nkr6od/image/small" group-title="⚽ BÓNG ĐÁ" , 15:30 27/10 ⚽ 🔥 Lâm Đồng vs PVF-CAND FC (BLV LÝ LINH LỰC) (HD2) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull1.digitalcdn.net/live/0e6e0cea29924075af6126d47157bd94/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/vjxm8ghg9nkr6od/image/small" group-title="⚽ BÓNG ĐÁ" , 15:30 27/10 ⚽ 🔥 Lâm Đồng vs PVF-CAND FC (Nhà đài)
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://lilive1.eu.cc/live/fe2a7690605ba076ae9ef45beab82e54/playlist.m3u8
 
 #EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/dj2ryohj834q1zp/image/small" group-title="⚽ BÓNG ĐÁ" , 17:00 27/10 ⚽ 🔥 Văn Hiến vs Gia Định (BLV LÝ LÀNG LÁ) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
