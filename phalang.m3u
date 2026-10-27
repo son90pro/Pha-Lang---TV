@@ -1,41 +1,5 @@
 #EXTM3U
 
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/vjxm8gh49xpr6od/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 00:30 28/10 ⚽ 🔥 Sassuolo vs Lazio (BLV LÃM LÀNG) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull.digitalcdn.net/live/964cef5c427442d19589315a92826bd8/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/vjxm8gh49xpr6od/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 00:30 28/10 ⚽ 🔥 Sassuolo vs Lazio (BLV LÃM LÀNG) (HD2) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull1.digitalcdn.net/live/964cef5c427442d19589315a92826bd8/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/vjxm8gh49xpr6od/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 00:30 28/10 ⚽ 🔥 Sassuolo vs Lazio (Nhà đài)
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://lilive1.eu.cc/live/39e3b860c290ba43868f6906dd24aa54/playlist.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/4zp5rzghe4nq82w/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 02:45 28/10 ⚽ 🔥 Dortmund vs Werder Bremen (BLV LÝ LONG) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull.digitalcdn.net/live/42bbf91ee6c648129d2e934b17ec8bb8/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/4zp5rzghe4nq82w/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 02:45 28/10 ⚽ 🔥 Dortmund vs Werder Bremen (BLV LÝ LONG) (HD2) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull1.digitalcdn.net/live/42bbf91ee6c648129d2e934b17ec8bb8/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/4zp5rzghe4nq82w/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 02:45 28/10 ⚽ 🔥 Dortmund vs Werder Bremen (Nhà đài)
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://lilive1.eu.cc/live/4443175585f7a22778189096ecb4dd2e/playlist.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/4zp5rzghkvlq82w/image/small" group-title="⚽ BÓNG ĐÁ" , 03:00 28/10 ⚽ 🔥 Fleetwood Town vs Arsenal (BLV LÝ LA LÀNG) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull.digitalcdn.net/live/17b3822c62cc419a8b23d2a4e7baeab2/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/4zp5rzghkvlq82w/image/small" group-title="⚽ BÓNG ĐÁ" , 03:00 28/10 ⚽ 🔥 Fleetwood Town vs Arsenal (BLV LÝ LA LÀNG) (HD2) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull1.digitalcdn.net/live/17b3822c62cc419a8b23d2a4e7baeab2/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/4zp5rzghkvlq82w/image/small" group-title="⚽ BÓNG ĐÁ" , 03:00 28/10 ⚽ 🔥 Fleetwood Town vs Arsenal (Nhà đài)
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://lilive1.eu.cc/live/fe50a5c8138326027441cdcb2bfbcb59/playlist.m3u8
-
 #EXTINF:-1 tvg-logo="https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/Flag_of_Vietnam.svg/330px-Flag_of_Vietnam.svg.png" group-title="⚽ BÓNG ĐÁ" , 15:45 28/10 ⚽ 🔥 U15 VIỆT NAM vs U15 RWANDA (BLV LÝ LÀNG LÁ) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull.digitalcdn.net/live/3a9515b504b94d9d8e28038944e8a2dd/index.m3u8
@@ -68,6 +32,10 @@ https://pull.digitalcdn.net/live/c6c94aec7446485297aaefb895f4c90d/index.m3u8
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull1.digitalcdn.net/live/c6c94aec7446485297aaefb895f4c90d/index.m3u8
 
+#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/dj2ryohy553q1zp/image/small" group-title="⚽ BÓNG ĐÁ" , 19:15 28/10 ⚽ 🔥 Thể Công Viettel vs Seoul FC (Nhà đài)
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://lilive1.eu.cc/live/f04da5aee5d5e77084bf46a33121ed26/playlist.m3u8
+
 #EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/gx7lm7phl2gm2wd/image/small" group-title="⚽ BÓNG ĐÁ" , 20:45 28/10 ⚽ 🔥 Nasaf Qarshi vs Al Kuwait SC (BLV LÝ LÀNG LÁ) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull.digitalcdn.net/live/63081187617543df8d10120e4fd6746e/index.m3u8
@@ -75,6 +43,10 @@ https://pull.digitalcdn.net/live/63081187617543df8d10120e4fd6746e/index.m3u8
 #EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/gx7lm7phl2gm2wd/image/small" group-title="⚽ BÓNG ĐÁ" , 20:45 28/10 ⚽ 🔥 Nasaf Qarshi vs Al Kuwait SC (BLV LÝ LÀNG LÁ) (HD2) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull1.digitalcdn.net/live/63081187617543df8d10120e4fd6746e/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/gx7lm7phl2gm2wd/image/small" group-title="⚽ BÓNG ĐÁ" , 20:45 28/10 ⚽ 🔥 Nasaf Qarshi vs Al Kuwait SC (Nhà đài)
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://lilive1.eu.cc/live/7e7f517ceac83fe09b26598edd8ff74c/playlist.m3u8
 
 #EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/y0or5jhlejwqwzv/image/small" group-title="⚽ BÓNG ĐÁ" , 21:30 28/10 ⚽ 🔥 Erbil vs Al-Ettifaq (BLV LÝ LINH LỰC) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
