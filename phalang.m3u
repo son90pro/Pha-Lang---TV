@@ -1,74 +1,14 @@
 #EXTM3U
 
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/p4jwq2ghd57m0ve/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 02:30 29/10 ⚽ 🔥 Man City vs Brighton (BLV LÝ LONG) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull.digitalcdn.net/live/0218308db3274075ad0502da530b92c1/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/p4jwq2ghd57m0ve/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 02:30 29/10 ⚽ 🔥 Man City vs Brighton (BLV LÝ LONG) (HD2) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull1.digitalcdn.net/live/0218308db3274075ad0502da530b92c1/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/p4jwq2ghd57m0ve/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 02:30 29/10 ⚽ 🔥 Man City vs Brighton (Nhà đài)
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://lilive1.eu.cc/live/5a71a1a33fbc9a69a5def7635ad5de27/playlist.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/gy0or5jhkkzqwzv/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 02:45 29/10 ⚽ 🔥 Genoa vs Juventus (BLV LÝ LÊN LỬA) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull.digitalcdn.net/live/e08e2d7a32a340c4a026efdda37b5cd9/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/gy0or5jhkkzqwzv/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 02:45 29/10 ⚽ 🔥 Genoa vs Juventus (BLV LÝ LÊN LỬA) (HD2) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull1.digitalcdn.net/live/e08e2d7a32a340c4a026efdda37b5cd9/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/gy0or5jhkkzqwzv/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 02:45 29/10 ⚽ 🔥 Genoa vs Juventus (Nhà đài)
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://lilive1.eu.cc/live/3aaf2a5fd7f61ec8b0299f08040688b0/playlist.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/9dn1m1ghdlpmoep/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 02:45 29/10 ⚽ 🔥 AFC Bournemouth vs Aston Villa (BLV LÝ LÀNG LÁ) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull.digitalcdn.net/live/f8efda81b2dc408691b987a56fed5d0a/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/9dn1m1ghdlpmoep/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 02:45 29/10 ⚽ 🔥 AFC Bournemouth vs Aston Villa (BLV LÝ LÀNG LÁ) (HD2) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull1.digitalcdn.net/live/f8efda81b2dc408691b987a56fed5d0a/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/9dn1m1ghdlpmoep/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 02:45 29/10 ⚽ 🔥 AFC Bournemouth vs Aston Villa (Nhà đài)
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://lilive1.eu.cc/live/ad751651012aff32e1743423094fc9ef/playlist.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/yl5ergphjy2r8k0/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 02:45 29/10 ⚽ 🔥 Bayern Munich vs FC Magdeburg (BLV LÃM LÀNG) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull.digitalcdn.net/live/702975fcff9e4e6fba966a737800da06/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/yl5ergphjy2r8k0/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 02:45 29/10 ⚽ 🔥 Bayern Munich vs FC Magdeburg (BLV LÃM LÀNG) (HD2) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull1.digitalcdn.net/live/702975fcff9e4e6fba966a737800da06/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/yl5ergphjy2r8k0/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 02:45 29/10 ⚽ 🔥 Bayern Munich vs FC Magdeburg (Nhà đài)
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://lilive1.eu.cc/live/66130f31f20e1b80d4895c034e6e06c7/playlist.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/gpxwrxlhw8gryk0/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 03:00 29/10 ⚽ 🔥 Liverpool vs Chelsea (BLV LÝ LA LÀNG) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull.digitalcdn.net/live/ad2cb55862ed4bb49abf02f584ac5964/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/gpxwrxlhw8gryk0/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 03:00 29/10 ⚽ 🔥 Liverpool vs Chelsea (BLV LÝ LA LÀNG) (HD2) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull1.digitalcdn.net/live/ad2cb55862ed4bb49abf02f584ac5964/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/gpxwrxlhw8gryk0/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 03:00 29/10 ⚽ 🔥 Liverpool vs Chelsea (Nhà đài)
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://lilive1.eu.cc/live/487a1de250ed21d6c020f33da837f65f/playlist.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/vjxm8ghjyd1r6od/image/small" group-title="⚽ BÓNG ĐÁ" , 06:30 29/10 ⚽ 🔥 Inter Miami vs FC Cincinnati (BLV LÝ LA LÀNG) [geo]
+#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/vjxm8ghjyd1r6od/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 06:30 29/10 ⚽ 🔥 Inter Miami vs FC Cincinnati (BLV LÝ LA LÀNG) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull.digitalcdn.net/live/3b8b79c4421e47ef8d9f76a04c56c7a9/index.m3u8
 
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/vjxm8ghjyd1r6od/image/small" group-title="⚽ BÓNG ĐÁ" , 06:30 29/10 ⚽ 🔥 Inter Miami vs FC Cincinnati (BLV LÝ LA LÀNG) (HD2) [geo]
+#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/vjxm8ghjyd1r6od/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 06:30 29/10 ⚽ 🔥 Inter Miami vs FC Cincinnati (BLV LÝ LA LÀNG) (HD2) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull1.digitalcdn.net/live/3b8b79c4421e47ef8d9f76a04c56c7a9/index.m3u8
 
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/vjxm8ghjyd1r6od/image/small" group-title="⚽ BÓNG ĐÁ" , 06:30 29/10 ⚽ 🔥 Inter Miami vs FC Cincinnati (Nhà đài)
+#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/vjxm8ghjyd1r6od/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 06:30 29/10 ⚽ 🔥 Inter Miami vs FC Cincinnati (Nhà đài)
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://lilive1.eu.cc/live/c3d1a9a3435c432b4caf14d884cd84ac/playlist.m3u8
 
