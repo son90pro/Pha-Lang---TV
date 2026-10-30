@@ -1,44 +1,48 @@
 #EXTM3U
 
-#EXTINF:-1 tvg-logo="https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/Flag_of_Vietnam.svg/330px-Flag_of_Vietnam.svg.png" group-title="⚽ BÓNG ĐÁ" , 14:30 30/10 ⚽ 🔥 U15 Việt Nam vs U15 Hungary (BLV LÝ LÀNG LÁ) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull.digitalcdn.net/live/be9aef1c6d044a869e8795b816033705/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/Flag_of_Vietnam.svg/330px-Flag_of_Vietnam.svg.png" group-title="⚽ BÓNG ĐÁ" , 14:30 30/10 ⚽ 🔥 U15 Việt Nam vs U15 Hungary (BLV LÝ LÀNG LÁ) (HD2) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull1.digitalcdn.net/live/be9aef1c6d044a869e8795b816033705/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/23xmvkh3vxvqg8n/image/small" group-title="⚽ BÓNG ĐÁ" , 16:00 30/10 ⚽ 🔥 Brisbane Roar vs Auckland FC (BLV LÝ LINH LỰC) [geo]
+#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/23xmvkh3vxvqg8n/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 16:00 30/10 ⚽ 🔥 Brisbane Roar vs Auckland FC (BLV LÝ LINH LỰC) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull.digitalcdn.net/live/2290183dcddd46f98d38c174cef7176b/index.m3u8
 
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/23xmvkh3vxvqg8n/image/small" group-title="⚽ BÓNG ĐÁ" , 16:00 30/10 ⚽ 🔥 Brisbane Roar vs Auckland FC (BLV LÝ LINH LỰC) (HD2) [geo]
+#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/23xmvkh3vxvqg8n/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 16:00 30/10 ⚽ 🔥 Brisbane Roar vs Auckland FC (BLV LÝ LINH LỰC) (HD2) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull1.digitalcdn.net/live/2290183dcddd46f98d38c174cef7176b/index.m3u8
 
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/4wyrn4h8kw3q86p/image/small" group-title="⚽ BÓNG ĐÁ" , 17:00 30/10 ⚽ 🔥 Thanh Hóa vs HL Hà Tĩnh (BLV LÝ LONG) [geo]
+#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/23xmvkh3vxvqg8n/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 16:00 30/10 ⚽ 🔥 Brisbane Roar vs Auckland FC (Nhà đài)
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://lilive1.eu.cc/live/736494e872646bdae64bdbedc0b8fb5f/playlist.m3u8
+
+#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/4wyrn4h8kw3q86p/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 17:00 30/10 ⚽ 🔥 Thanh Hóa vs HL Hà Tĩnh (BLV LÝ LONG) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull.digitalcdn.net/live/6d0784c38a434d24b334a8fb29f256e7/index.m3u8
 
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/4wyrn4h8kw3q86p/image/small" group-title="⚽ BÓNG ĐÁ" , 17:00 30/10 ⚽ 🔥 Thanh Hóa vs HL Hà Tĩnh (BLV LÝ LONG) (HD2) [geo]
+#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/4wyrn4h8kw3q86p/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 17:00 30/10 ⚽ 🔥 Thanh Hóa vs HL Hà Tĩnh (BLV LÝ LONG) (HD2) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull1.digitalcdn.net/live/6d0784c38a434d24b334a8fb29f256e7/index.m3u8
 
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/4wyrn4h8kw3q86p/image/small" group-title="⚽ BÓNG ĐÁ" , 17:00 30/10 ⚽ 🔥 Thanh Hóa vs HL Hà Tĩnh (Nhà đài)
+#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/4wyrn4h8kw3q86p/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 17:00 30/10 ⚽ 🔥 Thanh Hóa vs HL Hà Tĩnh (Nhà đài)
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://lilive1.eu.cc/live/c0149531e603ddca132d971cebe0722b/playlist.m3u8
 
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/1l4rjnhz9yxm7vx/image/small" group-title="⚽ BÓNG ĐÁ" , 18:00 30/10 ⚽ 🔥 TDTT Bắc Ninh vs Hoàng Anh Gia Lai (BLV LÝ LÀNG LÁ) [geo]
+#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/1l4rjnhz9yxm7vx/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 18:00 30/10 ⚽ 🔥 TDTT Bắc Ninh vs Hoàng Anh Gia Lai (BLV LÝ LÀNG LÁ) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull.digitalcdn.net/live/cb3e5dc8404e4166b6bd215c2343a469/index.m3u8
 
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/1l4rjnhz9yxm7vx/image/small" group-title="⚽ BÓNG ĐÁ" , 18:00 30/10 ⚽ 🔥 TDTT Bắc Ninh vs Hoàng Anh Gia Lai (BLV LÝ LÀNG LÁ) (HD2) [geo]
+#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/1l4rjnhz9yxm7vx/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 18:00 30/10 ⚽ 🔥 TDTT Bắc Ninh vs Hoàng Anh Gia Lai (BLV LÝ LÀNG LÁ) (HD2) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull1.digitalcdn.net/live/cb3e5dc8404e4166b6bd215c2343a469/index.m3u8
 
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/1l4rjnhz9yxm7vx/image/small" group-title="⚽ BÓNG ĐÁ" , 18:00 30/10 ⚽ 🔥 TDTT Bắc Ninh vs Hoàng Anh Gia Lai (Nhà đài)
+#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/1l4rjnhz9yxm7vx/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 18:00 30/10 ⚽ 🔥 TDTT Bắc Ninh vs Hoàng Anh Gia Lai (Nhà đài)
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://lilive1.eu.cc/live/ae7b234e34e75809d7411a69272fa9b4/playlist.m3u8
+
+#EXTINF:-1 tvg-logo="https://img0.aiscore.com/volleyball/team/b037a1bf40c26a9e0bad50963dbcb8c4.png!w60" group-title="🏐 BÓNG CHUYỀN" , 🔴 16:35 30/10 🏐 🔥 NEC Red Rockets Nữ vs M. Tel Aviv (BLV LÝ LIỀU LĨNH) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull.digitalcdn.net/live/7ec204c1f2e64b89a6bfcdc282e97dc2/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://img0.aiscore.com/volleyball/team/b037a1bf40c26a9e0bad50963dbcb8c4.png!w60" group-title="🏐 BÓNG CHUYỀN" , 🔴 16:35 30/10 🏐 🔥 NEC Red Rockets Nữ vs M. Tel Aviv (BLV LÝ LIỀU LĨNH) (HD2) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull1.digitalcdn.net/live/7ec204c1f2e64b89a6bfcdc282e97dc2/index.m3u8
 
 #EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/dn1m1ghen9wmoep/image/small" group-title="⚽ BÓNG ĐÁ" , 19:15 30/10 ⚽ 🔥 Hà Nội FC vs Ninh Bình (BLV LÝ LA LÀNG) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
@@ -84,13 +88,13 @@ https://pull.digitalcdn.net/live/78e784a302654412be73386969bbceaa/index.m3u8
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull1.digitalcdn.net/live/78e784a302654412be73386969bbceaa/index.m3u8
 
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/l5ergphoevor8k0/image/small" group-title="⚽ BÓNG ĐÁ" , 22:35 30/10 ⚽ 🔥 Shabab Al Ahli vs Ittihad Kalba FC (BLV LÝ LONG) [geo]
+#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/l7oqdeh445wr510/image/small" group-title="⚽ BÓNG ĐÁ" , 22:00 30/10 ⚽ 🔥 CSKA 1948 Sofia vs Spartak Varna (BLV LÝ LONG) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull.digitalcdn.net/live/c1a6cc7963a34a21af8254f4291aa563/index.m3u8
+https://pull.digitalcdn.net/live/b128fe163d074d958143a0f59ce69fb3/index.m3u8
 
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/l5ergphoevor8k0/image/small" group-title="⚽ BÓNG ĐÁ" , 22:35 30/10 ⚽ 🔥 Shabab Al Ahli vs Ittihad Kalba FC (BLV LÝ LONG) (HD2) [geo]
+#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/l7oqdeh445wr510/image/small" group-title="⚽ BÓNG ĐÁ" , 22:00 30/10 ⚽ 🔥 CSKA 1948 Sofia vs Spartak Varna (BLV LÝ LONG) (HD2) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull1.digitalcdn.net/live/c1a6cc7963a34a21af8254f4291aa563/index.m3u8
+https://pull1.digitalcdn.net/live/b128fe163d074d958143a0f59ce69fb3/index.m3u8
 
 #EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/l965mkyhdlpr1ge/image/small" group-title="⚽ BÓNG ĐÁ" , 00:00 31/10 ⚽ 🔥 Konyaspor vs Galatasaray (BLV LÝ LINH LỰC) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
@@ -196,6 +200,10 @@ https://pull.digitalcdn.net/live/802cd5acdac04b92aa9735b5bda92b26/index.m3u8
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull1.digitalcdn.net/live/802cd5acdac04b92aa9735b5bda92b26/index.m3u8
 
+#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/4zp5rzghewnq82w/image/small" group-title="⚽ BÓNG ĐÁ" , 21:30 31/10 ⚽ 🔥 Bayer Leverkusen vs Stuttgart (Nhà đài)
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://lilive1.eu.cc/live/0631516c46adcfe9d3a2297cf6846c2f/playlist.m3u8
+
 #EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/p4jwq2ghd57m0ve/image/small" group-title="⚽ BÓNG ĐÁ" , 22:00 31/10 ⚽ 🔥 Man City vs Brighton (BLV LÝ LONG) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull.digitalcdn.net/live/85b2ac1ae0e542b184956d826e173619/index.m3u8
@@ -203,6 +211,10 @@ https://pull.digitalcdn.net/live/85b2ac1ae0e542b184956d826e173619/index.m3u8
 #EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/p4jwq2ghd57m0ve/image/small" group-title="⚽ BÓNG ĐÁ" , 22:00 31/10 ⚽ 🔥 Man City vs Brighton (BLV LÝ LONG) (HD2) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull1.digitalcdn.net/live/85b2ac1ae0e542b184956d826e173619/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/p4jwq2ghd57m0ve/image/small" group-title="⚽ BÓNG ĐÁ" , 22:00 31/10 ⚽ 🔥 Man City vs Brighton (Nhà đài)
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://lilive1.eu.cc/live/6219251f34a49fe1fdbdc6d929fc9a3a/playlist.m3u8
 
 #EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/jednm9wh4d9ryox/image/small" group-title="⚽ BÓNG ĐÁ" , 22:00 31/10 ⚽ 🔥 Hull City vs Ipswich (BLV LÝ LẠNH LÙNG) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
@@ -212,6 +224,10 @@ https://pull.digitalcdn.net/live/ac8ff1e277104078a189d3266ee59f32/index.m3u8
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull1.digitalcdn.net/live/ac8ff1e277104078a189d3266ee59f32/index.m3u8
 
+#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/jednm9wh4d9ryox/image/small" group-title="⚽ BÓNG ĐÁ" , 22:00 31/10 ⚽ 🔥 Hull City vs Ipswich (Nhà đài)
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://lilive1.eu.cc/live/c46ac2c7f0425cd1fa0626e2690d821d/playlist.m3u8
+
 #EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/9dn1m1ghdlpmoep/image/small" group-title="⚽ BÓNG ĐÁ" , 22:00 31/10 ⚽ 🔥 AFC Bournemouth vs Leeds United (BLV LÝ LA LÀNG) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull.digitalcdn.net/live/564d03fd49b14b3d9a35ab17806c3aa3/index.m3u8
@@ -219,6 +235,10 @@ https://pull.digitalcdn.net/live/564d03fd49b14b3d9a35ab17806c3aa3/index.m3u8
 #EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/9dn1m1ghdlpmoep/image/small" group-title="⚽ BÓNG ĐÁ" , 22:00 31/10 ⚽ 🔥 AFC Bournemouth vs Leeds United (BLV LÝ LA LÀNG) (HD2) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull1.digitalcdn.net/live/564d03fd49b14b3d9a35ab17806c3aa3/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/9dn1m1ghdlpmoep/image/small" group-title="⚽ BÓNG ĐÁ" , 22:00 31/10 ⚽ 🔥 AFC Bournemouth vs Leeds United (Nhà đài)
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://lilive1.eu.cc/live/dc8143d8d8525c9a011f355778bbaf9f/playlist.m3u8
 
 #EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/kjw2r09hdk5rz84/image/small" group-title="⚽ BÓNG ĐÁ" , 22:00 31/10 ⚽ 🔥 Brentford vs Nott'm Forest (BLV LÝ LINH LỰC) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
@@ -228,13 +248,9 @@ https://pull.digitalcdn.net/live/5056e4000d0c4afaa46bdf0bd12f755b/index.m3u8
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull1.digitalcdn.net/live/5056e4000d0c4afaa46bdf0bd12f755b/index.m3u8
 
-#EXTINF:-1 tvg-logo="https://img0.aiscore.com/volleyball/team/b037a1bf40c26a9e0bad50963dbcb8c4.png!w60" group-title="🏐 BÓNG CHUYỀN" , 16:35 30/10 🏐 🔥 NEC Red Rockets Nữ vs M. Tel Aviv (BLV LÝ LIỀU LĨNH) [geo]
+#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/kjw2r09hdk5rz84/image/small" group-title="⚽ BÓNG ĐÁ" , 22:00 31/10 ⚽ 🔥 Brentford vs Nott'm Forest (Nhà đài)
 #EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull.digitalcdn.net/live/7ec204c1f2e64b89a6bfcdc282e97dc2/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://img0.aiscore.com/volleyball/team/b037a1bf40c26a9e0bad50963dbcb8c4.png!w60" group-title="🏐 BÓNG CHUYỀN" , 16:35 30/10 🏐 🔥 NEC Red Rockets Nữ vs M. Tel Aviv (BLV LÝ LIỀU LĨNH) (HD2) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull1.digitalcdn.net/live/7ec204c1f2e64b89a6bfcdc282e97dc2/index.m3u8
+https://lilive1.eu.cc/live/1d0ed5d366b0a24fae862ed7bec6dffe/playlist.m3u8
 
 #EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/vi/c/c3/Logo_Th%E1%BB%83_C%C3%B4ng_T%C3%A2n_C%E1%BA%A3ng.png" group-title="🏐 BÓNG CHUYỀN" , 12:00 31/10 🏐 🔥 Thể Công Tân Cảng vs Đà Nẵng (BLV LÝ LÊN LỬA) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
