@@ -1,12 +1,16 @@
 #EXTM3U
 
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/56ypq3nhd7kmd7o/image/small" group-title="⚽ BÓNG ĐÁ" , 17:00 03/11 ⚽ 🔥 Vissel Kobe vs Ratchaburi (BLV LÝ LIỀU LĨNH) [geo]
+#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/56ypq3nhd7kmd7o/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 17:00 03/11 ⚽ 🔥 Vissel Kobe vs Ratchaburi (BLV LÝ LIỀU LĨNH) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull.digitalcdn.net/live/3bc2af8b32214605a338f27dbaa14479/index.m3u8
 
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/56ypq3nhd7kmd7o/image/small" group-title="⚽ BÓNG ĐÁ" , 17:00 03/11 ⚽ 🔥 Vissel Kobe vs Ratchaburi (BLV LÝ LIỀU LĨNH) (HD2) [geo]
+#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/56ypq3nhd7kmd7o/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 17:00 03/11 ⚽ 🔥 Vissel Kobe vs Ratchaburi (BLV LÝ LIỀU LĨNH) (HD2) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull1.digitalcdn.net/live/3bc2af8b32214605a338f27dbaa14479/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/56ypq3nhd7kmd7o/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 17:00 03/11 ⚽ 🔥 Vissel Kobe vs Ratchaburi (Nhà đài)
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://lilive1.eu.cc/live/efc52e409ec2854c419533144557924a/playlist.m3u8
 
 #EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/e4wyrn4hjy0q86p/image/small" group-title="⚽ BÓNG ĐÁ" , 19:00 03/11 ⚽ 🔥 Villarreal U19 vs PSG U19 (BLV LÝ LẠNH LÙNG) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
