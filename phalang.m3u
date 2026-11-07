@@ -1,118 +1,38 @@
 #EXTM3U
 
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/kn54qllh6xwqvy9/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 21:00 07/11 ⚽ 🔥 Cagliari vs Frosinone (BLV LÝ LINH LỰC) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull.digitalcdn.net/live/c4ae7eca9cdd40a8a5b8ad6f4176f7af/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/kn54qllh6xwqvy9/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 21:00 07/11 ⚽ 🔥 Cagliari vs Frosinone (BLV LÝ LINH LỰC) (HD2) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull1.digitalcdn.net/live/c4ae7eca9cdd40a8a5b8ad6f4176f7af/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/kn54qllh6xwqvy9/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 21:00 07/11 ⚽ 🔥 Cagliari vs Frosinone (Nhà đài)
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://lilive1.eu.cc/live/66cd2f25dc14ffaeabf5d6a48b42dd16/playlist.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/jednm9whl2kryox/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 21:30 07/11 ⚽ 🔥 Mainz 05 vs Bayern Munich (BLV LÝ LẠNH LÙNG) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull.digitalcdn.net/live/afc96e751a6e420baf03a57ff7114e93/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/jednm9whl2kryox/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 21:30 07/11 ⚽ 🔥 Mainz 05 vs Bayern Munich (BLV LÝ LẠNH LÙNG) (HD2) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull1.digitalcdn.net/live/afc96e751a6e420baf03a57ff7114e93/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/jednm9whl2kryox/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 21:30 07/11 ⚽ 🔥 Mainz 05 vs Bayern Munich (Nhà đài)
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://lilive1.eu.cc/live/bcb5fd815f732354c482932b4b4fbc1c/playlist.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/4zp5rzghe4nq82w/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 21:30 07/11 ⚽ 🔥 Dortmund vs Elversberg (BLV LÝ LÀNG LÁ) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull.digitalcdn.net/live/7156150eada54a51b27e18091459937a/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/4zp5rzghe4nq82w/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 21:30 07/11 ⚽ 🔥 Dortmund vs Elversberg (BLV LÝ LÀNG LÁ) (HD2) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull1.digitalcdn.net/live/7156150eada54a51b27e18091459937a/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/4zp5rzghe4nq82w/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 21:30 07/11 ⚽ 🔥 Dortmund vs Elversberg (Nhà đài)
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://lilive1.eu.cc/live/9cf16a56479637400784ef8b8d06bd24/playlist.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/z318q66hdd1qo9j/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 22:00 07/11 ⚽ 🔥 Arsenal vs Hull City (BLV LÝ LA LÀNG) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull.digitalcdn.net/live/24ae7a1c7e0e42deac43c7d427e1babe/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/z318q66hdd1qo9j/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 22:00 07/11 ⚽ 🔥 Arsenal vs Hull City (BLV LÝ LA LÀNG) (HD2) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull1.digitalcdn.net/live/24ae7a1c7e0e42deac43c7d427e1babe/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/z318q66hdd1qo9j/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 22:00 07/11 ⚽ 🔥 Arsenal vs Hull City (Nhà đài)
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://lilive1.eu.cc/live/170e8c98da95888324149aca2399ac1f/playlist.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/vl7oqdehz23r510/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 22:00 07/11 ⚽ 🔥 Fulham vs Newcastle (BLV LÝ LONG) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull.digitalcdn.net/live/b5390953926d4ab0a5669645eb3b15bb/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/vl7oqdehz23r510/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 22:00 07/11 ⚽ 🔥 Fulham vs Newcastle (BLV LÝ LONG) (HD2) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull1.digitalcdn.net/live/b5390953926d4ab0a5669645eb3b15bb/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/vl7oqdehz23r510/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 22:00 07/11 ⚽ 🔥 Fulham vs Newcastle (Nhà đài)
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://lilive1.eu.cc/live/c3253ff8d247c5e9711ad75f8b48b19a/playlist.m3u8
-
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/vi/d/df/Logo_CLB_CATPHCM.png" group-title="🏐 BÓNG CHUYỀN" , 🔴 19:30 07/11 🏐 🔥 Công an TP. Hồ Chí Minh vs Thể Công Tân Cảng (BLV LÝ LÊN LỬA) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull.digitalcdn.net/live/67cfbf9e68214ac49ef8c7c6267a9e01/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/vi/d/df/Logo_CLB_CATPHCM.png" group-title="🏐 BÓNG CHUYỀN" , 🔴 19:30 07/11 🏐 🔥 Công an TP. Hồ Chí Minh vs Thể Công Tân Cảng (BLV LÝ LÊN LỬA) (HD2) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull1.digitalcdn.net/live/67cfbf9e68214ac49ef8c7c6267a9e01/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/gy0or5jhkvzqwzv/image/small" group-title="⚽ BÓNG ĐÁ" , 00:00 08/11 ⚽ 🔥 Parma vs Bologna (BLV LÃM LÀNG) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull.digitalcdn.net/live/ec97e50e072c4e7dae124b3f280b1cb0/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/gy0or5jhkvzqwzv/image/small" group-title="⚽ BÓNG ĐÁ" , 00:00 08/11 ⚽ 🔥 Parma vs Bologna (BLV LÃM LÀNG) (HD2) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull1.digitalcdn.net/live/ec97e50e072c4e7dae124b3f280b1cb0/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/gy0or5jhkvzqwzv/image/small" group-title="⚽ BÓNG ĐÁ" , 00:00 08/11 ⚽ 🔥 Parma vs Bologna (Nhà đài)
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://lilive1.eu.cc/live/ac094cca2d7ae48a04c4144cd261d464/playlist.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/vl7oqdehkx5r510/image/small" group-title="⚽ BÓNG ĐÁ" , 00:30 08/11 ⚽ 🔥 Osasuna vs Athletic Bilbao (BLV LÝ LÀNG LÁ) [geo]
+#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/vl7oqdehkx5r510/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 00:30 08/11 ⚽ 🔥 Osasuna vs Athletic Bilbao (BLV LÝ LÀNG LÁ) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull.digitalcdn.net/live/8b6cdc89b2cc43deb9c019236b4bc925/index.m3u8
 
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/vl7oqdehkx5r510/image/small" group-title="⚽ BÓNG ĐÁ" , 00:30 08/11 ⚽ 🔥 Osasuna vs Athletic Bilbao (BLV LÝ LÀNG LÁ) (HD2) [geo]
+#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/vl7oqdehkx5r510/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 00:30 08/11 ⚽ 🔥 Osasuna vs Athletic Bilbao (BLV LÝ LÀNG LÁ) (HD2) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull1.digitalcdn.net/live/8b6cdc89b2cc43deb9c019236b4bc925/index.m3u8
 
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/vl7oqdehkx5r510/image/small" group-title="⚽ BÓNG ĐÁ" , 00:30 08/11 ⚽ 🔥 Osasuna vs Athletic Bilbao (Nhà đài)
+#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/vl7oqdehkx5r510/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 00:30 08/11 ⚽ 🔥 Osasuna vs Athletic Bilbao (Nhà đài)
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://lilive1.eu.cc/live/d544d0e274c45e039c8600e9534adb50/playlist.m3u8
 
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/v2y8m4zhdx6ql07/image/small" group-title="⚽ BÓNG ĐÁ" , 00:30 08/11 ⚽ 🔥 Nott'm Forest vs Man City (BLV LÝ LONG) [geo]
+#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/v2y8m4zhdx6ql07/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 00:30 08/11 ⚽ 🔥 Nott'm Forest vs Man City (BLV LÝ LONG) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull.digitalcdn.net/live/858fe79fb0644c148e864ed2daf599e9/index.m3u8
 
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/v2y8m4zhdx6ql07/image/small" group-title="⚽ BÓNG ĐÁ" , 00:30 08/11 ⚽ 🔥 Nott'm Forest vs Man City (BLV LÝ LONG) (HD2) [geo]
+#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/v2y8m4zhdx6ql07/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 00:30 08/11 ⚽ 🔥 Nott'm Forest vs Man City (BLV LÝ LONG) (HD2) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull1.digitalcdn.net/live/858fe79fb0644c148e864ed2daf599e9/index.m3u8
 
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/v2y8m4zhdx6ql07/image/small" group-title="⚽ BÓNG ĐÁ" , 00:30 08/11 ⚽ 🔥 Nott'm Forest vs Man City (Nhà đài)
+#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/v2y8m4zhdx6ql07/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 00:30 08/11 ⚽ 🔥 Nott'm Forest vs Man City (Nhà đài)
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://lilive1.eu.cc/live/6f5f4b245cdfd9198124e3f289b8eed5/playlist.m3u8
 
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/gx7lm7phel7m2wd/image/small" group-title="⚽ BÓNG ĐÁ" , 02:45 08/11 ⚽ 🔥 AS Roma vs Sassuolo (BLV LÝ LINH LỰC) [geo]
+#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/gx7lm7phel7m2wd/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 02:45 08/11 ⚽ 🔥 AS Roma vs Sassuolo (BLV LÝ LINH LỰC) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull.digitalcdn.net/live/c30fb51a75b548cb93d464fdf4a04dc8/index.m3u8
 
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/gx7lm7phel7m2wd/image/small" group-title="⚽ BÓNG ĐÁ" , 02:45 08/11 ⚽ 🔥 AS Roma vs Sassuolo (BLV LÝ LINH LỰC) (HD2) [geo]
+#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/gx7lm7phel7m2wd/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 02:45 08/11 ⚽ 🔥 AS Roma vs Sassuolo (BLV LÝ LINH LỰC) (HD2) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull1.digitalcdn.net/live/c30fb51a75b548cb93d464fdf4a04dc8/index.m3u8
 
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/gx7lm7phel7m2wd/image/small" group-title="⚽ BÓNG ĐÁ" , 02:45 08/11 ⚽ 🔥 AS Roma vs Sassuolo (Nhà đài)
+#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/gx7lm7phel7m2wd/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 02:45 08/11 ⚽ 🔥 AS Roma vs Sassuolo (Nhà đài)
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://lilive1.eu.cc/live/16b6489eda57562507ef2967ce357cd7/playlist.m3u8
 
@@ -123,6 +43,10 @@ https://pull.digitalcdn.net/live/84104decf0e94dc899eeac31310670b1/index.m3u8
 #EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/56ypq3nhd2lmd7o/image/small" group-title="⚽ BÓNG ĐÁ" , 03:00 08/11 ⚽ 🔥 Valencia vs Real Madrid (BLV LÝ LÀNG LÁ) (HD2) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull1.digitalcdn.net/live/84104decf0e94dc899eeac31310670b1/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/56ypq3nhd2lmd7o/image/small" group-title="⚽ BÓNG ĐÁ" , 03:00 08/11 ⚽ 🔥 Valencia vs Real Madrid (Nhà đài)
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://lilive1.eu.cc/live/f9e69e7188979027b049a1168711069d/playlist.m3u8
 
 #EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/kjw2r09hv44rz84/image/small" group-title="⚽ BÓNG ĐÁ" , 03:05 08/11 ⚽ 🔥 PSG vs Troyes (BLV LÝ LẠNH LÙNG) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
@@ -272,6 +196,66 @@ https://pull.digitalcdn.net/live/e3dceac00a5e4822b753ad293feac129/index.m3u8
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull1.digitalcdn.net/live/e3dceac00a5e4822b753ad293feac129/index.m3u8
 
+#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/9dn1m1ghzl2moep/image/small" group-title="⚽ BÓNG ĐÁ" , 00:00 09/11 ⚽ 🔥 Inter vs Como (BLV LÝ LONG) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull.digitalcdn.net/live/e0f47d2aef174a02b7af1d27d8202855/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/9dn1m1ghzl2moep/image/small" group-title="⚽ BÓNG ĐÁ" , 00:00 09/11 ⚽ 🔥 Inter vs Como (BLV LÝ LONG) (HD2) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull1.digitalcdn.net/live/e0f47d2aef174a02b7af1d27d8202855/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/9dn1m1ghzl2moep/image/small" group-title="⚽ BÓNG ĐÁ" , 00:00 09/11 ⚽ 🔥 Inter vs Como (Nhà đài)
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://lilive1.eu.cc/live/2261663274d5e721ecd143ac31408621/playlist.m3u8
+
+#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/kjw2r09hvwwrz84/image/small" group-title="⚽ BÓNG ĐÁ" , 00:30 09/11 ⚽ 🔥 Villarreal vs Getafe (BLV LÝ LIỀU LĨNH) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull.digitalcdn.net/live/f922f2fefa594624a347de80600b4ff0/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/kjw2r09hvwwrz84/image/small" group-title="⚽ BÓNG ĐÁ" , 00:30 09/11 ⚽ 🔥 Villarreal vs Getafe (BLV LÝ LIỀU LĨNH) (HD2) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull1.digitalcdn.net/live/f922f2fefa594624a347de80600b4ff0/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/kjw2r09hvwwrz84/image/small" group-title="⚽ BÓNG ĐÁ" , 00:30 09/11 ⚽ 🔥 Villarreal vs Getafe (Nhà đài)
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://lilive1.eu.cc/live/a3126658ae90af564ac92f8c7afd3e6c/playlist.m3u8
+
+#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/kdj2ryoh3wyq1zp/image/small" group-title="⚽ BÓNG ĐÁ" , 01:30 09/11 ⚽ 🔥 Hoffenheim vs Schalke 04 (BLV LÝ LÀNG LÁ) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull.digitalcdn.net/live/0c96e265d4de47fda9b3ad73a95990d6/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/kdj2ryoh3wyq1zp/image/small" group-title="⚽ BÓNG ĐÁ" , 01:30 09/11 ⚽ 🔥 Hoffenheim vs Schalke 04 (BLV LÝ LÀNG LÁ) (HD2) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull1.digitalcdn.net/live/0c96e265d4de47fda9b3ad73a95990d6/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/kdj2ryoh3wyq1zp/image/small" group-title="⚽ BÓNG ĐÁ" , 01:30 09/11 ⚽ 🔥 Hoffenheim vs Schalke 04 (Nhà đài)
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://lilive1.eu.cc/live/3476077d975e880f71a77f033ab5d12b/playlist.m3u8
+
+#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/8y39mp1h80jmojx/image/small" group-title="⚽ BÓNG ĐÁ" , 02:45 09/11 ⚽ 🔥 Fiorentina vs Juventus (BLV LÃM LÀNG) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull.digitalcdn.net/live/df50658ae61d48c2abdf65db44657539/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/8y39mp1h80jmojx/image/small" group-title="⚽ BÓNG ĐÁ" , 02:45 09/11 ⚽ 🔥 Fiorentina vs Juventus (BLV LÃM LÀNG) (HD2) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull1.digitalcdn.net/live/df50658ae61d48c2abdf65db44657539/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/8y39mp1h80jmojx/image/small" group-title="⚽ BÓNG ĐÁ" , 02:45 09/11 ⚽ 🔥 Fiorentina vs Juventus (Nhà đài)
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://lilive1.eu.cc/live/15c99cf32ceec22feafb14f510fd8727/playlist.m3u8
+
+#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/9vjxm8ghodjr6od/image/small" group-title="⚽ BÓNG ĐÁ" , 03:00 09/11 ⚽ 🔥 Atl. Madrid vs Barcelona (BLV LÝ LA LÀNG) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull.digitalcdn.net/live/3bbe2fe21d4c429194b4543980795509/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/9vjxm8ghodjr6od/image/small" group-title="⚽ BÓNG ĐÁ" , 03:00 09/11 ⚽ 🔥 Atl. Madrid vs Barcelona (BLV LÝ LA LÀNG) (HD2) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull1.digitalcdn.net/live/3bbe2fe21d4c429194b4543980795509/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/9vjxm8ghodjr6od/image/small" group-title="⚽ BÓNG ĐÁ" , 03:00 09/11 ⚽ 🔥 Atl. Madrid vs Barcelona (Nhà đài)
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://lilive1.eu.cc/live/4ec9431b331e975f278906fae8e8ecf0/playlist.m3u8
+
 #EXTINF:-1 tvg-logo="https://static.flashscore.com/res/image/data/IT5JALxS-pxaNm0c7.png" group-title="🏐 BÓNG CHUYỀN" , 11:00 08/11 🏐 🔥 Toray Arrows Women vs Gunma Bank Green Wings Women (BLV LÝ LIỀU LĨNH) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull.digitalcdn.net/live/7c61577fce9b4733a13ddd48ba9f0413/index.m3u8
@@ -287,3 +271,35 @@ https://pull.digitalcdn.net/live/ef55625f82314a959006abce9e80ce78/index.m3u8
 #EXTINF:-1 tvg-logo="https://static.flashscore.com/res/image/data/zZwPgEBr-dSrpGvhU.png" group-title="🏐 BÓNG CHUYỀN" , 12:00 08/11 🏐 🔥 Aleeza Aichi Women vs Okayama Seagulls Women (BLV LÃM LÀNG) (HD2) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull1.digitalcdn.net/live/ef55625f82314a959006abce9e80ce78/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://thumb.wikimedia.org/wikipedia/vi/thumb/f/f6/Emblem_of_Da_Nang_City.png/250px-Emblem_of_Da_Nang_City.png" group-title="🏐 BÓNG CHUYỀN" , 12:00 08/11 🏐 🔥 Đà Nẵng vs TP. Hồ Chí Minh (BLV LÝ LÊN LỬA) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull.digitalcdn.net/live/e211b2516bb642a5a032abf467f4a581/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://thumb.wikimedia.org/wikipedia/vi/thumb/f/f6/Emblem_of_Da_Nang_City.png/250px-Emblem_of_Da_Nang_City.png" group-title="🏐 BÓNG CHUYỀN" , 12:00 08/11 🏐 🔥 Đà Nẵng vs TP. Hồ Chí Minh (BLV LÝ LÊN LỬA) (HD2) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull1.digitalcdn.net/live/e211b2516bb642a5a032abf467f4a581/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1d/Logo_Hanoi.png/250px-Logo_Hanoi.png" group-title="🏐 BÓNG CHUYỀN" , 14:30 08/11 🏐 🔥 Hà Nội vs Sanest Khánh Hòa (BLV LÝ LÊN LỬA) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull.digitalcdn.net/live/3af036842c3a4a879473abc72d24b5b3/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1d/Logo_Hanoi.png/250px-Logo_Hanoi.png" group-title="🏐 BÓNG CHUYỀN" , 14:30 08/11 🏐 🔥 Hà Nội vs Sanest Khánh Hòa (BLV LÝ LÊN LỬA) (HD2) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull1.digitalcdn.net/live/3af036842c3a4a879473abc72d24b5b3/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/vi/d/da/Logo_LP_Bank_Ninh_B%C3%ACnh.png" group-title="🏐 BÓNG CHUYỀN" , 17:00 08/11 🏐 🔥 LP Bank Ninh Bình vs Thể Công Tân Cảng (BLV LÃM LÀNG) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull.digitalcdn.net/live/9ad625b41e7c4ed99516dc78aba64467/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/vi/d/da/Logo_LP_Bank_Ninh_B%C3%ACnh.png" group-title="🏐 BÓNG CHUYỀN" , 17:00 08/11 🏐 🔥 LP Bank Ninh Bình vs Thể Công Tân Cảng (BLV LÃM LÀNG) (HD2) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull1.digitalcdn.net/live/9ad625b41e7c4ed99516dc78aba64467/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/vi/7/7c/Logo_B%C4%90BPVN.png" group-title="🏐 BÓNG CHUYỀN" , 19:30 08/11 🏐 🔥 Biên Phòng MB vs Công an TP. Hồ Chí Minh (BLV LÝ LÊN LỬA) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull.digitalcdn.net/live/5c56829074c945a099115707f29e2ef1/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://upload.wikimedia.org/wikipedia/vi/7/7c/Logo_B%C4%90BPVN.png" group-title="🏐 BÓNG CHUYỀN" , 19:30 08/11 🏐 🔥 Biên Phòng MB vs Công an TP. Hồ Chí Minh (BLV LÝ LÊN LỬA) (HD2) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull1.digitalcdn.net/live/5c56829074c945a099115707f29e2ef1/index.m3u8
