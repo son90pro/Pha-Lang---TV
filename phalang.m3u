@@ -8,6 +8,10 @@ https://pull.digitalcdn.net/live/da7696c95402470bb3ae2af1411f5c82/index.m3u8
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull1.digitalcdn.net/live/da7696c95402470bb3ae2af1411f5c82/index.m3u8
 
+#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/zp5rzgh722nq82w/image/small" group-title="⚽ BÓNG ĐÁ" , 16:00 09/11 ⚽ 🔥 Pakhtakor II vs FC Kattaqo (Nhà đài)
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://lilive1.eu.cc/live/ca0efed721ff640eccd23bc663163db9/playlist.m3u8
+
 #EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/4wyrn4h8k6wq86p/image/small" group-title="⚽ BÓNG ĐÁ" , 18:00 09/11 ⚽ 🔥 Tunisia U17 vs Libya U17 (BLV LÝ LINH LỰC) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull.digitalcdn.net/live/9157f09bc56e4c2f88044628a6c3623e/index.m3u8
@@ -39,14 +43,6 @@ https://pull.digitalcdn.net/live/690c2ffb92044f98adcea177c98e4a6a/index.m3u8
 #EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/zp5rzgh753pq82w/image/small" group-title="⚽ BÓNG ĐÁ" , 23:30 09/11 ⚽ 🔥 Veles vs FC KAMAZ (BLV LÝ LẠNH LÙNG) (HD2) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull1.digitalcdn.net/live/690c2ffb92044f98adcea177c98e4a6a/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/2y8m4zh3woxql07/image/small" group-title="⚽ BÓNG ĐÁ" , 01:00 10/11 ⚽ 🔥 Botosani vs Otelul Galati (BLV LÝ LÊN LỬA) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull.digitalcdn.net/live/e26b89fb100941ee8c94aeb87b28035a/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/2y8m4zh3woxql07/image/small" group-title="⚽ BÓNG ĐÁ" , 01:00 10/11 ⚽ 🔥 Botosani vs Otelul Galati (BLV LÝ LÊN LỬA) (HD2) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull1.digitalcdn.net/live/e26b89fb100941ee8c94aeb87b28035a/index.m3u8
 
 #EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/4zp5rzgh98vq82w/image/small" group-title="⚽ BÓNG ĐÁ" , 15:00 10/11 ⚽ 🔥 Qatar U23 vs Singapore U23 (BLV LÝ LÀNG LÁ) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
