@@ -1,17 +1,5 @@
 #EXTM3U
 
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/zp5rzgh753pq82w/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 23:30 09/11 ⚽ 🔥 Veles vs FC KAMAZ (BLV LÝ LẠNH LÙNG) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull.digitalcdn.net/live/690c2ffb92044f98adcea177c98e4a6a/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/zp5rzgh753pq82w/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 23:30 09/11 ⚽ 🔥 Veles vs FC KAMAZ (BLV LÝ LẠNH LÙNG) (HD2) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull1.digitalcdn.net/live/690c2ffb92044f98adcea177c98e4a6a/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/zp5rzgh753pq82w/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 23:30 09/11 ⚽ 🔥 Veles vs FC KAMAZ (Nhà đài)
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://lilive1.eu.cc/live/d1e642bd12e0962533cd8afc3081d11d/playlist.m3u8
-
 #EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/4zp5rzgh98vq82w/image/small" group-title="⚽ BÓNG ĐÁ" , 15:00 10/11 ⚽ 🔥 Qatar U23 vs Singapore U23 (BLV LÝ LÀNG LÁ) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull.digitalcdn.net/live/8ae2e1d0649843ada4203fcbf41ec8c2/index.m3u8
