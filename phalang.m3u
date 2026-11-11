@@ -1,33 +1,5 @@
 #EXTM3U
 
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/23xmvkh308oqg8n/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 23:00 11/11 ⚽ 🔥 Brunei Darussalam U17 vs Bahrain U17 (BLV LÝ LINH LỰC) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull.digitalcdn.net/live/a27629ab7e914502824bd7a19a90d065/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/23xmvkh308oqg8n/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 23:00 11/11 ⚽ 🔥 Brunei Darussalam U17 vs Bahrain U17 (BLV LÝ LINH LỰC) (HD2) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull1.digitalcdn.net/live/a27629ab7e914502824bd7a19a90d065/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/e4wyrn4hk85q86p/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 00:00 12/11 ⚽ 🔥 Pháp U19 vs Na Uy U19 (BLV LÝ LIỀU LĨNH) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull.digitalcdn.net/live/be9e80aa3e314acabad29bc505f1564c/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/e4wyrn4hk85q86p/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 00:00 12/11 ⚽ 🔥 Pháp U19 vs Na Uy U19 (BLV LÝ LIỀU LĨNH) (HD2) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull1.digitalcdn.net/live/be9e80aa3e314acabad29bc505f1564c/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/e4wyrn4hk85q86p/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 00:00 12/11 ⚽ 🔥 Pháp U19 vs Na Uy U19 (Nhà đài)
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://lilive1.eu.cc/live/eaa835ef72acfe414965d7ac5a094ed9/playlist.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/965mkyh7p3gr1ge/image/small" group-title="⚽ BÓNG ĐÁ" , 02:00 12/11 ⚽ 🔥 Nữ Liverpool vs Nữ Aston Villa (BLV LÝ LÊN LỬA) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull.digitalcdn.net/live/c09eed8fa7264c65852f08ab4e43c2be/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/965mkyh7p3gr1ge/image/small" group-title="⚽ BÓNG ĐÁ" , 02:00 12/11 ⚽ 🔥 Nữ Liverpool vs Nữ Aston Villa (BLV LÝ LÊN LỬA) (HD2) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull1.digitalcdn.net/live/c09eed8fa7264c65852f08ab4e43c2be/index.m3u8
-
 #EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/ednm9whkk88ryox/image/small" group-title="⚽ BÓNG ĐÁ" , 13:00 12/11 ⚽ 🔥 New Zealand vs Ấn Độ (BLV LÝ LÀNG LÁ) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull.digitalcdn.net/live/f1400ccd968e4ee1bf2b481d90264aa1/index.m3u8
