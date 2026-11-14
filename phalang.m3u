@@ -1,41 +1,5 @@
 #EXTM3U
 
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/z8yomo4hwpeq0j6/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 02:45 15/11 ⚽ 🔥 Bồ Đào Nha vs Đan Mạch (BLV LÝ LA LÀNG) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull.digitalcdn.net/live/5a7820585cc240319dcec6ee361df440/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/z8yomo4hwpeq0j6/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 02:45 15/11 ⚽ 🔥 Bồ Đào Nha vs Đan Mạch (BLV LÝ LA LÀNG) (HD2) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull1.digitalcdn.net/live/5a7820585cc240319dcec6ee361df440/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/z8yomo4hwpeq0j6/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 02:45 15/11 ⚽ 🔥 Bồ Đào Nha vs Đan Mạch (Nhà đài)
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://lilive1.eu.cc/live/f71002b7302ea3d6bec7f1271a4bd6af/playlist.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/56ypq3nh912md7o/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 02:45 15/11 ⚽ 🔥 Romania vs Ba Lan (BLV LÃM LÀNG) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull.digitalcdn.net/live/36d905dc6b9843e1bc4b08ae763cad98/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/56ypq3nh912md7o/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 02:45 15/11 ⚽ 🔥 Romania vs Ba Lan (BLV LÃM LÀNG) (HD2) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull1.digitalcdn.net/live/36d905dc6b9843e1bc4b08ae763cad98/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/56ypq3nh912md7o/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 02:45 15/11 ⚽ 🔥 Romania vs Ba Lan (Nhà đài)
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://lilive1.eu.cc/live/e96828408d0725d77d5644c9caa922ef/playlist.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/z318q66hpe5qo9j/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 02:45 15/11 ⚽ 🔥 Thụy Điển vs Bosnia-Herzegovina (BLV LÝ LẠNH LÙNG) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull.digitalcdn.net/live/5e24e1ebf9834fcba0668d7babc5ec79/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/z318q66hpe5qo9j/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 02:45 15/11 ⚽ 🔥 Thụy Điển vs Bosnia-Herzegovina (BLV LÝ LẠNH LÙNG) (HD2) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull1.digitalcdn.net/live/5e24e1ebf9834fcba0668d7babc5ec79/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/z318q66hpe5qo9j/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 02:45 15/11 ⚽ 🔥 Thụy Điển vs Bosnia-Herzegovina (Nhà đài)
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://lilive1.eu.cc/live/bc1ca2319d3cd239376743e5b1db989d/playlist.m3u8
-
 #EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/ednm9whkk88ryox/image/small" group-title="⚽ BÓNG ĐÁ" , 10:10 15/11 ⚽ 🔥 New Zealand vs Ấn Độ (BLV LÝ LINH LỰC) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull.digitalcdn.net/live/bbb4244d81514ec3a1e6ecf4d26e391d/index.m3u8
