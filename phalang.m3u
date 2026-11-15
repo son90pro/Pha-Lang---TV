@@ -1,12 +1,16 @@
 #EXTM3U
 
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/ednm9whkk88ryox/image/small" group-title="⚽ BÓNG ĐÁ" , 10:10 15/11 ⚽ 🔥 New Zealand vs Ấn Độ (BLV LÝ LINH LỰC) [geo]
+#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/ednm9whkk88ryox/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 10:10 15/11 ⚽ 🔥 New Zealand vs Ấn Độ (BLV LÝ LINH LỰC) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull.digitalcdn.net/live/bbb4244d81514ec3a1e6ecf4d26e391d/index.m3u8
 
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/ednm9whkk88ryox/image/small" group-title="⚽ BÓNG ĐÁ" , 10:10 15/11 ⚽ 🔥 New Zealand vs Ấn Độ (BLV LÝ LINH LỰC) (HD2) [geo]
+#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/ednm9whkk88ryox/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 10:10 15/11 ⚽ 🔥 New Zealand vs Ấn Độ (BLV LÝ LINH LỰC) (HD2) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull1.digitalcdn.net/live/bbb4244d81514ec3a1e6ecf4d26e391d/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/ednm9whkk88ryox/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 10:10 15/11 ⚽ 🔥 New Zealand vs Ấn Độ (Nhà đài)
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://lilive1.eu.cc/live/d67a53b05655bbfc7a7886bc4b177af1/playlist.m3u8
 
 #EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/dj2ryohkv8xq1zp/image/small" group-title="⚽ BÓNG ĐÁ" , 19:00 15/11 ⚽ 🔥 Kyrgyzstan vs Việt Nam (BLV LÝ LA LÀNG) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
@@ -24,6 +28,10 @@ https://pull.digitalcdn.net/live/51c968032f8d4c14ad53a0ff9df19291/index.m3u8
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull1.digitalcdn.net/live/51c968032f8d4c14ad53a0ff9df19291/index.m3u8
 
+#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/gy0or5jh2vgqwzv/image/small" group-title="⚽ BÓNG ĐÁ" , 21:00 15/11 ⚽ 🔥 Latvia vs Armenia (Nhà đài)
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://lilive1.eu.cc/live/e592634eb329b449c6101e02261fb956/playlist.m3u8
+
 #EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/kjw2r09hzx2rz84/image/small" group-title="⚽ BÓNG ĐÁ" , 21:00 15/11 ⚽ 🔥 Đảo Síp vs Montenegro (BLV LÝ LÀNG LÁ) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull.digitalcdn.net/live/f4a2f2ec70d34bbb906c82a68d6e672c/index.m3u8
@@ -31,6 +39,10 @@ https://pull.digitalcdn.net/live/f4a2f2ec70d34bbb906c82a68d6e672c/index.m3u8
 #EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/kjw2r09hzx2rz84/image/small" group-title="⚽ BÓNG ĐÁ" , 21:00 15/11 ⚽ 🔥 Đảo Síp vs Montenegro (BLV LÝ LÀNG LÁ) (HD2) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull1.digitalcdn.net/live/f4a2f2ec70d34bbb906c82a68d6e672c/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/kjw2r09hzx2rz84/image/small" group-title="⚽ BÓNG ĐÁ" , 21:00 15/11 ⚽ 🔥 Đảo Síp vs Montenegro (Nhà đài)
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://lilive1.eu.cc/live/7721a3a6a65f724841cef110965111fa/playlist.m3u8
 
 #EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/v2y8m4zhdp6ql07/image/small" group-title="⚽ BÓNG ĐÁ" , 22:15 15/11 ⚽ 🔥 Granada vs Las Palmas (BLV LÝ LẠNH LÙNG) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
@@ -127,14 +139,6 @@ https://pull.digitalcdn.net/live/79da20b4cc774b47b5951c059648f189/index.m3u8
 #EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/gy0or5jhd2oqwzv/image/small" group-title="⚽ BÓNG ĐÁ" , 22:00 16/11 ⚽ 🔥 Faroe Islands vs Moldova (BLV LÃM LÀNG) (HD2) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull1.digitalcdn.net/live/79da20b4cc774b47b5951c059648f189/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://static.flashscore.com/res/image/data/djDTeKyB-v3YmnHll.png" group-title="🏐 BÓNG CHUYỀN" , 11:05 15/11 🏐 🔥 Hisamitsu Springs Women vs PFU Blue Cats Women (BLV LÃM LÀNG) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull.digitalcdn.net/live/fff3fc736348472ea1dfd73246975086/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://static.flashscore.com/res/image/data/djDTeKyB-v3YmnHll.png" group-title="🏐 BÓNG CHUYỀN" , 11:05 15/11 🏐 🔥 Hisamitsu Springs Women vs PFU Blue Cats Women (BLV LÃM LÀNG) (HD2) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull1.digitalcdn.net/live/fff3fc736348472ea1dfd73246975086/index.m3u8
 
 #EXTINF:-1 tvg-logo="https://static.flashscore.com/res/image/data/hbnnxXeM-KGU5ehTK.png" group-title="🏐 BÓNG CHUYỀN" , 12:05 15/11 🏐 🔥 Okayama Seagulls Women vs NEC Red Rockets Women (BLV LÝ LIỀU LĨNH) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
