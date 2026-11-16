@@ -1,20 +1,32 @@
 #EXTM3U
 
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/x7lm7phpzl8m2wd/image/small" group-title="⚽ BÓNG ĐÁ" , 17:25 16/11 ⚽ 🔥 FC United Stars vs South United (BLV LÃM LÀNG) [geo]
+#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/x7lm7phpzl8m2wd/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 17:25 16/11 ⚽ 🔥 FC United Stars vs South United (BLV LÝ LÀNG LÁ) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull.digitalcdn.net/live/2cb79bfa43b747cf9765ca87cdbc2379/index.m3u8
 
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/x7lm7phpzl8m2wd/image/small" group-title="⚽ BÓNG ĐÁ" , 17:25 16/11 ⚽ 🔥 FC United Stars vs South United (BLV LÃM LÀNG) (HD2) [geo]
+#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/x7lm7phpzl8m2wd/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 17:25 16/11 ⚽ 🔥 FC United Stars vs South United (BLV LÝ LÀNG LÁ) (HD2) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull1.digitalcdn.net/live/2cb79bfa43b747cf9765ca87cdbc2379/index.m3u8
 
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/y0or5jhl7kpqwzv/image/small" group-title="⚽ BÓNG ĐÁ" , 18:00 16/11 ⚽ 🔥 Nữ Tây Ban Nha U17 vs Nữ Thụy Sĩ U17 (BLV LÝ LINH LỰC) [geo]
+#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/x7lm7phpzl8m2wd/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 17:25 16/11 ⚽ 🔥 FC United Stars vs South United (Nhà đài)
 #EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull.digitalcdn.net/live/44995b2014cc46ffb64a68eb61d8404f/index.m3u8
+https://lilive1.eu.cc/live/18fa2aa7a91e04b2c43e6ad2c457cca8/playlist.m3u8
 
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/y0or5jhl7kpqwzv/image/small" group-title="⚽ BÓNG ĐÁ" , 18:00 16/11 ⚽ 🔥 Nữ Tây Ban Nha U17 vs Nữ Thụy Sĩ U17 (BLV LÝ LINH LỰC) (HD2) [geo]
+#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/2y8m4zhg3nlql07/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 19:00 16/11 ⚽ 🔥 FK Graficar Beograd vs Vozdovac Beograd (BLV LÝ LIỀU LĨNH) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull1.digitalcdn.net/live/44995b2014cc46ffb64a68eb61d8404f/index.m3u8
+https://pull.digitalcdn.net/live/343c68affbd34b22a54a674f3b93e436/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/2y8m4zhg3nlql07/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 19:00 16/11 ⚽ 🔥 FK Graficar Beograd vs Vozdovac Beograd (BLV LÝ LIỀU LĨNH) (HD2) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull1.digitalcdn.net/live/343c68affbd34b22a54a674f3b93e436/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/gx7lm7phy96m2wd/image/small" group-title="⚽ BÓNG ĐÁ" , 20:00 16/11 ⚽ 🔥 Sudan vs Senegal (BLV LÃM LÀNG) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull.digitalcdn.net/live/a66c577a44b048c899c0ce40f8eab8db/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/gx7lm7phy96m2wd/image/small" group-title="⚽ BÓNG ĐÁ" , 20:00 16/11 ⚽ 🔥 Sudan vs Senegal (BLV LÃM LÀNG) (HD2) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull1.digitalcdn.net/live/a66c577a44b048c899c0ce40f8eab8db/index.m3u8
 
 #EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/p3glrw7h2wnqdyj/image/small" group-title="⚽ BÓNG ĐÁ" , 22:00 16/11 ⚽ 🔥 Kazakhstan vs Slovakia (BLV LÝ LÊN LỬA) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
