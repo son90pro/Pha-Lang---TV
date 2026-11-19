@@ -1,20 +1,12 @@
 #EXTM3U
 
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/x7lm7phkynxm2wd/image/small" group-title="⚽ BÓNG ĐÁ" , 15:30 19/11 ⚽ 🔥 Preston Lions vs South Hobart (BLV LÝ LẠNH LÙNG) [geo]
+#EXTINF:-1 tvg-logo="https://img0.aiscore.com/volleyball/team/7c125325ea334416e9274666b17df6fb.png!w80" group-title="🏐 BÓNG CHUYỀN" , 🔴 17:00 19/11 🏐 🔥 Hungkuk Womon vs GS Caltex Womon (BLV LÝ LINH LỰC) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull.digitalcdn.net/live/7c79f29788fd4f43858df4e2e3dc02f6/index.m3u8
+https://pull.digitalcdn.net/live/a623619be2be4682aa6c2290c068a034/index.m3u8
 
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/x7lm7phkynxm2wd/image/small" group-title="⚽ BÓNG ĐÁ" , 15:30 19/11 ⚽ 🔥 Preston Lions vs South Hobart (BLV LÝ LẠNH LÙNG) (HD2) [geo]
+#EXTINF:-1 tvg-logo="https://img0.aiscore.com/volleyball/team/7c125325ea334416e9274666b17df6fb.png!w80" group-title="🏐 BÓNG CHUYỀN" , 🔴 17:00 19/11 🏐 🔥 Hungkuk Womon vs GS Caltex Womon (BLV LÝ LINH LỰC) (HD2) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull1.digitalcdn.net/live/7c79f29788fd4f43858df4e2e3dc02f6/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/vjxm8ghg80kr6od/image/small" group-title="⚽ BÓNG ĐÁ" , 19:00 19/11 ⚽ 🔥 Svay Rieng FC vs Port FC (BLV LÝ LINH LỰC) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull.digitalcdn.net/live/9f511d4c663e48cb802c6b835269d2e8/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/vjxm8ghg80kr6od/image/small" group-title="⚽ BÓNG ĐÁ" , 19:00 19/11 ⚽ 🔥 Svay Rieng FC vs Port FC (BLV LÝ LINH LỰC) (HD2) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull1.digitalcdn.net/live/9f511d4c663e48cb802c6b835269d2e8/index.m3u8
+https://pull1.digitalcdn.net/live/a623619be2be4682aa6c2290c068a034/index.m3u8
 
 #EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/vjxm8gh4z7xr6od/image/small" group-title="⚽ BÓNG ĐÁ" , 19:00 19/11 ⚽ 🔥 Persib Bandung vs Shan United (BLV LÃM LÀNG) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
@@ -32,6 +24,10 @@ https://pull.digitalcdn.net/live/6e7a0f393a4d4d329397f5f66c1d057c/index.m3u8
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull1.digitalcdn.net/live/6e7a0f393a4d4d329397f5f66c1d057c/index.m3u8
 
+#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/23xmvkho9w9qg8n/image/small" group-title="⚽ BÓNG ĐÁ" , 19:30 19/11 ⚽ 🔥 Công An Hà Nội vs Johor Darul Takzim (Nhà đài)
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://lilive1.eu.cc/live/c99eec16e2dbb0c925d1889d846d1e0f/playlist.m3u8
+
 #EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/1l4rjnh6zpem7vx/image/small" group-title="⚽ BÓNG ĐÁ" , 20:00 19/11 ⚽ 🔥 Pháp U17 vs Haiti U17 (BLV LÝ LÀNG LÁ) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull.digitalcdn.net/live/4b8138004fb3427fbad7ae4829825a4d/index.m3u8
@@ -40,6 +36,10 @@ https://pull.digitalcdn.net/live/4b8138004fb3427fbad7ae4829825a4d/index.m3u8
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull1.digitalcdn.net/live/4b8138004fb3427fbad7ae4829825a4d/index.m3u8
 
+#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/1l4rjnh6zpem7vx/image/small" group-title="⚽ BÓNG ĐÁ" , 20:00 19/11 ⚽ 🔥 Pháp U17 vs Haiti U17 (Nhà đài)
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://lilive1.eu.cc/live/b451b4495c473bc1d73ce2f442b1569c/playlist.m3u8
+
 #EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/y0or5jhlx6eqwzv/image/small" group-title="⚽ BÓNG ĐÁ" , 20:30 19/11 ⚽ 🔥 Hàn Quốc U17 vs Uganda U17 (BLV LÝ LẠNH LÙNG) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull.digitalcdn.net/live/96c55c3aa824402892748c5245288840/index.m3u8
@@ -47,6 +47,10 @@ https://pull.digitalcdn.net/live/96c55c3aa824402892748c5245288840/index.m3u8
 #EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/y0or5jhlx6eqwzv/image/small" group-title="⚽ BÓNG ĐÁ" , 20:30 19/11 ⚽ 🔥 Hàn Quốc U17 vs Uganda U17 (BLV LÝ LẠNH LÙNG) (HD2) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull1.digitalcdn.net/live/96c55c3aa824402892748c5245288840/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/y0or5jhlx6eqwzv/image/small" group-title="⚽ BÓNG ĐÁ" , 20:30 19/11 ⚽ 🔥 Hàn Quốc U17 vs Uganda U17 (Nhà đài)
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://lilive1.eu.cc/live/4602fdfd70964feeaade860d0de7629e/playlist.m3u8
 
 #EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/4wyrn4h8vy5q86p/image/small" group-title="⚽ BÓNG ĐÁ" , 21:00 19/11 ⚽ 🔥 Ả Rập Xê Út U17 vs Uruguay U17 (BLV LÝ LINH LỰC) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
@@ -71,6 +75,10 @@ https://pull.digitalcdn.net/live/17c8d81a9b0146e1a99b1cac3251f87f/index.m3u8
 #EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/4wyrn4h850yq86p/image/small" group-title="⚽ BÓNG ĐÁ" , 22:25 19/11 ⚽ 🔥 Al-Ain FC vs Al-Dhafra (BLV LÃM LÀNG) (HD2) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull1.digitalcdn.net/live/17c8d81a9b0146e1a99b1cac3251f87f/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/4wyrn4h850yq86p/image/small" group-title="⚽ BÓNG ĐÁ" , 22:25 19/11 ⚽ 🔥 Al-Ain FC vs Al-Dhafra (Nhà đài)
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://lilive1.eu.cc/live/9fc1d87a76c52d43deff40273b077503/playlist.m3u8
 
 #EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/gy0or5jhpzjqwzv/image/small" group-title="⚽ BÓNG ĐÁ" , 22:30 19/11 ⚽ 🔥 Qatar U17 vs Panama U17 (BLV LÝ LONG) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
@@ -144,11 +152,11 @@ https://pull.digitalcdn.net/live/4c9eb5a1bd504609b6ae437954f0be78/index.m3u8
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull1.digitalcdn.net/live/4c9eb5a1bd504609b6ae437954f0be78/index.m3u8
 
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/n54qllh278xqvy9/image/small" group-title="⚽ BÓNG ĐÁ" , 19:00 20/11 ⚽ 🔥 Thái Lan U17 vs Iraq U17 (BLV LÝ LẮC) [geo]
+#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/n54qllh278xqvy9/image/small" group-title="⚽ BÓNG ĐÁ" , 19:00 20/11 ⚽ 🔥 Thái Lan U17 vs Iraq U17 (BLV LÝ LINH LỰC) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull.digitalcdn.net/live/8b47df45f2714a89bbfb51d508c85b5e/index.m3u8
 
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/n54qllh278xqvy9/image/small" group-title="⚽ BÓNG ĐÁ" , 19:00 20/11 ⚽ 🔥 Thái Lan U17 vs Iraq U17 (BLV LÝ LẮC) (HD2) [geo]
+#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/n54qllh278xqvy9/image/small" group-title="⚽ BÓNG ĐÁ" , 19:00 20/11 ⚽ 🔥 Thái Lan U17 vs Iraq U17 (BLV LÝ LINH LỰC) (HD2) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull1.digitalcdn.net/live/8b47df45f2714a89bbfb51d508c85b5e/index.m3u8
 
@@ -167,14 +175,6 @@ https://pull.digitalcdn.net/live/93904cb680c041ebb4fb381abff6c647/index.m3u8
 #EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/3glrw7hwy4kqdyj/image/small" group-title="⚽ BÓNG ĐÁ" , 20:00 20/11 ⚽ 🔥 Bỉ U17 vs Việt Nam U17 (BLV LÝ LA LÀNG) (HD2) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull1.digitalcdn.net/live/93904cb680c041ebb4fb381abff6c647/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/y0or5jhlpd4qwzv/image/small" group-title="⚽ BÓNG ĐÁ" , 20:00 20/11 ⚽ 🔥 Cuba U17 vs Tajikistan U17 (BLV LÝ LINH LỰC) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull.digitalcdn.net/live/9025b068755146bbb17205a597299ad3/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/y0or5jhlpd4qwzv/image/small" group-title="⚽ BÓNG ĐÁ" , 20:00 20/11 ⚽ 🔥 Cuba U17 vs Tajikistan U17 (BLV LÝ LINH LỰC) (HD2) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull1.digitalcdn.net/live/9025b068755146bbb17205a597299ad3/index.m3u8
 
 #EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/3glrw7hwy4kqdyj/image/small" group-title="⚽ BÓNG ĐÁ" , 20:00 20/11 ⚽ 🔥 Bỉ U17 vs Việt Nam U17 (BLV LÝ LÀNG LÁ) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
@@ -215,14 +215,6 @@ https://pull.digitalcdn.net/live/a827b17a8de34f80a17c94d3d94b1376/index.m3u8
 #EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/l5ergphovvxr8k0/image/small" group-title="⚽ BÓNG ĐÁ" , 23:00 20/11 ⚽ 🔥 Bờ Biển Ngà U17 vs Uzbekistan U17 (BLV LÝ LẮC) (HD2) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull1.digitalcdn.net/live/a827b17a8de34f80a17c94d3d94b1376/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://img0.aiscore.com/volleyball/team/7c125325ea334416e9274666b17df6fb.png!w80" group-title="🏐 BÓNG CHUYỀN" , 17:00 19/11 🏐 🔥 Hungkuk Womon vs GS Caltex Womon (BLV LÝ LIỀU LĨNH) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull.digitalcdn.net/live/a623619be2be4682aa6c2290c068a034/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://img0.aiscore.com/volleyball/team/7c125325ea334416e9274666b17df6fb.png!w80" group-title="🏐 BÓNG CHUYỀN" , 17:00 19/11 🏐 🔥 Hungkuk Womon vs GS Caltex Womon (BLV LÝ LIỀU LĨNH) (HD2) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull1.digitalcdn.net/live/a623619be2be4682aa6c2290c068a034/index.m3u8
 
 #EXTINF:-1 tvg-logo="https://img0.aiscore.com/volleyball/team/54fc4aabcc2beabb25eee5af3ee4b164.png!w80" group-title="🏐 BÓNG CHUYỀN" , 23:00 19/11 🏐 🔥 Zeren Spor Womon vs Galatasaray Womon (BLV LÝ LIỀU LĨNH) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
