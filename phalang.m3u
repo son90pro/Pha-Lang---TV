@@ -1,24 +1,16 @@
 #EXTM3U
 
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/y0or5jh3n0dqwzv/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 00:45 20/11 ⚽ 🔥 Nữ Austria Wien vs Nữ Bayern Munchen (BLV LÝ LẠNH LÙNG) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull.digitalcdn.net/live/463b785495fb4ca7a8a877056eaf11b5/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/y0or5jh3n0dqwzv/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 00:45 20/11 ⚽ 🔥 Nữ Austria Wien vs Nữ Bayern Munchen (BLV LÝ LẠNH LÙNG) (HD2) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull1.digitalcdn.net/live/463b785495fb4ca7a8a877056eaf11b5/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/y0or5jh3n0dqwzv/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 00:45 20/11 ⚽ 🔥 Nữ Austria Wien vs Nữ Bayern Munchen (Nhà đài)
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://lilive1.eu.cc/live/029158a1db80bb48e061fcc8c4bb88f4/playlist.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/kjw2r09hoxvrz84/image/small" group-title="⚽ BÓNG ĐÁ" , 07:30 20/11 ⚽ 🔥 Orlando City vs FC Cincinnati (BLV LÝ LẠNH LÙNG) [geo]
+#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/kjw2r09hoxvrz84/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 07:30 20/11 ⚽ 🔥 Orlando City vs FC Cincinnati (BLV LÝ LẠNH LÙNG) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull.digitalcdn.net/live/8a860de8645b4e41bbd5eff33ca459d1/index.m3u8
 
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/kjw2r09hoxvrz84/image/small" group-title="⚽ BÓNG ĐÁ" , 07:30 20/11 ⚽ 🔥 Orlando City vs FC Cincinnati (BLV LÝ LẠNH LÙNG) (HD2) [geo]
+#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/kjw2r09hoxvrz84/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 07:30 20/11 ⚽ 🔥 Orlando City vs FC Cincinnati (BLV LÝ LẠNH LÙNG) (HD2) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull1.digitalcdn.net/live/8a860de8645b4e41bbd5eff33ca459d1/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/kjw2r09hoxvrz84/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 07:30 20/11 ⚽ 🔥 Orlando City vs FC Cincinnati (Nhà đài)
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://lilive1.eu.cc/live/9284a2c3f4c2d0507bb6010cbdcb4e59/playlist.m3u8
 
 #EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/jw2r09hlv6jrz84/image/small" group-title="⚽ BÓNG ĐÁ" , 15:40 20/11 ⚽ 🔥 Western Sydney vs Adelaide United (BLV LÃM LÀNG) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
