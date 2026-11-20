@@ -1,48 +1,48 @@
 #EXTM3U
 
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/kjw2r09hoxvrz84/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 07:30 20/11 ⚽ 🔥 Orlando City vs FC Cincinnati (BLV LÝ LẠNH LÙNG) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull.digitalcdn.net/live/8a860de8645b4e41bbd5eff33ca459d1/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/kjw2r09hoxvrz84/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 07:30 20/11 ⚽ 🔥 Orlando City vs FC Cincinnati (BLV LÝ LẠNH LÙNG) (HD2) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull1.digitalcdn.net/live/8a860de8645b4e41bbd5eff33ca459d1/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/kjw2r09hoxvrz84/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 07:30 20/11 ⚽ 🔥 Orlando City vs FC Cincinnati (Nhà đài)
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://lilive1.eu.cc/live/9284a2c3f4c2d0507bb6010cbdcb4e59/playlist.m3u8
-
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/jw2r09hlv6jrz84/image/small" group-title="⚽ BÓNG ĐÁ" , 15:40 20/11 ⚽ 🔥 Western Sydney vs Adelaide United (BLV LÃM LÀNG) [geo]
+#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/jw2r09hlv6jrz84/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 15:40 20/11 ⚽ 🔥 Western Sydney vs Adelaide United (BLV LÃM LÀNG) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull.digitalcdn.net/live/7683d81916574289a8fa164b9ecbc69f/index.m3u8
 
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/jw2r09hlv6jrz84/image/small" group-title="⚽ BÓNG ĐÁ" , 15:40 20/11 ⚽ 🔥 Western Sydney vs Adelaide United (BLV LÃM LÀNG) (HD2) [geo]
+#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/jw2r09hlv6jrz84/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 15:40 20/11 ⚽ 🔥 Western Sydney vs Adelaide United (BLV LÃM LÀNG) (HD2) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull1.digitalcdn.net/live/7683d81916574289a8fa164b9ecbc69f/index.m3u8
 
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/y39mp1hjk42mojx/image/small" group-title="⚽ BÓNG ĐÁ" , 17:00 20/11 ⚽ 🔥 Bà Rịa Vũng Tàu vs Thai Nguyen (BLV LÝ LINH LỰC) [geo]
+#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/jw2r09hlv6jrz84/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 15:40 20/11 ⚽ 🔥 Western Sydney vs Adelaide United (Nhà đài)
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://lilive1.eu.cc/live/3263c5da272cc57f559ba675be9d80cb/playlist.m3u8
+
+#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/y39mp1hjk42mojx/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 17:00 20/11 ⚽ 🔥 Bà Rịa Vũng Tàu vs Thai Nguyen (BLV LÝ LINH LỰC) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull.digitalcdn.net/live/de00df40aad64b32b8edad06488a75fe/index.m3u8
 
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/y39mp1hjk42mojx/image/small" group-title="⚽ BÓNG ĐÁ" , 17:00 20/11 ⚽ 🔥 Bà Rịa Vũng Tàu vs Thai Nguyen (BLV LÝ LINH LỰC) (HD2) [geo]
+#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/y39mp1hjk42mojx/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 17:00 20/11 ⚽ 🔥 Bà Rịa Vũng Tàu vs Thai Nguyen (BLV LÝ LINH LỰC) (HD2) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull1.digitalcdn.net/live/de00df40aad64b32b8edad06488a75fe/index.m3u8
 
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/4wyrn4h8kw3q86p/image/small" group-title="⚽ BÓNG ĐÁ" , 17:00 20/11 ⚽ 🔥 Thanh Hóa vs Hoàng Anh Gia Lai (BLV LÝ LA LÀNG) [geo]
+#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/4wyrn4h8kw3q86p/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 17:00 20/11 ⚽ 🔥 Thanh Hóa vs Hoàng Anh Gia Lai (BLV LÝ LA LÀNG) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull.digitalcdn.net/live/d46546c7c4a64af4b37aeb8c7e43a4d7/index.m3u8
 
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/4wyrn4h8kw3q86p/image/small" group-title="⚽ BÓNG ĐÁ" , 17:00 20/11 ⚽ 🔥 Thanh Hóa vs Hoàng Anh Gia Lai (BLV LÝ LA LÀNG) (HD2) [geo]
+#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/4wyrn4h8kw3q86p/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 17:00 20/11 ⚽ 🔥 Thanh Hóa vs Hoàng Anh Gia Lai (BLV LÝ LA LÀNG) (HD2) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull1.digitalcdn.net/live/d46546c7c4a64af4b37aeb8c7e43a4d7/index.m3u8
 
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/56ypq3nhd7kmd7o/image/small" group-title="⚽ BÓNG ĐÁ" , 17:00 20/11 ⚽ 🔥 Vissel Kobe vs Mito Hollyhock (BLV LÝ LÀNG LÁ) [geo]
+#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/56ypq3nhd7kmd7o/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 17:00 20/11 ⚽ 🔥 Vissel Kobe vs Mito Hollyhock (BLV LÝ LÀNG LÁ) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull.digitalcdn.net/live/705a0e80399b40639e146599224d6291/index.m3u8
 
-#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/56ypq3nhd7kmd7o/image/small" group-title="⚽ BÓNG ĐÁ" , 17:00 20/11 ⚽ 🔥 Vissel Kobe vs Mito Hollyhock (BLV LÝ LÀNG LÁ) (HD2) [geo]
+#EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/56ypq3nhd7kmd7o/image/small" group-title="⚽ BÓNG ĐÁ" , 🔴 17:00 20/11 ⚽ 🔥 Vissel Kobe vs Mito Hollyhock (BLV LÝ LÀNG LÁ) (HD2) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull1.digitalcdn.net/live/705a0e80399b40639e146599224d6291/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://static.flashscore.com/res/image/data/2wkn81yB-WnWXnBkk.png" group-title="🏐 BÓNG CHUYỀN" , 🔴 17:00 20/11 🏐 🔥 Expressway Co Womon vs IBK Womon (BLV LÝ LIỀU LĨNH) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull.digitalcdn.net/live/df0b4716674342b59b547a3e87d72889/index.m3u8
+
+#EXTINF:-1 tvg-logo="https://static.flashscore.com/res/image/data/2wkn81yB-WnWXnBkk.png" group-title="🏐 BÓNG CHUYỀN" , 🔴 17:00 20/11 🏐 🔥 Expressway Co Womon vs IBK Womon (BLV LÝ LIỀU LĨNH) (HD2) [geo]
+#EXTVLCOPT:http-referrer=https://phalang.live/
+https://pull1.digitalcdn.net/live/df0b4716674342b59b547a3e87d72889/index.m3u8
 
 #EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/jednm9whlxkryox/image/small" group-title="⚽ BÓNG ĐÁ" , 18:35 20/11 ⚽ 🔥 Beijing Guoan vs Shanghai Port (BLV LÃM LÀNG) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
@@ -251,14 +251,6 @@ https://pull.digitalcdn.net/live/9565242e8c05451b9aeac2a92273d397/index.m3u8
 #EXTINF:-1 tvg-logo="https://imgts.sportpulseapiz.com/football/team/p3glrw7h5oeqdyj/image/small" group-title="⚽ BÓNG ĐÁ" , 23:15 21/11 ⚽ 🔥 Nice vs PSG (BLV LÃM LÀNG) (HD2) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
 https://pull1.digitalcdn.net/live/9565242e8c05451b9aeac2a92273d397/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://static.flashscore.com/res/image/data/2wkn81yB-WnWXnBkk.png" group-title="🏐 BÓNG CHUYỀN" , 17:00 20/11 🏐 🔥 Expressway Co Womon vs IBK Womon (BLV LÝ LIỀU LĨNH) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull.digitalcdn.net/live/df0b4716674342b59b547a3e87d72889/index.m3u8
-
-#EXTINF:-1 tvg-logo="https://static.flashscore.com/res/image/data/2wkn81yB-WnWXnBkk.png" group-title="🏐 BÓNG CHUYỀN" , 17:00 20/11 🏐 🔥 Expressway Co Womon vs IBK Womon (BLV LÝ LIỀU LĨNH) (HD2) [geo]
-#EXTVLCOPT:http-referrer=https://phalang.live/
-https://pull1.digitalcdn.net/live/df0b4716674342b59b547a3e87d72889/index.m3u8
 
 #EXTINF:-1 tvg-logo="https://static.flashscore.com/res/image/data/OQvoiZCr-KMZ7hG6b.png" group-title="🏐 BÓNG CHUYỀN" , 11:05 21/11 🏐 🔥 Gunma Bank Green Wings Women vs Aleeza Aichi Women (BLV LÝ LIỀU LĨNH) [geo]
 #EXTVLCOPT:http-referrer=https://phalang.live/
